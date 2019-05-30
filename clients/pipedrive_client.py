@@ -49,7 +49,7 @@ class PipedriveClient:
 
         self.client.create_deal(**deal)
 
-    def create_adviser(self, data):
+    def create_or_update_adviser(self, data):
         name = data.get("name", "")
         telegram = data.get("telegram", "")
         email = data.get("email")

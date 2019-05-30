@@ -16,14 +16,18 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from adviser.views import SupportPageView, DealPageView, AdviserFormView
+from adviser.views import SupportPageView, DealPageView, AdviserFormView, AdviserProfileView
 
 urlpatterns = [
 
     url(r'^support/$', SupportPageView.as_view(), name='support'),
     url(r'^deal/$', DealPageView.as_view(), name='deal'),
     url(r'^adviser/$', AdviserFormView.as_view(), name='adviser-add'),
-    url(r'^adviser/profile/(?P<id>\w+)$', AdviserFormView.as_view(), name='adviser-get'),
-    url(r'^adviser/profile/(?P<id>\w+)/update$', AdviserFormView.as_view(), name='adviser-update'),
+    #url(r'^adviser/(?P<id>[\w-]+)/$', AdviserProfileView.as_view(), name='adviser-update'),
+    #url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserFormView.as_view(), name='adviser-get'),
+
     url('admin/', admin.site.urls),
+
+    url(r'^adviser/(?P<id>\w+)/', AdviserProfileView.as_view(),
+        name='survey-confirmation'),
     ]

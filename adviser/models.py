@@ -1,4 +1,6 @@
 import uuid
+from audioop import reverse
+
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
@@ -66,3 +68,6 @@ class Adviser(models.Model):
     class Meta(object):
         verbose_name = _('adviser')
         verbose_name_plural = _('advisers')
+
+    def get_absolute_url(self):
+        return reverse("adviser-detail", args=(self.id))

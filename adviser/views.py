@@ -3,7 +3,7 @@ from django.views.generic import FormView, TemplateView
 from adviser.forms import ListingForm, SupportForm, REQUEST_CHOICES, AdviserForm
 from clients.zendesk_client import ZendeskClient
 from clients.pipedrive_client import PipedriveClient
-
+from django.shortcuts import get_object_or_404
 
 class HomePageView(TemplateView):
 
@@ -60,7 +60,7 @@ class DealPageView(FormView):
 
 
 class AdviserFormView(FormView):
-    template_name = 'main/become_adviser.html'
+    template_name = 'adviser/become_adviser.html'
     form_class = AdviserForm
     success_url = '.'
 
@@ -72,25 +72,26 @@ class AdviserFormView(FormView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-            PipedriveClient().create_adviser(form.cleaned_data)
+            PipedriveClient().create_or_update_adviser(form.cleaned_data)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
 
 class AdviserProfileView(FormView):
-    template_name = 'main/adviser_profile.html'
+    template_name = 'adviser/adviser_profile.html'
     form_class = AdviserForm
     success_url = '.'
 
     def get_context_data(self, **kwargs):
-        context = super(AdviserFormView, self).get_context_data(**kwargs)
+        context = super(AdviserProfileView, self).get_context_data(**kwargs)
         return context
 
     def post(self, request, *args, **kwargs):
+        adviser = get_object_or_404(Survey, is_published=True, id=str(kwargs['id']))
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-            PipedriveClient().create_adviser(form.cleaned_data)
+            PipedriveClient().create_or_update_adviser(form.cleaned_data)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
