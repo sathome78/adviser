@@ -28,6 +28,7 @@ SECRET_KEY = '%9t2&1x41@436xk!h=*dhkt746mjl&jhl#tda@+d^44_@_8_#&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -100,6 +101,11 @@ ZENDESK_EMAIL = config.get('DEFAULT', 'ZENDESK_EMAIL')
 USER_TELEGRAM = config.get('PIPEDRIVE_FIELDS', 'user_telegram')
 ORG_LINK_TO_PROJECT = config.get('PIPEDRIVE_FIELDS', 'org_link_to_project')
 USER_LINKEDIN = config.get('PIPEDRIVE_FIELDS', 'user_linked_in')
+
+USER_LINK_TO_FORM = config.get('PIPEDRIVE_FIELDS', 'user_link_to_form')
+USER_LINK_TO_DETAILS = config.get('PIPEDRIVE_FIELDS', 'user_link_to_details')
+
+DOMAIN = config.get('DEFAULT', 'DOMAIN')
 
 PIPELINE_CHANNELS = {
     "IEO": 2,
