@@ -1,4 +1,6 @@
 import uuid
+from audioop import reverse
+
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
@@ -39,6 +41,9 @@ class Adviser(models.Model):
                                     help_text="Type of partner", null=True, blank=True)
     short_description = models.CharField(max_length=300,
                                          help_text="Short description displayed in sidebar")
+
+    is_published = models.BooleanField(default=False)
+
     telegram = models.CharField(max_length=255, null=True, blank=True)
     linkedin = models.CharField(max_length=255, null=True, blank=True)
     twitter = models.CharField(max_length=255, null=True, blank=True)
@@ -66,3 +71,6 @@ class Adviser(models.Model):
     class Meta(object):
         verbose_name = _('adviser')
         verbose_name_plural = _('advisers')
+
+    def get_absolute_url(self):
+        return reverse("adviser-detail", args=(self.id))
