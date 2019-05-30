@@ -1,29 +1,59 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-	<meta charset="utf-8">
-	<title>{% block title %}{% endblock title %}</title>
-  </head>
-  <body>
-    <div class="container" id="wrap">
-    {% block nav_logout %}
-  {% endblock %}
-	   {% block wrapper %} {% endblock %}
-        <div class="well" id="container-main">
-	       {% block body %}
+<head>
+    <title>Document Template Title</title>
+    <!-- Main Meta information-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="Cache-control" content="public"/>
+    <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:600,500,400,300' rel='stylesheet' type='text/css'>
+    <!-- Meta Information-->
+    <meta name="robots" content="index, follow"/>
+    <link type="text/plain" rel="author" href="{% static 'humans.txt' %}"/>
+    <!-- Get html5shiv if this is IE lower or equal to 9-->
+    <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+    <link rel="stylesheet" href="{% static 'css/main.min.css' %}"/>
+</head>
 
-               {% block content %}
-                   {% endblock %}
+<body>
+{% block header %}
+    {% include "basic/_header.html" %}
 
-	       	{% endblock %}
-	   </div>
-	</div>
-	<div class="footer">
-        <div class="container">
-	       {% block footer %}{% endblock %}
-        </div>
+{% endblock %}
+{% block body %}
+<body>
+        <main>
+    {% block content %}
+    {% endblock %}
+        </main>
+</body>
+{% endblock %}
+<div class="footer">
+    <div class="container">
+        {% block footer %}
+            {% include "basic/_footer.html" %}
+        {% endblock %}
     </div>
-	{% block extrajs %}	{% endblock %}
-  </body>
+</div>
+{% block extrajs %}    {% endblock %}
+<div class="scripts">
+    <!-- Set JS assets-->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en'
+                }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="{% static 'js/vendor-bundle.min.js' %}"></script>
+    <script src="{% static 'js/custom-bundle.min.js' %}"></script>
+</div>
+
+</body>
 </html>

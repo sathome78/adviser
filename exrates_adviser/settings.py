@@ -83,6 +83,10 @@ TEMPLATES = [
         },
     ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -111,7 +115,6 @@ PIPELINE_CHANNELS = {
     "IEO": 2,
     "Listing": 3
     }
-
 
 WSGI_APPLICATION = 'exrates_adviser.wsgi.application'
 

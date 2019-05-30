@@ -120,3 +120,6 @@ class AdviserProfileView(TemplateView):
         data['username'] = None
         data['form'] = ListingForm
         return data
+
+class FiatPageView(TemplateView):
+    template_name = 'main/fiat.html'
