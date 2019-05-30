@@ -49,7 +49,7 @@ class PipedriveClient:
 
         self.client.create_deal(**deal)
 
-    def create_or_update_adviser(self, data):
+    def create_or_update_adviser(self, data, edit_url, update_url):
         name = data.get("name", "")
         telegram = data.get("telegram", "")
         email = data.get("email")
@@ -59,8 +59,12 @@ class PipedriveClient:
         # check if contact exists
         contact = next(iter(self.client.get_persons_by_name(term=name)["data"]), None) if \
         self.client.get_persons_by_name(term=name)["data"] else None
+
+
         data = {"name": name, "email": email, settings.USER_TELEGRAM: telegram, "label": "adviser",
-                settings.USER_LINKEDIN: linkedin}
+                settings.USER_LINKEDIN: linkedin, settings.USER_LINK_TO_FORM: edit_url, settings.USER_LINK_TO_DETAILS: update_url}
+
+
         if not contact:
             contact = self.client.create_person(**data)["data"]
         else:

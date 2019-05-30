@@ -41,6 +41,9 @@ class Adviser(models.Model):
                                     help_text="Type of partner", null=True, blank=True)
     short_description = models.CharField(max_length=300,
                                          help_text="Short description displayed in sidebar")
+
+    is_published = models.BooleanField(default=False)
+
     telegram = models.CharField(max_length=255, null=True, blank=True)
     linkedin = models.CharField(max_length=255, null=True, blank=True)
     twitter = models.CharField(max_length=255, null=True, blank=True)

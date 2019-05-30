@@ -1,6 +1,9 @@
-from django.views.generic import FormView, TemplateView
+from django.conf import settings
+from django.urls import reverse
+from django.views.generic import FormView, TemplateView, UpdateView
 
-from adviser.forms import ListingForm, SupportForm, REQUEST_CHOICES, AdviserForm
+from adviser.forms import ListingForm, SupportForm, REQUEST_CHOICES, AdviserForm, AdviserProfileForm
+from adviser.models import Adviser
 from clients.zendesk_client import ZendeskClient
 from clients.pipedrive_client import PipedriveClient
 from django.shortcuts import get_object_or_404
@@ -21,7 +24,6 @@ class SupportPageView(FormView):
 
     def get_context_data(self, **kwargs):
         context = super(SupportPageView, self).get_context_data(**kwargs)
-        # context["testing_out"] = "this is a new context var"
         return context
 
     def post(self, request, *args, **kwargs):
@@ -72,26 +74,49 @@ class AdviserFormView(FormView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-            PipedriveClient().create_or_update_adviser(form.cleaned_data)
+
+            adviser = form.save()
+            edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={'id':adviser.id}))
+            update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={'id': adviser.id}))
+            PipedriveClient().create_or_update_adviser(form.cleaned_data, edit_url, update_url)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
 
-class AdviserProfileView(FormView):
+class AdviserUpdateProfileView(UpdateView):
     template_name = 'adviser/adviser_profile.html'
-    form_class = AdviserForm
+    form_class = AdviserProfileForm
+    model = Adviser
     success_url = '.'
 
-    def get_context_data(self, **kwargs):
-        context = super(AdviserProfileView, self).get_context_data(**kwargs)
-        return context
+    def get_object(self, queryset=None):
+        return self.model.objects.get(pk=self.kwargs['id'])
 
     def post(self, request, *args, **kwargs):
-        adviser = get_object_or_404(Survey, is_published=True, id=str(kwargs['id']))
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-            PipedriveClient().create_or_update_adviser(form.cleaned_data)
+            adviser = form.save()
+            edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={'id': adviser.id}))
+            update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={'id': adviser.id}))
+            PipedriveClient().create_or_update_adviser(form.cleaned_data, edit_url, update_url)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+
+class AdviserProfileView(TemplateView):
+    template_name = 'adviser/adviser_page.html'
+    form_class = AdviserProfileForm
+    model = Adviser
+    success_url = '.'
+
+    def get_object(self, queryset=None):
+        return self.model.objects.get(pk=self.kwargs['id'])
+
+    def get_context_data(self, **kwargs):
+        pk = self.kwargs['id']
+        data = super().get_context_data(**kwargs)
+        data['adviser'] = get_object_or_404(Adviser, pk=pk)
+        data['username'] = None
+        data['form'] = ListingForm
+        return data
