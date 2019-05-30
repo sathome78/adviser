@@ -4386,7 +4386,7 @@
         <entry file="file://$PROJECT_DIR$/exrates_adviser/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="386">
-              <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+              <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
               <folding>
                 <element signature="e#639#671#0" expanded="true" />
               </folding>
@@ -4398,7 +4398,7 @@
         <entry file="file://$PROJECT_DIR$/templates/adviser/become_adviser.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
+              <caret line="10" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -4428,7 +4428,7 @@
         <entry file="file://$PROJECT_DIR$/templates/adviser/adviser_profile.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -4438,7 +4438,7 @@
         <entry file="file://$PROJECT_DIR$/adviser/forms.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="296">
-              <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+              <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -5064,7 +5064,7 @@
     <entry file="file://$PROJECT_DIR$/adviser/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
-          <caret line="77" column="33" lean-forward="true" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
+          <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="33" selection-end-line="77" selection-end-column="33" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -5116,7 +5116,7 @@
     <entry file="file://$PROJECT_DIR$/exrates_adviser/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
-          <caret line="26" column="42" lean-forward="true" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+          <caret line="26" column="42" lean-forward="false" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
           <folding>
             <element signature="e#639#671#0" expanded="true" />
           </folding>
@@ -5126,7 +5126,7 @@
     <entry file="file://$PROJECT_DIR$/templates/adviser/become_adviser.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
+          <caret line="10" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -5134,7 +5134,7 @@
     <entry file="file://$PROJECT_DIR$/templates/adviser/adviser_profile.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
           <folding />
         </state>
       </provider>
