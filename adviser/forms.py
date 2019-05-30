@@ -66,18 +66,15 @@ class AdviserForm(ModelForm):
         return instance
 
 
-class AdviserFullForm(ModelForm):
-    name = forms.CharField(max_length=255)
-    telegram = forms.CharField(max_length=255, required=False)
+class AdviserProfileForm(ModelForm):
     email = forms.EmailField()
-    linkedin = forms.CharField(required=False)
 
     class Meta:
         model = Adviser
-        fields = ['name', 'telegram', 'surname', 'email', 'linkedin', 'partner_type', 'short_description', 'avatar', ]
+        fields = ['name', 'surname', 'partner_type', 'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
 
     def save(self, commit=True):
-        instance = super(AdviserFullForm, self).save(commit=False)
+        instance = super(AdviserProfileForm, self).save(commit=False)
         instance.member_since = datetime.today()
         if commit:
             instance.save()

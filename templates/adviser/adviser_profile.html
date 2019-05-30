@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+    <form action="{% url 'adviser-update' id %}" enctype="multipart/form-data" method="POST">{% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock %}

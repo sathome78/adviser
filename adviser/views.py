@@ -59,13 +59,31 @@ class DealPageView(FormView):
             return self.form_invalid(form)
 
 
-class AdviseFormView(FormView):
+class AdviserFormView(FormView):
     template_name = 'main/become_adviser.html'
     form_class = AdviserForm
     success_url = '.'
 
     def get_context_data(self, **kwargs):
-        context = super(AdviseFormView, self).get_context_data(**kwargs)
+        context = super(AdviserFormView, self).get_context_data(**kwargs)
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        if form.is_valid():
+            PipedriveClient().create_adviser(form.cleaned_data)
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+class AdviserProfileView(FormView):
+    template_name = 'main/adviser_profile.html'
+    form_class = AdviserForm
+    success_url = '.'
+
+    def get_context_data(self, **kwargs):
+        context = super(AdviserFormView, self).get_context_data(**kwargs)
         return context
 
     def post(self, request, *args, **kwargs):

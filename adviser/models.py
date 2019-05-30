@@ -32,7 +32,7 @@ class Manager(models.Model):
 class Adviser(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     type = models.IntegerField(choices=ADVISER_TYPE_ENUM,
-                               help_text="Account type")
+                               help_text="Account type", default=1)
     name = models.CharField(max_length=50,
                             help_text="Company name or adviser first name")
     partner_type = models.CharField(max_length=255,
