@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock title %}</title>
+  </head>
+  <body>
+    <div class="container" id="wrap">
+    {% block nav_logout %}
+  {% endblock %}
+	   {% block wrapper %} {% endblock %}
+        <div class="well" id="container-main">
+	       {% block body %}
+
+               {% block content %}
+                   {% endblock %}
+
+	       	{% endblock %}
+	   </div>
+	</div>
+	<div class="footer">
+        <div class="container">
+	       {% block footer %}{% endblock %}
+        </div>
+    </div>
+	{% block extrajs %}	{% endblock %}
+  </body>
+</html>
