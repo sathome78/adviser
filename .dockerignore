@@ -1,0 +1,10 @@
+.idea
+.git
+.DS_Store
+.gitignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+Jenkinsfile
+k8s/*
