@@ -13,17 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url
+from django.conf.urls.static import static
 from django.contrib import admin
 
-from adviser.views import SupportPageView, DealPageView, AdviserFormView
+from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
+                           FiatPageView)
 
 urlpatterns = [
 
     url(r'^support/$', SupportPageView.as_view(), name='support'),
     url(r'^deal/$', DealPageView.as_view(), name='deal'),
     url(r'^adviser/$', AdviserFormView.as_view(), name='adviser-add'),
-    url(r'^adviser/profile/(?P<id>\w+)$', AdviserFormView.as_view(), name='adviser-get'),
-    url(r'^adviser/profile/(?P<id>\w+)/update$', AdviserFormView.as_view(), name='adviser-update'),
+    url(r'^adviser/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(), name='adviser-update'),
+    url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
+
+    url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
+
     url('admin/', admin.site.urls),
-    ]
+
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

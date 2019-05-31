@@ -6,12 +6,12 @@ from adviser.models import Adviser, Manager
 
 class AdviserAdmin(TranslationAdmin):
 
-    list_display = ("type", "name", "surname", "email", "short_description")
+    list_display = ("id", "type", "name", "surname", "email", "short_description")
     list_filter = ('type', 'partner_type', 'member_since')
-
+    readonly_fields = ("id", )
     fieldsets = (
         (None, {
-            "fields": ("type", "name", "surname", "partner_type", "short_description", "member_since", "avatar"),
+            "fields": ("id", "type", "name", "surname", "partner_type", "short_description", "member_since", "avatar"),
             }),
         ("Contacts", {
             "fields": ("email", "telegram", "linkedin", "twitter", "website",),

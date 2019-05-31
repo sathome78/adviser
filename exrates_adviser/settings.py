@@ -27,6 +27,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '%9t2&1x41@436xk!h=*dhkt746mjl&jhl#tda@+d^4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', True)
 
+
 ALLOWED_HOSTS = []
 
 # Application definition
@@ -82,6 +83,10 @@ TEMPLATES = [
         },
     ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -101,11 +106,15 @@ USER_TELEGRAM = config.get('PIPEDRIVE_FIELDS', 'user_telegram')
 ORG_LINK_TO_PROJECT = config.get('PIPEDRIVE_FIELDS', 'org_link_to_project')
 USER_LINKEDIN = config.get('PIPEDRIVE_FIELDS', 'user_linked_in')
 
+USER_LINK_TO_FORM = config.get('PIPEDRIVE_FIELDS', 'user_link_to_form')
+USER_LINK_TO_DETAILS = config.get('PIPEDRIVE_FIELDS', 'user_link_to_details')
+
+DOMAIN = config.get('DEFAULT', 'DOMAIN')
+
 PIPELINE_CHANNELS = {
     "IEO": 2,
     "Listing": 3
     }
-
 
 WSGI_APPLICATION = 'exrates_adviser.wsgi.application'
 
