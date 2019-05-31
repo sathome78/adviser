@@ -23,10 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%9t2&1x41@436xk!h=*dhkt746mjl&jhl#tda@+d^44_@_8_#&'
-
+SECRET_KEY = os.getenv('SECRET_KEY', '%9t2&1x41@436xk!h=*dhkt746mjl&jhl#tda@+d^44_@_8_#&')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', True)
 
 
 ALLOWED_HOSTS = []
@@ -54,6 +53,7 @@ MODELTRANSLATION_LANGUAGES = ('en', 'ru')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,11 +125,10 @@ WSGI_APPLICATION = 'exrates_adviser.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.getenv('SQLITE_FILE_PATH', os.path.join(BASE_DIR, 'db.sqlite3')),
         }
     }
 
@@ -168,5 +167,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+=======
+STATIC_ROOT = os.getenv('STATIC_ROOT_DIRECROTY', os.path.join(BASE_DIR, 'static'))
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+>>>>>>> 5c734c03827dc849a4071e4d3fb04b05c3e15cf9

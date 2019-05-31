@@ -1,0 +1,169 @@
+{%  load static %}
+<html>
+    <head>
+        <title>Document Template Title</title>
+        <!-- Main Meta information-->
+        <meta charset="utf-8" />
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:600,500,400,300' rel='stylesheet' type='text/css'>
+        <!-- Meta Information-->
+        <meta name="robots" content="index, follow" />
+        <link type="text/plain" rel="author" href="{% static 'humans.txt'%}" />
+        <!-- Get html5shiv if this is IE lower or equal to 9-->
+        <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+        <link rel="stylesheet" href="{% static 'css/main.min.css'%}" />
+    </head>
+    <body>
+        <div class="form-listing-wr">
+            <div class="top-part">
+                <div class="logo">
+                    <img src="{% static 'img/pics/logo-header.svg'%}" alt="">
+                </div>
+                <div class="description">
+                    <p>Cryptocurrency Exchange</p>
+                </div>
+            </div>
+            <div class="form-part">
+                <form action="{% url 'deal' %}" class="list-form" enctype="multipart/form-data" method="POST"> {% csrf_token %}
+                    <!-- start default variant -->
+                    <div class="left-part">
+                        <div class="title">
+                            <h3 class="variable-title">Apply to conduct an IEO</h3>
+                        </div>
+                        <div class="radio-wr">
+                            <div class="radio-item">
+                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="Apply to conduct an IEO" checked>
+                                <label class="check" for="id_request_type_0"></label>
+                                <label class="check-txt" for="id_request_type_0"><span>I need to conduct an IEO</span></label>
+                            </div>
+                            <div class="radio-item">
+                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_1" value="Listing" data-head="Apply for Listing">
+                                <label class="check" for="id_request_type_1"></label>
+                                <label class="check-txt" for="id_request_type_1"><span>I need to list a coin</span></label>
+                            </div>
+                        </div>
+                        <div class="inputs-wr">
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="name" id="id_name">
+                                <label class="wrap-input__label" for="id_name">Name*</label>
+                                <label class="error" for="id_name"><span class="standart-text"></span></label>
+                            </div>
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="telegram" id="id_telegram">
+                                <label class="wrap-input__label" for="id_telegram">Telegram</label>
+                                <label class="error" for="id_telegram"><span class="standart-text"></span></label>
+                            </div>
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="email" id="id_email">
+                                <label class="wrap-input__label" for="id_email">Email*</label>
+                                <label class="error" for="id_email"><span class="standart-text"></span></label>
+                            </div>
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="company_name" id="id_company_name">
+                                <label class="wrap-input__label" for="id_company_name">Company name*</label>
+                                <label class="error" for="id_company_name"><span class="standart-text"></span></label>
+                            </div>
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="website" id="id_link_to_project">
+                                <label class="wrap-input__label" for="id_link_to_project">Link to the website</label>
+                                <label class="error" for="id_link_to_project"><span class="standart-text"></span></label>
+                            </div>
+                        </div>
+                        <div class="button-wr">
+                            <button class="standart-btn" type="submit" ><span>Submit</span></button>
+                        </div>
+
+                        <div class="left-part success-mess">
+                            <div class="top-part">
+                                <div class="pic">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                        <circle cx="40" cy="40" r="39" stroke="#94C2FF" stroke-width="2" />
+                                        <rect x="22" y="37.1924" width="3" height="20" rx="1.5" transform="rotate(-45 22 37.1924)" fill="#94C2FF" />
+                                        <rect x="55.2344" y="28" width="3" height="30" rx="1.5" transform="rotate(45 55.2344 28)" fill="#94C2FF" />
+                                    </svg>
+                                </div>
+                                <div class="message-txt">
+                                    <p>IEO request submitted</p>
+                                </div>
+                            </div>
+                            <div class="bottom-part">
+                                <nav class="success-nav">
+                                    <ul class="success-nav-list">
+                                        <li class="success-nav-list-item">
+                                            <a href="#"><span>Trade</span></a>
+                                        </li>
+                                        <li class="success-nav-list-item">
+                                            <a href="#"><span>Support</span></a>
+                                        </li>
+                                        <li class="success-nav-list-item">
+                                            <a href="#"><span>Token Sale</span></a>
+                                        </li>
+                                        <li class="success-nav-list-item">
+                                            <a href="#"><span>Contacts</span></a>
+                                        </li>
+                                        <li class="success-nav-list-item">
+                                            <a href="#"><span>Fiat</span></a>
+                                        </li>
+                                        <li class="success-nav-list-item">
+                                            <a href="#"><span>Announcements</span></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="right-part">
+                        <div class="partner-part">
+                            <div class="coinmarketcup partner-item">
+                                <div class="pic">
+                                    <img src="{% static 'img/pics/coinmarketcup.svg'%}" alt="">
+                                </div>
+                                <div class="description-right">
+                                    <p><span>TOP-50</span> by CoinMarketCap</p>
+                                </div>
+                            </div>
+                            <div class="coingecko partner-item">
+                                <div class="pic">
+                                    <img src="{% static 'img/pics/coingecko.svg'%}" alt="">
+                                </div>
+                                <div class="description-right">
+                                    <p>Ranked by CoinGecko</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-part">
+                            <ul class="form-list">
+                                <li><span>Supporting all types of coins</span></li>
+                                <li><span class="weight">24/7 </span><span>Online Support</span></li>
+                                <li><span class="weight">$173,200,000 </span><span>Daily trading volumes</span></li>
+                                <li><span class="weight">140,000 </span><span>active traders</span></li>
+                                <li><span class="weight">X-Platform </span><span>for IEO NEW</span></li>
+                                <li><span class="weight">35 Fiat </span><span>currencies</span></li>
+                                <li><span class="weight">Trading API </span><span>for AlgoTraders</span></li>
+                            </ul>
+                        </div>
+                        <div class="back-btn">
+                            <a href="#"><span>
+                                    < Back</span> </a> </div> </div> </form> </div> </div> <div class="scripts">
+                                        <!-- Set JS assets-->
+                                        <script type="text/javascript">
+                                            function googleTranslateElementInit()
+                                            {
+                                                new google.translate.TranslateElement(
+                                                {
+                                                    pageLanguage: 'en'
+                                                }, 'google_translate_element');
+                                            }
+                                        </script>
+                                        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async=""></script>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+                                        <script src="{% static 'js/vendor-bundle.min.js'%}"></script>
+                                        <script src="{% static 'js/custom-bundle.min.js'%}"></script>
+                        </div>
+
+    </body>
+</html>
