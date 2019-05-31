@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.views.generic import FormView, TemplateView, UpdateView
 
 from adviser.forms import ListingForm, SupportForm, REQUEST_CHOICES, AdviserForm, AdviserProfileForm
-from adviser.models import Adviser
+from adviser.models import Adviser, Manager
 from clients.zendesk_client import ZendeskClient
 from clients.pipedrive_client import PipedriveClient
 from django.shortcuts import get_object_or_404
@@ -123,3 +123,14 @@ class AdviserProfileView(TemplateView):
 
 class FiatPageView(TemplateView):
     template_name = 'main/fiat.html'
+
+class ClientCenterPageView(TemplateView):
+    template_name = 'main/client-center.html'
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['contacts'] = Manager.objects.all()
+        return data
+
+class PrivacyPolicyPageView(TemplateView):
+    template_name = 'main/privacy-policy.html'

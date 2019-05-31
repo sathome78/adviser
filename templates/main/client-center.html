@@ -1,0 +1,129 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="client-center-wr">
+                <div class="client-center-inner">
+                    <div class="top-title">
+                        <h2>Sales Department</h2>
+                    </div>
+                    <div class="cont-wr">
+
+                        {% include "basic/sidebar.html" %}
+
+                        <div class="content-part">
+                            <div class="contact-sales">
+                                <div class="title-wr">
+                                    <h4>Contact of Sales Department: </h4>
+                                </div>
+                                <div class="contact-sales-item-wr">
+                                {% for contact in contacts %}
+
+
+
+                                    <div class="contact-sales-item">
+                                        <div class="avatar">
+                                            <img src="{{ MEDIA_URL }}{{ contact.avatar.url }}" alt="">
+                                        </div>
+                                        <div class="link-part">
+                                            <div class="name-wr">
+                                                <div class="name">
+                                                    <p>{{ contact.name }} {{ contact.surname }}</p>
+                                                </div>
+                                                <div class="prof">
+                                                    <p>{{ contact.job_title }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="contact-wr">
+                                                <div class="tg">
+                                                    <span>Telegram: </span><a href="">{{ contact.telegram }}</a>
+                                                </div>
+                                                <div class="email">
+                                                    <span>Email: </span><a href="">{{ contact.email }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    </div>
+                            </div>
+
+
+
+                            <div class="benefits">
+                                <div class="title-wr">
+                                    <h4>Our Benefits:</h4>
+                                </div>
+                                <div class="benefits-item-wr">
+                                    <div class="benefits-item">
+                                        <div class="title-b">
+                                            <h5>Personal Bank Account</h5>
+                                        </div>
+                                        <div class="description">
+                                            <p>We provide personal bank account with 3rd party payment option to 231 countries.</p>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-item">
+                                        <div class="title-b">
+                                            <h5>Fast KYC</h5>
+                                        </div>
+                                        <div class="description">
+                                            <p>We provide personal bank account with 3rd party payment option to 231 countries.</p>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-item">
+                                        <div class="title-b">
+                                            <h5>Personal Bank Account</h5>
+                                        </div>
+                                        <div class="description">
+                                            <p>Automatic KYC process with outstanding support. Fully remote account opening.</p>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-item large-item">
+                                        <div class="title-b">
+                                            <h5>Up to $500,000 monthly</h5>
+                                        </div>
+                                        <div class="description">
+                                            <p>For VIP clients we provide special conditions for fiat deposit and withdraw in 35 currencies.</p>
+                                        </div>
+                                        <div class="button-wr">
+                                            <a href="#" class="standart-btn reverse" target="blank"><span>Become a VIP</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-item">
+                                        <div class="title-b">
+                                            <h5>Low commissions</h5>
+                                        </div>
+                                        <div class="description">
+                                            <p>Free of charge SEPA outgoing payments.</p>
+                                        </div>
+                                    </div>
+                                    <div class="benefits-item">
+                                        <div class="title-b">
+                                            <h5>Payment solution powered by</h5>
+                                        </div>
+                                        <div class="description">
+                                            <p>Singaporian bank with the same license as PayPal & Apple Pay.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banners-part">
+                            <div class="banner-item">
+                                <img src="{%  static 'img/pics/baner4.png'%}" alt="">
+                            </div>
+                            <div class="banner-item">
+                                <img src="{%  static 'img/pics/baner1.png'%}" alt="">
+                            </div>
+                            <div class="banner-item">
+                                <img src="{%  static 'img/pics/baner2.png'%}" alt="">
+                            </div>
+                            <div class="banner-item">
+                                <img src="{%  static 'img/pics/baner3.png'%}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

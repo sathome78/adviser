@@ -21,7 +21,7 @@ class Manager(models.Model):
     job_title = models.CharField(max_length=255)
     telegram = models.CharField(max_length=200, null=True, blank=True)
     email = models.CharField(max_length=200, null=True, blank=True)
-    avatar = models.ImageField(upload_to='img/contacts/', default='static/images/default-avatar.png')
+    avatar = models.ImageField(upload_to='images', default='images/default-ava.png')
 
     def __str__(self):
         return '{}, {}'.format(self.surname, self.name)

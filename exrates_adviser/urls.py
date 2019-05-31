@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
-                           FiatPageView)
+                           FiatPageView, ClientCenterPageView, PrivacyPolicyPageView)
 
 urlpatterns = [
 
@@ -30,7 +30,10 @@ urlpatterns = [
     url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
 
     url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
+    url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
+url(r'^privacy-policy/$', PrivacyPolicyPageView.as_view(), name='privacy-policy'),
 
     url('admin/', admin.site.urls),
 
     ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
