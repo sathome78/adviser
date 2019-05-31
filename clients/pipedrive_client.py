@@ -27,18 +27,18 @@ class PipedriveClient:
         if not organization:
             organization = self.client.create_organization(**org)["data"]
         else:
-            data.update({"data_id": organization["id"]})
+            org.update({"data_id": organization["id"]})
             organization = self.client.update_organization(**org)["data"]
 
         # check if contact exists
         contact =  next(iter(self.client.get_persons_by_name(term=name)["data"]), None) if self.client.get_persons_by_name(term=name)["data"] else None
-        data = {"name": name, "email": email, settings.USER_TELEGRAM: telegram, "label": "adviser",
+        usr = {"name": name, "email": email, settings.USER_TELEGRAM: telegram, "label": "adviser",
                "org_id": organization["id"]}
         if not contact:
-            contact = self.client.create_person(**data)["data"]
+            contact = self.client.create_person(**usr)["data"]
         else:
-            data.update({"data_id": contact["id"]})
-            contact = self.client.update_person(**data)["data"]
+            usr.update({"data_id": contact["id"]})
+            contact = self.client.update_person(**usr)["data"]
 
         deal = {
             "title": title,

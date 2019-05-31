@@ -42,13 +42,12 @@ class SupportPageView(FormView):
             return self.form_invalid(form)
 
 class DealPageView(FormView):
-    template_name = 'main/deal.html'
+    template_name = 'main/form-listing.html'
     form_class = ListingForm
     success_url = '.'
 
     def get_context_data(self, **kwargs):
         context = super(DealPageView, self).get_context_data(**kwargs)
-        # context["testing_out"] = "this is a new context var"
         return context
 
     def post(self, request, *args, **kwargs):
@@ -62,7 +61,7 @@ class DealPageView(FormView):
 
 
 class AdviserFormView(FormView):
-    template_name = 'adviser/become_adviser.html'
+    template_name = 'adviser/become-advisor.html'
     form_class = AdviserForm
     success_url = '.'
 
@@ -105,7 +104,7 @@ class AdviserUpdateProfileView(UpdateView):
             return self.form_invalid(form)
 
 class AdviserProfileView(TemplateView):
-    template_name = 'adviser/adviser_page.html'
+    template_name = 'adviser/advisor-page.html'
     form_class = AdviserProfileForm
     model = Adviser
     success_url = '.'
@@ -134,3 +133,6 @@ class ClientCenterPageView(TemplateView):
 
 class PrivacyPolicyPageView(TemplateView):
     template_name = 'main/privacy-policy.html'
+
+class TermsPageView(TemplateView):
+    template_name = 'main/terms-of-use.html'

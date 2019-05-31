@@ -37,8 +37,6 @@ class Adviser(models.Model):
                                help_text="Account type", default=1)
     name = models.CharField(max_length=50,
                             help_text="Company name or adviser first name")
-    partner_type = models.CharField(max_length=255,
-                                    help_text="Type of partner", null=True, blank=True)
     short_description = models.CharField(max_length=300,
                                          help_text="Short description displayed in sidebar")
 
@@ -51,7 +49,7 @@ class Adviser(models.Model):
     website = models.CharField(max_length=255, null=True, blank=True)
 
     member_since = models.DateField(null=True, blank=True)
-    avatar = models.ImageField(upload_to='img/advisers/', default='static/images/default-avatar.png')
+    avatar = models.ImageField(upload_to='images/advisers/', default='images/default-ava.png')
 
     surname = models.CharField(max_length=255, null=True, blank=True,
                                help_text="Adviser's surname")

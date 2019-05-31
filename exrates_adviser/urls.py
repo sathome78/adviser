@@ -19,21 +19,23 @@ from django.conf.urls.static import static
 from django.contrib import admin
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
-                           FiatPageView, ClientCenterPageView, PrivacyPolicyPageView)
+                           FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView)
 
 urlpatterns = [
 
-    url(r'^support/$', SupportPageView.as_view(), name='support'),
-    url(r'^deal/$', DealPageView.as_view(), name='deal'),
-    url(r'^adviser/$', AdviserFormView.as_view(), name='adviser-add'),
-    url(r'^adviser/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(), name='adviser-update'),
-    url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
+                  url(r'^support/$', SupportPageView.as_view(), name='support'),
+                  url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
+                  url(r'^adviser/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(),
+                      name='adviser-update'),
+                  url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
 
-    url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
-    url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
-url(r'^privacy-policy/$', PrivacyPolicyPageView.as_view(), name='privacy-policy'),
+                  url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
+                  url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
+                  url(r'^privacy-policy/$', PrivacyPolicyPageView.as_view(), name='privacy-policy'),
+                  url(r'^terms-of-use/$', TermsPageView.as_view(), name='terms-of-use'),
+                  url(r'^become-advisor/$', AdviserFormView.as_view(), name='become-advisor'),
 
-    url('admin/', admin.site.urls),
+                  url('admin/', admin.site.urls),
 
-    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

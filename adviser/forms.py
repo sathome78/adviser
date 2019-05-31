@@ -71,7 +71,7 @@ class AdviserProfileForm(ModelForm):
 
     class Meta:
         model = Adviser
-        fields = ['name', 'surname', 'partner_type', 'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
+        fields = ['name', 'surname',  'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
 
     def save(self, commit=True):
         instance = super(AdviserProfileForm, self).save(commit=False)
