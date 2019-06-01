@@ -116,8 +116,10 @@ class AdviserProfileView(TemplateView):
         return data
 
 class FiatPageView(TemplateView):
-    translation.activate('ru')
     template_name = 'main/fiat.html'
+
+class AboutUsPageView(TemplateView):
+    template_name = 'main/about-us.html'
 
 class ClientCenterPageView(TemplateView):
     template_name = 'main/client-center.html'

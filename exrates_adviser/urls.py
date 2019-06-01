@@ -23,11 +23,12 @@ from django.shortcuts import redirect
 from django.urls import include, reverse
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
-                           FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView)
+                           FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView, AboutUsPageView)
 
 
 def home(request):
-    return redirect(reverse("fiat"))
+    return redirect(reverse("about-us"))
+
 
 urlpatterns = i18n_patterns(
         url(r'^$', home, name='home'),
@@ -43,6 +44,7 @@ urlpatterns = i18n_patterns(
         url(r'^privacy-policy/$', PrivacyPolicyPageView.as_view(), name='privacy-policy'),
         url(r'^terms-of-use/$', TermsPageView.as_view(), name='terms-of-use'),
         url(r'^become-advisor/$', AdviserFormView.as_view(), name='become-advisor'),
+        url(r'^about-us/$', AboutUsPageView.as_view(), name='about-us'),
 
         url(r'^become-advisor-form/$', AdviserFormView.as_view(), name='become-advisor-form'),
 
