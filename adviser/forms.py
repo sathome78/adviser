@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from datetime import datetime
 
 from django import forms
@@ -45,7 +46,7 @@ class ListingForm(forms.Form):
     telegram = forms.CharField(max_length=255, required=False)
     email = forms.EmailField()
     company_name = forms.CharField(max_length=255)
-    link_to_project = forms.CharField(max_length=255, required=False)
+    link_to_project = forms.CharField(max_length=255, required=True)
 
 
 class AdviserForm(ModelForm):

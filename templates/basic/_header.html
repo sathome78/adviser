@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load i18n urls %}
 <header class="header">
     <div class="header-inner">
         <div class="logo-wr">
@@ -47,20 +47,28 @@
                         <button><span>Register</span></button>
                     </div>
                     <div class="lang drop">
-                        <button><span>English</span></button>
+                    <button><span>English</span></button>
                         <div class="submenu">
+
+
+
                             <ul class="menu submenu__list">
+                            {% get_available_languages as LANGUAGES %}
+                                {% for language_code, language_name in LANGUAGES %}
+
+
                                 <li class="submenu__item">
-                                    <a class="submenu__link" href="https://t.me/exrates_official" target="blank">
-                                        <span _ngcontent-ufn-c1="" class="menu__link-text">English</span>
+                                    <a class="submenu__link" rel="alternate" target="blank" hreflang="{{ language_code }}"
+                                    href="{% translate_url language_code %}">
+                                        <span _ngcontent-ufn-c1="" class="menu__link-text">{{ language_name  }}</span>
                                     </a>
                                 </li>
-                                <li class="submenu__item">
-                                    <a class="submenu__link" href="https://t.me/exrates_official" target="blank">
-                                        <span _ngcontent-ufn-c1="" class="menu__link-text">Russian</span>
-                                    </a>
-                                </li>
+
+
+                                {% endfor %}
                             </ul>
+
+
                         </div>
                     </div>
                     <div class="translate">

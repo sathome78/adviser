@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load i18n %}
+
 {% load static %}
 {% block content %}
             <div class="fiat-page">
@@ -9,27 +11,27 @@
                         </div>
                         <div class="fs-wr">
                             <div class="title-wr">
-                                <h2>Open account for $20 and get 0% commission</h2>
+                                <h2> {% blocktrans%} Open account for $20 and get 0% commission {% endblocktrans %}</h2>
                             </div>
                             <div class="description-wr">
-                                <p>on outgoing payments in the Singapore Bank</p>
+                                {% blocktrans %} <p>on outgoing payments in the Singapore Bank</p>{% endblocktrans %}
                             </div>
                             <div class="button-wr">
-                                <a href="#" class="standart-btn" target="blank"><span>Open an Account now</span></a>
+                                <a href="#" class="standart-btn" target="blank"><span> {% blocktrans %}Open an Account now{% endblocktrans %}</span></a>
                             </div>
                         </div>
                     </div>
                     <div class="fiat-benefits">
                         <div class="head-part">
-                            <h3>Benefits</h3>
+                            <h3>{% blocktrans %}Benefits{% endblocktrans %}</h3>
                         </div>
                         <div class="benefits-items-wr">
                             <div class="benefits-item">
                                 <div class="title-part">
-                                    <h3>Personal Bank Account</h3>
+                                    <h3>{% blocktrans %}Personal Bank Account{% endblocktrans %}</h3>
                                 </div>
                                 <div class="description-part">
-                                    <p>We provide personal bank account with 3rd party payment option to 231 countries.</p>
+                                    <p>{% blocktrans %}We provide personal bank account with 3rd party payment option to 231 countries.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
@@ -37,49 +39,49 @@
                                     <h3>Fast KYC</h3>
                                 </div>
                                 <div class="description-part">
-                                    <p>Automatic KYC process with outstanding support. Fully remote account opening.</p>
+                                    <p>{% blocktrans %}Automatic KYC process with outstanding support. Fully remote account opening.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-part">
-                                    <h3>Payment solution powered by</h3>
+                                    <h3>{% blocktrans %}Payment solution powered by{% endblocktrans %}</h3>
                                 </div>
                                 <div class="description-part">
-                                    <p>Singaporian bank with the same license as PayPal & Apple Pay.</p>
+                                    <p>{% blocktrans %}Singaporian bank with the same license as PayPal & Apple Pay.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item pg-small">
                                 <div class="title-part">
-                                    <h3>Low commissions</h3>
+                                    <h3>{% blocktrans %}Low commissions{% endblocktrans %}</h3>
                                 </div>
                                 <div class="description-part">
-                                    <p>Free of charge SEPA outgoing payments.</p>
+                                    <p>{% blocktrans %}Free of charge SEPA outgoing payments.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item pg-small">
                                 <div class="title-part">
-                                    <h3>0% Transfer Fee</h3>
+                                    <h3>{% blocktrans %}0% Transfer Fee{% endblocktrans %}</h3>
                                 </div>
                                 <div class="description-part">
-                                    <p>0% transfer fee between personal and trading account on Exrates</p>
+                                    <p>{% blocktrans %}0% transfer fee between personal and trading account on Exrates{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item-large">
                                 <div class="title-part">
-                                    <h3>Up to $500,000 monthly</h3>
+                                    <h3>{% blocktrans %}Up to $500,000 monthly{% endblocktrans %}</h3>
                                 </div>
                                 <div class="description-part">
-                                    <p>For VIP clients we provide special conditions for fiat deposit and withdraw in 35 currencies.</p>
+                                    <p>{% blocktrans %}For VIP clients we provide special conditions for fiat deposit and withdraw in 35 currencies.{% endblocktrans %}</p>
                                 </div>
                                 <div class="button-wr">
-                                    <a href="#" class="standart-btn white-variant" target="blank"><span>Become a VIP</span></a>
+                                    <a href="#" class="standart-btn white-variant" target="blank"><span>{% blocktrans %}Become a VIP{% endblocktrans %}</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="how-work">
                         <div class="head-part">
-                            <h3>How does ot work?</h3>
+                            <h3>{% blocktrans %}How does ot work?{% endblocktrans %}</h3>
                         </div>
                         <div class="how-work-item-wr">
                             <div class="how-work-item">
@@ -90,13 +92,13 @@
                                     <span>1</span>
                                 </div>
                                 <div class="title-part">
-                                    <h5>Open Exrates account</h5>
+                                    <h5>{% blocktrans %}Open Exrates account{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description-part">
-                                    <p>Still don’t have Exrates account?</p>
+                                    <p>{% blocktrans %}Still don’t have Exrates account?{% endblocktrans %}</p>
                                 </div>
                                 <div class="link-part">
-                                    <a href="#">Create account now →</a>
+                                    <a href="#">{% blocktrans %}Create account now {% endblocktrans %}→</a>
                                 </div>
                             </div>
                             <div class="how-work-item">
@@ -107,7 +109,7 @@
                                     <span>2</span>
                                 </div>
                                 <div class="title-part">
-                                    <h5>Provide basic personal <br>information.</h5>
+                                    <h5>{% blocktrans %}Provide basic personal <br>information.{% endblocktrans %}</h5>
                                 </div>
                             </div>
                             <div class="how-work-item">
@@ -115,7 +117,7 @@
                                     <span>3</span>
                                 </div>
                                 <div class="title-part">
-                                    <h5>Get your personal FUG<br>account!</h5>
+                                    <h5>{% blocktrans %}Get your personal FUG<br>account!{% endblocktrans %}</h5>
                                 </div>
                             </div>
                         </div>
@@ -123,14 +125,13 @@
                     <div class="add-info">
                         <div class="add-info-wr">
                             <div class="left-part">
-                                <p>This is your personal account which you can use for instant fiat transfers to your Exrates trading account.</p>
+                                <p>{% blocktrans %}This is your personal account which you can use for instant fiat transfers to your Exrates trading account.{% endblocktrans %}</p>
                             </div>
                             <div class="right-part">
-                                <p>A more detailed description of the conditions is available on our financial partner page - <a href="#">FUG</a>.</p>
+                                <p>{% blocktrans %}A more detailed description of the conditions is available on our financial partner page - {% endblocktrans %}<a href="#">FUG</a>.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
 {% endblock %}

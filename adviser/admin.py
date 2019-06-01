@@ -1,7 +1,8 @@
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from adviser.models import Adviser, Manager
+from adviser.models import Adviser, Manager, GeneralFields
 
 
 class AdviserAdmin(TranslationAdmin):
@@ -58,3 +59,4 @@ class ManagerAdmin(TranslationAdmin):
 
 admin.site.register(Adviser, AdviserAdmin)
 admin.site.register(Manager, ManagerAdmin)
+admin.site.register(GeneralFields)

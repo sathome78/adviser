@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 from django.conf import settings
 from zdesk import Zendesk, get_id_from_url
 

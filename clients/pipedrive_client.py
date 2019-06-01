@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+import re
 from django.conf import settings
 from pipedrive.client import Client
 
@@ -20,9 +22,12 @@ class PipedriveClient:
         telegram = data.get("telegram")
 
 
+
+
+
         # check if organization exists
         organization = next(iter(self.client.get_organizations(name=company_name)["data"]), None) if self.client.get_organizations(name=company_name)["data"] else None
-        org = {"name": company_name, settings.ORG_LINK_TO_PROJECT: link_to_project}
+        org = {"name": company_name, settings.ORG_WEBSITE: link_to_project}
 
         if not organization:
             organization = self.client.create_organization(**org)["data"]
@@ -32,8 +37,18 @@ class PipedriveClient:
 
         # check if contact exists
         contact =  next(iter(self.client.get_persons_by_name(term=name)["data"]), None) if self.client.get_persons_by_name(term=name)["data"] else None
-        usr = {"name": name, "email": email, settings.USER_TELEGRAM: telegram, "label": "adviser",
+
+
+        usr = {"name": name, "email": email,
                "org_id": organization["id"]}
+        phone_pattern = re.compile("^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$")
+        telegram_pattern = re.compile("^[a-zA-Z0-9]+$")
+        if phone_pattern.match(telegram):
+            usr.update({"phone": telegram})
+        elif telegram_pattern.match(telegram):
+            usr.update({settings.USER_TELEGRAM: "https://t.me/{}".format(telegram)})
+
+
         if not contact:
             contact = self.client.create_person(**usr)["data"]
         else:
@@ -61,14 +76,28 @@ class PipedriveClient:
         self.client.get_persons_by_name(term=name)["data"] else None
 
 
-        data = {"name": name, "email": email, settings.USER_TELEGRAM: telegram, "label": "adviser",
+        data = {"name": name, "email": email, "label": "adviser",
                 settings.USER_LINKEDIN: linkedin, settings.USER_LINK_TO_FORM: edit_url, settings.USER_LINK_TO_DETAILS: update_url}
 
+        phone_pattern = re.compile("^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$")
+        telegram_pattern = re.compile("^[a-zA-Z0-9]+$")
+        if phone_pattern.match(telegram):
+            data.update({"phone": telegram})
+        elif telegram_pattern.match(telegram):
+            data.update({settings.USER_TELEGRAM: "https://t.me/{}".format(telegram)})
 
         if not contact:
             contact = self.client.create_person(**data)["data"]
         else:
             data.update({"data_id": contact["id"]})
             contact = self.client.update_person(**data)["data"]
+
+        deal = {
+            "title": name,
+            "pipeline_id": settings.PIPEDRIVE_NEW_ADVISER,
+            "person_id": contact["id"]
+            }
+
+        self.client.create_deal(**deal)
 
         return contact

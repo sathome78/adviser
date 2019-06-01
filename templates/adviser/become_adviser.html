@@ -3,9 +3,19 @@
 
 {% block body %}
 
-    <form action="{% url 'become-advisor' %}" enctype="multipart/form-data" method="POST">{% csrf_token %}
+    <form action="{% url 'become-advisor-form' %}" enctype="multipart/form-data" method="POST">{% csrf_token %}
     {{form.as_p}}
-    <button type="submit">Submit</button>
+
+   <br>
+
+   <br>
+
+    <button  style="background-color:black;color:white;width:150px; height:40px;"  type="submit">Submit</button>
+
+   <br>
+
+   <br>
+
 </form>
 
 {% endblock %}
