@@ -1,499 +1,194 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Document Template Title</title>
-        <!-- Main Meta information-->
-        <meta charset="utf-8" />
-        <meta http-equiv="Cache-control" content="public" />
-        <meta name="viewport" content="width=device-width, user-scalable=yes" />
-        <link href='https://fonts.googleapis.com/css?family=Roboto:600,500,400,300' rel='stylesheet' type='text/css'>
-        <!-- Meta Information-->
-        <meta name="robots" content="index, follow" />
-        <link type="text/plain" rel="author" href="humans.txt" />
-        <!-- Get html5shiv if this is IE lower or equal to 9-->
-        <!--[if lte IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-        <link rel="stylesheet" href="css/main.min.css" />
-    </head>
-    <body>
-        <header class="header">
-            <div class="header-inner">
-                <div class="logo-wr">
-                    <img src="img/pics/logo-header.svg" alt="logo">
-                </div>
-                <div class="menu-wr">
-                    <div class="left-part">
-                        <div class="nav main-nav-left">
-                            <ul>
-                                <li>
-                                    <a href=""><span>trade</span></a>
-                                </li>
-                                <li>
-                                    <a href=""><span>About us</span></a>
-                                </li>
-                                <li>
-                                    <a href=""><span>Apply to list</span></a>
-                                </li>
-                                <li>
-                                    <a href=""><span>Token Sale</span></a>
-                                </li>
-                                <li>
-                                    <a href=""><span>Fiat</span><span class="label">new</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="right-part">
-                        <div class="nav main-nav-right">
-                            <ul>
-                                <li>
-                                    <a href=""><span>News</span></a>
-                                </li>
-                                <li>
-                                    <a href=""><span>Announcments</span></a>
-                                </li>
-                                <li>
-                                    <a href=""><span>Community</span></a>
-                                </li>
-                            </ul>
-                            <div class="login">
-                                <button><span>Login</span></button>
-                            </div>
-                            <div class="register">
-                                <button><span>Register</span></button>
-                            </div>
-                            <div class="lang drop">
-                                <button><span>English</span></button>
-                                <div class="submenu">
-                                    <ul class="menu submenu__list">
-                                        <li class="submenu__item">
-                                            <a class="submenu__link" href="https://t.me/exrates_official" target="blank">
-                                                <span _ngcontent-ufn-c1="" class="menu__link-text">English</span>
-                                            </a>
-                                        </li>
-                                        <li class="submenu__item">
-                                            <a class="submenu__link" href="https://t.me/exrates_official" target="blank">
-                                                <span _ngcontent-ufn-c1="" class="menu__link-text">Russian</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="translate">
-                                <button class="translate__trigger">
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M14.4 2.4H7.10399L6.40001 0H1.60001C0.719999 0 0 0.719999 0 1.60001V12C0 12.88 0.719999 13.6 1.60001 13.6H7.19999L7.99998 16H14.4C15.28 16 16 15.28 16 14.4V4.00001C16 3.12 15.28 2.4 14.4 2.4ZM4.13201 10.068C2.328 10.068 0.863999 8.59998 0.863999 6.79998C0.863999 4.99998 2.33201 3.53197 4.13201 3.53197C4.96402 3.53197 5.72002 3.82796 6.32002 4.38397L6.37203 4.43598L5.39602 5.37997L5.34802 5.33598C5.12002 5.11998 4.72402 4.86798 4.13201 4.86798C3.084 4.86798 2.232 5.736 2.232 6.804C2.232 7.87199 3.084 8.74001 4.13201 8.74001C5.22802 8.74001 5.70401 8.03999 5.832 7.57199H4.06398V6.33198H7.22399L7.23599 6.38797C7.26798 6.55597 7.27998 6.70398 7.27998 6.87198C7.27601 8.75598 5.98398 10.068 4.13201 10.068ZM8.53998 7.25999H11.736C11.736 7.25999 11.464 8.31198 10.488 9.44801C10.06 8.95601 9.76398 8.47601 9.57599 8.09201H8.78399L8.53998 7.25999ZM9.91199 10.068L9.484 10.492L8.96002 8.70802C9.22799 9.18798 9.55199 9.64799 9.91199 10.068ZM15.2 14.4C15.2 14.84 14.84 15.2 14.4 15.2H8.80001L10.4 13.6L9.748 11.388L10.484 10.6519L12.632 12.7999L13.216 12.216L11.052 10.068C11.772 9.23996 12.332 8.26796 12.584 7.26397H13.6V6.432H10.692V5.59998H9.85998V6.432H8.29199L7.33998 3.19999H14.4C14.84 3.19999 15.2 3.55998 15.2 3.99997V14.4Z" fill="#AAB1C4" />
-                                    </svg>
-                                </button>
-                                <div class="translate__container">
-                                    <div id="google_translate_element"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="burger">
-                    <span></span>
-                </div>
-                <div class="mobile-menu">
-                    <div class="mobile-menu-inner">
-                        <div class="close-trigger">
-                            <span></span>
-                        </div>
-                        <div class="menu-title">
-                            <p>Account</p>
-                        </div>
-                        <div class="account-info">
-                            <div class="account-info__text">
-                                <a class="account-info__email">Login</a>
-                                <span class="slash">or</span>
-                                <a class="account-info__email">Register</a>
-                            </div>
-                        </div>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">Trade</span>
-                        </a>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">About us</span>
-                        </a>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">Apply to list</span>
-                        </a>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">Token Sale</span>
-                        </a>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">Fiat</span>
-                        </a>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">News</span>
-                        </a>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">Announcments</span>
-                        </a>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">Community</span>
-                        </a>
-                        <a class="menu-mob__link" href="">
-                            <span class="menu-mob__link-text">English</span>
-                        </a>
-                        <!-- <div _ngcontent-hdq-c1="" class="menu-mob__drop-wrap">
-					<a class="menu-mob__link menu-mob__link--drop menu-mob__link--active" href="">
-						<span class="menu-mob__link-text">Funds</span>
-					</a>
-					<div class="menu-mob__wrap-links">
-						<a class="menu-mob__link" href=""> Transaction history</a>
-						<a class="menu-mob__link" href="">Balance</a>
-					</div>
-				</div> -->
-                    </div>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="client-center-wr">
+        <div class="client-center-inner">
+            <div class="top-title">
+                <h2>Sales Department</h2>
+                <div class="open-sedebar-trigger">
+                    <button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
+                            <rect x="1.41422" y="16.9707" width="2" height="12" rx="1"
+                                  transform="rotate(-135 1.41422 16.9707)" fill="#237BEF"/>
+                            <rect y="1.41406" width="2" height="12" rx="1" transform="rotate(-45 0 1.41406)"
+                                  fill="#237BEF"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </header>
-        <main>
-            <div class="client-center-wr">
-                <div class="client-center-inner">
-                    <div class="top-title">
-                        <h2>Sales Department</h2>
-                        <div class="open-sedebar-trigger">
-                            <button>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
-                                    <rect x="1.41422" y="16.9707" width="2" height="12" rx="1" transform="rotate(-135 1.41422 16.9707)" fill="#237BEF" />
-                                    <rect y="1.41406" width="2" height="12" rx="1" transform="rotate(-45 0 1.41406)" fill="#237BEF" />
-                                </svg>
-                            </button>
-                        </div>
+            <div class="cont-wr">
+                <div class="sidebar">
+                    <div class="close-trigger">
+                        <span></span>
                     </div>
-                    <div class="cont-wr">
-                        <div class="sidebar">
-                            <div class="close-trigger">
-                                <span></span>
-                            </div>
-                            <ul class="sidebar-list">
-                                <li><a href="/about-us.html"><span>About us</span></a></li>
-                                <li><a href="/client-center.html" class="active"><span>Contacts</span></a></li>
-                                <li><a href=""><span>Support</span></a></li>
-                                <li><a href="/privacy-policy.html"><span>Privacy policy</span></a></li>
-                                <li><a href="/terms-of-use.html"><span>Terms of use</span></a></li>
-                                <li class="icon-lnk"><a href=""><span class="icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <ul class="sidebar-list">
+                        <li><a href="{% url 'about-us' %}"><span>About us</span></a></li>
+                        <li><a href="{% url 'client-center' %}" class="active"><span>Contacts</span></a></li>
+                        <li><a href=""><span>Support</span></a></li>
+                        <li><a href="{% url 'privacy-policy' %}"><span>Privacy policy</span></a></li>
+                        <li><a href="{% url 'terms-of-use' %}"><span>Terms of use</span></a></li>
+                        <li class="icon-lnk"><a href=""><span class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 16 16" fill="none">
                                                 <g clip-path="url(#clip0)">
-                                                    <path d="M2.33561 10.2524C2.24504 10.4331 2.28031 10.6515 2.42301 10.7943L2.53764 10.9089C2.86882 10.5165 3.2548 10.0906 3.72294 9.62256C3.75602 9.58948 3.79008 9.57349 3.82328 9.54297L3.08586 8.80542C2.65715 9.58081 2.40715 10.1106 2.33561 10.2524Z" fill="#237BEF" />
-                                                    <path d="M6.37466 12.2742C5.90543 12.7434 5.48062 13.1301 5.09036 13.4615L5.24564 13.6168C5.38968 13.7609 5.61014 13.7955 5.79141 13.7023C6.03421 13.5771 6.41605 13.3975 7.22659 12.946L6.45438 12.1738C6.42386 12.2072 6.40787 12.2411 6.37466 12.2742Z" fill="#237BEF" />
-                                                    <path d="M6.12475 9.87303C5.786 9.53428 4.83336 9.83799 4.38586 10.2854C2.88878 11.7825 2.21264 12.8439 1.90905 13.4706C1.82201 13.6501 1.85827 13.8651 1.99938 14.0062C2.14074 14.1477 2.35607 14.1836 2.53576 14.0965C3.14843 13.7991 4.19689 13.1261 5.71178 11.6113C6.20385 11.119 6.44665 10.1951 6.12511 9.8734L6.12475 9.87303Z" fill="#237BEF" />
-                                                    <path d="M1.46311 6.2409L0.137304 7.5667C-0.0125981 7.71661 -0.0433598 7.94866 0.0628414 8.1325C0.166479 8.3139 0.38352 8.4063 0.590063 8.35101C1.30662 8.15887 1.93711 8.07769 2.36167 8.18658C2.96567 7.11272 3.61472 6.1242 4.3021 5.22625C3.90452 4.97136 2.59067 5.11333 1.46311 6.2409Z" fill="#237BEF" />
-                                                    <path d="M7.93423 15.9497C8.11477 16.041 8.3334 16.0057 8.47634 15.8627L9.80227 14.5369C10.8288 13.5101 11.0094 12.1854 10.7765 11.7654C9.77505 12.5201 8.76052 13.1575 7.81399 13.691C7.8793 14.0598 7.83584 14.4176 7.68142 15.4625C7.65127 15.6648 7.75576 15.8605 7.93423 15.9497Z" fill="#237BEF" />
-                                                    <path d="M9.30621 4.70215C8.758 5.25049 8.758 6.14246 9.30621 6.6908C9.85455 7.23914 10.7466 7.23914 11.295 6.6908C11.8433 6.14246 11.8433 5.25049 11.295 4.70215C10.7466 4.15381 9.85455 4.15381 9.30621 4.70215Z" fill="#237BEF" />
-                                                    <path d="M15.9724 0.457235C15.9555 0.225423 15.771 0.0421957 15.5399 0.0248618C14.3886 -0.0618081 13.2419 0.0797934 12.1179 0.423543C12.2025 1.19576 12.6019 2.03145 13.2838 2.71334C13.9738 3.40328 14.8322 3.80257 15.6183 3.87728C15.921 2.81637 16.0645 1.68014 15.9724 0.457235Z" fill="#237BEF" />
-                                                    <path d="M12.6209 3.37634C11.8409 2.59631 11.3646 1.66077 11.2117 0.749878C8.39691 1.9043 5.70233 4.42529 3.57306 7.9668L4.63092 9.02466C5.3537 8.7312 6.23114 8.65369 6.78766 9.21008C7.34491 9.76746 7.26593 10.6445 6.9726 11.3663L8.06525 12.459C10.7901 10.8168 13.9625 8.22949 15.3115 4.78723C14.3784 4.64624 13.4136 4.16907 12.6209 3.37634ZM11.9578 7.35376C11.0441 8.26746 9.55719 8.26746 8.64337 7.35376C7.72955 6.43994 7.72955 4.95288 8.64337 4.03919C9.55719 3.12549 11.0441 3.12549 11.9578 4.03919C12.8716 4.953 12.8716 6.43994 11.9578 7.35376Z" fill="#237BEF" />
+                                                    <path d="M2.33561 10.2524C2.24504 10.4331 2.28031 10.6515 2.42301 10.7943L2.53764 10.9089C2.86882 10.5165 3.2548 10.0906 3.72294 9.62256C3.75602 9.58948 3.79008 9.57349 3.82328 9.54297L3.08586 8.80542C2.65715 9.58081 2.40715 10.1106 2.33561 10.2524Z"
+                                                          fill="#237BEF"/>
+                                                    <path d="M6.37466 12.2742C5.90543 12.7434 5.48062 13.1301 5.09036 13.4615L5.24564 13.6168C5.38968 13.7609 5.61014 13.7955 5.79141 13.7023C6.03421 13.5771 6.41605 13.3975 7.22659 12.946L6.45438 12.1738C6.42386 12.2072 6.40787 12.2411 6.37466 12.2742Z"
+                                                          fill="#237BEF"/>
+                                                    <path d="M6.12475 9.87303C5.786 9.53428 4.83336 9.83799 4.38586 10.2854C2.88878 11.7825 2.21264 12.8439 1.90905 13.4706C1.82201 13.6501 1.85827 13.8651 1.99938 14.0062C2.14074 14.1477 2.35607 14.1836 2.53576 14.0965C3.14843 13.7991 4.19689 13.1261 5.71178 11.6113C6.20385 11.119 6.44665 10.1951 6.12511 9.8734L6.12475 9.87303Z"
+                                                          fill="#237BEF"/>
+                                                    <path d="M1.46311 6.2409L0.137304 7.5667C-0.0125981 7.71661 -0.0433598 7.94866 0.0628414 8.1325C0.166479 8.3139 0.38352 8.4063 0.590063 8.35101C1.30662 8.15887 1.93711 8.07769 2.36167 8.18658C2.96567 7.11272 3.61472 6.1242 4.3021 5.22625C3.90452 4.97136 2.59067 5.11333 1.46311 6.2409Z"
+                                                          fill="#237BEF"/>
+                                                    <path d="M7.93423 15.9497C8.11477 16.041 8.3334 16.0057 8.47634 15.8627L9.80227 14.5369C10.8288 13.5101 11.0094 12.1854 10.7765 11.7654C9.77505 12.5201 8.76052 13.1575 7.81399 13.691C7.8793 14.0598 7.83584 14.4176 7.68142 15.4625C7.65127 15.6648 7.75576 15.8605 7.93423 15.9497Z"
+                                                          fill="#237BEF"/>
+                                                    <path d="M9.30621 4.70215C8.758 5.25049 8.758 6.14246 9.30621 6.6908C9.85455 7.23914 10.7466 7.23914 11.295 6.6908C11.8433 6.14246 11.8433 5.25049 11.295 4.70215C10.7466 4.15381 9.85455 4.15381 9.30621 4.70215Z"
+                                                          fill="#237BEF"/>
+                                                    <path d="M15.9724 0.457235C15.9555 0.225423 15.771 0.0421957 15.5399 0.0248618C14.3886 -0.0618081 13.2419 0.0797934 12.1179 0.423543C12.2025 1.19576 12.6019 2.03145 13.2838 2.71334C13.9738 3.40328 14.8322 3.80257 15.6183 3.87728C15.921 2.81637 16.0645 1.68014 15.9724 0.457235Z"
+                                                          fill="#237BEF"/>
+                                                    <path d="M12.6209 3.37634C11.8409 2.59631 11.3646 1.66077 11.2117 0.749878C8.39691 1.9043 5.70233 4.42529 3.57306 7.9668L4.63092 9.02466C5.3537 8.7312 6.23114 8.65369 6.78766 9.21008C7.34491 9.76746 7.26593 10.6445 6.9726 11.3663L8.06525 12.459C10.7901 10.8168 13.9625 8.22949 15.3115 4.78723C14.3784 4.64624 13.4136 4.16907 12.6209 3.37634ZM11.9578 7.35376C11.0441 8.26746 9.55719 8.26746 8.64337 7.35376C7.72955 6.43994 7.72955 4.95288 8.64337 4.03919C9.55719 3.12549 11.0441 3.12549 11.9578 4.03919C12.8716 4.953 12.8716 6.43994 11.9578 7.35376Z"
+                                                          fill="#237BEF"/>
                                                 </g>
                                                 <defs>
                                                     <clipPath id="clip0">
-                                                        <rect width="16" height="16" fill="white" />
+                                                        <rect width="16" height="16" fill="white"/>
                                                     </clipPath>
                                                 </defs>
                                             </svg>
                                         </span>
-                                        <span>Start IEO</span></a></li>
-                                <li class="icon-lnk"><a href=""><span class="icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                                <path d="M14.7025 12.2335L13.4125 10.9435C13.4866 10.8842 13.5533 10.8174 13.6127 10.7359C13.9092 10.3281 13.8351 9.79425 13.7758 9.32716C13.7387 9.03058 13.6942 8.71918 13.7609 8.52641C13.8203 8.34847 14.0279 8.13346 14.228 7.92586C14.5617 7.57739 14.9472 7.17702 14.9472 6.65802C14.9472 6.13902 14.5691 5.73865 14.228 5.39018C14.0279 5.18258 13.8203 4.96756 13.7609 4.78962C13.6942 4.59685 13.7387 4.28545 13.7758 3.98888C13.8425 3.51436 13.9092 2.98054 13.6127 2.58017C13.3161 2.17238 12.7823 2.076 12.3077 1.98702C12.0112 1.93512 11.7146 1.87581 11.5515 1.7646C11.3958 1.65338 11.2475 1.37905 11.114 1.11956C10.8842 0.696942 10.6321 0.215014 10.1428 0.0518999C10.039 0.0148285 9.93517 0 9.82396 0C9.46066 0 9.11219 0.170528 8.77113 0.333642C8.4968 0.467099 8.21506 0.600556 8.00005 0.600556C7.78503 0.600556 7.50329 0.467099 7.22896 0.333642C6.88791 0.170528 6.53943 0 6.17614 0C6.06492 0 5.95371 0.0148285 5.85732 0.0518999C5.36057 0.2076 5.10848 0.689527 4.87864 1.11214C4.73777 1.37164 4.5969 1.63855 4.4412 1.75718C4.27808 1.87581 3.9741 1.92771 3.68494 1.97961C3.21784 2.06117 2.68401 2.15755 2.38003 2.57275C2.08346 2.98054 2.1576 3.51437 2.21691 3.98146C2.25398 4.27804 2.29847 4.58943 2.23174 4.78221C2.17243 4.96015 1.96483 5.17516 1.76464 5.38276C1.431 5.73123 1.04546 6.1316 1.04546 6.6506C1.04546 7.1696 1.42359 7.56997 1.76464 7.91844C1.96483 8.12604 2.17243 8.34106 2.23174 8.519C2.29847 8.71177 2.25398 9.02317 2.21691 9.31974C2.15018 9.79425 2.08346 10.3281 2.38003 10.7285C2.43934 10.81 2.50607 10.8767 2.58021 10.9361L1.29013 12.2335C0.941658 12.582 1.00839 12.8934 1.05287 13.012C1.09736 13.1307 1.25306 13.4124 1.7424 13.4495L3.01024 13.5533C3.23267 13.5681 3.44768 13.7831 3.46993 14.013L3.57373 15.2808C3.61821 15.8146 3.94444 16 4.21135 16C4.34481 16 4.55982 15.9555 4.78967 15.7257L7.76279 12.7525C7.85176 12.7229 7.93332 12.7081 8.00746 12.7081C8.0816 12.7081 8.16316 12.7229 8.25213 12.7525L11.2178 15.7183C11.4477 15.9481 11.6553 15.9926 11.7962 15.9926C12.0631 15.9926 12.3967 15.7998 12.4338 15.2734L12.5376 14.0056C12.5524 13.7831 12.7674 13.5681 12.9973 13.5459L14.2651 13.4421C14.7544 13.405 14.9101 13.1233 14.9546 13.0046C14.9843 12.8934 15.051 12.582 14.7025 12.2335ZM10.2021 7.82206L10.7211 10.8397L8.00746 9.41613L5.30125 10.8397L5.82025 7.82206L3.63304 5.68675L6.65806 5.24931L8.01487 2.50602L9.37169 5.24931L12.3967 5.68675L10.2021 7.82206Z" fill="#237BEF" />
+                            <span>Start IEO</span></a></li>
+                        <li class="icon-lnk"><a href=""><span class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 16 16" fill="none">
+                                                <path d="M14.7025 12.2335L13.4125 10.9435C13.4866 10.8842 13.5533 10.8174 13.6127 10.7359C13.9092 10.3281 13.8351 9.79425 13.7758 9.32716C13.7387 9.03058 13.6942 8.71918 13.7609 8.52641C13.8203 8.34847 14.0279 8.13346 14.228 7.92586C14.5617 7.57739 14.9472 7.17702 14.9472 6.65802C14.9472 6.13902 14.5691 5.73865 14.228 5.39018C14.0279 5.18258 13.8203 4.96756 13.7609 4.78962C13.6942 4.59685 13.7387 4.28545 13.7758 3.98888C13.8425 3.51436 13.9092 2.98054 13.6127 2.58017C13.3161 2.17238 12.7823 2.076 12.3077 1.98702C12.0112 1.93512 11.7146 1.87581 11.5515 1.7646C11.3958 1.65338 11.2475 1.37905 11.114 1.11956C10.8842 0.696942 10.6321 0.215014 10.1428 0.0518999C10.039 0.0148285 9.93517 0 9.82396 0C9.46066 0 9.11219 0.170528 8.77113 0.333642C8.4968 0.467099 8.21506 0.600556 8.00005 0.600556C7.78503 0.600556 7.50329 0.467099 7.22896 0.333642C6.88791 0.170528 6.53943 0 6.17614 0C6.06492 0 5.95371 0.0148285 5.85732 0.0518999C5.36057 0.2076 5.10848 0.689527 4.87864 1.11214C4.73777 1.37164 4.5969 1.63855 4.4412 1.75718C4.27808 1.87581 3.9741 1.92771 3.68494 1.97961C3.21784 2.06117 2.68401 2.15755 2.38003 2.57275C2.08346 2.98054 2.1576 3.51437 2.21691 3.98146C2.25398 4.27804 2.29847 4.58943 2.23174 4.78221C2.17243 4.96015 1.96483 5.17516 1.76464 5.38276C1.431 5.73123 1.04546 6.1316 1.04546 6.6506C1.04546 7.1696 1.42359 7.56997 1.76464 7.91844C1.96483 8.12604 2.17243 8.34106 2.23174 8.519C2.29847 8.71177 2.25398 9.02317 2.21691 9.31974C2.15018 9.79425 2.08346 10.3281 2.38003 10.7285C2.43934 10.81 2.50607 10.8767 2.58021 10.9361L1.29013 12.2335C0.941658 12.582 1.00839 12.8934 1.05287 13.012C1.09736 13.1307 1.25306 13.4124 1.7424 13.4495L3.01024 13.5533C3.23267 13.5681 3.44768 13.7831 3.46993 14.013L3.57373 15.2808C3.61821 15.8146 3.94444 16 4.21135 16C4.34481 16 4.55982 15.9555 4.78967 15.7257L7.76279 12.7525C7.85176 12.7229 7.93332 12.7081 8.00746 12.7081C8.0816 12.7081 8.16316 12.7229 8.25213 12.7525L11.2178 15.7183C11.4477 15.9481 11.6553 15.9926 11.7962 15.9926C12.0631 15.9926 12.3967 15.7998 12.4338 15.2734L12.5376 14.0056C12.5524 13.7831 12.7674 13.5681 12.9973 13.5459L14.2651 13.4421C14.7544 13.405 14.9101 13.1233 14.9546 13.0046C14.9843 12.8934 15.051 12.582 14.7025 12.2335ZM10.2021 7.82206L10.7211 10.8397L8.00746 9.41613L5.30125 10.8397L5.82025 7.82206L3.63304 5.68675L6.65806 5.24931L8.01487 2.50602L9.37169 5.24931L12.3967 5.68675L10.2021 7.82206Z"
+                                                      fill="#237BEF"/>
                                             </svg>
                                         </span>
-                                        <span>Become Advisor</span></a></li>
-                            </ul>
-                            <div class="button-wr">
-                                <a href="#" class="standart-btn" target="blank"><span>List your Coin</span></a>
-                            </div>
+                            <span>Become Advisor</span></a></li>
+                    </ul>
+                    <div class="button-wr">
+                        <a href="#" class="standart-btn" target="blank"><span>List your Coin</span></a>
+                    </div>
+                </div>
+                <div class="content-part">
+                    <div class="contact-sales">
+                        <div class="title-wr">
+                            <h4>Contact of Sales Department: </h4>
                         </div>
-                        <div class="content-part">
-                            <div class="contact-sales">
-                                <div class="title-wr">
-                                    <h4>Contact of Sales Department: </h4>
+                        <div class="contact-sales-item-wr">
+ {{ MEDIA_URL }}
+                            {% for contact in contacts %}
+
+                            <div class="contact-sales-item">
+
+
+                                <div class="avatar">
+                                    <img src="{{ MEDIA_URL }}{{ contact.avatar.url }}" alt="">
+
                                 </div>
-                                <div class="contact-sales-item-wr">
-                                    <div class="contact-sales-item">
-                                        <div class="avatar">
-                                            <img src="img/pics/default-ava.png" alt="">
+                                <div class="link-part">
+                                    <div class="name-wr">
+                                        <div class="name">
+                                            <p>{{ contact.name }} {{ contact.surname }}</p>
                                         </div>
-                                        <div class="link-part">
-                                            <div class="name-wr">
-                                                <div class="name">
-                                                    <p>John Petterson</p>
-                                                </div>
-                                                <div class="prof">
-                                                    <p>Sales manager</p>
-                                                </div>
-                                            </div>
-                                            <div class="contact-wr">
-                                                <div class="tg">
-                                                    <span>Telegram: </span><a href="">@John_Exrates</a>
-                                                </div>
-                                                <div class="email">
-                                                    <span>Email: </span><a href="">john@exrates.me</a>
-                                                </div>
-                                            </div>
+                                        <div class="prof">
+                                            <p>{{ contact.job_title }}</p>
                                         </div>
                                     </div>
-                                    <div class="contact-sales-item">
-                                        <div class="avatar">
-                                            <img src="img/pics/default-ava.png" alt="">
+                                    <div class="contact-wr">
+                                        <div class="tg">
+                                            <span>Telegram: </span><a href="https://t.me/{{ contact.telegram }}">{{ contact.telegram }}</a>
                                         </div>
-                                        <div class="link-part">
-                                            <div class="name-wr">
-                                                <div class="name">
-                                                    <p>David Morrisson</p>
-                                                </div>
-                                                <div class="prof">
-                                                    <p>Sales manager</p>
-                                                </div>
-                                            </div>
-                                            <div class="contact-wr">
-                                                <div class="tg">
-                                                    <span>Telegram: </span><a href=""> @David_Exrates</a>
-                                                </div>
-                                                <div class="email">
-                                                    <span>Email: </span><a href="">david@exrates.me</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="contact-sales-item">
-                                        <div class="avatar">
-                                            <img src="img/pics/default-ava.png" alt="">
-                                        </div>
-                                        <div class="link-part">
-                                            <div class="name-wr">
-                                                <div class="name">
-                                                    <p>Taras Podgodesky</p>
-                                                </div>
-                                                <div class="prof">
-                                                    <p> Exrates COO</p>
-                                                </div>
-                                            </div>
-                                            <div class="contact-wr">
-                                                <div class="tg">
-                                                    <span>Telegram: </span><a href=""> @podgorodetskyi</a>
-                                                </div>
-                                                <div class="email">
-                                                    <span>Email: </span><a href="">coo@exrates.me</a>
-                                                </div>
-                                            </div>
+                                        <div class="email">
+                                            <span>Email: </span><a href="">{{ contact.email }}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="benefits">
-                                <div class="title-wr">
-                                    <h4>Our Benefits:</h4>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <div class="benefits">
+                        <div class="title-wr">
+                            <h4>Our Benefits:</h4>
+                        </div>
+                        <div class="benefits-item-wr">
+                            <div class="benefits-item">
+                                <div class="title-b">
+                                    <h5>Personal Bank Account</h5>
                                 </div>
-                                <div class="benefits-item-wr">
-                                    <div class="benefits-item">
-                                        <div class="title-b">
-                                            <h5>Personal Bank Account</h5>
-                                        </div>
-                                        <div class="description">
-                                            <p>We provide personal bank account with 3rd party payment option to 231 countries.</p>
-                                        </div>
-                                    </div>
-                                    <div class="benefits-item">
-                                        <div class="title-b">
-                                            <h5>Fast KYC</h5>
-                                        </div>
-                                        <div class="description">
-                                            <p>We provide personal bank account with 3rd party payment option to 231 countries.</p>
-                                        </div>
-                                    </div>
-                                    <div class="benefits-item">
-                                        <div class="title-b">
-                                            <h5>Personal Bank Account</h5>
-                                        </div>
-                                        <div class="description">
-                                            <p>Automatic KYC process with outstanding support. Fully remote account opening.</p>
-                                        </div>
-                                    </div>
-                                    <div class="benefits-item large-item">
-                                        <div class="title-b">
-                                            <h5>Up to $500,000 monthly</h5>
-                                        </div>
-                                        <div class="description">
-                                            <p>For VIP clients we provide special conditions for fiat deposit and withdraw in 35 currencies.</p>
-                                        </div>
-                                        <div class="button-wr">
-                                            <a href="#" class="standart-btn reverse" target="blank"><span>Become a VIP</span></a>
-                                        </div>
-                                    </div>
-                                    <div class="benefits-item">
-                                        <div class="title-b">
-                                            <h5>Low commissions</h5>
-                                        </div>
-                                        <div class="description">
-                                            <p>Free of charge SEPA outgoing payments.</p>
-                                        </div>
-                                    </div>
-                                    <div class="benefits-item">
-                                        <div class="title-b">
-                                            <h5>Payment solution powered by</h5>
-                                        </div>
-                                        <div class="description">
-                                            <p>Singaporian bank with the same license as PayPal & Apple Pay.</p>
-                                        </div>
-                                    </div>
+                                <div class="description">
+                                    <p>We provide personal bank account with 3rd party payment option to 231
+                                        countries.</p>
+                                </div>
+                            </div>
+                            <div class="benefits-item">
+                                <div class="title-b">
+                                    <h5>Fast KYC</h5>
+                                </div>
+                                <div class="description">
+                                    <p>We provide personal bank account with 3rd party payment option to 231
+                                        countries.</p>
+                                </div>
+                            </div>
+                            <div class="benefits-item">
+                                <div class="title-b">
+                                    <h5>Personal Bank Account</h5>
+                                </div>
+                                <div class="description">
+                                    <p>Automatic KYC process with outstanding support. Fully remote account opening.</p>
+                                </div>
+                            </div>
+                            <div class="benefits-item large-item">
+                                <div class="title-b">
+                                    <h5>Up to $500,000 monthly</h5>
+                                </div>
+                                <div class="description">
+                                    <p>For VIP clients we provide special conditions for fiat deposit and withdraw in 35
+                                        currencies.</p>
+                                </div>
+                                <div class="button-wr">
+                                    <a href="#" class="standart-btn reverse"
+                                       target="blank"><span>Become a VIP</span></a>
+                                </div>
+                            </div>
+                            <div class="benefits-item">
+                                <div class="title-b">
+                                    <h5>Low commissions</h5>
+                                </div>
+                                <div class="description">
+                                    <p>Free of charge SEPA outgoing payments.</p>
+                                </div>
+                            </div>
+                            <div class="benefits-item">
+                                <div class="title-b">
+                                    <h5>Payment solution powered by</h5>
+                                </div>
+                                <div class="description">
+                                    <p>Singaporian bank with the same license as PayPal & Apple Pay.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="banners-part">
-                            <div class="banner-item">
-                                <img src="img/pics/baner4.png" alt="">
-                            </div>
-                            <div class="banner-item">
-                                <img src="img/pics/baner1.png" alt="">
-                            </div>
-                            <div class="banner-item">
-                                <img src="img/pics/baner2.png" alt="">
-                            </div>
-                            <div class="banner-item">
-                                <img src="img/pics/baner3.png" alt="">
-                            </div>
-                        </div>
+                    </div>
+                </div>
+                <div class="banners-part">
+                    <div class="banner-item">
+                        <img src="{% static 'img/pics/baner4.png' %}" alt="">
+                    </div>
+                    <div class="banner-item">
+                        <img src="{% static 'img/pics/baner1.png' %}" alt="">
+                    </div>
+                    <div class="banner-item">
+                        <img src="{% static 'img/pics/baner2.png' %}" alt="">
+                    </div>
+                    <div class="banner-item">
+                        <img src="{% static 'img/pics/baner3.png' %}" alt="">
                     </div>
                 </div>
             </div>
-        </main>
-        <!-- Footer-->
-        <footer class="footer">
-            <div class="footer-inner">
-                <div class="top-part">
-                    <div class="social-wr">
-                        <div class="social-item">
-                            <a href="">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
-                                        <path d="M0.317934 7.51468L4.4655 9.06268L6.07086 14.2255C6.17358 14.5562 6.57792 14.6784 6.8463 14.459L9.15823 12.5742C9.40057 12.3768 9.74575 12.3669 9.99901 12.5508L14.1689 15.5782C14.456 15.7869 14.8627 15.6296 14.9347 15.2826L17.9894 0.589168C18.068 0.210208 17.6956 -0.105932 17.3348 0.0336278L0.313074 6.60009C-0.106987 6.76209 -0.103327 7.35682 0.317934 7.51468ZM5.81214 8.23864L13.918 3.24621C14.0637 3.15675 14.2136 3.35373 14.0885 3.46977L7.39878 9.68818C7.16364 9.90706 7.01196 10.2 6.969 10.5179L6.74112 12.2067C6.71094 12.4322 6.3942 12.4545 6.33198 12.2363L5.45556 9.15682C5.35518 8.80558 5.50146 8.4304 5.81214 8.23864Z" fill="#7E849A" />
-                                    </svg>
-                                </span>
-                                <div class="social-txt">
-                                    <span class="social-name">Telegram</span>
-                                    <span class="social-followers">21560 Followers</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="social-item">
-                            <a href="">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16" fill="none">
-                                        <path d="M18 2.41887C17.3306 2.7125 16.6174 2.90712 15.8737 3.00162C16.6388 2.54487 17.2226 1.82712 17.4971 0.962C16.7839 1.38725 15.9964 1.68763 15.1571 1.85525C14.4799 1.13413 13.5146 0.6875 12.4616 0.6875C10.4186 0.6875 8.77387 2.34575 8.77387 4.37863C8.77387 4.67113 8.79862 4.95237 8.85938 5.22012C5.7915 5.0705 3.07687 3.60013 1.25325 1.36025C0.934875 1.91263 0.748125 2.54488 0.748125 3.2255C0.748125 4.5035 1.40625 5.63637 2.38725 6.29225C1.79437 6.281 1.21275 6.10888 0.72 5.83775C0.72 5.849 0.72 5.86363 0.72 5.87825C0.72 7.6715 1.99912 9.161 3.6765 9.50412C3.37612 9.58625 3.04875 9.62562 2.709 9.62562C2.47275 9.62562 2.23425 9.61213 2.01038 9.56262C2.4885 11.024 3.84525 12.0984 5.4585 12.1332C4.203 13.1154 2.60888 13.7071 0.883125 13.7071C0.5805 13.7071 0.29025 13.6936 0 13.6565C1.63462 14.7106 3.57188 15.3125 5.661 15.3125C12.4515 15.3125 16.164 9.6875 16.164 4.81175C16.164 4.64862 16.1584 4.49113 16.1505 4.33475C16.8829 3.815 17.4982 3.16587 18 2.41887Z" fill="#7E849A" />
-                                    </svg>
-                                </span>
-                                <div class="social-txt">
-                                    <span class="social-name">Twitter</span>
-                                    <span class="social-followers">12800 Followers</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="social-item">
-                            <a href="">
-                                <span class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="18" viewBox="0 0 10 18" fill="none">
-                                        <path d="M9.49931 0.0037452L7.16514 0C4.54278 0 2.84809 1.73871 2.84809 4.42982V6.47227H0.501182C0.298381 6.47227 0.134155 6.63668 0.134155 6.83949V9.79876C0.134155 10.0016 0.298568 10.1658 0.501182 10.1658H2.84809V17.633C2.84809 17.8358 3.01231 18 3.21511 18H6.27716C6.47996 18 6.64419 17.8356 6.64419 17.633V10.1658H9.38827C9.59107 10.1658 9.75529 10.0016 9.75529 9.79876L9.75642 6.83949C9.75642 6.74211 9.71766 6.64886 9.64893 6.57994C9.58021 6.51103 9.48658 6.47227 9.3892 6.47227H6.64419V4.74086C6.64419 3.90868 6.84249 3.48622 7.92653 3.48622L9.49894 3.48566C9.70155 3.48566 9.86578 3.32124 9.86578 3.11863V0.370775C9.86578 0.168347 9.70174 0.00411972 9.49931 0.0037452Z" fill="#7E849A" />
-                                    </svg>
-                                </span>
-                                <div class="social-txt">
-                                    <span class="social-name">Facebook</span>
-                                    <span class="social-followers">20486 Followers</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="servise-page-wr">
-                        <div class="servise-page-item">
-                            <a href=""><span>Terms & conditions</span></a>
-                        </div>
-                        <div class="servise-page-item">
-                            <a href=""><span>Privacy policy</span></a>
-                        </div>
-                        <div class="servise-page-item">
-                            <a href=""><span>EU License</span></a>
-                        </div>
-                    </div>
-                    <div class="info-page-wr">
-                        <div class="info-page-item">
-                            <a href=""><span>Fees</span></a>
-                        </div>
-                        <div class="info-page-item">
-                            <a href=""><span>API</span></a>
-                        </div>
-                    </div>
-                    <div class="inside-page-wr">
-                        <div class="inside-page-item">
-                            <a href=""><span>Support</span></a>
-                        </div>
-                        <div class="inside-page-item">
-                            <a href=""><span>Contacts</span></a>
-                        </div>
-                        <div class="inside-page-item">
-                            <a href=""><span>List IEO</span></a>
-                        </div>
-                        <div class="inside-page-item">
-                            <a href=""><span>Become Advisor</span></a>
-                        </div>
-                    </div>
-                    <div class="adrr-block">
-                        <div class="pic">
-                            <img src="img/pics/flag.png" alt="">
-                        </div>
-                        <div class="adrr-txt">
-                            <h4>Official European Union License</h4>
-                            <p>DexTechnologies OÜ is registered in Estonia and operates under official license. Company ID 23342340-234</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bottom-part">
-                    <div class="copy">
-                        <p>© 2018 EXRATES LTD trade marks belong to their corresponding owners. All rights are reserved</p>
-                    </div>
-                    <div class="bottom-social-wr">
-                        <div class="bottom-social-item">
-                            <a href="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" viewBox="0 0 15 14" fill="none">
-                                    <path d="M0.264944 6.41603L3.72124 7.70603L5.05904 12.0084C5.14464 12.2839 5.48159 12.3858 5.70524 12.2029L7.63184 10.6323C7.83379 10.4678 8.12144 10.4596 8.33249 10.6128L11.8074 13.1356C12.0466 13.3095 12.3856 13.1784 12.4456 12.8893L14.9911 0.644782C15.0566 0.328982 14.7463 0.0655318 14.4456 0.181832L0.260894 5.65388C-0.0891557 5.78888 -0.0861058 6.28448 0.264944 6.41603ZM4.84344 7.01933L11.5983 2.85898C11.7197 2.78443 11.8446 2.94858 11.7404 3.04528L6.16564 8.22728C5.96969 8.40968 5.84329 8.65378 5.80749 8.91873L5.61759 10.326C5.59244 10.5139 5.32849 10.5326 5.27664 10.3507L4.54629 7.78448C4.46264 7.49178 4.58454 7.17913 4.84344 7.01933Z" fill="#7E849A" />
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="bottom-social-item">
-                            <a href="">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="13" viewBox="0 0 16 13" fill="none">
-                                    <path d="M15.5385 1.84906C14.9806 2.09375 14.3863 2.25594 13.7666 2.33469C14.4041 1.95406 14.8906 1.35594 15.1194 0.635C14.525 0.989375 13.8688 1.23969 13.1694 1.37938C12.605 0.778438 11.8006 0.40625 10.9231 0.40625C9.22064 0.40625 7.85001 1.78813 7.85001 3.48219C7.85001 3.72594 7.87064 3.96031 7.92126 4.18344C5.3647 4.05875 3.10251 2.83344 1.58283 0.966875C1.31751 1.42719 1.16189 1.95406 1.16189 2.52125C1.16189 3.58625 1.71033 4.53031 2.52783 5.07687C2.03376 5.0675 1.54908 4.92406 1.13845 4.69812C1.13845 4.7075 1.13845 4.71969 1.13845 4.73187C1.13845 6.22625 2.20439 7.4675 3.6022 7.75344C3.35189 7.82188 3.07908 7.85469 2.79595 7.85469C2.59908 7.85469 2.40033 7.84344 2.21376 7.80219C2.6122 9.02 3.74283 9.91531 5.0872 9.94438C4.04095 10.7628 2.71251 11.2559 1.27439 11.2559C1.0222 11.2559 0.780327 11.2447 0.538452 11.2137C1.90064 12.0922 3.51501 12.5938 5.25595 12.5938C10.9147 12.5938 14.0085 7.90625 14.0085 3.84312C14.0085 3.70719 14.0038 3.57594 13.9972 3.44563C14.6075 3.0125 15.1203 2.47156 15.5385 1.84906Z" fill="#7E849A" />
-                                </svg>
-                            </a>
-                        </div>
-                        <div class="bottom-social-item">
-                            <a href="" class="fb">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15" fill="none">
-                                    <path d="M12.0186 0.003121L10.0734 0C7.88814 0 6.4759 1.44892 6.4759 3.69152V5.39356H4.52015C4.35115 5.39356 4.21429 5.53057 4.21429 5.69957V8.16563C4.21429 8.33463 4.35131 8.47149 4.52015 8.47149H6.4759V14.6941C6.4759 14.8631 6.61276 15 6.78176 15H9.33346C9.50247 15 9.63932 14.863 9.63932 14.6941V8.47149H11.9261C12.0951 8.47149 12.2319 8.33463 12.2319 8.16563L12.2328 5.69957C12.2328 5.61843 12.2005 5.54071 12.1433 5.48329C12.086 5.42586 12.008 5.39356 11.9268 5.39356H9.63932V3.95072C9.63932 3.25723 9.80457 2.90518 10.7079 2.90518L12.0183 2.90472C12.1871 2.90472 12.324 2.7677 12.324 2.59886V0.308979C12.324 0.140289 12.1873 0.0034331 12.0186 0.003121Z" fill="#7E849A" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <div class="scripts">
-            <!-- Set JS assets-->
-            <script type="text/javascript">
-                function googleTranslateElementInit()
-                {
-                    new google.translate.TranslateElement(
-                    {
-                        pageLanguage: 'en'
-                    }, 'google_translate_element');
-                }
-            </script>
-            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async=""></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-            <script src="js/vendor-bundle.min.js"></script>
-            <script src="js/custom-bundle.min.js"></script>
         </div>
-    </body>
-</html>
+    </div>
+
+{% endblock %}
