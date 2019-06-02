@@ -169,10 +169,13 @@ $("form").on("submit", function (e) {
 	});
 	if (sendForm) {
 		var that = $(this);
+		var formData = new FormData(that.get(0));
 		$.ajax({
 			url: $(this).attr('action'),
 			type: 'POST',
-			data: $(this).serialize(),
+			contentType: false,
+			processData: false,
+			data: formData,
 
 			success: function success(data) {
 				$(".thk-modal").addClass("active");

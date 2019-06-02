@@ -27,7 +27,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', '%9t2&1x41@436xk!h=*dhkt746mjl&jhl#tda@+d^4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', True)
 
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.10.10.71']
 
 # Application definition
 
@@ -89,9 +90,9 @@ TEMPLATES = [
         },
     ]
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-    ]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static')
+#]
 
 config = get_config()
 PIPEDRIVE_URL = config.get('DEFAULT', 'PIPEDRIVE_URL')
@@ -169,6 +170,10 @@ LOCALE_PATHS = (
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATIC_ROOT = os.getenv('STATIC_ROOT_DIRECTORY', os.path.join(BASE_DIR, 'staticfiles'))
+#STATIC_ROOT = os.getenv('STATIC_ROOT_DIRECTORY', os.path.join(BASE_DIR, 'static'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
