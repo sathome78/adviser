@@ -173,12 +173,12 @@
                             <form action="{% url 'deal' %}">{% csrf_token %}
                                 <div class="checkbox-wr">
                                     <div class="check-item">
-                                        <input type="radio" value="IEO" id="id_request_type_0" name="formType" checked>
+                                        <input type="radio" value="IEO" id="id_request_type_0" name="request_type" checked>
                                         <label class="indicator" for="id_request_type_0"></label>
                                         <label class="label-txt" for="id_request_type_0">I need to conduct an IEO</label>
                                     </div>
                                     <div class="check-item">
-                                        <input type="radio" value="Listing" id="id_request_type_1" name="formType">
+                                        <input type="radio" value="Listing" id="id_request_type_1" name="request_type">
                                         <label class="indicator" for="id_request_type_1"></label>
                                         <label class="label-txt" for="id_request_type_1">I need to list a coin</label>
                                     </div>
@@ -199,12 +199,12 @@
                                     <label class="error" for="id_email"><span class="standart-text"></span></label>
                                 </div>
                                 <div class="wrap-input input-item popup__wrap-input">
-                                    <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="companyName" id="id_company_name">
+                                    <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="company_name" id="id_company_name">
                                     <label class="wrap-input__label" for="id_company_name">Company name*</label>
                                     <label class="error" for="id_company_name"><span class="standart-text"></span></label>
                                 </div>
                                 <div class="wrap-input input-item popup__wrap-input">
-                                    <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="linkToTheWebsite" id="id_link_to_project">
+                                    <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="link_to_project" id="id_link_to_project">
                                     <label class="wrap-input__label" for="id_link_to_project">Link to the website</label>
                                     <label class="error" for="id_link_to_project"><span class="standart-text"></span></label>
                                 </div>

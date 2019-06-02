@@ -1,24 +1,19 @@
+# -*- coding: utf-8 -*-
 from django.conf import settings
 from django.urls import reverse
+from django.utils import translation
 from django.views.generic import FormView, TemplateView, UpdateView
 
 from adviser.forms import ListingForm, SupportForm, REQUEST_CHOICES, AdviserForm, AdviserProfileForm
 from adviser.models import Adviser, Manager
 from clients.zendesk_client import ZendeskClient
 from clients.pipedrive_client import PipedriveClient
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 
-class HomePageView(TemplateView):
-
-    template_name = "main/home.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(HomePageView).get_context_data(**kwargs)
-        return context
 
 
 class SupportPageView(FormView):
-    template_name = 'main/support.html'
+    template_name = 'main/support-center.html'
     form_class = SupportForm
     success_url = '.'
 
@@ -30,9 +25,10 @@ class SupportPageView(FormView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         files = request.FILES.getlist('files')
+
         if form.is_valid():
             cleaned_data = form.cleaned_data
-            request_type = dict(REQUEST_CHOICES)[int(cleaned_data.get('request_type') )]
+            request_type = dict(REQUEST_CHOICES)[int(cleaned_data.get('request_type'))]
             email = cleaned_data.get('email')
             message = cleaned_data.get('message')
 
@@ -40,6 +36,9 @@ class SupportPageView(FormView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+
+    def get_form(self, form_class=None):
+        return SupportForm(self.request.POST, self.request.FILES)
 
 class DealPageView(FormView):
     template_name = 'main/form-listing.html'
@@ -61,19 +60,15 @@ class DealPageView(FormView):
 
 
 class AdviserFormView(FormView):
-    template_name = 'adviser/become-advisor.html'
+    template_name = 'adviser/advisor-form.html'
     form_class = AdviserForm
     success_url = '.'
 
-    def get_context_data(self, **kwargs):
-        context = super(AdviserFormView, self).get_context_data(**kwargs)
-        return context
 
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-
             adviser = form.save()
             edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={'id':adviser.id}))
             update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={'id': adviser.id}))
@@ -123,6 +118,9 @@ class AdviserProfileView(TemplateView):
 class FiatPageView(TemplateView):
     template_name = 'main/fiat.html'
 
+class AboutUsPageView(TemplateView):
+    template_name = 'main/about-us.html'
+
 class ClientCenterPageView(TemplateView):
     template_name = 'main/client-center.html'
 
@@ -136,3 +134,7 @@ class PrivacyPolicyPageView(TemplateView):
 
 class TermsPageView(TemplateView):
     template_name = 'main/terms-of-use.html'
+
+
+class BecomeAdviserPageView(TemplateView):
+    template_name = 'adviser/become-advisor.html'

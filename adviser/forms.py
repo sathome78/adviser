@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from datetime import datetime
 
 from django import forms
@@ -41,18 +42,18 @@ LISTING_CHOICES = (
 
 class ListingForm(forms.Form):
     request_type = forms.ChoiceField(choices=LISTING_CHOICES, widget=forms.RadioSelect)
-    name = forms.CharField(max_length=255, required=False)
+    name = forms.CharField(max_length=255)
     telegram = forms.CharField(max_length=255, required=False)
     email = forms.EmailField()
     company_name = forms.CharField(max_length=255)
-    link_to_project = forms.CharField(max_length=255, required=False)
+    link_to_project = forms.CharField(max_length=255, required=True)
 
 
 class AdviserForm(ModelForm):
     name = forms.CharField(max_length=255)
-    telegram = forms.CharField(max_length=255, required=False)
+    telegram = forms.CharField(max_length=255)
     email = forms.EmailField()
-    linkedin = forms.CharField(required=False)
+    linkedin = forms.CharField()
 
     class Meta:
         model = Adviser

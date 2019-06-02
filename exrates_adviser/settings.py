@@ -9,14 +9,14 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
+# -*- coding: utf-8 -*-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 from gettext import gettext
 
 from clients.utils import get_config
-
+from django.utils.translation import ugettext_lazy as _
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     ]
 
 LANGUAGES = (
-    ('ru', gettext('Russian')),
-    ('en', gettext('English')),
-    )
+    ('en', _('English')),
+    ('ru', _('Russian')),
+)
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_LANGUAGES = ('en', 'ru')
 
@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -83,6 +84,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'adviser.context_processor.from_settings',
                 ],
             },
         },
@@ -91,13 +93,6 @@ TEMPLATES = [
 #STATICFILES_DIRS = [
 #    os.path.join(BASE_DIR, 'static')
 #]
-
-
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'testdjangoapp1@gmail.com'
-EMAIL_HOST_PASSWORD = 'passtest0'
 
 config = get_config()
 PIPEDRIVE_URL = config.get('DEFAULT', 'PIPEDRIVE_URL')
@@ -108,11 +103,13 @@ ZENDESK_TOKEN = config.get('DEFAULT', 'ZENDESK_TOKEN')
 ZENDESK_EMAIL = config.get('DEFAULT', 'ZENDESK_EMAIL')
 
 USER_TELEGRAM = config.get('PIPEDRIVE_FIELDS', 'user_telegram')
-ORG_LINK_TO_PROJECT = config.get('PIPEDRIVE_FIELDS', 'org_link_to_project')
 USER_LINKEDIN = config.get('PIPEDRIVE_FIELDS', 'user_linked_in')
 
 USER_LINK_TO_FORM = config.get('PIPEDRIVE_FIELDS', 'user_link_to_form')
 USER_LINK_TO_DETAILS = config.get('PIPEDRIVE_FIELDS', 'user_link_to_details')
+ORG_WEBSITE = config.get('PIPEDRIVE_FIELDS', 'org_website')
+
+PIPEDRIVE_NEW_ADVISER = config.get('PIPEDRIVE_FIELDS', 'pipedrive_new_adviser')
 
 DOMAIN = config.get('DEFAULT', 'DOMAIN')
 
@@ -153,7 +150,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -162,6 +159,10 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

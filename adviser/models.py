@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import uuid
 from audioop import reverse
 
@@ -7,11 +8,6 @@ from django.db import models
 ADVISER_TYPE_ENUM = (
     (1, 'Company'),
     (2, 'Adviser')
-    )
-
-LANGUAGE_TYPE_ENUM = (
-    ('en', 'English'),
-    ('ru', 'Russian')
     )
 
 
@@ -55,9 +51,9 @@ class Adviser(models.Model):
                                help_text="Adviser's surname")
     long_description = models.CharField(max_length=700, null=True, blank=True,
                                         help_text="Company's benefits")
-    trading_volume = models.IntegerField(null=True, blank=True,
+    trading_volume = models.CharField(max_length=255, null=True, blank=True,
                                          help_text="24h trading volume")
-    rating = models.IntegerField(null=True, blank=True,
+    rating = models.CharField(max_length=255, null=True, blank=True,
                                  help_text="Rating CoinMarketCap")
 
     def __str__(self):
@@ -72,3 +68,24 @@ class Adviser(models.Model):
 
     def get_absolute_url(self):
         return reverse("adviser-detail", args=(self.id))
+
+
+class GeneralFields(models.Model):
+
+
+    telegram_followers = models.CharField(max_length=100)
+    twitter_followers = models.CharField(max_length=100)
+
+    facebook_followers = models.CharField(max_length=100)
+
+    trading_volumes = models.CharField(max_length=100)
+    active_trades = models.CharField(max_length=100)
+    fiat_currencies = models.CharField(max_length=100)
+    trading_pairs = models.CharField(max_length=100)
+
+    def __str__(self):
+        return 'General fields'
+
+    class Meta(object):
+        verbose_name = _('general fields')
+        verbose_name_plural = _('general fields')

@@ -1,4 +1,4 @@
-{%  load static %}
+{%  load static urls %}
 <html>
     <head>
         <title>Document Template Title</title>
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="{% static 'css/main.min.css'%}" />
     </head>
     <body>
+    {% get_extra_fields as extra_fields %}
         <div class="form-listing-wr">
             <div class="top-part">
                 <div class="logo">
@@ -67,7 +68,7 @@
                                 <label class="error" for="id_company_name"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
-                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="website" id="id_link_to_project">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="link_to_project" id="id_link_to_project">
                                 <label class="wrap-input__label" for="id_link_to_project">Link to the website</label>
                                 <label class="error" for="id_link_to_project"><span class="standart-text"></span></label>
                             </div>
@@ -139,10 +140,10 @@
                             <ul class="form-list">
                                 <li><span>Supporting all types of coins</span></li>
                                 <li><span class="weight">24/7 </span><span>Online Support</span></li>
-                                <li><span class="weight">$173,200,000 </span><span>Daily trading volumes</span></li>
-                                <li><span class="weight">140,000 </span><span>active traders</span></li>
+                                <li><span class="weight">${{ extra_fields.trading_volumes }} </span><span>Daily trading volumes</span></li>
+                                <li><span class="weight">{{ extra_fields.active_trades }} </span><span>active traders</span></li>
                                 <li><span class="weight">X-Platform </span><span>for IEO NEW</span></li>
-                                <li><span class="weight">35 Fiat </span><span>currencies</span></li>
+                                <li><span class="weight">{{ extra_fields.fiat_currencies }} Fiat </span><span>currencies</span></li>
                                 <li><span class="weight">Trading API </span><span>for AlgoTraders</span></li>
                             </ul>
                         </div>

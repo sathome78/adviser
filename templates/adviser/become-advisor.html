@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% load static urls %}
+{% block content %}{% get_extra_fields as extra_fields %}
 
             <div class="advisor-page">
                 <div class="advisor--inner">
@@ -113,7 +113,7 @@
                                     <p>Trading pairs</p>
                                 </div>
                                 <div class="value">
-                                    <span>512</span>
+                                    <span>{{ extra_fields.trading_pairs }}</span>
                                 </div>
                             </div>
                             <div class="exchange-item">

@@ -1,5 +1,7 @@
 {% load static %}
+{% load i18n urls%}
  {% block footer %}
+     {% get_extra_fields as extra_fields %}
 <!-- Footer-->
 <footer class="footer">
     <div class="footer-inner">
@@ -14,7 +16,7 @@
                         </span>
                         <div class="social-txt">
                             <span class="social-name">Telegram</span>
-                            <span class="social-followers">21560 Followers</span>
+                            <span class="social-followers">{{ extra_fields.telegram_followers }} Followers</span>
                         </div>
                     </a>
                 </div>
@@ -27,7 +29,7 @@
                         </span>
                         <div class="social-txt">
                             <span class="social-name">Twitter</span>
-                            <span class="social-followers">12800 Followers</span>
+                            <span class="social-followers">{{ extra_fields.twitter_followers }} Followers</span>
                         </div>
                     </a>
                 </div>
@@ -40,7 +42,7 @@
                         </span>
                         <div class="social-txt">
                             <span class="social-name">Facebook</span>
-                            <span class="social-followers">20486 Followers</span>
+                            <span class="social-followers">{{ extra_fields.facebook_followers }} Followers</span>
                         </div>
                     </a>
                 </div>

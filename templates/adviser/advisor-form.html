@@ -1,0 +1,140 @@
+{% load i18n %}
+
+{% load static %}
+<html>
+    <head>
+        <title>Document Template Title</title>
+        <!-- Main Meta information-->
+        <meta charset="utf-8" />
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:600,500,400,300' rel='stylesheet' type='text/css'>
+        <!-- Meta Information-->
+        <meta name="robots" content="index, follow" />
+        <link type="text/plain" rel="author" href="humans.txt" />
+        <!-- Get html5shiv if this is IE lower or equal to 9-->
+        <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+        <link rel="stylesheet" href="{% static 'css/main.min.css' %}" />
+    </head>
+    <body>
+        <div class="form-listing-wr a-form">
+            <div class="top-part">
+                <div class="logo">
+                    <img src="{% static 'img/pics/logo-header.svg' %}" alt="">
+                </div>
+                <div class="description">
+                    <p>Cryptocurrency Exchange</p>
+                </div>
+            </div>
+            <div class="form-part">
+                <form action="{% url 'advisor-form' %}" class="list-form" enctype="multipart/form-data" method="POST">{% csrf_token %}
+                    <!-- start default variant -->
+                    <div class="left-part">
+                        <div class="title">
+                            <h3 class="variable-title">Fill the form to become an Advisor</h3>
+                        </div>
+                        <div class="inputs-wr">
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="name" id="id_name">
+                                <label class="wrap-input__label" for="id_name">Name*</label>
+                                <label class="error" for="id_name"><span class="standart-text"></span></label>
+                            </div>
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="telegram" id="id_telegram">
+                                <label class="wrap-input__label" for="id_telegram">Telegram*</label>
+                                <label class="error" for="id_telegram"><span class="standart-text"></span></label>
+                            </div>
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="email" id="id_email">
+                                <label class="wrap-input__label" for="id_email">Email*</label>
+                                <label class="error" for="id_email"><span class="standart-text"></span></label>
+                            </div>
+                            <div class="wrap-input input-item popup__wrap-input">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="linkedin" id="id_linkedin">
+                                <label class="wrap-input__label" for="id_linkedin">Linkedin*</label>
+                                <label class="error" for="id_linkedin"><span class="standart-text"></span></label>
+                            </div>
+                        </div>
+                        <div class="button-wr">
+                            <button class="standart-btn" type="submit"><span>Submit</span></button>
+                        </div>
+                    </div>
+                    <div class="right-part">
+                        <div class="title-wr">
+                            <h4>Benefits for Exrates Advisors</h4>
+                        </div>
+                        <div class="a-info-part">
+                            <ul class="a-form-list">
+                                <li>
+                                    <div class="icon">
+                                        <img src="{% static 'img/pics/a-form1.svg' %}" alt="">
+                                    </div>
+                                    <span>Special reward system for advisors: <br>get from 5% to 15%</span>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <img src="{% static 'img/pics/a-form2.svg' %}" alt="">
+                                    </div>
+                                    <span>Get exclusive analytical market reports</span>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <img src="{% static 'img/pics/a-form3.svg' %}" alt="">
+                                    </div>
+                                    <span>Participation in online trainings & webinars</span>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <img src="{% static 'img/pics/a-form4.svg' %}" alt="">
+                                    </div>
+                                    <span>Your personal page on Exchange website</span>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <img src="{% static 'img/pics/a-form5.svg' %}" alt="">
+                                    </div>
+                                    <span>Your personal manager</span>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <img src="{% static 'img/pics/a-form6.svg' %}" alt="">
+                                    </div>
+                                    <span>Attend conferences & events as a part of Exrates team</span>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <img src="{% static 'img/pics/a-form7.svg' %}" alt="">
+                                    </div>
+                                    <span>An opportunity to become a part of international community</span>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <img src="{% static 'img/pics/a-form8.svg' %}" alt="">
+                                    </div>
+                                    <span>Referral program</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="back-btn">
+                            <a href="#" onclick="window.history.back()"><span>
+                                    < Back</span> </a> </div> </div> </form> </div> </div> <div class="scripts">
+                                        <!-- Set JS assets-->
+                                        <script type="text/javascript">
+                                            function googleTranslateElementInit()
+                                            {
+                                                new google.translate.TranslateElement(
+                                                {
+                                                    pageLanguage: 'en'
+                                                }, 'google_translate_element');
+                                            }
+                                        </script>
+                                        <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async=""></script>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+                                        <script src="{% static 'js/vendor-bundle.min.js' %}"></script>
+                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/2.0.4/js/Jcrop.min.js"></script>
+                                        <script src="{% static 'js/custom-bundle.min.js'%}"></script>
+                        </div>
+    </body>
+</html>
