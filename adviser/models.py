@@ -10,11 +10,6 @@ ADVISER_TYPE_ENUM = (
     (2, 'Adviser')
     )
 
-LANGUAGE_TYPE_ENUM = (
-    ('en', 'English'),
-    ('ru', 'Russian')
-    )
-
 
 class Manager(models.Model):
     name = models.CharField(max_length=100)

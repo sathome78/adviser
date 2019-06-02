@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-02 08:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: adviser/models.py:31
+msgid "sale manager"
+msgstr ""
+
+#: adviser/models.py:32
+msgid "sale managers"
+msgstr ""
+
+#: adviser/models.py:71
+msgid "adviser"
+msgstr ""
+
+#: adviser/models.py:72
+msgid "advisers"
+msgstr ""
+
+#: adviser/models.py:95 adviser/models.py:96
+msgid "general fields"
+msgstr ""
+
+#: exrates_adviser/settings.py:47
+msgid "English"
+msgstr ""
+
+#: exrates_adviser/settings.py:48
+msgid "Russian"
+msgstr ""
+
+#: templates/main/fiat.html:14
+#, fuzzy, python-format
+#| msgid "Open account for $20 and get 0%% commission"
+msgid " Open account for $20 and get 0%% commission "
+msgstr "Откройте за счёт с рпапрощгпапрол"
+
+#: templates/main/fiat.html:17
+msgid " <p>on outgoing payments in the Singapore Bank</p>"
+msgstr ""
+
+#: templates/main/fiat.html:20
+msgid "Open an Account now"
+msgstr ""
+
+#: templates/main/fiat.html:26
+msgid "Benefits"
+msgstr ""
+
+#: templates/main/fiat.html:31
+msgid "Personal Bank Account"
+msgstr ""
+
+#: templates/main/fiat.html:34
+msgid ""
+"We provide personal bank account with 3rd party payment option to 231 "
+"countries."
+msgstr ""
+
+#: templates/main/fiat.html:42
+msgid ""
+"Automatic KYC process with outstanding support. Fully remote account opening."
+msgstr ""
+
+#: templates/main/fiat.html:47
+msgid "Payment solution powered by"
+msgstr ""
+
+#: templates/main/fiat.html:50
+msgid "Singaporian bank with the same license as PayPal & Apple Pay."
+msgstr ""
+
+#: templates/main/fiat.html:55
+msgid "Low commissions"
+msgstr ""
+
+#: templates/main/fiat.html:58
+msgid "Free of charge SEPA outgoing payments."
+msgstr ""
+
+#: templates/main/fiat.html:63
+#, python-format
+msgid "0%% Transfer Fee"
+msgstr ""
+
+#: templates/main/fiat.html:66
+#, python-format
+msgid "0%% transfer fee between personal and trading account on Exrates"
+msgstr ""
+
+#: templates/main/fiat.html:71
+msgid "Up to $500,000 monthly"
+msgstr ""
+
+#: templates/main/fiat.html:74
+msgid ""
+"For VIP clients we provide special conditions for fiat deposit and withdraw "
+"in 35 currencies."
+msgstr ""
+
+#: templates/main/fiat.html:77
+msgid "Become a VIP"
+msgstr ""
+
+#: templates/main/fiat.html:84
+msgid "How does ot work?"
+msgstr ""
+
+#: templates/main/fiat.html:95
+msgid "Open Exrates account"
+msgstr ""
+
+#: templates/main/fiat.html:98
+msgid "Still don’t have Exrates account?"
+msgstr ""
+
+#: templates/main/fiat.html:101
+msgid "Create account now "
+msgstr ""
+
+#: templates/main/fiat.html:112
+msgid "Provide basic personal <br>information."
+msgstr ""
+
+#: templates/main/fiat.html:120
+msgid "Get your personal FUG<br>account!"
+msgstr ""
+
+#: templates/main/fiat.html:128
+msgid ""
+"This is your personal account which you can use for instant fiat transfers "
+"to your Exrates trading account."
+msgstr ""
+
+#: templates/main/fiat.html:131
+msgid ""
+"A more detailed description of the conditions is available on our financial "
+"partner page - "
+msgstr ""

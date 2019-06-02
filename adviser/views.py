@@ -13,7 +13,7 @@ from django.shortcuts import get_object_or_404, redirect
 
 
 class SupportPageView(FormView):
-    template_name = 'main/support.html'
+    template_name = 'main/support-center.html'
     form_class = SupportForm
     success_url = '.'
 
@@ -25,9 +25,10 @@ class SupportPageView(FormView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         files = request.FILES.getlist('files')
+
         if form.is_valid():
             cleaned_data = form.cleaned_data
-            request_type = dict(REQUEST_CHOICES)[int(cleaned_data.get('request_type') )]
+            request_type = dict(REQUEST_CHOICES)[int(cleaned_data.get('request_type'))]
             email = cleaned_data.get('email')
             message = cleaned_data.get('message')
 
@@ -35,6 +36,9 @@ class SupportPageView(FormView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+
+    def get_form(self, form_class=None):
+        return SupportForm(self.request.POST, self.request.FILES)
 
 class DealPageView(FormView):
     template_name = 'main/form-listing.html'
@@ -56,25 +60,23 @@ class DealPageView(FormView):
 
 
 class AdviserFormView(FormView):
-    template_name = 'adviser/become_adviser.html'
+    template_name = 'adviser/advisor-form.html'
     form_class = AdviserForm
     success_url = '.'
 
-    def get_context_data(self, **kwargs):
-        context = super(AdviserFormView, self).get_context_data(**kwargs)
-        return context
 
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-
+            print(form.cleaned_data)
             adviser = form.save()
             edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={'id':adviser.id}))
             update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={'id': adviser.id}))
             PipedriveClient().create_or_update_adviser(form.cleaned_data, edit_url, update_url)
             return self.form_valid(form)
         else:
+            print('ivalid', form.errors)
             return self.form_invalid(form)
 
 class AdviserUpdateProfileView(UpdateView):
@@ -134,3 +136,7 @@ class PrivacyPolicyPageView(TemplateView):
 
 class TermsPageView(TemplateView):
     template_name = 'main/terms-of-use.html'
+
+
+class BecomeAdviserPageView(TemplateView):
+    template_name = 'adviser/become-advisor.html'

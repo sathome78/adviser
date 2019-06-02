@@ -42,7 +42,7 @@ LISTING_CHOICES = (
 
 class ListingForm(forms.Form):
     request_type = forms.ChoiceField(choices=LISTING_CHOICES, widget=forms.RadioSelect)
-    name = forms.CharField(max_length=255, required=False)
+    name = forms.CharField(max_length=255)
     telegram = forms.CharField(max_length=255, required=False)
     email = forms.EmailField()
     company_name = forms.CharField(max_length=255)
@@ -51,9 +51,9 @@ class ListingForm(forms.Form):
 
 class AdviserForm(ModelForm):
     name = forms.CharField(max_length=255)
-    telegram = forms.CharField(max_length=255, required=False)
+    telegram = forms.CharField(max_length=255)
     email = forms.EmailField()
-    linkedin = forms.CharField(required=False)
+    linkedin = forms.CharField()
 
     class Meta:
         model = Adviser

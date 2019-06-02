@@ -23,7 +23,8 @@ from django.shortcuts import redirect
 from django.urls import include, reverse
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
-                           FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView, AboutUsPageView)
+                           FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView, AboutUsPageView,
+                           BecomeAdviserPageView)
 
 
 def home(request):
@@ -33,7 +34,7 @@ def home(request):
 urlpatterns = i18n_patterns(
         url(r'^$', home, name='home'),
 
-        url(r'^support/$', SupportPageView.as_view(), name='support'),
+
         url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
         url(r'^adviser/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(),
             name='adviser-update'),
@@ -43,10 +44,13 @@ urlpatterns = i18n_patterns(
         url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
         url(r'^privacy-policy/$', PrivacyPolicyPageView.as_view(), name='privacy-policy'),
         url(r'^terms-of-use/$', TermsPageView.as_view(), name='terms-of-use'),
-        url(r'^become-advisor/$', AdviserFormView.as_view(), name='become-advisor'),
+
+
+        url(r'^become-advisor/$', BecomeAdviserPageView.as_view(), name='become-advisor'),
         url(r'^about-us/$', AboutUsPageView.as_view(), name='about-us'),
 
-        url(r'^become-advisor-form/$', AdviserFormView.as_view(), name='become-advisor-form'),
+        url(r'^advisor-form/$', AdviserFormView.as_view(), name='advisor-form'),
+        url(r'^support-center/$', SupportPageView.as_view(), name='support-center'),
 
         url('admin/', admin.site.urls),
         url('i18n/', include('django.conf.urls.i18n')),
