@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', '%9t2&1x41@436xk!h=*dhkt746mjl&jhl#tda@+d^4
 DEBUG = os.getenv('DEBUG', True)
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.10.10.71', '172.31.28.213', 'about.exrates.me']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.10.10.71', '172.31.28.213', 'about.exrates.me','172.50.100.48']
 
 # Application definition
 
