@@ -160,7 +160,6 @@ class AdviserDemoPageView(TemplateView):
 
 
     def get_context_data(self, **kwargs):
-        pk = self.kwargs['id']
         data = super().get_context_data(**kwargs)
         data['form'] = ListingForm
         return data
