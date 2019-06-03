@@ -258,6 +258,15 @@ $(".dropdown-item").click(function () {
 	$(".drop-wr input").attr("value", inputValue);
 });
 
+$(".lang-variant").click(function () {
+	var lang = $(this).html();
+	$(".cur-lang").html(lang);
+});
+
+$(".menu-mob__drop-wrap").click(function () {
+	$(this).toggleClass("active");
+});
+
 var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
 
 	var crop_max_width = 400;

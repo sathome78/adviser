@@ -24,21 +24,28 @@ from django.urls import include, reverse
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
                            FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView, AboutUsPageView,
-                           BecomeAdviserPageView)
+                           BecomeAdviserPageView, AdviserDemoPageView)
 
 
 def home(request):
+    request.session['username'] = request.GET.get('username')
+    request.session['email'] = request.GET.get('email')
+    request.session['picture'] = request.GET.get('picture')
     return redirect(reverse("about-us"))
 
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
         url(r'^$', home, name='home'),
 
 
         url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
+url(r'^adviser-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
+
         url(r'^adviser/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(),
             name='adviser-update'),
         url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
+
+
 
         url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
         url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
@@ -55,5 +62,5 @@ urlpatterns = i18n_patterns(
         url('admin/', admin.site.urls),
         url('i18n/', include('django.conf.urls.i18n')),
 
-        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+        ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
