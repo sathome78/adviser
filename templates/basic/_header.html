@@ -3,7 +3,7 @@
 <header class="header">
     <div class="header-inner">
         <div class="logo-wr">
-            <img src="{% static 'img/pics/logo-header.svg'%}" alt="logo">
+            <img src="{% static  'img/pics/logo-exrates.svg' %}" alt="logo">
         </div>
         <div class="menu-wr">
             <div class="left-part">
@@ -11,6 +11,44 @@
                     <ul>
                         <li>
                             <a href="https://exrates.me/dashboard"><span>trade</span></a>
+                        </li>
+                        <li>
+                            <div class="drop">
+                                <a href="#"><span>Funds</span></a>
+                                <div class="submenu">
+                                    <ul class="menu submenu__list">
+                                        <li class="submenu__item">
+                                            <a class="submenu__link" href="https://exrates.me/funds/balances" target="blank">
+                                                <span class="menu__link-text">Balances</span>
+                                            </a>
+                                        </li>
+                                        <li class="submenu__item">
+                                            <a class="submenu__link" href="https://exrates.me/funds/transaction-history" target="blank">
+                                                <span class="menu__link-text">Transaction history</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="drop">
+                                <a href="#"><span>Orders</span></a>
+                                <div class="submenu">
+                                    <ul class="menu submenu__list">
+                                        <li class="submenu__item">
+                                            <a class="submenu__link" href="https://exrates.me/orders/open" target="blank">
+                                                <span class="menu__link-text">Open orders</span>
+                                            </a>
+                                        </li>
+                                        <li class="submenu__item">
+                                            <a class="submenu__link" href="https://exrates.me/funds/orders/closed" target="blank">
+                                                <span class="menu__link-text">Orders history</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
                         <li>
                             {% url 'about-us' as about %}
@@ -36,9 +74,9 @@
                         <li>
                             <a href="https://exrates.me/news"><span>News</span></a>
                         </li>
-                        <li>
-                            <a href="https://support.exrates.me/categories/announcements"><span>Announcments</span></a>
-                        </li>
+                        <!-- <li>
+							<a href="#"><span>Announcments</span></a>
+						</li> -->
                         <li>
                             <div class="drop">
                                 <a href="#"><span>Community</span></a>
@@ -74,9 +112,6 @@
                             </div>
                         </li>
                     </ul>
-
-
-                    {% if request.session.email %}
                     <!-- start not auth user -->
                     <div class="login">
                         <button><span>Login</span></button>
@@ -85,53 +120,52 @@
                         <button><span>Register</span></button>
                     </div>
                     <!-- end not auth user -->
-                    {% else %}
                     <!-- start auth user -->
-                    <div class="account">
-                        <span class="login-menu__icon">
-                            <svg fill="none" height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0)">
-                                    <path d="M9.0002 9.53152C11.229 9.53152 13.036 7.41659 13.036 4.80773C13.036 1.18995 11.2291 0.0839844 9.0002 0.0839844C6.7712 0.0839844 4.96436 1.18995 4.96436 4.80773C4.9644 7.41659 6.77125 9.53152 9.0002 9.53152Z" fill="#a0a0a0"></path>
-                                    <path d="M17.912 16.4849L15.8759 11.8981C15.7827 11.6882 15.6191 11.5142 15.4155 11.4081L12.2555 9.76318C12.1859 9.72698 12.1015 9.73402 12.0388 9.78144C11.1451 10.4574 10.0943 10.8147 9.00005 10.8147C7.90566 10.8147 6.85491 10.4574 5.96117 9.78144C5.89835 9.73402 5.81397 9.72698 5.74429 9.76318L2.58456 11.4081C2.38083 11.5142 2.2174 11.6881 2.12418 11.8981L0.0880542 16.4849C-0.0523244 16.8011 -0.0235536 17.1629 0.16504 17.4529C0.353546 17.7429 0.672576 17.916 1.01849 17.916H16.9815C17.3274 17.916 17.6465 17.7428 17.835 17.4529C18.0235 17.1629 18.0524 16.8009 17.912 16.4849Z" fill="#a0a0a0"></path>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0">
-                                        <rect fill="#AAB1C4" height="18" width="18"></rect>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </span>
-                    </div>
+                    <!-- <div class="account">
+						<span class="login-menu__icon">
+							<svg fill="none" height="18" viewBox="0 0 18 18" width="18" xmlns="http://www.w3.org/2000/svg">
+								<g clip-path="url(#clip0)">
+									<path d="M9.0002 9.53152C11.229 9.53152 13.036 7.41659 13.036 4.80773C13.036 1.18995 11.2291 0.0839844 9.0002 0.0839844C6.7712 0.0839844 4.96436 1.18995 4.96436 4.80773C4.9644 7.41659 6.77125 9.53152 9.0002 9.53152Z" fill="#a0a0a0"></path>
+									<path d="M17.912 16.4849L15.8759 11.8981C15.7827 11.6882 15.6191 11.5142 15.4155 11.4081L12.2555 9.76318C12.1859 9.72698 12.1015 9.73402 12.0388 9.78144C11.1451 10.4574 10.0943 10.8147 9.00005 10.8147C7.90566 10.8147 6.85491 10.4574 5.96117 9.78144C5.89835 9.73402 5.81397 9.72698 5.74429 9.76318L2.58456 11.4081C2.38083 11.5142 2.2174 11.6881 2.12418 11.8981L0.0880542 16.4849C-0.0523244 16.8011 -0.0235536 17.1629 0.16504 17.4529C0.353546 17.7429 0.672576 17.916 1.01849 17.916H16.9815C17.3274 17.916 17.6465 17.7428 17.835 17.4529C18.0235 17.1629 18.0524 16.8009 17.912 16.4849Z" fill="#a0a0a0"></path>
+								</g>
+								<defs>
+									<clipPath id="clip0">
+										<rect fill="#AAB1C4" height="18" width="18"></rect>
+									</clipPath>
+								</defs>
+							</svg>
+						</span>
+						<div class="login-menu__submenu">
+							<div class="login-menu__submenu-item">
+								<div class="item-title">Account</div>
+								<span>lexesss64@gmail.com</span>
+							</div>
+							<div class="login-menu__submenu-item">
+								<div class="item-title">Estimated Holdings</div>
+								<span> $0.0 </span>
+							</div>
+							<a class="menu__link login-menu__link" href="https://exrates.me/settings"><span class="menu__link-text">Settings</span></a>
+							<a class="menu__link login-menu__link menu__link--auth--log"><span class="menu__link-text">Log out</span></a>
+						</div>
+					</div> -->
                     <!-- end auth user -->
-                    {% endif %}
-
-
-                    <div class="lang drop">
-                        <button><span class="cur-lang">English</span></button>
-                        <div class="submenu">
-
-
-                            <ul class="menu submenu__list">
-
-                                {% get_available_languages as LANGUAGES %}
-                                {% for language_code, language_name in LANGUAGES %}
-
-                                    <li class="submenu__item">
-                                        <a class="submenu__link" hreflang="{{ language_code }}"
-                                           href="{% translate_url language_code %}" target="blank" rel="alternate">
-                                        <span class="menu__link-text lang-variant">{{ language_name }}</span>
-
-                                        </a>
-
-                                    </li>
-
-                                {% endfor %}
-
-                            </ul>
-                                    </div>
-                                    </div>
-
-
+                    <!-- <div class="lang drop"> -->
+                    <!-- <button><span class="cur-lang">English</span></button> -->
+                    <!-- <div class="submenu">
+							<ul class="menu submenu__list">
+								<li class="submenu__item">
+									<a class="submenu__link">
+										<span class="menu__link-text lang-variant">English</span>
+									</a>
+								</li>
+								<li class="submenu__item">
+									<a class="submenu__link">
+										<span class="menu__link-text lang-variant">Russian</span>
+									</a>
+								</li>
+							</ul>
+						</div> -->
+                    <!-- </div> -->
                     <div class="translate">
                         <button class="translate__trigger">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -156,18 +190,15 @@
                 <div class="menu-title">
                     <p>Account</p>
                 </div>
-                {% if request.session.email %}
-
                 <!-- start not auth user -->
                 <div class="account-info">
                     <div class="account-info__text">
-                        <a class="account-info__email" href="https://exrates.me/login">Login</a>
+                        <a class="account-info__email">Login</a>
                         <span class="slash">or</span>
-                        <a class="account-info__email" href="https://exrates.me/register">Register</a>
+                        <a class="account-info__email">Register</a>
                     </div>
                 </div>
                 <!-- end not auth user	 -->
-                {% else %}
                 <!-- start auth user  -->
                 <div class="account-info account-info--auth">
                     <div class="account-info__img account-info__img--auth">
@@ -177,16 +208,32 @@
                         </svg>
                     </div>
                     <div class="account-info__text">
-                        <div class="account-info__title account-info__title--auth">{{ request.session.email }}</div>
+                        <div class="account-info__title account-info__title--auth">lexesss64@gmail.com</div>
                     </div>
                 </div>
-
                 <!-- end not auth user	 -->
-                {% endif %}
                 <a class="menu-mob__link" href="https://exrates.me/dashboard">
                     <span class="menu-mob__link-text">Trade</span>
                 </a>
-                <a class="menu-mob__link" href="/">
+                <div class="menu-mob__drop-wrap">
+                    <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
+                        <span class="menu-mob__link-text">Funds</span>
+                    </a>
+                    <div class="menu-mob__wrap-links">
+                        <a class="menu-mob__link" href="https://exrates.me/funds/balances">Balances</a>
+                        <a class="menu-mob__link" href="https://exrates.me/funds/transaction-history" target="blank">Transaction history</a>
+                    </div>
+                </div>
+                <div class="menu-mob__drop-wrap">
+                    <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
+                        <span class="menu-mob__link-text">Orders</span>
+                    </a>
+                    <div class="menu-mob__wrap-links">
+                        <a class="menu-mob__link" href="https://exrates.me/orders/open">Open orders</a>
+                        <a class="menu-mob__link" href="https://exrates.me/funds/orders/closed">Orders history</a>
+                    </div>
+                </div>
+                <a class="menu-mob__link" href="{% url 'about-us' %}">
                 {% url 'about-us' as about %}
                     <span  {% if request.path == about %} class=" menu-mob__link-text active" {% else %} class=" menu-mob__link-text"{% endif %}>About us</span>
                 </a>
@@ -205,9 +252,9 @@
                 <a class="menu-mob__link" href="https://exrates.me/news">
                     <span class="menu-mob__link-text">News</span>
                 </a>
-                <a class="menu-mob__link" href="https://support.exrates.me/categories/announcements">
-                    <span class="menu-mob__link-text">Announcments</span>
-                </a>
+                <!-- <a class="menu-mob__link" href="#">
+					<span class="menu-mob__link-text">Announcments</span>
+				</a> -->
                 <div class="menu-mob__drop-wrap">
                     <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
                         <span class="menu-mob__link-text">Community</span>
