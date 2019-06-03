@@ -148,7 +148,7 @@
                             </ul>
                         </div>
                         <div class="back-btn">
-                            <a href="{% url 'become-advisor' %}"><span>
+                            <a href="{{request.META.HTTP_REFERER}}"><span>
                                     < Back</span> </a> </div> </div> </form> </div> </div> <div class="scripts">
                                         <!-- Set JS assets-->
                                         <script type="text/javascript">
@@ -156,6 +156,7 @@
                                             {
                                                 new google.translate.TranslateElement(
                                                 {
+
                                                     pageLanguage: 'en'
                                                 }, 'google_translate_element');
                                             }

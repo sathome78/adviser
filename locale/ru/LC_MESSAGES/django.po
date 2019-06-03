@@ -52,7 +52,7 @@ msgstr ""
 #, fuzzy, python-format
 #| msgid "Open account for $20 and get 0%% commission"
 msgid " Open account for $20 and get 0%% commission "
-msgstr "Откройте за счёт с рпапрощгпапрол"
+msgstr ""
 
 #: templates/main/fiat.html:17
 msgid " <p>on outgoing payments in the Singapore Bank</p>"
