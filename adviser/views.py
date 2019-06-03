@@ -138,3 +138,7 @@ class TermsPageView(TemplateView):
 
 class BecomeAdviserPageView(TemplateView):
     template_name = 'adviser/become-advisor.html'
+
+
+class AdviserDemoPageView(TemplateView):
+    template_name = 'adviser/adviser_page.html'
