@@ -52,8 +52,8 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_LANGUAGES = ('en', 'ru')
 
 MIDDLEWARE = [
-    #'django.middleware.cache.UpdateCacheMiddleware',
-    #'django.middleware.cache.FetchFromCacheMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.gzip.GZipMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -123,9 +123,16 @@ PIPEDRIVE_NEW_ADVISER = config.get('PIPEDRIVE_FIELDS', 'pipedrive_new_adviser')
 
 DOMAIN = config.get('DEFAULT', 'DOMAIN')
 
+
+MYSQL_USER = config.get('MYSQL', 'MYSQL_USER')
+MYSQL_DB_NAME = config.get('MYSQL', 'MYSQL_DB_NAME')
+MYSQL_PASSWORD = config.get('MYSQL', 'MYSQL_PASSWORD')
+
+
+
 PIPELINE_CHANNELS = {
-    "IEO": 2,
-    "Listing": 3
+    "IEO": config.get('PIPEDRIVE_FIELDS', 'pipedrive_ieo'),
+    "Listing": config.get('PIPEDRIVE_FIELDS', 'pipedrive_listing')
     }
 
 WSGI_APPLICATION = 'exrates_adviser.wsgi.application'
@@ -136,7 +143,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.getenv('SQLITE_FILE_PATH', os.path.join(BASE_DIR, 'db.sqlite3')),
-        }
+        },
+'   default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': MYSQL_DB_NAME,
+        'USER': MYSQL_USER,
+        'PASSWORD': MYSQL_PASSWORD,
+        'HOST': DOMAIN,   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
     }
 
 # Password validation
