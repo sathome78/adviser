@@ -52,8 +52,8 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_LANGUAGES = ('en', 'ru')
 
 MIDDLEWARE = [
-    'django.middleware.cache.UpdateCacheMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    #'django.middleware.cache.UpdateCacheMiddleware',
+    #'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.gzip.GZipMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',

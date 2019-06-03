@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 import configparser
 import logging
-import mimetypes
 
 import os
-
-from django.conf import settings
 
 config = configparser.ConfigParser()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
