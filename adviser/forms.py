@@ -9,7 +9,7 @@ from adviser.models import Adviser
 REQUEST_CHOICES = (
     (1, "Funds Withdrawal"),
     (2, "API Issue"),
-    (3, "Development sugestions"),
+    (3, "Development suggestions"),
     (4, "Help with Deposit"),
     (5, "Help with withdrawal"),
     (6, "Not receiving email"),
@@ -17,11 +17,11 @@ REQUEST_CHOICES = (
     (8, "Help with google Aut"),
     (9, "Help with SMS Aut"),
 
-    (10, "Help with acoount"),
+    (10, "Help with account"),
     (11, "Help with trade"),
-    (12, "Prommoutions"),
+    (12, "Promotions"),
     (13, "Security issues"),
-    (14, "Bussiness comunication"),
+    (14, "Business communication"),
     (15, "Service description"),
 
     )

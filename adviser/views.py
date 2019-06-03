@@ -43,7 +43,6 @@ class SupportPageView(FormView):
 class DealPageView(FormView):
     template_name = 'main/form-listing.html'
     form_class = ListingForm
-    success_url = '.'
 
     def get_context_data(self, **kwargs):
         context = super(DealPageView, self).get_context_data(**kwargs)
@@ -118,8 +117,24 @@ class AdviserProfileView(TemplateView):
 class FiatPageView(TemplateView):
     template_name = 'main/fiat.html'
 
-class AboutUsPageView(TemplateView):
+class AboutUsPageView(FormView):
     template_name = 'main/about-us.html'
+
+    form_class = ListingForm
+    success_url = '.'
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutUsPageView, self).get_context_data(**kwargs)
+        return context
+
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        if form.is_valid():
+            PipedriveClient().create_deal(form.cleaned_data)
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
 
 class ClientCenterPageView(TemplateView):
     template_name = 'main/client-center.html'
@@ -142,3 +157,10 @@ class BecomeAdviserPageView(TemplateView):
 
 class AdviserDemoPageView(TemplateView):
     template_name = 'adviser/adviser_page.html'
+
+
+    def get_context_data(self, **kwargs):
+        pk = self.kwargs['id']
+        data = super().get_context_data(**kwargs)
+        data['form'] = ListingForm
+        return data

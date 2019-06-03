@@ -35,32 +35,28 @@ def home(request):
 
 
 urlpatterns = [
-        url(r'^$', home, name='home'),
+                  url(r'^$', home, name='home'),
 
+                  url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
+                  url(r'^adviser-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
 
-        url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
-url(r'^adviser-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
+                  url(r'^adviser/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(),
+                      name='adviser-update'),
+                  url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
 
-        url(r'^adviser/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(),
-            name='adviser-update'),
-        url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
+                  url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
+                  url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
+                  url(r'^privacy-policy/$', PrivacyPolicyPageView.as_view(), name='privacy-policy'),
+                  url(r'^terms-of-use/$', TermsPageView.as_view(), name='terms-of-use'),
 
+                  url(r'^become-advisor/$', BecomeAdviserPageView.as_view(), name='become-advisor'),
+                  url(r'^about-us/$', AboutUsPageView.as_view(), name='about-us'),
 
+                  url(r'^advisor-form/$', AdviserFormView.as_view(), name='advisor-form'),
+                  url(r'^support-center/$', SupportPageView.as_view(), name='support-center'),
 
-        url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
-        url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
-        url(r'^privacy-policy/$', PrivacyPolicyPageView.as_view(), name='privacy-policy'),
-        url(r'^terms-of-use/$', TermsPageView.as_view(), name='terms-of-use'),
+                  url('admin/', admin.site.urls),
+                  url('i18n/', include('django.conf.urls.i18n')),
 
-
-        url(r'^become-advisor/$', BecomeAdviserPageView.as_view(), name='become-advisor'),
-        url(r'^about-us/$', AboutUsPageView.as_view(), name='about-us'),
-
-        url(r'^advisor-form/$', AdviserFormView.as_view(), name='advisor-form'),
-        url(r'^support-center/$', SupportPageView.as_view(), name='support-center'),
-
-        url('admin/', admin.site.urls),
-        url('i18n/', include('django.conf.urls.i18n')),
-
-        ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+                  ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
