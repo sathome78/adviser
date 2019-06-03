@@ -28,10 +28,13 @@ from adviser.views import (SupportPageView, DealPageView, AdviserFormView, Advis
 
 
 def home(request):
+    request.session['username'] = request.GET.get('username')
+    request.session['email'] = request.GET.get('email')
+    request.session['picture'] = request.GET.get('picture')
     return redirect(reverse("about-us"))
 
 
-urlpatterns = i18n_patterns(
+urlpatterns = [
         url(r'^$', home, name='home'),
 
 
@@ -55,5 +58,5 @@ urlpatterns = i18n_patterns(
         url('admin/', admin.site.urls),
         url('i18n/', include('django.conf.urls.i18n')),
 
-        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+        ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
