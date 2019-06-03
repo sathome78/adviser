@@ -51,6 +51,18 @@ document.addEventListener('scroll', function (e) {
 
 // end parallax function
 
+var openChat;
+document.addEventListener("DOMContentLoaded", function () {
+	openChat = function openChat() {
+		var chatEl = document.getElementById("launcher");
+		var iframeDoc = chatEl.contentWindow.document.body.getElementsByTagName("button")[0];
+		iframeDoc.click();
+	};
+});
+
+$(".vip").click(function () {
+	openChat();
+});
 
 // input label script
 
