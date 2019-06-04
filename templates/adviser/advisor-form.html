@@ -58,84 +58,122 @@
                                 <label class="error" for="id_linkedin"><span class="standart-text"></span></label>
                             </div>
                         </div>
-                        <div class="button-wr">
-                            <button class="standart-btn" type="submit"><span>Submit</span></button>
+                         <div class="button-wr">
+                    <button class="standart-btn" type="submit"><span>Submit</span></button>
+                </div>
+                <div class="left-part success-mess">
+                    <div class="top-part">
+                        <div class="pic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                <circle cx="40" cy="40" r="39" stroke="#94C2FF" stroke-width="2" />
+                                <rect x="22" y="37.1924" width="3" height="20" rx="1.5" transform="rotate(-45 22 37.1924)" fill="#94C2FF" />
+                                <rect x="55.2344" y="28" width="3" height="30" rx="1.5" transform="rotate(45 55.2344 28)" fill="#94C2FF" />
+                            </svg>
+                        </div>
+                        <div class="message-txt">
+                            <p>IEO request submitted</p>
                         </div>
                     </div>
-                    <div class="right-part">
-                        <div class="title-wr">
-                            <h4>Benefits for Exrates Advisors</h4>
-                        </div>
-                        <div class="a-info-part">
-                            <ul class="a-form-list">
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'img/pics/a-form1.svg' %}" alt="">
-                                    </div>
-                                    <span>Special reward system for advisors: <br>get from 5% to 15%</span>
+                    <div class="bottom-part">
+                        <nav class="success-nav">
+                            <ul class="success-nav-list">
+                                <li class="success-nav-list-item">
+                                    <a href="https://exrates.me/dashboard"><span>Trade</span></a>
                                 </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'img/pics/a-form2.svg' %}" alt="">
-                                    </div>
-                                    <span>Get exclusive analytical market reports</span>
+                                <li class="success-nav-list-item">
+                                    <a href="{%  url 'support-center'%}"><span>Support</span></a>
                                 </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'img/pics/a-form3.svg' %}" alt="">
-                                    </div>
-                                    <span>Participation in online trainings & webinars</span>
+                                <li class="success-nav-list-item">
+                                    <a href="https://exrates.me/ieo"><span>Token Sale</span></a>
                                 </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'img/pics/a-form4.svg' %}" alt="">
-                                    </div>
-                                    <span>Your personal page on Exchange website</span>
+                                <li class="success-nav-list-item">
+                                    <a href="{% url 'client-center' %}"><span>Contacts</span></a>
                                 </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'img/pics/a-form5.svg' %}" alt="">
-                                    </div>
-                                    <span>Your personal manager</span>
+                                <li class="success-nav-list-item">
+                                    <a href="{% url 'fiat'%}"><span>Fiat</span></a>
                                 </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'img/pics/a-form6.svg' %}" alt="">
-                                    </div>
-                                    <span>Attend conferences & events as a part of Exrates team</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'img/pics/a-form7.svg' %}" alt="">
-                                    </div>
-                                    <span>An opportunity to become a part of international community</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{% static 'img/pics/a-form8.svg' %}" alt="">
-                                    </div>
-                                    <span>Referral program</span>
+                                <li class="success-nav-list-item">
+                                    <a href="#"><span>Announcements</span></a>
                                 </li>
                             </ul>
-                        </div>
-                        <div class="back-btn" >
-                            <a href="#" onclick="window.history.back()"><span>
-                                    < Back</span> </a> </div> </div> </form> </div> </div> <div class="scripts">
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="right-part">
+                <div class="title-wr">
+                    <h4>Benefits for Exrates Advisors</h4>
+                </div>
+                <div class="a-info-part">
+                    <ul class="a-form-list">
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/pics/a-form1.svg'%}" alt="">
+                            </div>
+                            <span>Special reward system for advisors: <br>get from 5% to 15%</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/pics/a-form2.svg'%}" alt="">
+                            </div>
+                            <span>Get exclusive analytical market reports</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/pics/a-form3.svg'%}" alt="">
+                            </div>
+                            <span>Participation in online trainings & webinars</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/pics/a-form4.svg'%}" alt="">
+                            </div>
+                            <span>Your personal page on Exchange website</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/pics/a-form5.svg'%}" alt="">
+                            </div>
+                            <span>Your personal manager</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/pics/a-form6.svg' %}" alt="">
+                            </div>
+                            <span>Attend conferences & events as a part of Exrates team</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/pics/a-form7.svg'%}" alt="">
+                            </div>
+                            <span>An opportunity to become a part of international community</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static 'img/pics/a-form8.svg'%}" alt="">
+                            </div>
+                            <span>Referral program</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="back-btn">
+                    <a href="#" onclick="window.history.back()"><span>
+                            < Back</span> </a> </div> </div> </form> </div>
+        <div class="scripts">
                                         <!-- Set JS assets-->
                                         <script type="text/javascript">
                                             function googleTranslateElementInit()
                                             {
                                                 new google.translate.TranslateElement(
                                                 {
+
                                                     pageLanguage: 'en'
                                                 }, 'google_translate_element');
                                             }
                                         </script>
                                         <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async=""></script>
                                         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-                                        <script src="{% static 'js/vendor-bundle.min.js' %}"></script>
-                                        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/2.0.4/js/Jcrop.min.js"></script>
-                                        <script src="{% static 'js/custom-bundle.min.js'%}"></script>
-                        </div>
+                                        <script src="{% static 'js/vendor-bundle.min.js'%}"></script>
+                                        <script src="{% static 'js/custom-bundle.min.js'%}"></script></div>
     </body>
 </html>
