@@ -93,4 +93,6 @@ local_settings.py
 .idea
 idea/
 
+db.sqlite
+
 config/*.ini

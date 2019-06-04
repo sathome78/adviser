@@ -1,7 +1,8 @@
 {%  load static urls %}
 <html>
     <head>
-        <title>Document Template Title</title>
+       <title>Apply for listing | Exrates</title>
+<meta name="description" content="Apply your coin for listing in 2 clicks! Receive your exclusive offer immediately and get listed in few days!" />
         <!-- Main Meta information-->
         <meta charset="utf-8" />
         <meta http-equiv="Cache-control" content="public" />
@@ -28,7 +29,7 @@
                 </div>
             </div>
             <div class="form-part">
-                <form action="{% url 'deal' %}" class="list-form" enctype="multipart/form-data" method="POST"> {% csrf_token %}
+                <form action="{% url 'deal' %}" class="list-form nomodal" enctype="multipart/form-data" method="POST"> {% csrf_token %}
                     <!-- start default variant -->
                     <div class="left-part">
                         <div class="title">
@@ -58,7 +59,7 @@
                                 <label class="error" for="id_telegram"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
-                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="email" id="id_email">
+                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input required-field reqiered-field" autocomplete="new-password" type="text" name="email" id="id_email">
                                 <label class="wrap-input__label" for="id_email">Email*</label>
                                 <label class="error" for="id_email"><span class="standart-text"></span></label>
                             </div>
@@ -148,7 +149,7 @@
                             </ul>
                         </div>
                         <div class="back-btn">
-                            <a href="{{request.META.HTTP_REFERER}}"><span>
+                            <a href="#" onclick="window.history.back()"><span>
                                     < Back</span> </a> </div> </div> </form> </div> </div> <div class="scripts">
                                         <!-- Set JS assets-->
                                         <script type="text/javascript">

@@ -1,11 +1,16 @@
       {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% block title %}
+<title>Support | Exrates</title>
+<meta name="description" content="Exrates provides 24/7 support. Find your issue in FAQ, submit your request here or contact our Support Team." />
+{% endblock %}
+
 {% block content %}
 
             <div class="support-center-wr">
                 <div class="support-center-inner">
                     <div class="top-title">
-                        <h2>Support Centre</h2>
+                        <h2>Support Center</h2>
                         <div class="open-sedebar-trigger">
                             <button>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
@@ -54,7 +59,7 @@
                                 <span>Become Advisor</span></a></li>
                     </ul>
                     <div class="button-wr">
-                        <a href="{% url 'deal' %}" class="standart-btn" target="blank"><span>List your Coin</span></a>
+                        <a href="{% url 'deal' %}" class="standart-btn " target="blank"><span>List your Coin</span></a>
                     </div>
                 </div>
                         <div class="content-part">
@@ -81,14 +86,14 @@
                                     </div>
                                     <div class="inputs-wr">
                                         <div class="wrap-input input-item popup__wrap-input">
-                                            <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input " autocomplete="new-password" type="text" name="email" id="id_email">
+                                            <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input required-field reqiered-field" autocomplete="new-password" type="text" name="email" id="id_email">
                                             <label class="wrap-input__label" for="id_email">Enter email</label>
                                             <label class="error" for="id_email"><span class="standart-text"></span></label>
                                         </div>
                                     </div>
                                     <div class="inputs-wr">
                                         <div class="wrap-input input-item popup__wrap-input">
-                                            <textarea class="wrap-input__input ng-dirty ng-valid ng-touched form-input " autocomplete="new-password" type="text" name="message" id="id_message"> </textarea>
+                                            <textarea class="wrap-input__input ng-dirty ng-valid ng-touched form-input " autocomplete="new-password" type="text" name="message" id="id_message"></textarea>
                                             <label class="wrap-input__label" for="id_message">Your Message</label>
                                             <label class="error" for="id_message"><span class="standart-text"></span></label>
                                         </div>
@@ -112,16 +117,16 @@
                                 <h4>top-10 questions </h4>
                             </div>
                             <ul class="questions-list">
-                                <li><a href="https://support.exrates.me/article/how-to-register" target="blank"><span>How long does withdrawal take?</span></a></li>
-                                <li><a href="https://support.exrates.me/article/inputoutput" target="blank"><span>How long does withdrawal take?</span></a></li>
-                                <li><a href="https://support.exrates.me/article/inputoutput" target="blank"><span>My deposit wasn't approved</span></a></li>
-                                <li><a href="https://support.exrates.me/article/commissions"><span>Where can I check the Fees?</span></a></li>
-                                <li><a href="https://support.exrates.me/article/i-havent-received-email" target="blank"><span>I haven't received a PIN-code</span></a></li>
-                                <li><a href="https://support.exrates.me/article/how-create-my-first-order" target="blank"><span>How to create an order?</span></a></li>
-                                <li><a href="https://support.exrates.me/article/verification" target="blank"><span>How to pass verification?</span></a></li>
-                                <li><a href="https://support.exrates.me/article/api "><span>Where can I get your API?</span></a></li>
-                                <li><a href="https://support.exrates.me/article/how-add-your-token-our-exchange" target="blank"><span>How to get listed?</span></a></li>
-                                <li><a href="ttps://support.exrates.me/article/how-contact-you-partnership-and-cooperation" target="blank"><span>How to contact you for partnership and cooperation?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/how-to-register" target="_blank"><span>How to register on Exrates?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/inputoutput" target="_blank"><span>How long does withdrawal take?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/inputoutput" target="_blank"><span>My deposit wasn't approved</span></a></li>
+                                <li><a href="https://support.exrates.me/article/commissions" target="_blank"><span>Where can I check the Fees?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/i-havent-received-email" target="_blank"><span>I haven't received a PIN-code</span></a></li>
+                                <li><a href="https://support.exrates.me/article/how-create-my-first-order" target="_blank"><span>How to create an order?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/verification" target="_blank" ><span>How to pass verification?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/api" target="_blank"><span>Where can I get your API?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/how-add-your-token-our-exchange" target="_blank"><span>How to get listed?</span></a></li>
+                                <li><a href="ttps://support.exrates.me/article/how-contact-you-partnership-and-cooperation" target="_blank"><span>How to contact you for partnership and cooperation?</span></a></li>
                             </ul>
                         </div>
                     </div>

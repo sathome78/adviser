@@ -3,7 +3,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Exrates info page</title>
+
+
+    {%  block title %}
+
+
+    {% endblock %}
 
     <!-- Main Meta information-->
     <meta charset="utf-8" />
@@ -19,7 +24,6 @@
     <!--[if lte IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link rel="stylesheet" type="text/css" href="http://jcrop-cdn.tapmodo.com/v0.9.12/css/jquery.Jcrop.min.css">
 
 <link rel="apple-touch-icon" sizes="57x57" href="{%  static 'apple-icon-57x57'%}">
 <link rel="apple-touch-icon" sizes="60x60" href="{%  static 'apple-icon-60x60.png'%}">
@@ -63,6 +67,30 @@
             {% include "basic/_footer.html" %}
         {% endblock %}
     </div>
+
+<div class="overlay modal thk-modal">
+    <div class="popup">
+        <div class="popup__close close-trigger"></div>
+        <div class="logo-login-mob mobile-container"><img alt="" src="{%  static 'img/pics/logo-exrates.svg'%}"></div>
+        <h6 class="popup__title">Thank you</h6>
+        <p class="popup__subtitle">Our specialist will contact you shortly</p>
+        <div class="button-wr">
+            <button class="standart-btn close-trigger" type="submit"><span>OK</span></button>
+        </div>
+    </div>
+</div>
+<div class="overlay modal err-modal">
+    <div class="popup">
+        <div class="popup__close close-trigger"></div>
+        <div class="logo-login-mob mobile-container"><img alt="" src="{% static 'img/pics/logo-exrates.svg'%}"></div>
+        <h6 class="popup__title">Error</h6>
+        <p class="popup__subtitle">Please resend the form</p>
+        <div class="button-wr">
+            <button class="standart-btn close-trigger" type="submit"><span>OK</span></button>
+        </div>
+    </div>
+</div>
+
 {% block extrajs %}    {% endblock %}
 <div class="scripts">
     <!-- Set JS assets-->
@@ -78,7 +106,6 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
 
-  <script type="text/javascript" src="http://jcrop-cdn.tapmodo.com/v0.9.12/js/jquery.Jcrop.min.js"></script>
 
   <script src="{% static 'js/vendor-bundle.min.js'%}"></script>
   <script src="{% static 'js/custom-bundle.min.js'%}"></script>
