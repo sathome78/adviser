@@ -12,7 +12,7 @@
                         <li>
                             <a href="https://exrates.me/dashboard"><span>trade</span></a>
                         </li>
-                        <li>
+                       <!-- <li>
                             <div class="drop">
                                 <a href="#"><span>Funds</span></a>
                                 <div class="submenu">
@@ -49,7 +49,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </li>
+                        </li>-->
                         <li>
                             {% url 'about-us' as about %}
                             <a href="{% url 'about-us' %}" {% if request.path == about %} class="active"{% endif %} ><span>About us</span></a>
@@ -215,7 +215,7 @@
                 <a class="menu-mob__link" href="https://exrates.me/dashboard">
                     <span class="menu-mob__link-text">Trade</span>
                 </a>
-                <div class="menu-mob__drop-wrap">
+                <!--<div class="menu-mob__drop-wrap">
                     <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
                         <span class="menu-mob__link-text">Funds</span>
                     </a>
@@ -228,12 +228,12 @@
                     <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
                         <span class="menu-mob__link-text">Orders</span>
                     </a>
-                    <!--
+
                     <div class="menu-mob__wrap-links">
                         <a class="menu-mob__link" href="https://exrates.me/orders/open">Open orders</a>
                         <a class="menu-mob__link" href="https://exrates.me/funds/orders/closed">Orders history</a>
-                    </div>-->
-                </div>
+                    </div>
+                </div>-->
                 <a class="menu-mob__link" href="{% url 'about-us' %}">
                 {% url 'about-us' as about %}
                 {%  url 'client-center'  as clientcenter %}
