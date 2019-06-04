@@ -1,5 +1,10 @@
       {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% block title %}
+<title>Support | Exrates</title>
+<meta name="description" content="Exrates provides 24/7 support. Find your issue in FAQ, submit your request here or contact our Support Team." />
+{% endblock %}
+
 {% block content %}
 
             <div class="support-center-wr">
@@ -54,7 +59,7 @@
                                 <span>Become Advisor</span></a></li>
                     </ul>
                     <div class="button-wr">
-                        <a href="{% url 'deal' %}" class="standart-btn" target="blank"><span>List your Coin</span></a>
+                        <a href="{% url 'deal' %}" class="standart-btn " target="blank"><span>List your Coin</span></a>
                     </div>
                 </div>
                         <div class="content-part">
@@ -62,7 +67,7 @@
                                 <div class="title-wr">
                                     <h4>submit a request </h4>
                                 </div>
-                                <form action="{% url 'support-center' %}" class="list-form"  enctype="multipart/form-data" method="POST">{% csrf_token %}
+                                <form action="{% url 'support-center' %}" class="list-form nomodal"  enctype="multipart/form-data" method="POST">{% csrf_token %}
                                     <div class="drop-wr">
                                         <div class="wrap-input input-item popup__wrap-input">
                                             <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="request_type" id="id_request_type" value="1" readonly>
@@ -115,11 +120,11 @@
                                 <li><a href="https://support.exrates.me/article/how-to-register" target="blank"><span>How long does withdrawal take?</span></a></li>
                                 <li><a href="https://support.exrates.me/article/inputoutput" target="blank"><span>How long does withdrawal take?</span></a></li>
                                 <li><a href="https://support.exrates.me/article/inputoutput" target="blank"><span>My deposit wasn't approved</span></a></li>
-                                <li><a href="https://support.exrates.me/article/commissions"><span>Where can I check the Fees?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/commissions" target="blank"><span>Where can I check the Fees?</span></a></li>
                                 <li><a href="https://support.exrates.me/article/i-havent-received-email" target="blank"><span>I haven't received a PIN-code</span></a></li>
                                 <li><a href="https://support.exrates.me/article/how-create-my-first-order" target="blank"><span>How to create an order?</span></a></li>
-                                <li><a href="https://support.exrates.me/article/verification" target="blank"><span>How to pass verification?</span></a></li>
-                                <li><a href="https://support.exrates.me/article/api "><span>Where can I get your API?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/verification" target="blank" ><span>How to pass verification?</span></a></li>
+                                <li><a href="https://support.exrates.me/article/api" target="blank"><span>Where can I get your API?</span></a></li>
                                 <li><a href="https://support.exrates.me/article/how-add-your-token-our-exchange" target="blank"><span>How to get listed?</span></a></li>
                                 <li><a href="ttps://support.exrates.me/article/how-contact-you-partnership-and-cooperation" target="blank"><span>How to contact you for partnership and cooperation?</span></a></li>
                             </ul>

@@ -39,7 +39,7 @@ class ManagerAdmin(TranslationAdmin):
 
     fieldsets = (
         (None, {
-            "fields": ("name", "surname", "job_title"),
+            "fields": ("name", "surname", "job_title", "avatar"),
             }),
         ("Contacts", {
             "fields": ("telegram", "email",),

@@ -51,18 +51,6 @@ document.addEventListener('scroll', function (e) {
 
 // end parallax function
 
-var openChat;
-document.addEventListener("DOMContentLoaded", function () {
-	openChat = function openChat() {
-		var chatEl = document.getElementById("launcher");
-		var iframeDoc = chatEl.contentWindow.document.body.getElementsByTagName("button")[0];
-		iframeDoc.click();
-	};
-});
-
-$(".vip").click(function () {
-	openChat();
-});
 
 // input label script
 
@@ -125,8 +113,11 @@ $(".reqiered-field").keyup(function (e) {
 });
 
 $(".reqiered-field").focusout(function (e) {
-	console.log($(this).val());
+	// if($(this).val() !== ""){
+	// 	$(this).closest(".input-item").addClass("active");
+	// }
 	if ($(this).val() == "") {
+		// $(this).closest(".input-item").removeClass("active");
 		$(this).closest(".input-item").addClass("validation-error");
 		$(this).closest(".input-item").find(".error span").html("can't be empty");
 		sendForm = false;
@@ -190,11 +181,13 @@ $("form").on("submit", function (e) {
 			data: formData,
 
 			success: function success(data) {
-				$(".thk-modal").addClass("active");
-				$("body").addClass("modal-open");
-				if (that.hasClass("list-form")) {
+
+				if (that.hasClass("nomodal")) {
 					$("body").removeClass("modal-open");
 					$(".list-form .success-mess").addClass("active");
+				} else {
+					$(".thk-modal").addClass("active");
+					$("body").addClass("modal-open");
 				}
 
 				that.find(".form-input").each(function () {
@@ -202,12 +195,13 @@ $("form").on("submit", function (e) {
 				});
 			},
 			error: function error(xhr, err, data) {
-				$(".err-modal").addClass("active");
-				$("body").addClass("modal-open");
-				console.log(that);
-				if (that.hasClass("list-form")) {
+
+				if (that.hasClass("nomodal")) {
 					$("body").removeClass("modal-open");
 					$(".list-form .success-mess").addClass("active");
+				} else {
+					$(".err-modal").addClass("active");
+					$("body").addClass("modal-open");
 				}
 			}
 		});
@@ -279,209 +273,228 @@ $(".menu-mob__drop-wrap").click(function () {
 	$(this).toggleClass("active");
 });
 
-var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
+// var VanillaRunOnDomReady = function() {
 
-	var crop_max_width = 400;
-	var crop_max_height = 400;
-	var jcrop_api;
-	var canvas;
-	var context;
-	var image;
+// 	var crop_max_width = 400;
+// 	var crop_max_height = 400;
+// 	var jcrop_api;
+// 	var canvas;
+// 	var context;
+// 	var image;
 
-	var prefsize;
+// 	var prefsize;
 
-	$("#crop-file").change(function () {
-		loadImage(this);
-	});
+// 	$("#crop-file").change(function() {
+// 		loadImage(this);
+// 	});
 
-	function loadImage(input) {
-		if (input.files && input.files[0]) {
-			var reader = new FileReader();
-			canvas = null;
-			reader.onload = function (e) {
-				image = new Image();
-				image.onload = validateImage;
-				image.src = e.target.result;
-			};
-			reader.readAsDataURL(input.files[0]);
-		}
-	}
+// 	function loadImage(input) {
+// 		if (input.files && input.files[0]) {
+// 			var reader = new FileReader();
+// 			canvas = null;
+// 			reader.onload = function(e) {
+// 				image = new Image();
+// 				image.onload = validateImage;
+// 				image.src = e.target.result;
+// 			}
+// 			reader.readAsDataURL(input.files[0]);
+// 		}
+// 	}
 
-	function dataURLtoBlob(dataURL) {
-		var BASE64_MARKER = ';base64,';
-		if (dataURL.indexOf(BASE64_MARKER) == -1) {
-			var parts = dataURL.split(',');
-			var contentType = parts[0].split(':')[1];
-			var raw = decodeURIComponent(parts[1]);
+// 	function dataURLtoBlob(dataURL) {
+// 		var BASE64_MARKER = ';base64,';
+// 		if (dataURL.indexOf(BASE64_MARKER) == -1) {
+// 			var parts = dataURL.split(',');
+// 			var contentType = parts[0].split(':')[1];
+// 			var raw = decodeURIComponent(parts[1]);
 
-			return new Blob([raw], {
-				type: contentType
-			});
-		}
-		var parts = dataURL.split(BASE64_MARKER);
-		var contentType = parts[0].split(':')[1];
-		var raw = window.atob(parts[1]);
-		var rawLength = raw.length;
-		var uInt8Array = new Uint8Array(rawLength);
-		for (var i = 0; i < rawLength; ++i) {
-			uInt8Array[i] = raw.charCodeAt(i);
-		}
+// 			return new Blob([raw], {
+// 				type: contentType
+// 			});
+// 		}
+// 		var parts = dataURL.split(BASE64_MARKER);
+// 		var contentType = parts[0].split(':')[1];
+// 		var raw = window.atob(parts[1]);
+// 		var rawLength = raw.length;
+// 		var uInt8Array = new Uint8Array(rawLength);
+// 		for (var i = 0; i < rawLength; ++i) {
+// 			uInt8Array[i] = raw.charCodeAt(i);
+// 		}
 
-		return new Blob([uInt8Array], {
-			type: contentType
-		});
-	}
+// 		return new Blob([uInt8Array], {
+// 			type: contentType
+// 		});
+// 	}
 
-	function validateImage() {
-		if (canvas != null) {
-			image = new Image();
-			image.onload = restartJcrop;
-			image.src = canvas.toDataURL('image/png');
-		} else restartJcrop();
-	}
+// 	function validateImage() {
+// 		if (canvas != null) {
+// 			image = new Image();
+// 			image.onload = restartJcrop;
+// 			image.src = canvas.toDataURL('image/png');
+// 		} else restartJcrop();
+// 	}
 
-	function restartJcrop() {
-		if (jcrop_api != null) {
-			jcrop_api.destroy();
-		}
-		$("#views").empty();
-		$("#views").append("<canvas id=\"canvas\">");
-		canvas = $("#canvas")[0];
-		context = canvas.getContext("2d");
-		canvas.width = image.width;
-		canvas.height = image.height;
-		context.drawImage(image, 0, 0);
-		$("#canvas").Jcrop({
-			onChange: selectcanvas,
-			onRelease: clearcanvas,
-			boxWidth: crop_max_width,
-			boxHeight: crop_max_height,
-			aspectRatio: 1 / 1
-		}, function () {
-			jcrop_api = this;
-		});
-		clearcanvas();
-	}
+// 	function restartJcrop() {
+// 		if (jcrop_api != null) {
+// 			jcrop_api.destroy();
+// 		}
+// 		$("#views").empty();
+// 		$("#views").append("<canvas id=\"canvas\">");
+// 		canvas = $("#canvas")[0];
+// 		context = canvas.getContext("2d");
+// 		canvas.width = image.width;
+// 		canvas.height = image.height;
+// 		context.drawImage(image, 0, 0);
+// 		$("#canvas").Jcrop({
+// 			onChange: selectcanvas,
+// 			onRelease: clearcanvas,
+// 			boxWidth: crop_max_width,
+// 			boxHeight: crop_max_height,
+// 			aspectRatio: 1 / 1
+// 		}, function() {
+// 			jcrop_api = this;
+// 		});
+// 		clearcanvas();
+// 	}
 
-	function clearcanvas() {
-		prefsize = {
-			x: 0,
-			y: 0,
-			w: canvas.width,
-			h: canvas.height
+// 	function clearcanvas() {
+// 		prefsize = {
+// 			x: 0,
+// 			y: 0,
+// 			w: canvas.width,
+// 			h: canvas.height,
+// 		};
+// 	}
+
+// 	function selectcanvas(coords) {
+// 		prefsize = {
+// 			x: Math.round(coords.x),
+// 			y: Math.round(coords.y),
+// 			w: Math.round(coords.w),
+// 			h: Math.round(coords.h)
+// 		};
+// 	}
+
+// 	function applyCrop() {
+// 		canvas.width = prefsize.w;
+// 		canvas.height = prefsize.h;
+// 		context.drawImage(image, prefsize.x, prefsize.y, prefsize.w, prefsize.h, 0, 0, canvas.width, canvas.height);
+// 		validateImage();
+// 	}
+
+// 	function applyScale(scale) {
+// 		if (scale == 1) return;
+// 		canvas.width = canvas.width * scale;
+// 		canvas.height = canvas.height * scale;
+// 		context.drawImage(image, 0, 0, canvas.width, canvas.height);
+// 		validateImage();
+// 	}
+
+// 	function applyRotate() {
+// 		canvas.width = image.height;
+// 		canvas.height = image.width;
+// 		context.clearRect(0, 0, canvas.width, canvas.height);
+// 		context.translate(image.height / 2, image.width / 2);
+// 		context.rotate(Math.PI / 2);
+// 		context.drawImage(image, -image.width / 2, -image.height / 2);
+// 		validateImage();
+// 	}
+
+// 	function applyHflip() {
+// 		context.clearRect(0, 0, canvas.width, canvas.height);
+// 		context.translate(image.width, 0);
+// 		context.scale(-1, 1);
+// 		context.drawImage(image, 0, 0);
+// 		validateImage();
+// 	}
+
+// 	function applyVflip() {
+// 		context.clearRect(0, 0, canvas.width, canvas.height);
+// 		context.translate(0, image.height);
+// 		context.scale(1, -1);
+// 		context.drawImage(image, 0, 0);
+// 		validateImage();
+// 	}
+
+// 	$("#views").keyup(function(e) {
+// 		if(e.keyCode == 13){
+
+// 			applyCrop();
+// 		}
+// 	});
+// 	$("#scalebutton").click(function(e) {
+// 		var scale = prompt("Scale Factor:", "1");
+// 		applyScale(scale);
+// 	});
+// 	$("#rotatebutton").click(function(e) {
+// 		applyRotate();
+// 	});
+// 	$("#hflipbutton").click(function(e) {
+// 		applyHflip();
+// 	});
+// 	$("#vflipbutton").click(function(e) {
+// 		applyVflip();
+// 	});
+
+// 	$("#form").submit(function(e) {
+// 		e.preventDefault();
+// 		formData = new FormData($(this)[0]);
+// 		var blob = dataURLtoBlob(canvas.toDataURL('image/png'));
+//   //---Add file blob to the form data
+//   formData.append("cropped_image[]", blob);
+//   $.ajax({
+//   	url: "whatever.php",
+//   	type: "POST",
+//   	data: formData,
+//   	contentType: false,
+//   	cache: false,
+//   	processData: false,
+//   	success: function(data) {
+//   		alert("Success");
+//   	},
+//   	error: function(data) {
+//   		alert("Error");
+//   	},
+//   	complete: function(data) {}
+//   });
+// });
+
+
+// }
+
+// var alreadyrunflag = 0;
+
+// if (document.addEventListener)
+// 	document.addEventListener("DOMContentLoaded", function(){
+// 		alreadyrunflag=1; 
+// 		VanillaRunOnDomReady();
+// 	}, false);
+// else if (document.all && !window.opera) {
+// 	document.write('<script type="text/javascript" id="contentloadtag" defer="defer" src="javascript:void(0)"><\/script>');
+// 	var contentloadtag = document.getElementById("contentloadtag")
+// 	contentloadtag.onreadystatechange=function(){
+// 		if (this.readyState=="complete"){
+// 			alreadyrunflag=1;
+// 			VanillaRunOnDomReady();
+// 		}
+// 	}
+// }
+
+// window.onload = function(){
+// 	setTimeout("if (!alreadyrunflag){VanillaRunOnDomReady}", 0);
+// }
+
+setTimeout(function () {
+	document.addEventListener("DOMContentLoaded", function () {
+		openChat = function openChat() {
+			var chatEl = document.getElementById("launcher");
+			var iframeDoc = chatEl.contentWindow.document.body.getElementsByTagName("button")[0];
+			iframeDoc.click();
 		};
-	}
-
-	function selectcanvas(coords) {
-		prefsize = {
-			x: Math.round(coords.x),
-			y: Math.round(coords.y),
-			w: Math.round(coords.w),
-			h: Math.round(coords.h)
-		};
-	}
-
-	function applyCrop() {
-		canvas.width = prefsize.w;
-		canvas.height = prefsize.h;
-		context.drawImage(image, prefsize.x, prefsize.y, prefsize.w, prefsize.h, 0, 0, canvas.width, canvas.height);
-		validateImage();
-	}
-
-	function applyScale(scale) {
-		if (scale == 1) return;
-		canvas.width = canvas.width * scale;
-		canvas.height = canvas.height * scale;
-		context.drawImage(image, 0, 0, canvas.width, canvas.height);
-		validateImage();
-	}
-
-	function applyRotate() {
-		canvas.width = image.height;
-		canvas.height = image.width;
-		context.clearRect(0, 0, canvas.width, canvas.height);
-		context.translate(image.height / 2, image.width / 2);
-		context.rotate(Math.PI / 2);
-		context.drawImage(image, -image.width / 2, -image.height / 2);
-		validateImage();
-	}
-
-	function applyHflip() {
-		context.clearRect(0, 0, canvas.width, canvas.height);
-		context.translate(image.width, 0);
-		context.scale(-1, 1);
-		context.drawImage(image, 0, 0);
-		validateImage();
-	}
-
-	function applyVflip() {
-		context.clearRect(0, 0, canvas.width, canvas.height);
-		context.translate(0, image.height);
-		context.scale(1, -1);
-		context.drawImage(image, 0, 0);
-		validateImage();
-	}
-
-	$("#views").keyup(function (e) {
-		if (e.keyCode == 13) {
-
-			applyCrop();
-		}
 	});
-	$("#scalebutton").click(function (e) {
-		var scale = prompt("Scale Factor:", "1");
-		applyScale(scale);
-	});
-	$("#rotatebutton").click(function (e) {
-		applyRotate();
-	});
-	$("#hflipbutton").click(function (e) {
-		applyHflip();
-	});
-	$("#vflipbutton").click(function (e) {
-		applyVflip();
-	});
+}, 300);
+var openChat;
 
-	$("#form").submit(function (e) {
-		e.preventDefault();
-		formData = new FormData($(this)[0]);
-		var blob = dataURLtoBlob(canvas.toDataURL('image/png'));
-		//---Add file blob to the form data
-		formData.append("cropped_image[]", blob);
-		$.ajax({
-			url: "whatever.php",
-			type: "POST",
-			data: formData,
-			contentType: false,
-			cache: false,
-			processData: false,
-			success: function success(data) {
-				alert("Success");
-			},
-			error: function error(data) {
-				alert("Error");
-			},
-			complete: function complete(data) {}
-		});
-	});
-};
-
-var alreadyrunflag = 0;
-
-if (document.addEventListener) document.addEventListener("DOMContentLoaded", function () {
-	alreadyrunflag = 1;
-	VanillaRunOnDomReady();
-}, false);else if (document.all && !window.opera) {
-	document.write('<script type="text/javascript" id="contentloadtag" defer="defer" src="javascript:void(0)"><\/script>');
-	var contentloadtag = document.getElementById("contentloadtag");
-	contentloadtag.onreadystatechange = function () {
-		if (this.readyState == "complete") {
-			alreadyrunflag = 1;
-			VanillaRunOnDomReady();
-		}
-	};
-}
-
-window.onload = function () {
-	setTimeout("if (!alreadyrunflag){VanillaRunOnDomReady}", 0);
-};
+$(".vip").click(function () {
+	openChat();
+});

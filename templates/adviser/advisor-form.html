@@ -3,7 +3,8 @@
 {% load static %}
 <html>
     <head>
-        <title>Document Template Title</title>
+        <title>Advisors | Exrates</title>
+<meta name="description" content="Meet official representatives of Exrates exchange. And become one of them!" />
         <!-- Main Meta information-->
         <meta charset="utf-8" />
         <meta http-equiv="Cache-control" content="public" />
@@ -29,7 +30,7 @@
                 </div>
             </div>
             <div class="form-part">
-                <form action="{% url 'advisor-form' %}" class="list-form" enctype="multipart/form-data" method="POST">{% csrf_token %}
+                <form action="{% url 'advisor-form' %}" class="list-form nomodal" enctype="multipart/form-data" method="POST">{% csrf_token %}
                     <!-- start default variant -->
                     <div class="left-part">
                         <div class="title">
@@ -117,8 +118,8 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="back-btn">
-                            <a href="{{request.META.HTTP_REFERER}}" onclick="window.history.back()"><span>
+                        <div class="back-btn" >
+                            <a href="#" onclick="window.history.back()"><span>
                                     < Back</span> </a> </div> </div> </form> </div> </div> <div class="scripts">
                                         <!-- Set JS assets-->
                                         <script type="text/javascript">

@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block title %}
+<title>Contact us | Exrates</title>
+<meta name="description" content="Exrates Sales team is waiting for your requests! Contact us for listing, IEO or cooperation any time!" />
+{%  endblock %}
 {% block content %}
 
     <div class="client-center-wr">
@@ -182,7 +187,7 @@
                     <a href="{% url 'deal' %}" class="banner-item">
                         <img src="{% static 'img/pics/baner2.png' %}" alt="">
                     </a>
-                    <a href="{% url 'advisor-form' %}" class="banner-item">
+                    <a href="{% url 'become-advisor' %}" class="banner-item">
                         <img src="{% static 'img/pics/baner3.png' %}" alt="">
                     </a>
                 </div>
