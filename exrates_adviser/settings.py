@@ -52,8 +52,8 @@ MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 MODELTRANSLATION_LANGUAGES = ('en', 'ru')
 
 MIDDLEWARE = [
-    #'django.middleware.cache.UpdateCacheMiddleware',
-    #'django.middleware.cache.FetchFromCacheMiddleware',
+    'django.middleware.cache.UpdateCacheMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.gzip.GZipMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -115,18 +115,21 @@ ZENDESK_EMAIL = config.get('DEFAULT', 'ZENDESK_EMAIL')
 USER_TELEGRAM = config.get('PIPEDRIVE_FIELDS', 'user_telegram')
 USER_LINKEDIN = config.get('PIPEDRIVE_FIELDS', 'user_linked_in')
 
-USER_LINK_TO_FORM = config.get('PIPEDRIVE_FIELDS', 'user_link_to_form')
-USER_LINK_TO_DETAILS = config.get('PIPEDRIVE_FIELDS', 'user_link_to_details')
+USER_LINKS = config.get('PIPEDRIVE_FIELDS', 'user_links')
 ORG_WEBSITE = config.get('PIPEDRIVE_FIELDS', 'org_website')
 
 PIPEDRIVE_NEW_ADVISER = config.get('PIPEDRIVE_FIELDS', 'pipedrive_new_adviser')
+PIPEDRIVECHANNEL = config.get('PIPEDRIVE_FIELDS', 'pipedrive_listing')
+
 
 DOMAIN = config.get('DEFAULT', 'DOMAIN')
 
-PIPELINE_CHANNELS = {
-    "IEO": 2,
-    "Listing": 3
-    }
+
+MYSQL_USER = config.get('MYSQL', 'MYSQL_USER')
+MYSQL_DB_NAME = config.get('MYSQL', 'MYSQL_DB_NAME')
+MYSQL_PASSWORD = config.get('MYSQL', 'MYSQL_PASSWORD')
+
+
 
 WSGI_APPLICATION = 'exrates_adviser.wsgi.application'
 
@@ -136,7 +139,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.getenv('SQLITE_FILE_PATH', os.path.join(BASE_DIR, 'db.sqlite3')),
-        }
+        },
+    #'default': {
+    #    'ENGINE': 'django.db.backends.mysql',
+    #    'NAME': MYSQL_DB_NAME,
+    #    'USER': MYSQL_USER,
+    #    'PASSWORD': MYSQL_PASSWORD,
+    #    'HOST': DOMAIN,   # Or an IP Address that your DB is hosted on
+     #   'PORT': '3306',
+    #}
     }
 
 # Password validation

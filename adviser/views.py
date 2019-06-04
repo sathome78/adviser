@@ -43,6 +43,7 @@ class SupportPageView(FormView):
 class DealPageView(FormView):
     template_name = 'main/form-listing.html'
     form_class = ListingForm
+    success_url = '.'
 
     def get_context_data(self, **kwargs):
         context = super(DealPageView, self).get_context_data(**kwargs)
@@ -157,6 +158,7 @@ class BecomeAdviserPageView(TemplateView):
 
 class AdviserDemoPageView(TemplateView):
     template_name = 'adviser/adviser_page.html'
+    success_url = '.'
 
 
     def get_context_data(self, **kwargs):

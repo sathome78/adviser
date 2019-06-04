@@ -29,12 +29,3 @@
     python manage.py runserver
     
     
-https://tabesco.serveo.net/
-
-https://tabesco.serveo.net/form-listing/
-https://tabesco.serveo.net/fiat/
-https://tabesco.serveo.net/client-center/
-https://tabesco.serveo.net/privacy-policy/
-https://tabesco.serveo.net/terms-of-use/
-https://tabesco.serveo.net/become-advisor/
-https://tabesco.serveo.net/adviser/80d971a1-1271-41a1-878e-159ac717ac82/
