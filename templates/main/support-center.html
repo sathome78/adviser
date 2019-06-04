@@ -67,7 +67,7 @@
                                 <div class="title-wr">
                                     <h4>submit a request </h4>
                                 </div>
-                                <form action="{% url 'support-center' %}" class="list-form nomodal"  enctype="multipart/form-data" method="POST">{% csrf_token %}
+                                <form action="{% url 'support-center' %}" class="list-form"  enctype="multipart/form-data" method="POST">{% csrf_token %}
                                     <div class="drop-wr">
                                         <div class="wrap-input input-item popup__wrap-input">
                                             <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="request_type" id="id_request_type" value="1" readonly>
