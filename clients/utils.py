@@ -6,7 +6,7 @@ import os
 
 config = configparser.ConfigParser()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CONFIG_PATH = os.path.join(BASE_DIR, 'config', 'dev.ini')
+CONFIG_PATH = os.path.join(BASE_DIR, 'config', 'prod.ini')
 
 
 def get_config():
