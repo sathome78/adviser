@@ -102,7 +102,7 @@
                                         <div class="contact-wr">
                                             <div class="tg">
                                                 <span>Telegram: </span><a
-                                                    href="https://t.me/{{ contact.telegram }}">{{ contact.telegram }}</a>
+                                                    href="https://t.me/{{ contact.telegram|slice:"1:" }}">{{ contact.telegram }}</a>
                                             </div>
                                             <div class="email">
                                                 <span>Email: </span><a href="">{{ contact.email }}</a>
