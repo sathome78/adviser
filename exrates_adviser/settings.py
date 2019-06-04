@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY', '%9t2&1x41@436xk!h=*dhkt746mjl&jhl#tda@+d^44_@_8_#&')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', True)
+DEBUG = os.getenv('DEBUG', False)
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.10.10.71', '172.31.28.213', 'about.exrates.me', '172.50.100.48']
 
@@ -136,18 +136,18 @@ WSGI_APPLICATION = 'exrates_adviser.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.getenv('SQLITE_FILE_PATH', os.path.join(BASE_DIR, 'db.sqlite3')),
-        },
     #'default': {
-    #    'ENGINE': 'django.db.backends.mysql',
-    #    'NAME': MYSQL_DB_NAME,
-    #    'USER': MYSQL_USER,
-    #    'PASSWORD': MYSQL_PASSWORD,
-    #    'HOST': DOMAIN,   # Or an IP Address that your DB is hosted on
-     #   'PORT': '3306',
-    #}
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': os.getenv('SQLITE_FILE_PATH', os.path.join(BASE_DIR, 'db.sqlite3')),
+    #    },
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': MYSQL_DB_NAME,
+        'USER': MYSQL_USER,
+        'PASSWORD': MYSQL_PASSWORD,
+        'HOST': DOMAIN,   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
     }
 
 # Password validation
