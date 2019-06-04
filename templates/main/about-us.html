@@ -1,6 +1,13 @@
 
 {% extends 'base.html' %}
 {% load static %}
+
+{%  block title %}
+<title>About us | Exrates </title>
+<meta name="description" content="Exrates Exchange is one of the leading cryptocurrency exchanges. With more than 200 coins, 170k active traders and 50k community. Join Exrates now!" />
+
+    {% endblock %}
+
 {% block content %}
 <div class="top-title">
                 <h2> About Us </h2>
@@ -60,7 +67,7 @@
                         <p> Exrates is an actively growing cryptoСЃurrency exchange, founded in 2016. <br> At the moment more than 600 trading pairs are available on Exrates with a total trading volume of $160 million per day. <br>
                             <br> Our aim is to make trading accessible for everyone and provide all the tools needed. </p>
                         <div class="why-exrates-link">
-                            <a href="">WHY EXRATES?</a>
+                            <p>WHY EXRATES?</p>
                         </div>
                         <hr>
                     </div>
@@ -119,11 +126,11 @@
                             <div class="radio-wr">
                                 <div class="radio-item">
                                     <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="0" data-head="Apply to conduct an IEO" checked>
-                                    <label class="check" for="id_request_type"></label>
-                                    <label class="check-txt" for="id_request_type"><span>I need to conduct an IEO</span></label>
+                                    <label class="check" for="id_request_type_0"></label>
+                                    <label class="check-txt" for="id_request_type_0"><span>I need to conduct an IEO</span></label>
                                 </div>
                                 <div class="radio-item">
-                                    <input class="accessibility-content radio-form-list" type="radio" name="id_request_type" id="id_request_type_1" value="1" data-head="Apply for Listing">
+                                    <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_1" value="1" data-head="Apply for Listing">
                                     <label class="check" for="id_request_type_1"></label>
                                     <label class="check-txt" for="id_request_type_1"><span>I need to list a coin</span></label>
                                 </div>
