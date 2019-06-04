@@ -484,15 +484,15 @@ $(".menu-mob__drop-wrap").click(function () {
 // 	setTimeout("if (!alreadyrunflag){VanillaRunOnDomReady}", 0);
 // }
 
-setTimeout(function () {
-	document.addEventListener("DOMContentLoaded", function () {
-		openChat = function openChat() {
-			var chatEl = document.getElementById("launcher");
-			var iframeDoc = chatEl.contentWindow.document.body.getElementsByTagName("button")[0];
-			iframeDoc.click();
-		};
-	});
-}, 300);
+
+document.addEventListener("DOMContentLoaded", function () {
+	openChat = function openChat() {
+		var chatEl = document.getElementById("launcher");
+		var iframeDoc = chatEl.contentWindow.document.body.getElementsByTagName("button")[0];
+		iframeDoc.click();
+	};
+});
+
 var openChat;
 
 $(".vip").click(function () {
