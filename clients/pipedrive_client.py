@@ -21,10 +21,6 @@ class PipedriveClient:
         email = data.get("email")
         telegram = data.get("telegram")
 
-
-
-
-
         # check if organization exists
         organization = next(iter(self.client.get_organizations(name=company_name)["data"]), None) if self.client.get_organizations(name=company_name)["data"] else None
         org = {"name": company_name, settings.ORG_WEBSITE: link_to_project}
@@ -58,11 +54,11 @@ class PipedriveClient:
         deal = {
             "title": title,
             "org_id": organization["id"],
-            "pipeline_id": settings.PIPELINE_CHANNELS[type],
+            "pipeline_id": settings.PIPEDRIVECHANNEL,
             "person_id": contact["id"]
             }
 
-        self.client.create_deal(**deal)
+        return self.client.create_deal(**deal)
 
     def create_or_update_adviser(self, data, edit_url, update_url):
         name = data.get("name", "")
@@ -77,7 +73,7 @@ class PipedriveClient:
 
 
         data = {"name": name, "email": email, "label": "adviser",
-                settings.USER_LINKEDIN: linkedin, settings.USER_LINK_TO_FORM: edit_url, settings.USER_LINK_TO_DETAILS: update_url}
+                settings.USER_LINKEDIN: linkedin, settings.USER_LINKS: '{} \n {}'.format(edit_url, update_url)}
 
         phone_pattern = re.compile("^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$")
         telegram_pattern = re.compile("^[a-zA-Z0-9]+$")

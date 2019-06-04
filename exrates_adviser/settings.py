@@ -115,11 +115,12 @@ ZENDESK_EMAIL = config.get('DEFAULT', 'ZENDESK_EMAIL')
 USER_TELEGRAM = config.get('PIPEDRIVE_FIELDS', 'user_telegram')
 USER_LINKEDIN = config.get('PIPEDRIVE_FIELDS', 'user_linked_in')
 
-USER_LINK_TO_FORM = config.get('PIPEDRIVE_FIELDS', 'user_link_to_form')
-USER_LINK_TO_DETAILS = config.get('PIPEDRIVE_FIELDS', 'user_link_to_details')
+USER_LINKS = config.get('PIPEDRIVE_FIELDS', 'user_links')
 ORG_WEBSITE = config.get('PIPEDRIVE_FIELDS', 'org_website')
 
 PIPEDRIVE_NEW_ADVISER = config.get('PIPEDRIVE_FIELDS', 'pipedrive_new_adviser')
+PIPEDRIVECHANNEL = config.get('PIPEDRIVE_FIELDS', 'pipedrive_listing')
+
 
 DOMAIN = config.get('DEFAULT', 'DOMAIN')
 
@@ -130,11 +131,6 @@ MYSQL_PASSWORD = config.get('MYSQL', 'MYSQL_PASSWORD')
 
 
 
-PIPELINE_CHANNELS = {
-    "IEO": config.get('PIPEDRIVE_FIELDS', 'pipedrive_ieo'),
-    "Listing": config.get('PIPEDRIVE_FIELDS', 'pipedrive_listing')
-    }
-
 WSGI_APPLICATION = 'exrates_adviser.wsgi.application'
 
 # Database
@@ -144,14 +140,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.getenv('SQLITE_FILE_PATH', os.path.join(BASE_DIR, 'db.sqlite3')),
         },
-'   default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': MYSQL_DB_NAME,
-        'USER': MYSQL_USER,
-        'PASSWORD': MYSQL_PASSWORD,
-        'HOST': DOMAIN,   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
-    }
+    #'default': {
+    #    'ENGINE': 'django.db.backends.mysql',
+    #    'NAME': MYSQL_DB_NAME,
+    #    'USER': MYSQL_USER,
+    #    'PASSWORD': MYSQL_PASSWORD,
+    #    'HOST': DOMAIN,   # Or an IP Address that your DB is hosted on
+     #   'PORT': '3306',
+    #}
     }
 
 # Password validation
