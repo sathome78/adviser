@@ -41,11 +41,11 @@ urlpatterns = [
                   url(r'^$', home, name='home'),
 
                   url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
-                  url(r'^adviser-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
+                  url(r'^advisor-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
 
-                  url(r'^adviser/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(),
+                  url(r'^advisor/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(),
                       name='adviser-update'),
-                  url(r'^adviser/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
+                  url(r'^advisor/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
 
                   url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
                   url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
