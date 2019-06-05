@@ -165,17 +165,17 @@
                     <div class="right-col">
                         <div class="form-part">
                             <div class="form-title">
-                                <h3>Get report about your coin</h3>
+                                <h3 class="variable-title">Get report about your coin</h3>
                             </div>
                             <form action="{% url 'deal' %}">{% csrf_token %}
                                 <div class="checkbox-wr">
                                     <div class="check-item">
-                                        <input type="radio" value="IEO" id="id_request_type_0" name="request_type" checked>
+                                        <input type="radio" class="accessibility-content radio-form-list" value="IEO" id="id_request_type_0" name="request_type" data-head="Get report about your coin" checked>
                                         <label class="indicator" for="id_request_type_0"></label>
                                         <label class="label-txt" for="id_request_type_0">I need to conduct an IEO</label>
                                     </div>
                                     <div class="check-item">
-                                        <input type="radio" value="Listing" id="id_request_type_1" name="request_type">
+                                        <input type="radio" class="accessibility-content radio-form-list" value="Listing" id="id_request_type_1" name="request_type" data-head="Submit a request for list a coin">
                                         <label class="indicator" for="id_request_type_1"></label>
                                         <label class="label-txt" for="id_request_type_1">I need to list a coin</label>
                                     </div>
