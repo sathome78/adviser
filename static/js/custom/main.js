@@ -171,6 +171,7 @@ $("form").on("submit", function (e) {
 		}
 	});
 	if (sendForm) {
+		$(".list-form button[type ='submit']").attr('disabled', true);
 		var that = $(this);
 		var formData = new FormData(that.get(0));
 		$.ajax({
@@ -181,7 +182,7 @@ $("form").on("submit", function (e) {
 			data: formData,
 
 			success: function success(data) {
-
+				$(".list-form button[type ='submit']").attr('disabled', false);
 				if (that.hasClass("nomodal")) {
 					$("body").removeClass("modal-open");
 					$(".list-form .success-mess").addClass("active");
@@ -195,7 +196,7 @@ $("form").on("submit", function (e) {
 				});
 			},
 			error: function error(xhr, err, data) {
-
+				$(".list-form button[type ='submit']").attr('disabled', false);
 				if (that.hasClass("nomodal")) {
 					$("body").removeClass("modal-open");
 					$(".list-form .success-mess").addClass("active");
