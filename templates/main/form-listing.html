@@ -56,14 +56,15 @@
                         <div class="title">
                             <h3 class="variable-title">Apply to conduct an IEO</h3>
                         </div>
+
                         <div class="radio-wr">
                             <div class="radio-item">
-                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="Apply to conduct an IEO" checked>
+                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="Apply to conduct an IEO" {% if type == 'ieo' %} checked {% endif %}>
                                 <label class="check" for="id_request_type_0"></label>
                                 <label class="check-txt" for="id_request_type_0"><span>I need to conduct an IEO</span></label>
                             </div>
                             <div class="radio-item">
-                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_1" value="Listing" data-head="Apply for Listing">
+                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_1" value="Listing" data-head="Apply for Listing" {% if type == 'listing' %} checked {% endif %}>
                                 <label class="check" for="id_request_type_1"></label>
                                 <label class="check-txt" for="id_request_type_1"><span>I need to list a coin</span></label>
                             </div>
