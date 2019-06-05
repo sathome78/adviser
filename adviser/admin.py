@@ -35,7 +35,7 @@ class AdviserAdmin(TranslationAdmin):
 
 class ManagerAdmin(TranslationAdmin):
 
-    list_display = ("name", "surname", "job_title",)
+    list_display = ("id", "name", "surname", "job_title",)
 
     fieldsets = (
         (None, {
