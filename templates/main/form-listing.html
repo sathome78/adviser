@@ -56,7 +56,6 @@
                         <div class="title">
                             <h3 class="variable-title">Apply to conduct an IEO</h3>
                         </div>
-                        {{  request.get_full_path|split:"=" }}
                         <div class="radio-wr">
                             <div class="radio-item">
                                 <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="Apply to conduct an IEO" {% if '=ieo' in request.build_absolute_uri %} checked="checked" {% endif %}>
