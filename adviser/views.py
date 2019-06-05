@@ -40,13 +40,14 @@ class SupportPageView(FormView):
     def get_form(self, form_class=None):
         return SupportForm(self.request.POST, self.request.FILES)
 
-class DealPageView(FormView):
+class DealPageView(TemplateView):
     template_name = 'main/form-listing.html'
     form_class = ListingForm
     success_url = '.'
 
     def get_context_data(self, **kwargs):
         context = super(DealPageView, self).get_context_data(**kwargs)
+        context["type"] = self.request.POST.get("type", "ieo")
         return context
 
     def post(self, request, *args, **kwargs):

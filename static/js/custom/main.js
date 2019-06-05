@@ -238,8 +238,11 @@ document.querySelectorAll("a[href*='#']").forEach(function (userItem) {
 		e.preventDefault();
 		var anchor = this;
 		var blockID = anchor.getAttribute('href');
-		var elPos = document.querySelector(blockID).offsetTop;
-		window.scroll({ top: elPos - 100, left: 0, behavior: 'smooth' });
+		console.log(blockID);
+		if (blockID !== "#") {
+			var elPos = document.querySelector(blockID).offsetTop;
+			window.scroll({ top: elPos - 100, left: 0, behavior: 'smooth' });
+		}
 	});
 });
 
