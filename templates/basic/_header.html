@@ -71,12 +71,14 @@
             <div class="right-part">
                 <div class="nav main-nav-right">
                     <ul>
-                        <li>
-                            <a href="https://exrates.me/news"><span>News</span></a>
-                        </li>
+
                         <!-- <li>
 							<a href="#"><span>Announcments</span></a>
 						</li> -->
+
+
+
+
                         <li>
                             <div class="drop">
                                 <a href="#"><span>Community</span></a>
@@ -111,6 +113,10 @@
                                 </div>
                             </div>
                         </li>
+                         <li>
+                            <a href="https://exrates.me/news"><span>News</span></a>
+                        </li>
+
                     </ul>
                     <!-- start not auth user -->
                     <div class="login">
@@ -254,9 +260,7 @@
                 <a class="menu-mob__link" href="{% url 'fiat' %}">
                     <span {% if request.path == fiat %} class=" menu-mob__link-text active" {% else %} class=" menu-mob__link-text"{% endif %}>Fiat</span>
                 </a>
-                <a class="menu-mob__link" href="https://exrates.me/news">
-                    <span class="menu-mob__link-text">News</span>
-                </a>
+
                 <!-- <a class="menu-mob__link" href="#">
 					<span class="menu-mob__link-text">Announcments</span>
 				</a> -->
@@ -272,6 +276,10 @@
                         <a class="menu-mob__link" href="https://t.me/exrates_official_ko" target="blank">Community Korea</a>
                     </div>
                 </div>
+
+            <a class="menu-mob__link" href="https://exrates.me/news">
+                    <span class="menu-mob__link-text">News</span>
+                </a>
                 <div class="menu-mob__drop-wrap">
                     <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
                         <span class="menu-mob__link-text cur-lang">English</span>
