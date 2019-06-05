@@ -58,7 +58,7 @@
                         </div>
                         <div class="radio-wr">
                             <div class="radio-item">
-                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="Apply to conduct an IEO" {% if '=ieo' in request.build_absolute_uri %} checked="checked" {% endif %}>
+                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="Apply to conduct an IEO" {% if '=ieo' in request.build_absolute_uri or "type" not in request.build_absolute_uri %} checked="checked" {% endif %}>
                                 <label class="check" for="id_request_type_0"></label>
                                 <label class="check-txt" for="id_request_type_0"><span>I need to conduct an IEO</span></label>
                             </div>
@@ -164,7 +164,8 @@
                                 <li><span class="weight">24/7 </span><span>Online Support</span></li>
                                 <li><span class="weight">${{ extra_fields.trading_volumes }} </span><span>Daily trading volumes</span></li>
                                 <li><span class="weight">{{ extra_fields.active_trades }} </span><span>active traders</span></li>
-                                <li><span class="weight">X-Platform </span><span>for IEO NEW</span></li>
+                                <li><span class="weight">X-Platform </span><span>for IEO</span>
+                                <span class="label">NEW</span></li>
                                 <li><span class="weight">{{ extra_fields.fiat_currencies }} Fiat </span><span>currencies</span></li>
                                 <li><span class="weight">Trading API </span><span>for AlgoTraders</span></li>
                             </ul>
