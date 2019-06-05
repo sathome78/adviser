@@ -19,7 +19,7 @@ from django.conf.urls import url
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render, render_to_response
 from django.urls import include, reverse
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
@@ -33,6 +33,9 @@ def home(request):
     request.session['picture'] = request.GET.get('picture')
     return redirect(reverse("about-us"))
 
+
+def page_not_found_view(request):
+    return render(request, '404.html', {})
 
 urlpatterns = [
                   url(r'^$', home, name='home'),
