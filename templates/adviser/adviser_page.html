@@ -1,5 +1,7 @@
            {% extends 'base.html' %}
 {% load static %}
+{% load cache %}
+{% cache 500 contacts %}
 {% block content %}
            <div class="adviser-container">
                 <div class="first-screen">
@@ -214,3 +216,4 @@
                 </div>
             </div>
            {% endblock %}
+{% endcache %}

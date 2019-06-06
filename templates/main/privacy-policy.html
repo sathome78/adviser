@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cache %}
+{% cache 500 contacts %}
+
 {% block title %}
 <title>Contact us | Exrates</title>
 <meta name="description" content="Exrates Sales team is waiting for your requests! Contact us for listing, IEO or cooperation any time!" />
@@ -216,3 +219,4 @@ Our registered office is at Tornimae tn 7, Kesklinna linnaosa, Tallin, Harju maa
             </div>
 
 {% endblock %}
+{% endcache %}

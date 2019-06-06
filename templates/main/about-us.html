@@ -1,13 +1,14 @@
 
 {% extends 'base.html' %}
 {% load static %}
-
+{% load cache %}
 {%  block title %}
 <title>About us | Exrates </title>
 <meta name="description" content="Exrates Exchange is one of the leading cryptocurrency exchanges. With more than 200 coins, 170k active traders and 50k community. Join Exrates now!" />
 
     {% endblock %}
 
+{% cache 500 contacts %}
 {% block content %}
 <div class="top-title">
                 <h2> About Us </h2>
@@ -171,3 +172,4 @@
             </div>
 
 {% endblock %}
+{% endcache %}
