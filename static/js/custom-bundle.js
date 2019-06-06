@@ -1,6 +1,27 @@
 "use strict";
 
 // parallax function
+// $(window).on("load",function(){
+// 	var loc = window.location.search.substr(1);
+// 	console.log(loc == "type=listing")
+// 	if(loc == "type=listing"){
+// 		$("#id_request_type_0").prop('checked', true);
+// 		$("#id_request_type_1").prop('checked', false);
+// 		console.log($("#id_request_type_0").attr('data-head'))
+// 		var headTxt = $("#id_request_type_0").attr('data-head');
+// 		$('.variable-title').html(headTxt);
+// 	}
+// 	else{
+// 		$("#id_request_type_1").prop('checked', true);
+// 		$("#id_request_type_0").prop('checked', false);
+// 		console.log($("#id_request_type_1").attr('data-head'))
+// 		var headTxt = $("#id_request_type_1").attr('data-head');
+// 		$('.variable-title').html(headTxt);
+// 	}
+
+
+// })
+
 
 function Paralax(parent, element, transition, animationSpeed, offset, adaptive) {
 	var adaptiveMod;
