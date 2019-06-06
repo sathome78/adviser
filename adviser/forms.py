@@ -52,6 +52,7 @@ class ListingForm(forms.Form):
     link_to_project = forms.CharField(max_length=255, required=True)
 
 
+
 class AdviserForm(ModelForm):
     name = forms.CharField(max_length=255)
     telegram = forms.CharField(max_length=255)
@@ -65,12 +66,14 @@ class AdviserForm(ModelForm):
     def save(self, commit=True):
         instance = super(AdviserForm, self).save(commit=False)
         instance.type = 1
-        edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={"id": str(instance.id)}))
-        update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
+        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"id": str(instance.id)}))
+        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
         PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
         if commit:
             instance.save()
         return instance
+
+
 
 
 class AdviserProfileForm(ModelForm):
@@ -83,8 +86,8 @@ class AdviserProfileForm(ModelForm):
     def save(self, commit=True):
         instance = super(AdviserProfileForm, self).save(commit=False)
         instance.member_since = datetime.today()
-        edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={"id": str(instance.id)}))
-        update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
+        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"id": str(instance.id)}))
+        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
         PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
         if commit:
             instance.save()
@@ -100,9 +103,10 @@ class AdviserAdminForm(ModelForm):
 
     def save(self, commit=True):
         instance = super(AdviserAdminForm, self).save(commit=False)
-        edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={"id": str(instance.id)}))
-        update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
-        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
+        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"id": str(instance.id)}))
+        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
+        #PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
+        print(edit_url, update_url)
         if commit:
             instance.save()
         return instance
