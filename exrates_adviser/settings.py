@@ -46,6 +46,8 @@ INSTALLED_APPS = [
 
     ]
 
+SITE = config.get('DEFAULT', 'SITE')
+
 LANGUAGES = (
     ('en', _('English')),
     ('ru', _('Russian')),

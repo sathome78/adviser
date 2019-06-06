@@ -70,7 +70,7 @@ class Adviser(models.Model):
         verbose_name_plural = _('advisers')
 
     def get_absolute_url(self):
-        return reverse("adviser-detail", args=(self.id))
+        return reverse("adviser-detail", kwargs={"id": str(self.id)})
 
 class GeneralFields(models.Model):
 
