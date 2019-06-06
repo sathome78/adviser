@@ -2,9 +2,12 @@
 from datetime import datetime
 
 from django import forms
-from django.forms import ModelForm
+from django.conf import settings
+from django.forms import ModelForm, model_to_dict
+from django.urls import reverse
 
 from adviser.models import Adviser
+from clients.pipedrive_client import PipedriveClient
 
 REQUEST_CHOICES = (
     (1, "Funds Withdrawal"),
@@ -62,6 +65,9 @@ class AdviserForm(ModelForm):
     def save(self, commit=True):
         instance = super(AdviserForm, self).save(commit=False)
         instance.type = 1
+        edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={"id": str(instance.id)}))
+        update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
+        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
         if commit:
             instance.save()
         return instance
@@ -77,6 +83,26 @@ class AdviserProfileForm(ModelForm):
     def save(self, commit=True):
         instance = super(AdviserProfileForm, self).save(commit=False)
         instance.member_since = datetime.today()
+        edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={"id": str(instance.id)}))
+        update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
+        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
+        if commit:
+            instance.save()
+        return instance
+
+
+class AdviserAdminForm(ModelForm):
+    email = forms.EmailField()
+
+    class Meta:
+        model = Adviser
+        fields = ['name', 'surname', 'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
+
+    def save(self, commit=True):
+        instance = super(AdviserAdminForm, self).save(commit=False)
+        edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={"id": str(instance.id)}))
+        update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
+        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
         if commit:
             instance.save()
         return instance

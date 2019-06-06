@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 import uuid
-from audioop import reverse
 
+from django.conf import settings
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
+
+from clients.pipedrive_client import PipedriveClient
 
 ADVISER_TYPE_ENUM = (
     (1, 'Company'),
@@ -68,7 +71,6 @@ class Adviser(models.Model):
 
     def get_absolute_url(self):
         return reverse("adviser-detail", args=(self.id))
-
 
 class GeneralFields(models.Model):
 

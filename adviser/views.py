@@ -69,10 +69,6 @@ class AdviserFormView(FormView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-            adviser = form.save()
-            edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={'id':adviser.id}))
-            update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={'id': adviser.id}))
-            PipedriveClient().create_or_update_adviser(form.cleaned_data, edit_url, update_url)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
@@ -90,10 +86,6 @@ class AdviserUpdateProfileView(UpdateView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-            adviser = form.save()
-            edit_url = "{}{}".format(settings.DOMAIN, reverse('adviser-update', kwargs={'id': adviser.id}))
-            update_url = "{}{}".format(settings.DOMAIN, reverse('adviser-detail', kwargs={'id': adviser.id}))
-            PipedriveClient().create_or_update_adviser(form.cleaned_data, edit_url, update_url)
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
