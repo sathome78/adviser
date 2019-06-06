@@ -37,6 +37,7 @@ def home(request):
 def page_not_found_view(request):
     return render(request, '404.html', {})
 
+
 urlpatterns = [
                   url(r'^$', home, name='home'),
 
@@ -60,6 +61,7 @@ urlpatterns = [
 
                   url('admin/', admin.site.urls),
                   url('i18n/', include('django.conf.urls.i18n')),
+                  url('api/', include('api.urls')),
 
                   ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

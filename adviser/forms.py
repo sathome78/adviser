@@ -106,7 +106,6 @@ class AdviserAdminForm(ModelForm):
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"id": str(instance.id)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
         PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
-        print(edit_url, update_url)
         if commit:
             instance.save()
         return instance
