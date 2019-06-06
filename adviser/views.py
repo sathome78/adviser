@@ -2,6 +2,7 @@
 from django.conf import settings
 from django.urls import reverse
 from django.utils import translation
+from django.views.decorators.gzip import gzip_page
 from django.views.generic import FormView, TemplateView, UpdateView
 
 from adviser.forms import ListingForm, SupportForm, REQUEST_CHOICES, AdviserForm, AdviserProfileForm
@@ -49,6 +50,7 @@ class DealPageView(FormView):
         context = super(DealPageView, self).get_context_data(**kwargs)
         return context
 
+    @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -64,7 +66,7 @@ class AdviserFormView(FormView):
     form_class = AdviserForm
     success_url = '.'
 
-
+    @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -82,6 +84,7 @@ class AdviserUpdateProfileView(UpdateView):
     def get_object(self, queryset=None):
         return self.model.objects.get(pk=self.kwargs['id'])
 
+    @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -99,6 +102,7 @@ class AdviserProfileView(TemplateView):
     def get_object(self, queryset=None):
         return self.model.objects.get(pk=self.kwargs['id'])
 
+    @gzip_page
     def get_context_data(self, **kwargs):
         pk = self.kwargs['id']
         data = super().get_context_data(**kwargs)
@@ -120,6 +124,7 @@ class AboutUsPageView(FormView):
         context = super(AboutUsPageView, self).get_context_data(**kwargs)
         return context
 
+    @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)

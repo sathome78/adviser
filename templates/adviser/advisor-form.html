@@ -2,6 +2,8 @@
 
 {% load static %}
 <html>
+{% load cache %}
+{% cache 500 contacts %}
     <head>
         <title>Advisors | Exrates</title>
 <meta name="description" content="Meet official representatives of Exrates exchange. And become one of them!" />
@@ -176,6 +178,7 @@
                 <div class="back-btn">
                     <a href="#" onclick="window.history.back()"><span>
                             < Back</span> </a> </div> </div> </form> </div>
+        </div>
         <div class="scripts">
                                         <!-- Set JS assets-->
                                         <script type="text/javascript">
@@ -223,6 +226,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 
     </body>
+{% endcache %}
 
 
 

@@ -1,4 +1,6 @@
 {%  load static urls %}
+{% load cache %}
+{% cache 500 contacts %}
 <html>
     <head>
        <title>Apply for listing | Exrates</title>
@@ -220,3 +222,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
     </body>
 </html>
+{% endcache %}

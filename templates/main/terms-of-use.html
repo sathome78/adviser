@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load cache %}
+{% cache 500 contacts %}
 {% block title %}
 <title>Terms of use | Exrates</title>
 <meta name="description" content="By accessing, registering, or using Exrates, you have agreed to the terms of use. Have a great trading!" />
@@ -501,3 +502,4 @@
             </div>
 
 {% endblock %}
+{% endcache %}

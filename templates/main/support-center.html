@@ -1,5 +1,7 @@
       {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% load cache %}
+{% cache 500 contacts %}
 {% block title %}
 <title>Support | Exrates</title>
 <meta name="description" content="Exrates provides 24/7 support. Find your issue in FAQ, submit your request here or contact our Support Team." />
@@ -134,7 +136,7 @@
             </div>
 
       {% endblock %}
-
+{% endcache %}
 
 
 

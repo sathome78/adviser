@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load cache %}
 {% load static %}
-
+{% cache 500 contacts %}
 {% block title %}
 <title>Contact us | Exrates</title>
 <meta name="description" content="Exrates Sales team is waiting for your requests! Contact us for listing, IEO or cooperation any time!" />
@@ -195,3 +196,4 @@
     </div>
 
 {% endblock %}
+{% endcache %}
