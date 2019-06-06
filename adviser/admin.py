@@ -2,6 +2,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
+from adviser.forms import AdviserAdminForm
 from adviser.models import Adviser, Manager, GeneralFields
 
 
@@ -10,6 +11,7 @@ class AdviserAdmin(TranslationAdmin):
     list_display = ("id", "type", "name", "surname", "email", "short_description")
     list_filter = ('type', 'member_since')
     readonly_fields = ("id", )
+    form = AdviserAdminForm
     fieldsets = (
         (None, {
             "fields": ("id", "type", "name", "surname",  "short_description", "member_since", "avatar"),
@@ -36,6 +38,7 @@ class AdviserAdmin(TranslationAdmin):
 class ManagerAdmin(TranslationAdmin):
 
     list_display = ("id", "name", "surname", "job_title",)
+    list_display_links = ('name', 'surname')
 
     fieldsets = (
         (None, {
