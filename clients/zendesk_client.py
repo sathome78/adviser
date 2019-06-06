@@ -58,7 +58,7 @@ class ZendeskClient:
                 'requester_email': email,
                 'subject': type,
                 "comment": {
-                    "body": body
+                    "body": "{} \n \n from Exrates support site form".format(body)
                     }
                 },
             'uploads': files_list
