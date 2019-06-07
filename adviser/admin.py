@@ -10,11 +10,11 @@ class AdviserAdmin(TabbedTranslationAdmin):
 
     list_display = ("id", "type", "name",  "email", "short_description")
     list_filter = ('type', 'member_since')
-    readonly_fields = ("id", )
+    readonly_fields = ("id", "slug")
     form = AdviserAdminForm
     fieldsets = (
         (None, {
-            "fields": ("id", "type", "name",  "short_description", "member_since", "avatar"),
+            "fields": ("id", "type", "name", "slug",  "short_description", "member_since", "avatar"),
             }),
         ("Contacts", {
             "fields": ("email", "telegram", "linkedin", "twitter", "website",),

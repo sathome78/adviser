@@ -66,6 +66,9 @@ class AdviserFormView(FormView):
     form_class = AdviserForm
     success_url = '.'
 
+    def get_object(self, queryset=None):
+        return self.model.objects.get(slug=self.kwargs['slug'])
+
     @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
@@ -82,7 +85,7 @@ class AdviserUpdateProfileView(UpdateView):
     success_url = '.'
 
     def get_object(self, queryset=None):
-        return self.model.objects.get(pk=self.kwargs['id'])
+        return self.model.objects.get(slug=self.kwargs['slug'])
 
     @gzip_page
     def post(self, request, *args, **kwargs):
@@ -100,12 +103,12 @@ class AdviserProfileView(TemplateView):
     success_url = '.'
 
     def get_object(self, queryset=None):
-        return self.model.objects.get(pk=self.kwargs['id'])
+        return self.model.objects.get(slug=self.kwargs['slug'])
 
     def get_context_data(self, **kwargs):
-        pk = self.kwargs['id']
+        slug = self.kwargs['slug']
         data = super().get_context_data(**kwargs)
-        data['adviser'] = get_object_or_404(Adviser, pk=pk)
+        data['adviser'] = get_object_or_404(Adviser, slug=slug)
         data['username'] = None
         data['form'] = ListingForm
         return data

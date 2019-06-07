@@ -7,10 +7,12 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 from clients.pipedrive_client import PipedriveClient
+from django_extensions.db.fields import AutoSlugField
 
 ADVISER_TYPE_ENUM = (
     (1, 'Company'),
-    (2, 'Adviser')
+    (2, 'Ambassador'),
+    (3, 'Sales')
     )
 
 
@@ -35,11 +37,13 @@ class Adviser(models.Model):
     type = models.IntegerField(choices=ADVISER_TYPE_ENUM,
                                help_text="Account type", default=1)
     name = models.CharField(max_length=250,
-                            help_text="Company name or adviser first name")
+                            help_text="Company name or adviser first name", unique=True)
     short_description = models.CharField(max_length=300,
                                          help_text="Short description displayed in sidebar")
 
     is_published = models.BooleanField(default=False)
+
+    slug = AutoSlugField(_('slug'), max_length=50, unique=True, populate_from=('name',))
 
     telegram = models.CharField(max_length=255, null=True, blank=True)
     linkedin = models.CharField(max_length=255, null=True, blank=True)
@@ -53,9 +57,9 @@ class Adviser(models.Model):
     long_description = models.CharField(max_length=700, null=True, blank=True,
                                         help_text="Company's benefits")
     trading_volume = models.CharField(max_length=255, null=True, blank=True,
-                                         help_text="24h trading volume")
+                                      help_text="24h trading volume")
     rating = models.CharField(max_length=255, null=True, blank=True,
-                                 help_text="Rating CoinMarketCap")
+                              help_text="Rating CoinMarketCap")
 
     def __str__(self):
         if self.get_type_display() == "adviser":
@@ -68,11 +72,10 @@ class Adviser(models.Model):
         verbose_name_plural = _('Ambassadors')
 
     def get_absolute_url(self):
-        return reverse("adviser-detail", kwargs={"id": str(self.id)})
+        return reverse("adviser-detail", kwargs={"slug": self.slug})
+
 
 class GeneralFields(models.Model):
-
-
     telegram_followers = models.CharField(max_length=100)
     twitter_followers = models.CharField(max_length=100)
 

@@ -9,7 +9,7 @@
                     </div>
                     <div class="fs-content">
                         <div class="title-wr">
-                            <h1>Ambassador Exrates Exchange</h1>
+                            <h1>{{ adviser.get_type_display }} Exrates Exchange</h1>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                                 <span>{{ adviser.name }}</span>
                             </div>
                             <div class="profesion">
-                                <span>Verified Ambassador</span>
+                                <span>Verified {{ adviser.get_type_display }}</span>
                             </div>
                             <div class="description">
                                 <p>{{ adviser.short_description }}</p>
@@ -47,7 +47,7 @@
                             <nav>
                                 <ul class="advisor-navigation-wr">
                                     <li class="advisor-navigation-item active">
-                                        <a href="#respons">Ambassador Responsibilities </a>
+                                        <a href="#respons">{{ adviser.get_type_display }} Responsibilities </a>
                                     </li>
                                     <li class="advisor-navigation-item">
                                         <a href="#servise">Services</a>
@@ -62,7 +62,7 @@
                             <div class="respons-inner">
                                 <div class="respons-item">
                                     <div class="list-title">
-                                        <h4>Ambassador in charge:</h4>
+                                        <h4>{{ adviser.get_type_display }} in charge:</h4>
                                     </div>
                                     <ul class="advisor-list">
                                         <li><span>Conduct negotiations about sales</span></li>
@@ -73,20 +73,12 @@
                                 </div>
                                 <div class="respons-item">
                                     <div class="list-title">
-                                        <h4>Ambassador not in charge:</h4>
+                                        <h4>{{ adviser.get_type_display }} not in charge:</h4>
                                     </div>
                                     <ul class="advisor-list">
                                         <li><span>Accept payments</span></li>
                                         <li><span>Sign official documents and agreements</span></li>
                                     </ul>
-                                </div>
-                                <div class="respons-item">
-                                    <div class="list-title">
-                                        <h4>Please notice</h4>
-                                    </div>
-                                    <div class="list-txt">
-                                        <p>All payments about listing are done on wallet {{ adviser.id }}, after agreement that is signed.</p>
-                                    </div>
                                 </div>
                             </div>
                         </div>

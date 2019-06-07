@@ -43,9 +43,9 @@ urlpatterns = [
                   url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
                   url(r'^ambassador-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
 
-                  url(r'^ambassador/(?P<id>[0-9a-f-]+)/update/$', AdviserUpdateProfileView.as_view(),
+                  url(r'^ambassador/(?P<slug>[-\w]+)/update/$', AdviserUpdateProfileView.as_view(),
                       name='adviser-update'),
-                  url(r'^ambassador/(?P<id>[0-9a-f-]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
+                  url(r'^ambassador/(?P<slug>[-\w]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
 
                   url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
                   url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
