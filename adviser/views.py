@@ -164,3 +164,6 @@ class AdviserDemoPageView(TemplateView):
         data = super().get_context_data(**kwargs)
         data['form'] = ListingForm
         return data
+
+class ChatPageView(TemplateView):
+    template_name = 'main/support-chat.html'

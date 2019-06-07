@@ -24,7 +24,7 @@ from django.urls import include, reverse
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
                            FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView, AboutUsPageView,
-                           BecomeAdviserPageView, AdviserDemoPageView)
+                           BecomeAdviserPageView, AdviserDemoPageView, ChatPageView)
 
 
 def home(request):
@@ -57,6 +57,10 @@ urlpatterns = [
 
                   url(r'^ambassador-form/$', AdviserFormView.as_view(), name='advisor-form'),
                   url(r'^support-center/$', SupportPageView.as_view(), name='support-center'),
+
+
+                url(r'^chat/$', ChatPageView.as_view(), name='chat'),
+
 
                   url('admin/', admin.site.urls),
                   url('i18n/', include('django.conf.urls.i18n')),

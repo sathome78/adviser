@@ -512,14 +512,38 @@ $(".menu-mob__drop-wrap").click(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 	openChat = function openChat() {
-		var chatEl = document.getElementById("launcher");
-		var iframeDoc = chatEl.contentWindow.document.body.getElementsByTagName("button")[0];
-		iframeDoc.click();
+		if (document.getElementById("launcher") !== null) {
+			var chatEl = document.getElementById("launcher");
+			var iframeDoc = chatEl.contentWindow.document.body.getElementsByTagName("button")[0];
+			iframeDoc.click();
+		}
 	};
 });
 
 var openChat;
+var $zopim = '';
 
-$(".vip").click(function () {
-	openChat();
+$(".vip").click(function (e) {
+	if (document.documentElement.clientWidth > 992) {
+		e.preventDefault();
+		openChat();
+	}
 });
+
+var zCh = function zCh() {
+	if ($zopim == '') {
+		setTimeout(function () {
+
+			console.log("ef");
+			zCh();
+		}, 200);
+	} else {
+		$zopim(function () {
+			zE('webWidget', 'setLocale', 'en');
+			$zopim.livechat.addTags('EXRATES');
+		});
+	}
+};
+if (document.documentElement.clientWidth > 992) {
+	zCh();
+}
