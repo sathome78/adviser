@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
-from modeltranslation.admin import TranslationAdmin
+from modeltranslation.admin import TranslationAdmin, TabbedTranslationAdmin
 
 from adviser.forms import AdviserAdminForm
 from adviser.models import Adviser, Manager, GeneralFields
 
 
-class AdviserAdmin(TranslationAdmin):
+class AdviserAdmin(TabbedTranslationAdmin):
 
     list_display = ("id", "type", "name", "surname", "email", "short_description")
     list_filter = ('type', 'member_since')
@@ -25,17 +25,18 @@ class AdviserAdmin(TranslationAdmin):
             "classes": ("collapse", "collapse-closed"),
             }),
         )
+
     class Media:
         js = (
-            '/static/modeltranslation/js/force_jquery.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
-            '/static/modeltranslation/js/tabbed_translation_fields.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
             )
         css = {
-            'screen': ('/static/modeltranslation/css/tabbed_translation_fields.css',),
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
             }
 
-class ManagerAdmin(TranslationAdmin):
+class ManagerAdmin(TabbedTranslationAdmin):
 
     list_display = ("id", "name", "surname", "job_title",)
     list_display_links = ('name', 'surname')
@@ -48,14 +49,15 @@ class ManagerAdmin(TranslationAdmin):
             "fields": ("telegram", "email",),
             }),
         )
+
     class Media:
         js = (
-            '/static/modeltranslation/js/force_jquery.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js',
-            '/static/modeltranslation/js/tabbed_translation_fields.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
             )
         css = {
-            'screen': ('/static/modeltranslation/css/tabbed_translation_fields.css',),
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
             }
 
 

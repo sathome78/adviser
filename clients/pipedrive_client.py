@@ -77,10 +77,12 @@ class PipedriveClient:
 
         phone_pattern = re.compile("^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$")
         telegram_pattern = re.compile("^[a-zA-Z0-9]+$")
-        if phone_pattern.match(telegram):
-            data.update({"phone": telegram})
-        elif telegram_pattern.match(telegram):
-            data.update({settings.USER_TELEGRAM: "https://t.me/{}".format(telegram)})
+
+        if telegram:
+            if phone_pattern.match(telegram):
+                data.update({"phone": telegram})
+            elif telegram_pattern.match(telegram):
+                data.update({settings.USER_TELEGRAM: "https://t.me/{}".format(telegram)})
 
         if not contact:
             contact = self.client.create_person(**data)["data"]

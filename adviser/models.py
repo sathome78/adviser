@@ -66,8 +66,8 @@ class Adviser(models.Model):
             return '{}--{}'.format(self.get_type_display(), self.surname, self.name)
 
     class Meta(object):
-        verbose_name = _('adviser')
-        verbose_name_plural = _('advisers')
+        verbose_name = _('Ambassador')
+        verbose_name_plural = _('Ambassadors')
 
     def get_absolute_url(self):
         return reverse("adviser-detail", kwargs={"id": str(self.id)})

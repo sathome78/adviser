@@ -2,7 +2,6 @@
 {% load static %}
 {% block content %}
 {% load cache %}
-{% cache 500 contacts %}
             <div class="adviser-container">
                 <div class="first-screen">
                     <div class="fs-image-container">
@@ -215,5 +214,4 @@
                     </div>
                 </div>
             </div>
-{% endcache %}
 {% endblock %}

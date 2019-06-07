@@ -102,7 +102,6 @@ class AdviserProfileView(TemplateView):
     def get_object(self, queryset=None):
         return self.model.objects.get(pk=self.kwargs['id'])
 
-    @gzip_page
     def get_context_data(self, **kwargs):
         pk = self.kwargs['id']
         data = super().get_context_data(**kwargs)
