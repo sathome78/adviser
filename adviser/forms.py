@@ -81,7 +81,7 @@ class AdviserProfileForm(ModelForm):
 
     class Meta:
         model = Adviser
-        fields = ['name', 'surname',  'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
+        fields = ['name',  'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
 
     def save(self, commit=True):
         instance = super(AdviserProfileForm, self).save(commit=False)
@@ -99,14 +99,13 @@ class AdviserAdminForm(ModelForm):
 
     class Meta:
         model = Adviser
-        fields = ['name', 'surname', 'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
+        fields = ['name', 'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
 
     def save(self, commit=True):
         instance = super(AdviserAdminForm, self).save(commit=False)
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"id": str(instance.id)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"id": str(instance.id)}))
         PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
-        print(edit_url, update_url)
         if commit:
             instance.save()
         return instance

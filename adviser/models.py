@@ -34,7 +34,7 @@ class Adviser(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     type = models.IntegerField(choices=ADVISER_TYPE_ENUM,
                                help_text="Account type", default=1)
-    name = models.CharField(max_length=50,
+    name = models.CharField(max_length=250,
                             help_text="Company name or adviser first name")
     short_description = models.CharField(max_length=300,
                                          help_text="Short description displayed in sidebar")
@@ -50,8 +50,6 @@ class Adviser(models.Model):
     member_since = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='images/advisers/', default='images/default-ava.png')
 
-    surname = models.CharField(max_length=255, null=True, blank=True,
-                               help_text="Adviser's surname")
     long_description = models.CharField(max_length=700, null=True, blank=True,
                                         help_text="Company's benefits")
     trading_volume = models.CharField(max_length=255, null=True, blank=True,
@@ -61,9 +59,9 @@ class Adviser(models.Model):
 
     def __str__(self):
         if self.get_type_display() == "adviser":
-            return '{}--{},{}'.format(self.get_type_display(), self.surname, self.name)
+            return '{}--{}'.format(self.get_type_display(), self.name)
         else:
-            return '{}--{}'.format(self.get_type_display(), self.surname, self.name)
+            return '{}--{}'.format(self.get_type_display(), self.name)
 
     class Meta(object):
         verbose_name = _('Ambassador')
