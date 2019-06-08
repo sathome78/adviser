@@ -45,12 +45,11 @@ class ZendeskClient:
             fdata = file.read()
 
             import magic
-            mime_type = magic.from_buffer(fdata)
+            mime_type = magic.from_buffer(fdata, mime=True)
 
             upload_result = self.zendesk_client.upload_create(
                     fdata, filename=fname, mime_type=mime_type, complete_response=True)
             files_list.append(upload_result['content']['upload']['token'])
-
 
         new_ticket = {
             'ticket': {
