@@ -16,6 +16,9 @@ class AdviserAdmin(TabbedTranslationAdmin):
         (None, {
             "fields": ("id", "type", "name", "slug",  "short_description", "member_since", "avatar"),
             }),
+        ("Titles", {
+            "fields": ("page_title", "ambassador_type", ),
+            }),
         ("Contacts", {
             "fields": ("email", "telegram", "linkedin", "twitter", "website",),
             }),
