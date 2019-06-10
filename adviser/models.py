@@ -61,11 +61,14 @@ class Adviser(models.Model):
     rating = models.CharField(max_length=255, null=True, blank=True,
                               help_text="Rating CoinMarketCap")
 
+    page_title = models.CharField(max_length=255, null=True, blank=True,
+                              help_text="Title of the page", default="Ambassador Exrates Exchange")
+
+    ambassador_type = models.CharField(max_length=255, null=True, blank=True,
+                                  help_text="Type of ambassador/sales/company", default="Verified Ambassador")
+
     def __str__(self):
-        if self.get_type_display() == "adviser":
-            return '{}--{}'.format(self.get_type_display(), self.name)
-        else:
-            return '{}--{}'.format(self.get_type_display(), self.name)
+        return '{}--{}'.format(self.get_type_display(), self.name)
 
     class Meta(object):
         verbose_name = _('Ambassador')
