@@ -9,6 +9,7 @@ class ZendeskClient:
                      'Security',
                      'Authentication',
                      'Application Performance',
+                     'API issue',
                      'Trading']
 
     def __init__(self):
