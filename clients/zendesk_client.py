@@ -4,6 +4,14 @@ from zdesk import Zendesk, get_id_from_url
 
 
 class ZendeskClient:
+
+    HIGH_PRIORITY = ['Funds Withdrawal',
+'Help with Deposit',
+'Help with Google Aut',
+'Help with SMS Aut',
+'Security issues',
+'Trading questions']
+
     def __init__(self):
         config = {
             'zdesk_email': settings.ZENDESK_EMAIL,
@@ -64,8 +72,11 @@ class ZendeskClient:
             }
 
         new_ticket['ticket']['comment']['uploads'] = files_list
-        result = self.zendesk_client.ticket_create(data=new_ticket)
 
+        if type in self.HIGH_PRIORITY:
+            new_ticket['ticket']['priority'] = 'high'
+
+        result = self.zendesk_client.ticket_create(data=new_ticket)
 
         return result
 

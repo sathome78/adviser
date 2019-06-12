@@ -15,18 +15,17 @@ REQUEST_CHOICES = (
     (2, "API Issue"),
     (3, "Development suggestions"),
     (4, "Help with Deposit"),
-    (5, "Help with withdrawal"),
-    (6, "Not receiving email"),
-    (7, "Help with clients issue"),
-    (8, "Help with google Aut"),
-    (9, "Help with SMS Aut"),
+    (5, "Not receiving email"),
+    (6, "Security issues"),
+    (7, "Help with Google Aut"),
+    (8, "Help with SMS Aut"),
 
-    (10, "Help with account"),
-    (11, "Help with trade"),
-    (12, "Promotions"),
-    (13, "Security issues"),
-    (14, "Business communication"),
-    (15, "Service description"),
+    (9, "Help with account"),
+    (10, "Trading questions"),
+    (11, "Promotions"),
+    (12, "Security issues"),
+    (13, "Business communication"),
+    (14, "Service description"),
 
     )
 
