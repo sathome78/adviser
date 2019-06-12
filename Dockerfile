@@ -4,7 +4,6 @@ ADD . /usr/src/app
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt 
-#RUN python manage.py migrate --noinput && python manage.py collectstatic --noinput 
+RUN ["chmod", "+x", "./migrate_collect_run.sh"]
+ENTRYPOINT ["./migrate_collect_run.sh"]
 EXPOSE 8000
-ENTRYPOINT ["python", "manage.py"]
-CMD ["runserver", "0.0.0.0:8000"]
