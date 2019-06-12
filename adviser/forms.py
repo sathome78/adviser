@@ -13,19 +13,20 @@ from clients.pipedrive_client import PipedriveClient
 REQUEST_CHOICES = (
     (1, "Funds Withdrawal"),
     (2, "API Issue"),
-    (3, "Development suggestions"),
-    (4, "Help with Deposit"),
-    (5, "Not receiving email"),
-    (6, "Security issues"),
-    (7, "Help with Google Aut"),
-    (8, "Help with SMS Aut"),
+    (3, "Improvement"),
+    (4, "Deposit"),
+    (5, "I see issue"),
 
-    (9, "Help with account"),
-    (10, "Trading questions"),
-    (11, "Promotions"),
-    (12, "Security issues"),
-    (13, "Business communication"),
-    (14, "Service description"),
+    (6, "Help with my account"),
+    (7, "Trading"),
+    (8, "Promotion"),
+    (9, "Security"),
+    (10, "Business communication"),
+    (11, "Service description"),
+    (12, "Application Performance"),
+    (13, "Authentication"),
+    (14, "Usability"),
+    (15, "Other")
 
     )
 
