@@ -7,6 +7,9 @@ class ZendeskClient:
     HIGH_PRIORITY = ['Funds Withdrawal',
                      'Deposit',
                      'Security',
+                     'Authentication',
+                     'Application Performance',
+                     'API issue',
                      'Trading']
 
     def __init__(self):
