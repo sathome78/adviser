@@ -33,7 +33,7 @@ class ArticleSchema(serializers.ModelSerializer):
         model = Analytic
         fields = ('id', 'post_type', 'name', 'slug',
                   'short_description', 'article', 'currency_pair', 'preview_image', 'published_at', 'is_published', 'facebook_comments', 'facebook_link',
-                  'go_to_trade_link', 'link', 'author', 'tags', 'views')
+                  'go_to_trade_link', 'link', 'author', 'tags', 'views', "currency_pair_link")
 
     def get_link(self, obj):
         return "{}{}".format(DOMAIN, obj.get_absolute_url())

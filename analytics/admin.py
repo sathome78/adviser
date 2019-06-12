@@ -17,7 +17,7 @@ class AnalyticsAdmin(TabbedTranslationAdmin):
             "fields": ("article", "preview_image", "published_at", "is_published", "author", "views" ),
             }),
         ("Settings", {
-            "fields": ("facebook_comments", "facebook_link", "go_to_trade_link", ),
+            "fields": ("facebook_comments", "facebook_link", "go_to_trade_link", "currency_pair_link", "currency_pair"),
             }),
         ("Tags", {
             "fields": ("tags", ),
