@@ -8,13 +8,13 @@ class AnalyticsAdmin(TabbedTranslationAdmin):
 
     list_display = ("name",  "post_type", "short_description", "is_published", "published_at")
     list_filter = ('post_type', 'is_published', 'author')
-    readonly_fields = ("slug", "author")
+    readonly_fields = ("slug", "author", "views")
     fieldsets = (
         (None, {
             "fields": ("post_type", "name", "slug", "short_description", ),
             }),
         ("Article", {
-            "fields": ("article", "preview_image", "published_at", "is_published", "author" ),
+            "fields": ("article", "preview_image", "published_at", "is_published", "author", "views" ),
             }),
         ("Settings", {
             "fields": ("facebook_comments", "facebook_link", "go_to_trade_link", ),

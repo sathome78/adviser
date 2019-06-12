@@ -37,6 +37,7 @@ class Analytic(models.Model):
     go_to_trade_link = models.CharField(null=True, blank=True, max_length=255)
     author = models.ForeignKey(settings.AUTH_USER_MODEL,
                       null=True, blank=True, on_delete=models.SET_NULL)
+    views = models.PositiveIntegerField(default=0)
 
 
     def __str__(self):
