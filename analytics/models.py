@@ -27,6 +27,7 @@ class Analytic(models.Model):
     short_description = models.TextField(max_length=500)
     article = RichTextUploadingField(max_length=2000)
     currency_pair = models.CharField(max_length=100)
+    currency_pair_link = models.CharField(max_length=255, null=True, blank=True)
     preview_image = models.ImageField(upload_to='articles', default='images/default-ava.png')
 
     published_at = models.DateTimeField(default=datetime.utcnow())
