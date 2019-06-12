@@ -1,3 +1,5 @@
+from django.db.models import F
+from django.db.transaction import atomic
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView, ListView
 from rest_framework import generics, permissions
@@ -6,8 +8,18 @@ from rest_framework.pagination import PageNumberPagination
 from analytics.models import Analytic
 from analytics.serializers import ArticleSchema
 
+class ArticleCounterMixin(object):
+    def get_context_data(self, **kwargs):
+        context = super(ArticleCounterMixin, self).get_context_data(**kwargs)
+        article_slug = self.kwargs['slug']
+        if not article_slug in self.request.session:
+            bp = Analytic.objects.filter(slug=article_slug).update(views=F("views") + 1)
+            bp.save()
+            # Insert the slug into the session as the user has seen it
+            self.request.session[article_slug] = article_slug
+        return context
 
-class ArticlePageView(TemplateView):
+class ArticlePageView(TemplateView, ArticleCounterMixin):
     template_name = 'main/article.html'
     model = Analytic
 
@@ -17,6 +29,9 @@ class ArticlePageView(TemplateView):
     def get_context_data(self, **kwargs):
         slug = self.kwargs['slug']
         data = super().get_context_data(**kwargs)
+        if not slug in self.request.session:
+            Analytic.objects.filter(slug=slug).update(views=F("views") + 1)
+            self.request.session[slug] = slug
         data['article'] = get_object_or_404(Analytic, slug=slug)
         return data
 
