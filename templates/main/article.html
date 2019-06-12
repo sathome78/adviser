@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cache %}
+{%  block title %}
+{% endblock %}
+{% load i18n %}
+
+p {
+  color: white;
+}
+{% block content %}
+    <div id="fb-root"></div>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=1867139203553457&autoLogAppEvents=1"></script>
+    {{ article.name }}
+
+    <hr>
+     <hr>
+     <hr>
+     {% language 'en' %}
+    {{ article.published_at|date:"M/d/Y G:i A l" }}
+    {% endlanguage %}
+     <hr>
+     <hr>
+     <hr>
+     <hr>
+     <hr>
+
+    {{ article.article|safe }}
+     <hr>
+     <hr>
+<div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="200" data-numposts="5"></div>
+ <hr>
+
+{% endblock %}
+
