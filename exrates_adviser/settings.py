@@ -49,6 +49,12 @@ INSTALLED_APPS = [
 
     ]
 
+OPENGRAPH_CONFIG = {
+    'FB_ADMINS': '100003930913968',
+    'FB_APP_ID': '1335507479837766',
+    'SITE_NAME': 'Exrates.me',
+}
+
 SITE = config.get('DEFAULT', 'SITE')
 
 LANGUAGES = (

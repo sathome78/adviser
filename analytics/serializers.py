@@ -31,7 +31,7 @@ class ArticleSchema(serializers.ModelSerializer):
 
     class Meta:
         model = Analytic
-        fields = ('id', 'post_type', 'name', 'slug',
+        fields = ('id', 'post_type', 'title', 'slug',
                   'short_description', 'article', 'currency_pair', 'preview_image', 'published_at', 'is_published', 'facebook_comments', 'facebook_link',
                   'go_to_trade_link', 'link', 'author', 'tags', 'views', "currency_pair_link")
 

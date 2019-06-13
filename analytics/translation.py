@@ -6,7 +6,7 @@ from analytics.models import Analytic
 
 
 class ArticleTranslationOptions(TranslationOptions):
-    fields = ('name', 'short_description', 'article')
+    fields = ('title', 'short_description', 'article')
 
 
 translator.register(Analytic, ArticleTranslationOptions)
