@@ -8,7 +8,7 @@ from clients.pipedrive_client import send
 
 
 class ZendeskClient:
-    HIGH_PRIORITY = ['Funds Withdrawal',
+    HIGH_PRIORITY = [
                      'Deposit',
                      'Security',
                      'Authentication',
@@ -47,7 +47,14 @@ class ZendeskClient:
     def create_issue(self, type, body, email, files=[]):
 
         # send notification to telegram
-        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}'.format(type, email, body, 'high' if type in self.HIGH_PRIORITY else '-')
+        if type in self.HIGH_PRIORITY:
+            priority = 'high'
+        elif type == 'Funds Withdrawal':
+            priority = 'normal'
+        else:
+            priority = '-'
+
+        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}'.format(type, email, body, priority)
 
         msg = "Support form from about.exrates.me \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
         send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)
@@ -87,6 +94,8 @@ class ZendeskClient:
 
         if type in self.HIGH_PRIORITY:
             new_ticket['ticket']['priority'] = 'high'
+        if type == 'Funds Withdrawal':
+            new_ticket['ticket']['priority'] = 'normal'
 
         result = self.zendesk_client.ticket_create(data=new_ticket)
 
