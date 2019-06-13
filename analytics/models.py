@@ -1,11 +1,10 @@
-from datetime import datetime
 
-from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
-from django.conf import settings
-from django.urls import reverse
-from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
+from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.fields import AutoSlugField
 
 POST_TYPE_ENUM = (
@@ -30,13 +29,13 @@ class Analytic(models.Model):
     currency_pair_link = models.CharField(max_length=255, null=True, blank=True)
     preview_image = models.ImageField(upload_to='articles', default='images/default-ava.png')
 
-    published_at = models.DateTimeField(default=datetime.utcnow())
+    published_at = models.DateTimeField(default=timezone.now)
     is_published = models.BooleanField(default=False)
     tags = models.ManyToManyField(Tag, related_name='article_tags')
     facebook_comments = models.BooleanField(default=True)
     facebook_link = models.CharField(null=True, blank=True, max_length=255)
     go_to_trade_link = models.CharField(null=True, blank=True, max_length=255)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL,
+    author = models.ForeignKey(User,
                       null=True, blank=True, on_delete=models.SET_NULL)
     views = models.PositiveIntegerField(default=0)
 

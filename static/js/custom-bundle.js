@@ -547,4 +547,6 @@ var zCh = function zCh() {
 if (document.documentElement.clientWidth > 992) {
 	zCh();
 }
+
+$(window).on('scroll', function (e) {});
 "use strict";
