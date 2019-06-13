@@ -594,7 +594,7 @@ var downloadPost = function downloadPost() {
 			}
 			pageNumber++;
 
-			if (JSON.parse(data).next != null) {
+			if (data.next != null) {
 				scrollFlag = true;
 			}
 		},
