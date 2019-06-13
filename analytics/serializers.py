@@ -7,7 +7,7 @@ from rest_framework.fields import SerializerMethodField
 from rest_framework.relations import SlugRelatedField
 
 from analytics.models import Analytic, Tag
-from exrates_adviser.settings import DOMAIN
+from exrates_adviser.settings import SITE
 
 
 class UserSchema(serializers.ModelSerializer):
@@ -36,7 +36,7 @@ class ArticleSchema(serializers.ModelSerializer):
                   'go_to_trade_link', 'link', 'author', 'tags', 'views', "currency_pair_link")
 
     def get_link(self, obj):
-        return "{}{}".format(DOMAIN, obj.get_absolute_url())
+        return "{}{}".format(SITE, obj.get_absolute_url())
 
     def get_published_at(self, obj):
         return obj.published_at.strftime("%b/%d/%Y %-I:%-M %p %A")

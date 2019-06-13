@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
+
 from django.conf import settings
 from zdesk import Zendesk, get_id_from_url
+
+from clients.pipedrive_client import send
 
 
 class ZendeskClient:
@@ -41,6 +45,14 @@ class ZendeskClient:
         return user_id
 
     def create_issue(self, type, body, email, files=[]):
+
+        # send notification to telegram
+        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}'.format(type, body, email, 'high' if type in self.HIGH_PRIORITY else 'normal')
+
+        msg = "Suppor form from about.exrates.me \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
+        send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)
+
+
 
         user_id = self.create_user(email)
 
