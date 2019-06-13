@@ -6,12 +6,12 @@ from analytics.models import Analytic, Tag
 
 class AnalyticsAdmin(TabbedTranslationAdmin):
 
-    list_display = ("name",  "post_type", "short_description", "is_published", "published_at")
+    list_display = ("title",  "post_type", "short_description", "is_published", "published_at")
     list_filter = ('post_type', 'is_published', 'author')
     readonly_fields = ("slug", "author", "views")
     fieldsets = (
         (None, {
-            "fields": ("post_type", "name", "slug", "short_description", ),
+            "fields": ("post_type", "title", "slug", "short_description", ),
             }),
         ("Article", {
             "fields": ("article", "preview_image", "published_at", "is_published", "author", "views" ),

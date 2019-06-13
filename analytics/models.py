@@ -21,10 +21,10 @@ class Tag(models.Model):
 class Analytic(models.Model):
     post_type = models.IntegerField(choices=POST_TYPE_ENUM,
                                 default=1)
-    name = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
     slug = AutoSlugField(_('slug'), max_length=50, unique=True, populate_from=('name',))
     short_description = models.TextField(max_length=500)
-    article = RichTextUploadingField(max_length=2000)
+    article = RichTextUploadingField(max_length=5000)
     currency_pair = models.CharField(max_length=100)
     currency_pair_link = models.CharField(max_length=255, null=True, blank=True)
     preview_image = models.ImageField(upload_to='articles', default='images/default-ava.png')
@@ -41,11 +41,11 @@ class Analytic(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return self.title
 
     class Meta(object):
         verbose_name = _('Analytic article')
         verbose_name_plural = _('Analytic articles')
 
     def get_absolute_url(self):
-        return reverse("article-detail", kwargs={"slug": self.slug})
+        return reverse("analytics-detail", kwargs={"slug": self.slug})

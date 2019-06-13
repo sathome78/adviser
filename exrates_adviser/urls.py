@@ -61,11 +61,11 @@ urlpatterns = [
                   url(r'^support-center/$', SupportPageView.as_view(), name='support-center'),
 
                   url(r'^chat/$', ChatPageView.as_view(), name='chat'),
-                  url(r'^articles/$', ArticlesListPageView.as_view(), name='articles-list'),
+                  url(r'^analytics/$', ArticlesListPageView.as_view(), name='analytics-list'),
 
                     url(r'^api/articles/$', ListArticleView.as_view(), name='articles-list1'),
 
-                  url(r'^articles/(?P<slug>[-\w]+)/$', ArticlePageView.as_view(), name='article-detail'),
+                  url(r'^analytics-detail/(?P<slug>[-\w]+)/$', ArticlePageView.as_view(), name='analytics-detail'),
 
                   url('admin/', admin.site.urls),
                   url('i18n/', include('django.conf.urls.i18n')),
