@@ -13,7 +13,7 @@ class ZendeskClient:
                      'Security',
                      'Authentication',
                      'Application Performance',
-                     'API issue',
+                     'API Issue',
                      'Trading']
 
     def __init__(self):
@@ -47,7 +47,7 @@ class ZendeskClient:
     def create_issue(self, type, body, email, files=[]):
 
         # send notification to telegram
-        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}'.format(type, body, email, 'high' if type in self.HIGH_PRIORITY else 'normal')
+        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}'.format(type, email, body, 'high' if type in self.HIGH_PRIORITY else '-')
 
         msg = "Support form from about.exrates.me \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
         send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)

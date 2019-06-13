@@ -24,7 +24,7 @@ class ArticlePageView(TemplateView):
         data['article'] = get_object_or_404(Analytic, slug=slug)
         return data
 
-class ArticlesListPageView(ListView):
+class ArticlesListPageView(TemplateView):
     template_name = 'main/analitics.html'
     model = Analytic
     queryset = Analytic.objects.filter(is_published=True)
