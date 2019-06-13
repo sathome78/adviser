@@ -8,6 +8,10 @@ from clients.pipedrive_client import send
 
 
 class ZendeskClient:
+    NORMAL_PRIORITY = [
+                     'Deposit',
+                     'Funds Withdrawal']
+
     HIGH_PRIORITY = [
                      'Deposit',
                      'Security',
@@ -49,7 +53,7 @@ class ZendeskClient:
         # send notification to telegram
         if type in self.HIGH_PRIORITY:
             priority = 'high'
-        elif type == 'Funds Withdrawal':
+        elif type in self.NORMAL_PRIORITY:
             priority = 'normal'
         else:
             priority = '-'
@@ -94,7 +98,7 @@ class ZendeskClient:
 
         if type in self.HIGH_PRIORITY:
             new_ticket['ticket']['priority'] = 'high'
-        if type == 'Funds Withdrawal':
+        elif type in self.NORMAL_PRIORITY:
             new_ticket['ticket']['priority'] = 'normal'
 
         result = self.zendesk_client.ticket_create(data=new_ticket)
