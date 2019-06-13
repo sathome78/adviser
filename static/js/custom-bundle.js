@@ -553,14 +553,21 @@ $(window).on('scroll', function (e) {
 	}
 });
 
+var strGET = window.location.search.replace('?', '');
 var postPreview;
 var pageNumber = 1;
 var scrollFlag = true;
+console.log(strGET);
+var apiUrl;
 var downloadPost = function downloadPost() {
-
+	if (strGET != "") {
+		apiUrl = "/api/articles/?page=" + pageNumber + "&" + strGET;
+	} else {
+		apiUrl = "/api/articles/?page=" + pageNumber;
+	}
 	$.ajax({
-		url: "/api/articles/?page=" + pageNumber,
-		// url: "getList" + pageNumber + ".php",
+		// url: "/api/articles/?page=" + pageNumber,
+		url: apiUrl,
 		type: 'GET',
 		success: function success(data) {
 			postPreview = "";
