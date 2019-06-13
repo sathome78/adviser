@@ -42,4 +42,4 @@ class ArticleSchema(serializers.ModelSerializer):
         return obj.published_at.strftime("%b/%d/%Y %-I:%-M %p %A")
 
     def get_post_type(self, obj):
-        return obj.get_post_type_display()
+        return str(obj.get_post_type_display())
