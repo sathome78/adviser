@@ -566,7 +566,7 @@ var downloadPost = function downloadPost() {
 			postPreview = "";
 			console.log(data);
 			console.log(data.results);
-			postPreview = JSON.parse(data).results;
+			postPreview = data.results;
 			for (var i = 0; i < postPreview.length; i++) {
 				$("#template .title h5").html(postPreview[i].currency_pair + " " + postPreview[i].title);
 				$("#template .pic-container img").attr("src", postPreview[i].preview_image);
