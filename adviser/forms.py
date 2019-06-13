@@ -22,11 +22,10 @@ REQUEST_CHOICES = (
     (8, "Promotion"),
     (9, "Security"),
     (10, "Business communication"),
-    (11, "Service description"),
-    (12, "Application Performance"),
-    (13, "Authentication"),
-    (14, "Usability"),
-    (15, "Other")
+    (11, "Application Performance"),
+    (12, "Authentication"),
+    (13, "Usability"),
+    (14, "Other")
 
     )
 
