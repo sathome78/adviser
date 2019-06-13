@@ -24,7 +24,11 @@
                         <h4>{{ article.title }}</h4>
                     </div>
                     <div class="coin">
-                        <p>{{ article.currency_pair }} </p>
+                        {% if  article.currency_pair_link %}
+                        <a href="{{ article.currency_pair_link }}">{{ article.currency_pair }} </a>
+                        {%  else %}
+                         <a href="#">{{ article.currency_pair }} </a>
+                        {% endif %}
                     </div>
                     <div class="date">
                         {% language 'en' %}
