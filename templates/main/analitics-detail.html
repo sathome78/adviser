@@ -41,7 +41,7 @@
                     <div class="sharing-part">
                         <div class="labels">
                             {%  for tag in article.tags.all %}
-                            <a href="{% url 'analytics-detail' slug=article.slug%}?tag={{ tag.name }}" class="label-item">
+                            <a href="{% url 'analytics-list'%}?tag={{ tag }}" class="label-item">
                                 <span>{{ tag }}</span>
                             </a>
                             {% endfor %}

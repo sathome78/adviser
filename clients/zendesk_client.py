@@ -49,7 +49,7 @@ class ZendeskClient:
         # send notification to telegram
         msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}'.format(type, body, email, 'high' if type in self.HIGH_PRIORITY else 'normal')
 
-        msg = "Suppor form from about.exrates.me \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
+        msg = "Support form from about.exrates.me \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
         send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)
 
 
