@@ -13,7 +13,6 @@ class ZendeskClient:
                      'Funds Withdrawal']
 
     HIGH_PRIORITY = [
-                     'Deposit',
                      'Security',
                      'Authentication',
                      'Application Performance',
