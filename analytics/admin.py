@@ -7,17 +7,17 @@ from analytics.models import Analytic, Tag
 class AnalyticsAdmin(TabbedTranslationAdmin):
 
     list_display = ("title",  "post_type", "short_description", "is_published", "published_at")
-    list_filter = ('post_type', 'is_published', 'author')
-    readonly_fields = ("slug", "author", "views")
+    list_filter = ('post_type',  'author')
+    readonly_fields = ("slug", "author", "views", 'is_published')
     fieldsets = (
         (None, {
-            "fields": ("post_type", "title", "slug", "short_description", ),
+            "fields": ("post_type", "term", "title", "slug", "short_description", ),
             }),
         ("Article", {
             "fields": ("article", "preview_image", "published_at", "is_published", "author", "views" ),
             }),
         ("Settings", {
-            "fields": ("facebook_comments", "facebook_link", "go_to_trade_link", "currency_pair_link", "currency_pair"),
+            "fields": ("facebook_comments", "go_to_trade_link", "currency_pair_link", "currency_pair"),
             }),
         ("Tags", {
             "fields": ("tags", ),

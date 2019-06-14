@@ -540,6 +540,15 @@ if (document.documentElement.clientWidth > 992) {
 }
 
 $(document).ready(function () {
+	// downloadPost();
+	filterHeadFunc();
+});
+
+$('body').on('click', ".clearFilter", function (e) {
+	e.preventDefault();
+	var urlNoParam = window.location.href.split('?')[0];
+	window.history.pushState('', '', urlNoParam);
+	filterHeadFunc();
 	downloadPost();
 });
 
@@ -553,13 +562,48 @@ $(window).on('scroll', function (e) {
 	}
 });
 
-var strGET = window.location.search.replace('?', '');
+window.addEventListener("popstate", function (e) {
+	filterHeadFunc();
+	var pageNumber = 1;
+	downloadPost();
+}, false);
+
+var filterHeadFunc = function filterHeadFunc() {
+	strGET = window.location.search.replace('?', '');
+	if (strGET != "" && $("#template").length) {
+		var filterParam = strGET.replace('=', '');
+		$("#template .head-filter h5").html(filterParam);
+		$("#template .tags-block span").html(filterParam);
+		$("#template .tags-block a").attr("href", '/analytics/' + strGET);
+		var filterHead = $("#template .filter-block").clone();
+		$(".analitics-inner").prepend(filterHead);
+	} else {
+		$(".analitics-inner .filter-block").remove();
+	}
+};
+
+$(".share-link a").click(function (e) {
+	e.preventDefault();
+	var shareUrl = $(this).closest(".analitics-item").find(".hidden-link").attr("href");
+	if ($(this).closest(".share-link").hasClass("tg")) {
+		window.open('https://telegram.me/share/url?url=' + shareUrl);
+	}
+	if ($(this).closest(".share-link").hasClass("fb")) {
+		window.open('https://facebook.com/sharer/sharer.php?u=' + shareUrl);
+	}
+	if ($(this).closest(".share-link").hasClass("tw")) {
+		window.open('https://facebook.com/sharer/sharer.php?u=' + shareUrl);
+	}
+});
+
+var strGET;
 var postPreview;
-var pageNumber = 1;
+var pageNumber = 2;
 var scrollFlag = true;
 console.log(strGET);
 var apiUrl;
 var downloadPost = function downloadPost() {
+	strGET = window.location.search.replace('?', '');
 	if (strGET != "") {
 		apiUrl = "/api/articles/?page=" + pageNumber + "&" + strGET;
 	} else {
@@ -578,13 +622,8 @@ var downloadPost = function downloadPost() {
 				$("#template .title h5").html(postPreview[i].title);
 				$("#template .pic-container img").attr("src", postPreview[i].preview_image);
 				$("#template .category p").html("");
-				for (var s = 0; s < postPreview[i].tags.length; s++) {
-					if (s > 0) {
-						$("#template .category p").append("<span>, " + postPreview[i].tags[s] + "</span>");
-					} else {
-						$("#template .category p").append("<span>" + postPreview[i].tags[s] + "</span>");
-					}
-				}
+				$("#template .category a").attr("href", postPreview[i].currency_pair_link);
+				$("#template .category a").html(postPreview[i].currency_pair);
 				$("#template .description p").html(postPreview[i].short_description);
 				$("#template .date p").html(postPreview[i].published_at);
 				$("#template .view p").html(postPreview[i].views);

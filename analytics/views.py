@@ -1,6 +1,8 @@
 from django.db.models import F
 from django.db.transaction import atomic
 from django.shortcuts import render, get_object_or_404
+from django.utils import timezone
+from django.views.decorators.gzip import gzip_page
 from django.views.generic import TemplateView, ListView
 from rest_framework import generics, permissions
 from rest_framework.pagination import PageNumberPagination
@@ -27,12 +29,11 @@ class ArticlePageView(TemplateView):
 class ArticlesListPageView(TemplateView):
     template_name = 'main/analitics.html'
     model = Analytic
-    queryset = Analytic.objects.filter(is_published=True)
-
+    queryset = Analytic.objects.filter(published_at__lte=timezone.now())
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        data['articles'] = Analytic.objects.filter(is_published=True)
+        data['articles'] = Analytic.objects.filter(published_at__lte=timezone.now())[:10]
         return data
 
 
@@ -47,7 +48,7 @@ class ListArticleView(generics.ListAPIView):
     pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
-        queryset = Analytic.objects.filter(is_published=True)
+        queryset = Analytic.objects.filter(published_at__lte=timezone.now())
         tag = self.request.query_params.get('tag')
 
         if tag:
