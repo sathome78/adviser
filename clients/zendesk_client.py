@@ -49,21 +49,6 @@ class ZendeskClient:
 
     def create_issue(self, type, body, email, files=[]):
 
-        # send notification to telegram
-        if type in self.HIGH_PRIORITY:
-            priority = 'high'
-        elif type in self.NORMAL_PRIORITY:
-            priority = 'normal'
-        else:
-            priority = '-'
-
-        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}'.format(type, email, body, priority)
-
-        msg = "Support form from about.exrates.me \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
-        send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)
-
-
-
         user_id = self.create_user(email)
 
         files_list = []
@@ -96,10 +81,21 @@ class ZendeskClient:
         new_ticket['ticket']['comment']['uploads'] = files_list
 
         if type in self.HIGH_PRIORITY:
-            new_ticket['ticket']['priority'] = 'high'
+            priority = 'high'
         elif type in self.NORMAL_PRIORITY:
-            new_ticket['ticket']['priority'] = 'normal'
+            priority = 'normal'
+        else:
+            priority = 'low'
 
+        new_ticket['ticket']['priority'] = priority
         result = self.zendesk_client.ticket_create(data=new_ticket)
+
+
+        # send notification to telegram
+        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}  \n \n Link to the ticket: {}'.format(type, email, body, priority, result)
+
+        msg = "Support form from about.exrates.me \n  \n  \n {} \n {}".format(msg1,
+                                                                              datetime.now().strftime("%Y-%m-%d %H:%M"))
+        send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)
 
         return result
