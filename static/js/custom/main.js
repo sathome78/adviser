@@ -629,7 +629,13 @@ var downloadPost = function downloadPost() {
 			console.log(data.results);
 			postPreview = data.results;
 			for (var i = 0; i < postPreview.length; i++) {
+				$("#template .hidden-link").remove();
+				$("#template .title h5 label").html('');
+				if (postPreview[i].post_type != "Preview") {
+					$("#template .analitics-item-in").prepend("<a class='hidden-link' href =" + postPreview[i].link + "></a>");
+				}
 				$("#template .title h5").html(postPreview[i].title);
+				$("#template .title h5 label").html(postPreview[i].term);
 				$("#template .pic-container img").attr("src", postPreview[i].preview_image);
 				$("#template .category p").html("");
 				$("#template .category a").attr("href", postPreview[i].currency_pair_link);
@@ -637,7 +643,6 @@ var downloadPost = function downloadPost() {
 				$("#template .description p").html(postPreview[i].short_description);
 				$("#template .date p").html(postPreview[i].published_at);
 				$("#template .view p").html(postPreview[i].views);
-				$("#template .hidden-link").attr("href", postPreview[i].link);
 				var item = $("#template .analitics-item").clone();
 				$(".analitics-item-wr").append(item);
 			}
