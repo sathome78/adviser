@@ -575,7 +575,7 @@ var downloadPost = function downloadPost() {
 			console.log(data.results);
 			postPreview = data.results;
 			for (var i = 0; i < postPreview.length; i++) {
-				$("#template .title h5").html(postPreview[i].currency_pair + " " + postPreview[i].title);
+				$("#template .title h5").html(postPreview[i].title);
 				$("#template .pic-container img").attr("src", postPreview[i].preview_image);
 				$("#template .category p").html("");
 				for (var s = 0; s < postPreview[i].tags.length; s++) {
