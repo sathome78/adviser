@@ -578,10 +578,11 @@ window.addEventListener("popstate", function (e) {
 var filterHeadFunc = function filterHeadFunc() {
 	strGET = window.location.search.replace('?', '');
 	if (strGET != "" && $("#template").length) {
-		var filterParam = strGET.replace('=', '');
-		$("#template .head-filter h5").html(filterParam);
-		$("#template .tags-block span").html(filterParam);
+		var filterParam = strGET.split('=')[1];
+		$("#template .head-filter h5").html(decodeURI(filterParam));
+		$("#template .tags-block span").html(decodeURI(filterParam));
 		$("#template .tags-block a").attr("href", '/analytics/' + strGET);
+		console.log(strGET);
 		var filterHead = $("#template .filter-block").clone();
 		$(".analitics-inner").prepend(filterHead);
 	} else {
@@ -590,8 +591,10 @@ var filterHeadFunc = function filterHeadFunc() {
 };
 
 $(".share-link a").click(function (e) {
+	console.log(e.target);
 	e.preventDefault();
 	var shareUrl = $(this).closest(".analitics-item").find(".hidden-link").attr("href");
+	console.log();
 	if ($(this).closest(".share-link").hasClass("tg")) {
 		window.open('https://telegram.me/share/url?url=' + shareUrl);
 	}
