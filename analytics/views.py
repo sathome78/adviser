@@ -31,11 +31,11 @@ class ArticlePageView(TemplateView):
 class ArticlesListPageView(TemplateView):
     template_name = 'main/analitics.html'
     model = Analytic
-    queryset = Analytic.objects.filter(published_at__lte=timezone.now())
+    queryset = Analytic.objects.filter(published_at__lte=timezone.now(), is_active=True)
 
     def get(self, request, *args, **kwargs):
         tag = request.GET.get('tag')
-        queryset = Analytic.objects.filter(published_at__lte=timezone.now())
+        queryset = Analytic.objects.filter(published_at__lte=timezone.now(), is_active=True).order_by('-published_at')
 
         if tag:
             queryset = queryset.filter(tags__tag_name=tag)
@@ -55,7 +55,7 @@ class ListArticleView(generics.ListAPIView):
     pagination_class = StandardResultsSetPagination
 
     def get_queryset(self):
-        queryset = Analytic.objects.filter(published_at__lte=timezone.now())
+        queryset = Analytic.objects.filter(published_at__lte=timezone.now(), is_active=True).order_by('-published_at')
         tag = self.request.query_params.get('tag')
 
         if tag:

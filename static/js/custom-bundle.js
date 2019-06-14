@@ -632,9 +632,9 @@ var downloadPost = function downloadPost() {
 			for (var i = 0; i < postPreview.length; i++) {
 				$("#template .hidden-link").remove();
 				$("#template .title h5 label").remove();
-				if (postPreview[i].post_type != "Preview") {
-					$("#template .analitics-item-in").prepend("<a class='hidden-link' href =" + postPreview[i].link + "></a>");
-				}
+				// if(postPreview[i].post_type !="Preview"){
+				$("#template .analitics-item-in").prepend("<a class='hidden-link' href =" + postPreview[i].link + "></a>");
+				// }
 				$("#template .title h5").html(postPreview[i].title);
 				$("#template .title h5").append("<span class='label'>" + postPreview[i].term + "</span>");
 				$("#template .pic-container img").attr("src", postPreview[i].preview_image);
