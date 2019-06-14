@@ -26,13 +26,12 @@ class ArticleSchema(serializers.ModelSerializer):
         slug_field='tag_name')
     link = SerializerMethodField()
     published_at = SerializerMethodField()
-    post_type = SerializerMethodField()
     term = SerializerMethodField()
     views = serializers.IntegerField(read_only=True)
 
     class Meta:
         model = Analytic
-        fields = ('id', 'post_type', 'title', 'slug',
+        fields = ('id', 'title', 'slug', 'is_active',
                   'short_description', 'article', 'term', 'currency_pair', 'preview_image', 'published_at', 'is_published', 'facebook_comments',
                   'go_to_trade_link', 'link', 'author', 'tags', 'views', "currency_pair_link")
 
@@ -42,8 +41,6 @@ class ArticleSchema(serializers.ModelSerializer):
     def get_published_at(self, obj):
         return obj.published_at.strftime("%b/%d/%Y %-I:%-M %p %A")
 
-    def get_post_type(self, obj):
-        return str(obj.get_post_type_display())
 
     def get_term(self, obj):
         return str(obj.get_term_display())

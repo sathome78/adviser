@@ -7,10 +7,6 @@ from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from django_extensions.db.fields import AutoSlugField
 
-POST_TYPE_ENUM = (
-    (1, 'Preview'),
-    (2, 'Article'),
-    )
 TERM_ENUM = (
     (1, 'Short'),
     (2, 'Long'),
@@ -22,8 +18,6 @@ class Tag(models.Model):
         return self.tag_name
 
 class Analytic(models.Model):
-    post_type = models.IntegerField(choices=POST_TYPE_ENUM,
-                                default=1)
     title = models.CharField(max_length=255)
     slug = AutoSlugField(_('slug'), max_length=50, unique=True, populate_from=('title',))
     short_description = models.TextField(max_length=500)
@@ -31,6 +25,7 @@ class Analytic(models.Model):
     currency_pair = models.CharField(max_length=100)
     term = models.IntegerField(choices=TERM_ENUM,
                                 default=1)
+    is_active = models.BooleanField(default=True)
     currency_pair_link = models.URLField(max_length=255, null=True, blank=True)
     preview_image = models.ImageField(upload_to='articles', default='images/default-ava.png')
 
