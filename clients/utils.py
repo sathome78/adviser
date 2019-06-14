@@ -9,7 +9,7 @@ from django.conf import settings
 
 config = configparser.ConfigParser()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CONFIG_PATH = os.path.join(BASE_DIR, 'config', 'prod.ini')
+CONFIG_PATH = os.path.join(BASE_DIR, 'config', 'local.ini')
 
 
 def get_config():
