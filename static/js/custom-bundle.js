@@ -593,7 +593,8 @@ var filterHeadFunc = function filterHeadFunc() {
 $(document).on("click", ".share-link a", function (e) {
 	console.log(e.target);
 	e.preventDefault();
-	var shareUrl = location.origin + $(this).closest(".analitics-item").find(".hidden-link").attr("href");
+	var shareUrl = $(this).closest(".analitics-item").find(".hidden-link").attr("href");
+	// var shareUrl = location.origin  + $(this).closest(".analitics-item").find(".hidden-link").attr("href");
 	console.log(shareUrl);
 
 	if ($(this).closest(".share-link").hasClass("tg")) {
@@ -621,7 +622,6 @@ var downloadPost = function downloadPost() {
 		apiUrl = "/api/articles/?page=" + pageNumber;
 	}
 	$.ajax({
-		// url: "/api/articles/?page=" + pageNumber,
 		url: apiUrl,
 		type: 'GET',
 		success: function success(data) {
@@ -631,14 +631,13 @@ var downloadPost = function downloadPost() {
 			postPreview = data.results;
 			for (var i = 0; i < postPreview.length; i++) {
 				$("#template .hidden-link").remove();
-				$("#template .title h5 label").html('');
+				$("#template .title h5 label").remove();
 				if (postPreview[i].post_type != "Preview") {
 					$("#template .analitics-item-in").prepend("<a class='hidden-link' href =" + postPreview[i].link + "></a>");
 				}
 				$("#template .title h5").html(postPreview[i].title);
-				$("#template .title h5 label").html(postPreview[i].term);
+				$("#template .title h5").append("<span class='label'>" + postPreview[i].term + "</span>");
 				$("#template .pic-container img").attr("src", postPreview[i].preview_image);
-				$("#template .category p").html("");
 				$("#template .category a").attr("href", postPreview[i].currency_pair_link);
 				$("#template .category a").html(postPreview[i].currency_pair);
 				$("#template .description p").html(postPreview[i].short_description);
