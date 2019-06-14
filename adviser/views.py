@@ -50,7 +50,6 @@ class DealPageView(FormView):
         context = super(DealPageView, self).get_context_data(**kwargs)
         return context
 
-    @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -69,7 +68,6 @@ class AdviserFormView(FormView):
     def get_object(self, queryset=None):
         return self.model.objects.get(slug=self.kwargs['slug'])
 
-    @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -87,7 +85,6 @@ class AdviserUpdateProfileView(UpdateView):
     def get_object(self, queryset=None):
         return self.model.objects.get(slug=self.kwargs['slug'])
 
-    @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -126,7 +123,6 @@ class AboutUsPageView(FormView):
         context = super(AboutUsPageView, self).get_context_data(**kwargs)
         return context
 
-    @gzip_page
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
