@@ -21,7 +21,7 @@ class Manager(models.Model):
     surname = models.CharField(max_length=100)
     job_title = models.CharField(max_length=255)
     telegram = models.CharField(max_length=200, null=True, blank=True)
-    email = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(max_length=200, null=True, blank=True)
     avatar = models.ImageField(upload_to='images', default='images/default-ava.png')
 
     def __str__(self):
@@ -46,10 +46,10 @@ class Adviser(models.Model):
     slug = AutoSlugField(_('slug'), max_length=50, unique=True, populate_from=('name',))
 
     telegram = models.CharField(max_length=255, null=True, blank=True)
-    linkedin = models.CharField(max_length=255, null=True, blank=True)
+    linkedin = models.URLField(max_length=255, null=True, blank=True)
     twitter = models.CharField(max_length=255, null=True, blank=True)
-    email = models.CharField(max_length=255, null=True, blank=True)
-    website = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(max_length=255, null=True, blank=True)
+    website = models.URLField(max_length=255, null=True, blank=True)
 
     member_since = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='images/advisers/', default='images/default-ava.png')
