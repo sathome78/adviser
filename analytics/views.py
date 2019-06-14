@@ -24,6 +24,8 @@ class ArticlePageView(TemplateView):
             Analytic.objects.filter(slug=slug).update(views=F("views") + 1)
             self.request.session[slug] = slug
         data['article'] = get_object_or_404(Analytic, slug=slug)
+
+
         return data
 
 class ArticlesListPageView(TemplateView):
@@ -31,10 +33,15 @@ class ArticlesListPageView(TemplateView):
     model = Analytic
     queryset = Analytic.objects.filter(published_at__lte=timezone.now())
 
-    def get_context_data(self, **kwargs):
-        data = super().get_context_data(**kwargs)
-        data['articles'] = Analytic.objects.filter(published_at__lte=timezone.now())[:10]
-        return data
+    def get(self, request, *args, **kwargs):
+        tag = request.GET.get('tag')
+        queryset = Analytic.objects.filter(published_at__lte=timezone.now())
+
+        if tag:
+            queryset = queryset.filter(tags__tag_name=tag)
+        context = {'articles': queryset[:6]}
+        return render(request, "main/analitics.html", context=context)
+
 
 
 class StandardResultsSetPagination(PageNumberPagination):
