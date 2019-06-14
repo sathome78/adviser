@@ -70,11 +70,11 @@
                                     <h4>submit a request </h4>
                                 </div>
                                 <form action="{% url 'support-center' %}" class="list-form"  enctype="multipart/form-data" method="POST">{% csrf_token %}
-                                    <div class="drop-wr">
+                                    <div class="drop-wr" tabindex="0">
                                         <div class="wrap-input input-item popup__wrap-input">
-                                            <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input noclear" autocomplete="new-password" type="text" name="request_type" id="id_request_type" value="1" readonly>
+                                            <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input noclear reqiered-field drop-input" autocomplete="new-password" type="text" name="request_type" id="id_request_type" value="" readonly >
                                             <label class="wrap-input__label" for="id_request_type">Choose the topic of your request</label>
-                                            <label class="select-txt" for="id_request_type"><span class="standart-text">Funds Withdrawal</span></label>
+                                            <label class="select-txt" for="id_request_type"><span class="standart-text"></span></label>
                                         </div>
                                         <div class="dropdown">
 
