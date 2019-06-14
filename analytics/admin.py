@@ -6,9 +6,9 @@ from analytics.models import Analytic, Tag
 
 class AnalyticsAdmin(TabbedTranslationAdmin):
 
-    list_display = ("title", "short_description", "is_published", "published_at")
+    list_display = ("title", "short_description", 'is_active', "is_published", "published_at")
     list_filter = ('author', 'tags')
-    readonly_fields = ("slug", "author", "views", 'is_published', 'is_active')
+    readonly_fields = ("slug", "author", "views", 'is_published', )
     fieldsets = (
         (None, {
             "fields": ("term", "title", "slug", "short_description", ),
