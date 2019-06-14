@@ -129,28 +129,28 @@ $(".reqiered-field").keyup(function (e) {
 });
 
 $(".reqiered-field").focusout(function (e) {
-	// if($(this).val() !== ""){
-	// 	$(this).closest(".input-item").addClass("active");
-	// }
-	if ($(this).val() == "") {
-		// $(this).closest(".input-item").removeClass("active");
-		$(this).closest(".input-item").addClass("validation-error");
-		$(this).closest(".input-item").find(".error span").html("can't be empty");
-		sendForm = false;
-	} else if ($(this).attr("name") == "email") {
+
+	if (!$(this).hasClass("drop-input")) {
 		if ($(this).val() == "") {
+			// $(this).closest(".input-item").removeClass("active");
 			$(this).closest(".input-item").addClass("validation-error");
 			$(this).closest(".input-item").find(".error span").html("can't be empty");
 			sendForm = false;
-		} else if (!/\S+@\S+\.\S+/.test($(this).val())) {
-			$(this).closest(".input-item").addClass("validation-error");
-			$(this).closest(".input-item").find(".error span").html("invalid email");
-			sendForm = false;
+		} else if ($(this).attr("name") == "email") {
+			if ($(this).val() == "") {
+				$(this).closest(".input-item").addClass("validation-error");
+				$(this).closest(".input-item").find(".error span").html("can't be empty");
+				sendForm = false;
+			} else if (!/\S+@\S+\.\S+/.test($(this).val())) {
+				$(this).closest(".input-item").addClass("validation-error");
+				$(this).closest(".input-item").find(".error span").html("invalid email");
+				sendForm = false;
+			} else {
+				$(this).closest(".input-item").removeClass("validation-error");
+			}
 		} else {
 			$(this).closest(".input-item").removeClass("validation-error");
 		}
-	} else {
-		$(this).closest(".input-item").removeClass("validation-error");
 	}
 });
 //end form validation script
@@ -163,6 +163,7 @@ $("form").on("submit", function (e) {
 	var thisForm = $(this);
 	sendForm = true;
 	$(this).find(".reqiered-field").each(function () {
+
 		if ($(this).val() == "") {
 			$(this).closest(".input-item").addClass("validation-error");
 			$(this).closest(".input-item").find(".error span").html("can't be empty");
@@ -275,10 +276,16 @@ $(".drop-wr").click(function () {
 });
 
 $(".dropdown-item").click(function () {
+
+	$(".drop-wr input").closest(".drop-wr").find(".wrap-input__label").addClass("active");
 	var selectVal = $(this).find("p").html();
 	var inputValue = $(this).find("p").attr("data-value");
 	$(".drop-wr .select-txt").html(selectVal);
+
 	$(".drop-wr input").attr("value", inputValue);
+	if ($(".drop-wr input").val() != "") {
+		$(".drop-wr input").closest(".input-item").removeClass("validation-error");
+	}
 });
 
 $(".lang-variant").click(function () {
