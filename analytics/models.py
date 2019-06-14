@@ -22,7 +22,7 @@ class Analytic(models.Model):
     post_type = models.IntegerField(choices=POST_TYPE_ENUM,
                                 default=1)
     title = models.CharField(max_length=255)
-    slug = AutoSlugField(_('slug'), max_length=50, unique=True, populate_from=('name',))
+    slug = AutoSlugField(_('slug'), max_length=50, unique=True, populate_from=('title',))
     short_description = models.TextField(max_length=500)
     article = RichTextUploadingField(max_length=5000)
     currency_pair = models.CharField(max_length=100)
