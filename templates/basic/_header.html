@@ -10,7 +10,7 @@
                 <div class="nav main-nav-left">
                     <ul>
                         <li>
-                            <a href="https://exrates.me/dashboard"><span>Trade</span></a>
+                            <a href="https://exrates.me/dashboard"><span>{% blocktrans %}Trade{% endblocktrans %}</span></a>
                         </li>
                        <!-- <li>
                             <div class="drop">
@@ -52,18 +52,18 @@
                         </li>-->
                         <li>
                             {% url 'about-us' as about %}
-                            <a href="{% url 'about-us' %}" {% if request.path == about %} class="active"{% endif %} ><span>About us</span></a>
+                            <a href="{% url 'about-us' %}" {% if request.path == about %} class="active"{% endif %} ><span>{% blocktrans %}About us{% endblocktrans %}</span></a>
                         </li>
                         <li>
                         {% url 'deal' as deal %}
-                            <a href="{% url 'deal' %}" {% if request.path == deal %} class="active"{% endif %}><span>Apply to list</span></a>
+                            <a href="{% url 'deal' %}" {% if request.path == deal %} class="active"{% endif %}><span>{% blocktrans %}Apply to list{% endblocktrans %}</span></a>
                         </li>
                         <li>
-                            <a href="https://exrates.me/ieo"><span>Token Sale</span></a>
+                            <a href="https://exrates.me/ieo"><span>{% blocktrans %}Token Sale{% endblocktrans %}</span></a>
                         </li>
                         <li>
                         {% url 'fiat' as fiat %}
-                            <a href="{% url 'fiat' %}" {% if request.path == fiat %} class="active"{% endif %}><span>Fiat</span><span class="label">new</span></a>
+                            <a href="{% url 'fiat' %}" {% if request.path == fiat %} class="active"{% endif %}><span>{% blocktrans %}Fiat{% endblocktrans %}</span><span class="label">new</span></a>
                         </li>
                     </ul>
                 </div>
@@ -81,32 +81,32 @@
 
                         <li>
                             <div class="drop">
-                                <a href="#"><span>Community</span></a>
+                                <a href="#"><span>{% blocktrans %}Community{% endblocktrans %}</span></a>
                                 <div class="submenu">
                                     <ul class="menu submenu__list">
                                         <li class="submenu__item">
                                             <a class="submenu__link" href="https://t.me/exrates_official" target="blank">
-                                                <span class="menu__link-text">Community World</span>
+                                                <span class="menu__link-text">{% blocktrans %}Community World{% endblocktrans %}</span>
                                             </a>
                                         </li>
                                         <li class="submenu__item">
                                             <a class="submenu__link" href="https://t.me/exrates_official_cn" target="blank">
-                                                <span class="menu__link-text">Community China</span>
+                                                <span class="menu__link-text">{% blocktrans %}Community China{% endblocktrans %}</span>
                                             </a>
                                         </li>
                                         <li class="submenu__item">
                                             <a class="submenu__link" href="https://t.me/exrates_official_id" target="blank">
-                                                <span class="menu__link-text">Community Indonesia</span>
+                                                <span class="menu__link-text">{% blocktrans %}Community Indonesia{% endblocktrans %}</span>
                                             </a>
                                         </li>
                                         <li class="submenu__item">
                                             <a class="submenu__link" href="https://t.me/exrates_official_ru" target="blank">
-                                                <span class="menu__link-text"> Community Russia</span>
+                                                <span class="menu__link-text"> {% blocktrans %}Community Russia{% endblocktrans %}</span>
                                             </a>
                                         </li>
                                         <li class="submenu__item">
                                             <a class="submenu__link" href="https://t.me/exrates_official_ko" target="blank">
-                                                <span class="menu__link-text">Community Korea</span>
+                                                <span class="menu__link-text">{% blocktrans %}Community Korea{% endblocktrans %}</span>
                                             </a>
                                         </li>
                                     </ul>
@@ -114,16 +114,16 @@
                             </div>
                         </li>
                          <li>
-                            <a href="https://exrates.me/news"><span>News</span></a>
+                            <a href="https://exrates.me/news"><span>{% blocktrans %}News{% endblocktrans %}</span></a>
                         </li>
 
                     </ul>
                     <!-- start not auth user -->
                     <div class="login">
-                        <button><a href="https://exrates.me/login"><span>Login</span></a></button>
+                        <button><a href="https://exrates.me/login"><span>{% blocktrans %}Login{% endblocktrans %}</span></a></button>
                     </div>
                     <div class="register">
-                        <button><a href="https://exrates.me/register"><span>Register</span></a></button>
+                        <button><a href="https://exrates.me/register"><span>{% blocktrans %}Register{% endblocktrans %}</span></a></button>
                     </div>
                     <!-- end not auth user -->
                     <!-- start auth user -->
@@ -199,9 +199,9 @@
                 <!-- start not auth user -->
                 <div class="account-info">
                     <div class="account-info__text" >
-                        <a class="account-info__email" href="https://exrates.me/login">Login</a>
+                        <a class="account-info__email" href="https://exrates.me/login">{% blocktrans %}Login{% endblocktrans %}</a>
                         <span class="slash">or</span>
-                        <a class="account-info__email" href="https://exrates.me/register">Register</a>
+                        <a class="account-info__email" href="https://exrates.me/register">{% blocktrans %}Register{% endblocktrans %}</a>
                     </div>
                 </div>
                 <!-- end not auth user	 -->
@@ -219,7 +219,7 @@
                 </div>
                 <!-- end not auth user	 -->
                 <a class="menu-mob__link" href="https://exrates.me/dashboard">
-                    <span class="menu-mob__link-text">Trade</span>
+                    <span class="menu-mob__link-text">{% blocktrans %}Trade{% endblocktrans %}</span>
                 </a>
                 <!--<div class="menu-mob__drop-wrap">
                     <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
@@ -251,14 +251,14 @@
             {% url 'deal' as deal %}
                 <a class="menu-mob__link" href="{% url 'deal' %}">
                 {% url 'deal' as deal %}
-                    <span {% if request.path == deal %} class=" menu-mob__link-text active" {% else %} class=" menu-mob__link-text"{% endif %}>Apply to list</span>
+                    <span {% if request.path == deal %} class=" menu-mob__link-text active" {% else %} class=" menu-mob__link-text"{% endif %}>{% blocktrans %}Apply to list{% endblocktrans %}</span>
                 </a>
                 <a class="menu-mob__link" href="https://exrates.me/ieo">
-                    <span class=" menu-mob__link-text active" >Token Sale</span>
+                    <span class=" menu-mob__link-text active" >{% blocktrans %}Token Sale{% endblocktrans %}</span>
                 </a>
             {% url 'fiat' as fiat %}
                 <a class="menu-mob__link" href="{% url 'fiat' %}">
-                    <span {% if request.path == fiat %} class=" menu-mob__link-text active" {% else %} class=" menu-mob__link-text"{% endif %}>Fiat</span>
+                    <span {% if request.path == fiat %} class=" menu-mob__link-text active" {% else %} class=" menu-mob__link-text"{% endif %}>{% blocktrans %}Fiat{% endblocktrans %}</span>
                 </a>
 
                 <!-- <a class="menu-mob__link" href="#">
@@ -266,27 +266,27 @@
 				</a> -->
                 <div class="menu-mob__drop-wrap">
                     <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
-                        <span class="menu-mob__link-text">Community</span>
+                        <span class="menu-mob__link-text">{% blocktrans %}Community{% endblocktrans %}</span>
                     </a>
                     <div class="menu-mob__wrap-links">
-                        <a class="menu-mob__link" href="https://t.me/exrates_official" target="blank">Community World</a>
-                        <a class="menu-mob__link" href="https://t.me/exrates_official_cn" target="blank">Community China</a>
-                        <a class="menu-mob__link" href="https://t.me/exrates_official_id" target="blank">Community Indonesia</a>
-                        <a class="menu-mob__link" href="https://t.me/exrates_official_ru" target="blank">Community Russia</a>
-                        <a class="menu-mob__link" href="https://t.me/exrates_official_ko" target="blank">Community Korea</a>
+                        <a class="menu-mob__link" href="https://t.me/exrates_official" target="_blank">{% blocktrans %}Community World{% endblocktrans %}</a>
+                        <a class="menu-mob__link" href="https://t.me/exrates_official_cn" target="_blank">{% blocktrans %}Community China{% endblocktrans %}</a>
+                        <a class="menu-mob__link" href="https://t.me/exrates_official_id" target="_blank">{% blocktrans %}Community Indonesia{% endblocktrans %}</a>
+                        <a class="menu-mob__link" href="https://t.me/exrates_official_ru" target="_blank">{% blocktrans %}Community Russia{% endblocktrans %}</a>
+                        <a class="menu-mob__link" href="https://t.me/exrates_official_ko" target="_blank">{% blocktrans %}Community Korea{% endblocktrans %}</a>
                     </div>
                 </div>
 
             <a class="menu-mob__link" href="https://exrates.me/news">
-                    <span class="menu-mob__link-text">News</span>
+                    <span class="menu-mob__link-text">{% blocktrans %}News{% endblocktrans %}</span>
                 </a>
                 <div class="menu-mob__drop-wrap">
                     <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
-                        <span class="menu-mob__link-text cur-lang">English</span>
+                        <span class="menu-mob__link-text cur-lang">{% blocktrans %}English{% endblocktrans %}</span>
                     </a>
                     <div class="menu-mob__wrap-links">
-                        <a class="menu-mob__link lang-variant">English</a>
-                        <a class="menu-mob__link lang-variant">Russian</a>
+                        <a class="menu-mob__link lang-variant">{% blocktrans %}English{% endblocktrans %}</a>
+                        <a class="menu-mob__link lang-variant">{% blocktrans %}Russian{% endblocktrans %}</a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static urls %}
 {% load cache %}
+{%  load i18n %}
 {% block title %}
 
 <title>Become an Ambassador | Exrates</title>
@@ -19,21 +20,21 @@
                         </div>
                         <div class="fs-wr">
                             <div class="title-wr">
-                                <h2>Become an Official Ambassador of Exrates Exchange!</h2>
+                                <h2>{% blocktrans %}Become an Official Ambassador of Exrates Exchange!{% endblocktrans %}</h2>
                             </div>
                             <div class="button-part">
                                 <div class="button-wr">
-                                    <a href="{% url 'advisor-form' %}" class="standart-btn"><span>Apply form</span></a>
+                                    <a href="{% url 'advisor-form' %}" class="standart-btn"><span>{% blocktrans %}Apply form{% endblocktrans %}</span></a>
                                 </div>
                                 <div class="button-wr">
-                                    <a href="{% url 'adviser-demo' %}" class="standart-btn reverse"><span>View demo</span></a>
+                                    <a href="{% url 'adviser-demo' %}" class="standart-btn reverse"><span>{% blocktrans %}View demo{% endblocktrans %}</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="how-get">
                         <div class="title">
-                            <h4>Benefits for Exrates Ambassadors</h4>
+                            <h4>{% blocktrans %}Benefits for Exrates Ambassadors{% endblocktrans %}</h4>
                         </div>
                          <div class="how-get-item-wr">
                             <div class="how-get-item">
@@ -41,7 +42,7 @@
                                     <img src="{%  static  'img/pics/become1.svg' %}" alt="">
                                 </div>
                                 <div class="head-item">
-                                    <h5>Special reward system for advisors: <br>get from 5% to 15%</h5>
+                                    <h5>{% blocktrans %}Special reward system for advisors: <br>get from 5% to 15%{% endblocktrans %}</h5>
                                 </div>
                             </div>
                             <div class="how-get-item hover exclusive">
@@ -49,7 +50,7 @@
                                     <img src="{%  static  'img/pics/become2.svg'%}" alt="">
                                 </div>
                                 <div class="head-item">
-                                    <h5>Your <span>personal page</span> <br>on Exchange website</h5>
+                                    <h5>{% blocktrans %}Your <span>personal page</span> <br>on Exchange website{% endblocktrans %}</h5>
                                 </div>
                             </div>
                             <div class="how-get-item">
@@ -57,7 +58,7 @@
                                     <img src="{%  static  'img/pics/become3.svg' %}" alt="">
                                 </div>
                                 <div class="head-item">
-                                    <h5>Attend conferences and events as <br>a part of Exrates team</h5>
+                                    <h5>{% blocktrans %}Attend conferences and events as <br>a part of Exrates team{% endblocktrans %}</h5>
                                 </div>
                             </div>
                             <div class="how-get-item">
@@ -65,7 +66,7 @@
                                     <img src="{%  static  'img/pics/become4.svg'%}" alt="">
                                 </div>
                                 <div class="head-item">
-                                    <h5>Get exclusive <br>analytical market reports</h5>
+                                    <h5>{% blocktrans %}Get exclusive <br>analytical market reports{% endblocktrans %}</h5>
                                 </div>
                             </div>
                             <!-- <div class="how-get-item">
@@ -82,7 +83,7 @@
                                     <img src="{%  static  'img/pics/become8.svg'%}" alt="">
                                 </div>
                                 <div class="head-item">
-                                    <h5>Referral program</h5>
+                                    <h5>{% blocktrans %}Referral program{% endblocktrans %}</h5>
                                 </div>
                             </div>
                             <div class="how-get-item">
@@ -90,7 +91,7 @@
                                     <img src="{%  static  'img/pics/become6.svg'%}" alt="">
                                 </div>
                                 <div class="head-item">
-                                    <h5>An opportunity to become a <br>part of international community</h5>
+                                    <h5>{% blocktrans %}An opportunity to become a <br>part of international community{% endblocktrans %}</h5>
                                 </div>
                             </div>
                             <!-- <div class="how-get-item">
@@ -109,12 +110,12 @@
                     </div>
                     <div class="exchange-info">
                         <div class="title">
-                            <h4>What is Exrates?</h4>
+                            <h4>{% blocktrans %}What is Exrates?{% endblocktrans %}</h4>
                         </div>
                         <div class="exchange-item-wr">
                             <div class="exchange-item">
                                 <div class="title">
-                                    <p>Trading volume for 24h</p>
+                                    <p>{% blocktrans %}Trading volume for 24h{% endblocktrans %}</p>
                                 </div>
                                 <div class="value">
                                     <span>${{ extra_fields.trading_volumes }}</span>
@@ -122,7 +123,7 @@
                             </div>
                             <div class="exchange-item">
                                 <div class="title">
-                                    <p>Trading pairs</p>
+                                    <p>{% blocktrans %}Trading pairs{% endblocktrans %}</p>
                                 </div>
                                 <div class="value">
                                     <span>{{ extra_fields.trading_pairs }}</span>
@@ -130,7 +131,7 @@
                             </div>
                             <div class="exchange-item">
                                 <div class="title">
-                                    <p>Active traders</p>
+                                    <p>{% blocktrans %}Active traders{% endblocktrans %}</p>
                                 </div>
                                 <div class="value">
                                     <span>{{ extra_fields.active_trades }} +</span>
@@ -140,55 +141,55 @@
                     </div>
                     <div class="benefits">
                         <div class="title">
-                            <h4>What is Exrates for traders?</h4>
+                            <h4>{% blocktrans %}What is Exrates for traders?{% endblocktrans %}</h4>
                         </div>
                         <div class="benefits-item-wr">
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Personal Bank Account</h5>
+                                    <h5>{% blocktrans %}Personal Bank Account{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>We provide personal bank account with 3rd party payment option to 231 countries.</p>
+                                    <p>{% blocktrans %}We provide personal bank account with 3rd party payment option to 231 countries.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Fast KYC</h5>
+                                    <h5>{% blocktrans %}Fast KYC{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>Automatic KYC process with outstanding support. Fully remote account opening.</p>
+                                    <p>{% blocktrans %}Automatic KYC process with outstanding support. Fully remote account opening.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Payment solution powered by</h5>
+                                    <h5>{% blocktrans %}Payment solution powered by{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>Singaporean bank with the same license as PayPal & Apple Pay.</p>
+                                    <p>{% blocktrans %}Singaporean bank with the same license as PayPal & Apple Pay.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Low commissions</h5>
+                                    <h5>{% blocktrans %}Low commissions{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>Free of charge SEPA outgoing payments.</p>
+                                    <p>{% blocktrans %}Free of charge SEPA outgoing payments.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>0% Transfer Fee</h5>
+                                    <h5>{% blocktrans %}0% Transfer Fee{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>0% transfer fee between personal and trading account on Exrates</p>
+                                    <p>{% blocktrans %}0% transfer fee between personal and trading account on Exrates{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Up to $500,000 monthly</h5>
+                                    <h5>{% blocktrans %}Up to $500,000 monthly{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>For VIP clients we provide special conditions for fiat deposit and withdraw in 35 currencies.</p>
+                                    <p>{% blocktrans %}For VIP clients we provide special conditions for fiat deposit and withdraw in 35 currencies.{% endblocktrans %}</p>
                                 </div>
                             </div>
                         </div>

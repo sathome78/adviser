@@ -36,11 +36,11 @@
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M16 9.72918V15.6445H12.5707V10.1254C12.5707 8.7389 12.0747 7.7927 10.8334 7.7927C9.88579 7.7927 9.32189 8.43037 9.07381 9.04721C8.98334 9.26772 8.96006 9.57466 8.96006 9.88333V15.6445H5.52958C5.52958 15.6445 5.57579 6.29689 5.52958 5.32841H8.95972V6.79067C8.95276 6.8016 8.94372 6.8134 8.93718 6.824H8.95972V6.79067C9.41545 6.08876 10.2293 5.08605 12.051 5.08605C14.308 5.08602 16 6.56048 16 9.72918ZM1.94116 0.355545C0.767605 0.355545 0 1.12531 0 2.13757C0 3.12778 0.745397 3.9209 1.89563 3.9209H1.91855C3.11484 3.9209 3.85882 3.12793 3.85882 2.13757C3.83628 1.12531 3.11484 0.355545 1.94116 0.355545ZM0.20374 15.6445H3.63291V5.32841H0.20374V15.6445Z" fill="#94C2FF" />
                                 </svg>
-                                <a href="{{ adviser.linkedin }}"><span>View profile</span></a>
+                                <a href="{{ adviser.linkedin }}"><span>{% blocktrans %}View profile{% endblocktrans %}</span></a>
                             </div>
                             {% language 'en' %}
                             <div class="member">
-                                <p>MEMBER SINCE: {{ adviser.member_since|date:'F d, Y' }}</p>
+                                <p>{% blocktrans %}MEMBER SINCE:{% endblocktrans %} {{ adviser.member_since|date:'F d, Y' }}</p>
                             </div>
                             {% endlanguage %}
                         </div>
@@ -50,13 +50,13 @@
                             <nav>
                                 <ul class="advisor-navigation-wr">
                                     <li class="advisor-navigation-item active">
-                                        <a href="#respons">{{ adviser.get_type_display }} Responsibilities </a>
+                                        <a href="#respons">{{ adviser.get_type_display }} {% blocktrans %}Responsibilities{% endblocktrans %} </a>
                                     </li>
                                     <li class="advisor-navigation-item">
-                                        <a href="#servise">Services</a>
+                                        <a href="#servise">{% blocktrans %}Services{% endblocktrans %}</a>
                                     </li>
                                     <li class="advisor-navigation-item">
-                                        <a href="#about-block">About Exrates</a>
+                                        <a href="#about-block">{% blocktrans %}About Exrates{% endblocktrans %}</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -65,22 +65,22 @@
                             <div class="respons-inner">
                                 <div class="respons-item">
                                     <div class="list-title">
-                                        <h4>{{ adviser.get_type_display }} in charge:</h4>
+                                        <h4>{{ adviser.get_type_display }} {% blocktrans %}in charge:{% endblocktrans %}</h4>
                                     </div>
                                     <ul class="advisor-list">
-                                        <li><span>Conduct negotiations about sales</span></li>
-                                        <li><span>Offer our products and services</span></li>
-                                        <li><span>Create custom offers</span></li>
-                                        <li><span>Represent Exrates on events and conferences</span></li>
+                                        <li><span>{% blocktrans %}Conduct negotiations about sales{% endblocktrans %}</span></li>
+                                        <li><span>{% blocktrans %}Offer our products and services{% endblocktrans %}</span></li>
+                                        <li><span>{% blocktrans %}Create custom offers{% endblocktrans %}</span></li>
+                                        <li><span>{% blocktrans %}Represent Exrates on events and conferences{% endblocktrans %}</span></li>
                                     </ul>
                                 </div>
                                 <div class="respons-item">
                                     <div class="list-title">
-                                        <h4>{{ adviser.get_type_display }} not in charge:</h4>
+                                        <h4>{{ adviser.get_type_display }} {% blocktrans %}not in charge:{% endblocktrans %}</h4>
                                     </div>
                                     <ul class="advisor-list">
-                                        <li><span>Accept payments</span></li>
-                                        <li><span>Sign official documents and agreements</span></li>
+                                        <li><span>{% blocktrans %}Accept payments{% endblocktrans %}</span></li>
+                                        <li><span>{% blocktrans %}Sign official documents and agreements{% endblocktrans %}</span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -106,53 +106,53 @@
                             <div class="benefits-item-wr">
                                 <div class="benefits-item">
                                     <div class="title-b">
-                                        <h5>Personal Bank Account</h5>
+                                        <h5>{% blocktrans %}Personal Bank Account{% endblocktrans %}</h5>
                                     </div>
                                     <div class="description">
-                                        <p>We provide personal bank account with 3rd party payment option to 231 countries.</p>
+                                        <p>{% blocktrans %}We provide personal bank account with 3rd party payment option to 231 countries.{% endblocktrans %}</p>
                                     </div>
                                 </div>
                                 <div class="benefits-item">
                                     <div class="title-b">
-                                        <h5>Fast KYC</h5>
+                                        <h5>{% blocktrans %}Fast KYC{% endblocktrans %}</h5>
                                     </div>
                                     <div class="description">
-                                        <p>We provide personal bank account with 3rd party payment option to 231 countries.</p>
+                                        <p>{% blocktrans %}We provide personal bank account with 3rd party payment option to 231 countries.{% endblocktrans %}</p>
                                     </div>
                                 </div>
                                 <div class="benefits-item">
                                     <div class="title-b">
-                                        <h5>Personal Bank Account</h5>
+                                        <h5>{% blocktrans %}Personal Bank Account{% endblocktrans %}</h5>
                                     </div>
                                     <div class="description">
-                                        <p>Automatic KYC process with outstanding support. Fully remote account opening.</p>
+                                        <p>{% blocktrans %}Automatic KYC process with outstanding support. Fully remote account opening.{% endblocktrans %}</p>
                                     </div>
                                 </div>
                                 <div class="benefits-item large-item">
                                     <div class="title-b">
-                                        <h5>Up to $500,000 monthly</h5>
+                                        <h5>{% blocktrans %}Up to $500,000 monthly{% endblocktrans %}</h5>
                                     </div>
                                     <div class="description">
-                                        <p>For VIP clients we provide special conditions for fiat deposit and withdraw in 35 currencies.</p>
+                                        <p>{% blocktrans %}For VIP clients we provide special conditions for fiat deposit and withdraw in 35 currencies.{% endblocktrans %}</p>
                                     </div>
                                     <div class="button-wr">
-                                        <a href="#" class="standart-btn reverse vip" target="blank"><span>Become a VIP</span></a>
+                                        <a href="#" class="standart-btn reverse vip" target="blank"><span>{% blocktrans %}Become a VIP{% endblocktrans %}</span></a>
                                     </div>
                                 </div>
                                 <div class="benefits-item">
                                     <div class="title-b">
-                                        <h5>Low commissions</h5>
+                                        <h5>{% blocktrans %}Low commissions{% endblocktrans %}</h5>
                                     </div>
                                     <div class="description">
-                                        <p>Free of charge SEPA outgoing payments.</p>
+                                        <p>{% blocktrans %}Free of charge SEPA outgoing payments.{% endblocktrans %}</p>
                                     </div>
                                 </div>
                                 <div class="benefits-item">
                                     <div class="title-b">
-                                        <h5>Payment solution powered by</h5>
+                                        <h5>{% blocktrans %}Payment solution powered by{% endblocktrans %}</h5>
                                     </div>
                                     <div class="description">
-                                        <p>Singaporian bank with the same license as PayPal & Apple Pay.</p>
+                                        <p>{% blocktrans %}Singaporian bank with the same license as PayPal & Apple Pay.{% endblocktrans %}</p>
                                     </div>
                                 </div>
                             </div>
@@ -161,24 +161,24 @@
                     <div class="right-col">
                         <div class="form-part">
                             <div class="form-title">
-                                <h3 class="variable-title">Get report about your coin</h3>
+                                <h3 class="variable-title">{% blocktrans %}Get report about your coin{% endblocktrans %}</h3>
                             </div>
                             <form action="{% url 'deal' %}">{% csrf_token %}
                                 <div class="checkbox-wr">
                                     <div class="check-item">
                                         <input type="radio" class="accessibility-content radio-form-list" value="IEO" id="id_request_type_0" name="request_type" data-head="Get report about your coin" checked>
                                         <label class="indicator" for="id_request_type_0"></label>
-                                        <label class="label-txt" for="id_request_type_0">I need to conduct an IEO</label>
+                                        <label class="label-txt" for="id_request_type_0">{% blocktrans %}I need to conduct an IEO{% endblocktrans %}</label>
                                     </div>
                                     <div class="check-item">
                                         <input type="radio" class="accessibility-content radio-form-list" value="Listing" id="id_request_type_1" name="request_type" data-head="Submit a request for list a coin">
                                         <label class="indicator" for="id_request_type_1"></label>
-                                        <label class="label-txt" for="id_request_type_1">I need to list a coin</label>
+                                        <label class="label-txt" for="id_request_type_1">{% blocktrans %}I need to list a coin{% endblocktrans %}</label>
                                     </div>
                                 </div>
                                 <div class="wrap-input input-item popup__wrap-input">
                                     <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="name" id="id_name">
-                                    <label class="wrap-input__label" for="id_name">Name*</label>
+                                    <label class="wrap-input__label" for="id_name">{% blocktrans %}Name{% endblocktrans %}*</label>
                                     <label class="error" for="id_name"><span class="standart-text"></span></label>
                                 </div>
                                 <div class="wrap-input input-item popup__wrap-input">
@@ -193,16 +193,16 @@
                                 </div>
                                 <div class="wrap-input input-item popup__wrap-input">
                                     <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="company_name" id="id_company_name">
-                                    <label class="wrap-input__label" for="id_company_name">Company name*</label>
+                                    <label class="wrap-input__label" for="id_company_name">{% blocktrans %}Company name{% endblocktrans %}*</label>
                                     <label class="error" for="id_company_name"><span class="standart-text"></span></label>
                                 </div>
                                 <div class="wrap-input input-item popup__wrap-input">
                                     <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="link_to_project" id="id_link_to_project">
-                                    <label class="wrap-input__label" for="id_link_to_project">Link to the website</label>
+                                    <label class="wrap-input__label" for="id_link_to_project">{% blocktrans %}Link to the website{% endblocktrans %}</label>
                                     <label class="error" for="id_link_to_project"><span class="standart-text"></span></label>
                                 </div>
                                 <div class="button-wr">
-                                    <button class="standart-btn reverse" type="submit"><span>Submit</span></button>
+                                    <button class="standart-btn reverse" type="submit"><span>{% blocktrans %}Submit{% endblocktrans %}</span></button>
                                 </div>
                             </form>
                         </div>

@@ -17,7 +17,7 @@
                     <img src="{% static 'img/pics/logo-header.svg' %}" alt="">
                 </div>
                 <div class="description">
-                    <p>Cryptocurrency Exchange</p>
+                    <p>{% blocktrans %}Cryptocurrency Exchange{% endblocktrans %}</p>
                 </div>
             </div>
             <div class="form-part">
@@ -25,12 +25,12 @@
                     <!-- start default variant -->
                     <div class="left-part">
                         <div class="title">
-                            <h3 class="variable-title">Fill the form to become an Ambassador</h3>
+                            <h3 class="variable-title">{% blocktrans %}Fill the form to become an Ambassador{% endblocktrans %}</h3>
                         </div>
                         <div class="inputs-wr">
                             <div class="wrap-input input-item popup__wrap-input">
                                 <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="name" id="id_name">
-                                <label class="wrap-input__label" for="id_name">Name*</label>
+                                <label class="wrap-input__label" for="id_name">{% blocktrans %}Name{% endblocktrans %}*</label>
                                 <label class="error" for="id_name"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                          <div class="button-wr">
-                    <button class="standart-btn" type="submit"><span>Submit</span></button>
+                    <button class="standart-btn" type="submit"><span>{% blocktrans %}Submit{% endblocktrans %}</span></button>
                 </div>
                 <div class="left-part success-mess">
                     <div class="top-part">
@@ -62,29 +62,29 @@
                             </svg>
                         </div>
                         <div class="message-txt">
-                            <p>IEO request submitted</p>
+                            <p>{% blocktrans %}IEO request submitted{% endblocktrans %}</p>
                         </div>
                     </div>
                     <div class="bottom-part">
                         <nav class="success-nav">
                             <ul class="success-nav-list">
                                 <li class="success-nav-list-item">
-                                    <a href="https://exrates.me/dashboard"><span>Trade</span></a>
+                                    <a href="https://exrates.me/dashboard"><span>{% blocktrans %}Trade{% endblocktrans %}</span></a>
                                 </li>
                                 <li class="success-nav-list-item">
-                                    <a href="{%  url 'support-center'%}"><span>Support</span></a>
+                                    <a href="{%  url 'support-center'%}"><span>{% blocktrans %}Support{% endblocktrans %}</span></a>
                                 </li>
                                 <li class="success-nav-list-item">
-                                    <a href="https://exrates.me/ieo"><span>Token Sale</span></a>
+                                    <a href="https://exrates.me/ieo"><span>{% blocktrans %}Token Sale{% endblocktrans %}</span></a>
                                 </li>
                                 <li class="success-nav-list-item">
-                                    <a href="{% url 'client-center' %}"><span>Contacts</span></a>
+                                    <a href="{% url 'client-center' %}"><span>{% blocktrans %}Contacts{% endblocktrans %}</span></a>
                                 </li>
                                 <li class="success-nav-list-item">
-                                    <a href="{% url 'fiat'%}"><span>Fiat</span></a>
+                                    <a href="{% url 'fiat'%}"><span>{% blocktrans %}Fiat{% endblocktrans %}</span></a>
                                 </li>
                                 <li class="success-nav-list-item">
-                                    <a href="#"><span>Announcements</span></a>
+                                    <a href="#"><span>{% blocktrans %}Announcements{% endblocktrans %}</span></a>
                                 </li>
                             </ul>
                         </nav>
@@ -93,7 +93,7 @@
             </div>
             <div class="right-part">
                 <div class="title-wr">
-                    <h4>Benefits for Exrates Ambassadors</h4>
+                    <h4>{% blocktrans %}Benefits for Exrates Ambassadors{% endblocktrans %}</h4>
                 </div>
                 <div class="a-info-part">
                     <ul class="a-form-list">
@@ -101,55 +101,55 @@
                             <div class="icon">
                                 <img src="{% static 'img/pics/a-form1.svg'%}" alt="">
                             </div>
-                            <span>Special reward system for ambassadors: <br>get from 5% to 15%</span>
+                            <span>{% blocktrans %}Special reward system for ambassadors: <br>get from 5% to 15%{% endblocktrans %}</span>
                         </li>
                         <li>
                             <div class="icon">
                                 <img src="{% static 'img/pics/a-form2.svg'%}" alt="">
                             </div>
-                            <span>Get exclusive analytical market reports</span>
+                            <span>{% blocktrans %}Get exclusive analytical market reports{% endblocktrans %}</span>
                         </li>
                         <li>
                             <div class="icon">
                                 <img src="{% static 'img/pics/a-form3.svg'%}" alt="">
                             </div>
-                            <span>Participation in online trainings & webinars</span>
+                            <span>{% blocktrans %}Participation in online trainings & webinars{% endblocktrans %}</span>
                         </li>
                         <li>
                             <div class="icon">
                                 <img src="{% static 'img/pics/a-form4.svg'%}" alt="">
                             </div>
-                            <span>Your personal page on Exchange website</span>
+                            <span>{% blocktrans %}Your personal page on Exchange website{% endblocktrans %}</span>
                         </li>
                         <li>
                             <div class="icon">
                                 <img src="{% static 'img/pics/a-form5.svg'%}" alt="">
                             </div>
-                            <span>Your personal manager</span>
+                            <span>{% blocktrans %}Your personal manager{% endblocktrans %}</span>
                         </li>
                         <li>
                             <div class="icon">
                                 <img src="{% static 'img/pics/a-form6.svg' %}" alt="">
                             </div>
-                            <span>Attend conferences & events as a part of Exrates team</span>
+                            <span>{% blocktrans %}Attend conferences & events as a part of Exrates team{% endblocktrans %}</span>
                         </li>
                         <li>
                             <div class="icon">
                                 <img src="{% static 'img/pics/a-form7.svg'%}" alt="">
                             </div>
-                            <span>An opportunity to become a part of international community</span>
+                            <span>{% blocktrans %}An opportunity to become a part of international community{% endblocktrans %}</span>
                         </li>
                         <li>
                             <div class="icon">
                                 <img src="{% static 'img/pics/a-form8.svg'%}" alt="">
                             </div>
-                            <span>Referral program</span>
+                            <span>{% blocktrans %}Referral program{% endblocktrans %}</span>
                         </li>
                     </ul>
                 </div>
                 <div class="back-btn">
                     <a href="#" onclick="window.history.back()"><span>
-                            < Back</span> </a> </div> </div> </form> </div>
+                            < {% blocktrans %}Back{% endblocktrans %}</span> </a> </div> </div> </form> </div>
         </div>
         {% include 'basic/_scripts.html' %}
 

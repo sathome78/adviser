@@ -3,12 +3,11 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-18 12:21+0000\n"
+"POT-Creation-Date: 2019-06-18 14:12+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,41 +51,500 @@ msgstr ""
 msgid "Analytic articles"
 msgstr ""
 
-#: exrates_adviser/settings.py:62
+#: exrates_adviser/settings.py:62 templates/basic/_header.html:285
+#: templates/basic/_header.html:288
 msgid "English"
 msgstr ""
 
-#: exrates_adviser/settings.py:63
+#: exrates_adviser/settings.py:63 templates/basic/_header.html:289
 msgid "Russian"
 msgstr ""
 
-#: templates/main/about-us.html:15
-#, fuzzy
-#| msgid "About us"
-msgid "About Us "
-msgstr "О нас"
+#: templates/adviser/adviser_page.html:14
+#| msgid "Become an Official Ambassador of Exrates Exchange!"
+msgid "Ambassador Exrates Exchange"
+msgstr "Представитель Биржи Exrates"
 
-#: templates/main/about-us.html:31 templates/main/client-center.html:33
-#: templates/main/privacy-policy.html:35 templates/main/support-center.html:32
-msgid "About us"
-msgstr "О нас"
+#: templates/adviser/adviser_page.html:25
+msgid "Jana Christian"
+msgstr ""
 
+#: templates/adviser/adviser_page.html:28
+#| msgid "Become Ambassador"
+msgid "Verified Ambassador"
+msgstr "Официальный Представитель"
+
+#: templates/adviser/adviser_page.html:31
+msgid ""
+"CEO at The Currency Analytics, CMO , Ambassador and Brand Ambassador / "
+"specialized in marketing - Cryptocurrency"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:34
+msgid "Chat in telegram"
+msgstr "Связаться в Telegram"
+
+#: templates/adviser/adviser_page.html:40
+#: templates/adviser/advisor-page.html:39
+msgid "View profile"
+msgstr "Посмотреть профиль"
+
+#: templates/adviser/adviser_page.html:43
+msgid " SINCE: JANUARY 23, 2018"
+msgstr "представляет Exrates с: JANUARY 23, 2018"
+
+#: templates/adviser/adviser_page.html:52
+msgid "Ambassador Responsibilities"
+msgstr "Обязанности Представителя"
+
+#: templates/adviser/adviser_page.html:55
+#: templates/adviser/adviser_page.html:89
+#: templates/adviser/advisor-page.html:56
+msgid "Services"
+msgstr "Услуги"
+
+#: templates/adviser/adviser_page.html:58
+#: templates/adviser/advisor-page.html:59
+msgid "About Exrates"
+msgstr "О Exrates"
+
+#: templates/adviser/adviser_page.html:67
+msgid "Ambassador in charge:"
+msgstr "Представитель может: "
+
+#: templates/adviser/adviser_page.html:70
+#: templates/adviser/advisor-page.html:71
+msgid "Conduct negotiations about sales"
+msgstr "Проводить переговоры о продажах"
+
+#: templates/adviser/adviser_page.html:71
+#: templates/adviser/advisor-page.html:72
+msgid "Offer our products and services"
+msgstr "Предлагать наши продукты и услуги"
+
+#: templates/adviser/adviser_page.html:72
+#: templates/adviser/advisor-page.html:73
+msgid "Create custom offers"
+msgstr "Комбинировать пакет услуг для каждого клиента "
+
+#: templates/adviser/adviser_page.html:73
+#: templates/adviser/advisor-page.html:74
+msgid "Represent Exrates on events and conferences"
+msgstr "Представлять Exrates на конференциях и выставках "
+
+#: templates/adviser/adviser_page.html:78
+msgid "Ambassador not in charge:"
+msgstr "Представитель не может: "
+
+#: templates/adviser/adviser_page.html:81
+#: templates/adviser/advisor-page.html:82
+msgid "Accept payments"
+msgstr "Принимать оплату услуг "
+
+#: templates/adviser/adviser_page.html:82
+#: templates/adviser/advisor-page.html:83
+msgid "Sign official documents and agreements"
+msgstr "Подписывать документы и соглашения от имени Exrates "
+
+#: templates/adviser/adviser_page.html:103
+msgid "Benefits:"
+msgstr "Преимущества счета"
+
+#: templates/adviser/adviser_page.html:108
+#: templates/adviser/adviser_page.html:124
+#: templates/adviser/advisor-page.html:109
+#: templates/adviser/advisor-page.html:125
+#: templates/adviser/become-advisor.html:149
+#: templates/main/client-center.html:127 templates/main/fiat.html:42
+msgid "Personal Bank Account"
+msgstr "Личный банковский счет"
+
+#: templates/adviser/adviser_page.html:111
+#: templates/adviser/adviser_page.html:119
+#: templates/adviser/advisor-page.html:112
+#: templates/adviser/advisor-page.html:120
+#: templates/adviser/become-advisor.html:152 templates/main/fiat.html:45
+msgid ""
+"We provide personal bank account with 3rd party payment option to 231 "
+"countries."
+msgstr ""
+"Мы предоставляем личный банковский аккаунт с возможностью переводов через 3ю "
+"сторону в 231 страну."
+
+#: templates/adviser/adviser_page.html:116
+#: templates/adviser/advisor-page.html:117
+#: templates/adviser/become-advisor.html:157
+#: templates/main/client-center.html:136 templates/main/fiat.html:50
+msgid "Fast KYC"
+msgstr "Быстрое прохождение KYC"
+
+#: templates/adviser/adviser_page.html:127
+#: templates/adviser/advisor-page.html:128
+#: templates/adviser/become-advisor.html:160
+#: templates/main/client-center.html:139 templates/main/fiat.html:53
+msgid ""
+"Automatic KYC process with outstanding support. Fully remote account opening."
+msgstr ""
+"Автоматическое прохождение KYC с круглосуточной поддержкой. Автономное "
+"открытие аккаунта."
+
+#: templates/adviser/adviser_page.html:132
+#: templates/adviser/advisor-page.html:133
+#: templates/adviser/become-advisor.html:189
+#: templates/main/client-center.html:144 templates/main/fiat.html:82
+msgid "Up to $500,000 monthly"
+msgstr "До $500,000 в месяц"
+
+#: templates/adviser/adviser_page.html:135
+#: templates/adviser/advisor-page.html:136
+#: templates/adviser/become-advisor.html:192 templates/main/fiat.html:85
+msgid ""
+"For VIP clients we provide special conditions for fiat deposit and withdraw "
+"in 35 currencies."
+msgstr ""
+"Для VIP-клиентов мы предоставляем особые условия ввода и вывода средств в 35 "
+"валютах."
+
+#: templates/adviser/adviser_page.html:138
+#: templates/adviser/advisor-page.html:139
+#: templates/main/client-center.html:151 templates/main/fiat.html:88
+msgid "Become a VIP"
+msgstr "Стать VIP"
+
+#: templates/adviser/adviser_page.html:143
+#: templates/adviser/advisor-page.html:144
+#: templates/adviser/become-advisor.html:173
+#: templates/main/client-center.html:164 templates/main/fiat.html:66
+msgid "Low commissions"
+msgstr "Низкие комиссии"
+
+#: templates/adviser/adviser_page.html:146
+#: templates/adviser/advisor-page.html:147
+#: templates/adviser/become-advisor.html:176
+#: templates/main/client-center.html:167 templates/main/fiat.html:69
+msgid "Free of charge SEPA outgoing payments."
+msgstr "Платежи SEPA без комиссий и сборов."
+
+#: templates/adviser/advisor-form.html:20
+msgid "Cryptocurrency Exchange"
+msgstr "Представитель Биржи Exrates"
+
+#: templates/adviser/advisor-form.html:28
+msgid "Fill the form to become an Ambassador"
+msgstr "Заполните форму"
+
+#: templates/adviser/advisor-form.html:33
+#: templates/adviser/advisor-page.html:181 templates/main/about-us.html:143
+#: templates/main/form-listing.html:45
+msgid "Name"
+msgstr "Имя"
+
+#: templates/adviser/advisor-form.html:53
+#: templates/adviser/advisor-page.html:205 templates/main/form-listing.html:70
+#: templates/main/support-center.html:113
+msgid "Submit"
+msgstr "Отправить"
+
+#: templates/adviser/advisor-form.html:65 templates/main/form-listing.html:83
+msgid "IEO request submitted"
+msgstr "Запрос на проведение IEO отправлен"
+
+#: templates/adviser/advisor-form.html:72 templates/basic/_header.html:13
+#: templates/basic/_header.html:222 templates/main/form-listing.html:90
+msgid "Trade"
+msgstr "Торги"
+
+#: templates/adviser/advisor-form.html:75 templates/basic/_footer.html:77
+#: templates/main/about-us.html:33 templates/main/client-center.html:35
+#: templates/main/form-listing.html:93 templates/main/privacy-policy.html:37
+#: templates/main/support-center.html:34
+#: templates/main/about-us.html:91
+msgid "Support"
+msgstr "Поддержка"
+
+#: templates/adviser/advisor-form.html:78 templates/basic/_header.html:62
+#: templates/basic/_header.html:257 templates/main/form-listing.html:96
+msgid "Token Sale"
+msgstr "Продажа токенов"
+
+#: templates/adviser/advisor-form.html:81 templates/basic/_footer.html:80
 #: templates/main/about-us.html:32 templates/main/client-center.html:34
 #: templates/main/form-listing.html:99 templates/main/privacy-policy.html:36
 #: templates/main/support-center.html:33
 msgid "Contacts"
 msgstr "Контакты"
 
-#: templates/main/about-us.html:33 templates/main/client-center.html:35
-#: templates/main/form-listing.html:93 templates/main/privacy-policy.html:37
-#: templates/main/support-center.html:34
-msgid "Support"
-msgstr "Поддержка"
+#: templates/adviser/advisor-form.html:84 templates/basic/_header.html:66
+#: templates/basic/_header.html:261 templates/main/form-listing.html:102
+msgid "Fiat"
+msgstr "Фиат"
 
-#: templates/main/about-us.html:34 templates/main/privacy-policy.html:17
-#: templates/main/privacy-policy.html:38 templates/main/support-center.html:35
-msgid "Privacy policy"
+#: templates/adviser/advisor-form.html:87 templates/main/form-listing.html:105
+msgid "Announcements"
+msgstr "Объявления"
+
+#: templates/adviser/advisor-form.html:96
+#: templates/adviser/become-advisor.html:37
+msgid "Benefits for Exrates Ambassadors"
+msgstr "Что получает наш представитель?"
+
+#: templates/adviser/advisor-form.html:104
+#, python-format
+msgid "Special reward system for ambassadors: <br>get from 5%% to 15%%"
+msgstr "Бонусы за привлеченные монеты - от 5 до 15 процентов"
+
+#: templates/adviser/advisor-form.html:110
+msgid "Get exclusive analytical market reports"
+msgstr "Эксклюзивные аналитические отчеты о состоянии рынка"
+
+#: templates/adviser/advisor-form.html:116
+msgid "Participation in online trainings & webinars"
+msgstr "Участие в онлайн семинарах и лекциях"
+
+#: templates/adviser/advisor-form.html:122
+msgid "Your personal page on Exchange website"
+msgstr "Своя официальная личная страница на бирже"
+
+#: templates/adviser/advisor-form.html:128
+msgid "Your personal manager"
+msgstr "Сообщение"
+
+#: templates/adviser/advisor-form.html:134
+msgid "Attend conferences & events as a part of Exrates team"
+msgstr "Посещение конференций от имени Exrates"
+
+#: templates/adviser/advisor-form.html:140
+msgid "An opportunity to become a part of international community"
+msgstr "Возможность стать частью международного комьюнити"
+
+#: templates/adviser/advisor-form.html:146
+#: templates/adviser/become-advisor.html:86
+msgid "Referral program"
+msgstr "Ваш персональный менеджер"
+
+#: templates/adviser/advisor-form.html:152 templates/main/form-listing.html:146
+msgid "Back"
+msgstr "Назад"
+
+#: templates/adviser/advisor-page.html:43
+msgid "MEMBER SINCE:"
+msgstr "представляет Exrates с: "
+
+#: templates/adviser/advisor-page.html:53
+msgid "Responsibilities"
+msgstr "Обязанности"
+
+#: templates/adviser/advisor-page.html:68
+msgid "in charge:"
+msgstr "может: "
+
+#: templates/adviser/advisor-page.html:79
+#| msgid "Ambassador not in charge:"
+msgid "not in charge:"
+msgstr "Представитель не может: "
+
+#: templates/adviser/advisor-page.html:152
+#: templates/adviser/become-advisor.html:165
+#: templates/main/client-center.html:172 templates/main/fiat.html:58
+msgid "Payment solution powered by"
+msgstr "Платежи через сингапурский банк"
+
+#: templates/adviser/advisor-page.html:155
+#: templates/main/client-center.html:175 templates/main/fiat.html:61
+msgid "Singaporian bank with the same license as PayPal & Apple Pay."
 msgstr ""
+"Платежное решение от сингапурского банка с лицензией как у PayPal и ApplePay."
+
+#: templates/adviser/advisor-page.html:164
+msgid "Get report about your coin"
+msgstr "Запрос на проведение IEO"
+
+#: templates/adviser/advisor-page.html:171 templates/main/form-listing.html:34
+msgid "I need to conduct an IEO"
+msgstr "Мне нужно провести IEO"
+
+#: templates/adviser/advisor-page.html:176 templates/main/about-us.html:137
+#: templates/main/form-listing.html:39
+msgid "I need to list a coin"
+msgstr "Мне нужно разместить монету"
+
+#: templates/adviser/advisor-page.html:196 templates/main/about-us.html:158
+#: templates/main/form-listing.html:60
+msgid "Company name"
+msgstr "Название компании"
+
+#: templates/adviser/advisor-page.html:201 templates/main/about-us.html:163
+#: templates/main/form-listing.html:65
+msgid "Link to the website"
+msgstr "Ссылка на сайт"
+
+#: templates/adviser/become-advisor.html:23
+msgid "Become an Official Ambassador of Exrates Exchange!"
+msgstr "Станьте официальным Представителем Exrates"
+
+#: templates/adviser/become-advisor.html:27
+msgid "Apply form"
+msgstr "Форма заявки"
+
+#: templates/adviser/become-advisor.html:30
+msgid "View demo"
+msgstr "Демо-версия"
+
+#: templates/adviser/become-advisor.html:45
+#, python-format
+msgid "Special reward system for advisors: <br>get from 5%% to 15%%"
+msgstr "Бонусы за привлеченные монеты - от 5 до 15 процентов"
+
+#: templates/adviser/become-advisor.html:53
+msgid "Your <span>personal page</span> <br>on Exchange website"
+msgstr "Своя официальная личная страница на бирже"
+
+#: templates/adviser/become-advisor.html:61
+msgid "Attend conferences and events as <br>a part of Exrates team"
+msgstr "Посещение конференций от имени Exrates"
+
+#: templates/adviser/become-advisor.html:69
+msgid "Get exclusive <br>analytical market reports"
+msgstr "Эксклюзивные аналитические отчеты о состоянии рынка"
+
+#: templates/adviser/become-advisor.html:94
+msgid "An opportunity to become a <br>part of international community"
+msgstr "Возможность стать частью международного комьюнити"
+
+#: templates/adviser/become-advisor.html:113
+msgid "What is Exrates?"
+msgstr "О Exrates"
+
+#: templates/adviser/become-advisor.html:118
+msgid "Trading volume for 24h"
+msgstr "Объем торгов в сутки"
+
+#: templates/adviser/become-advisor.html:126
+msgid "Trading pairs"
+msgstr "Торговых пар"
+
+#: templates/adviser/become-advisor.html:134
+msgid "Active traders"
+msgstr "Активных трейдеров"
+
+#: templates/adviser/become-advisor.html:144
+msgid "What is Exrates for traders?"
+msgstr "Exrates для трейдеров"
+
+#: templates/adviser/become-advisor.html:168
+#| msgid "Singaporian bank with the same license as PayPal & Apple Pay."
+msgid "Singaporean bank with the same license as PayPal & Apple Pay."
+msgstr ""
+"Платежное решение от сингапурского банка с лицензией как у PayPal и ApplePay."
+
+#: templates/adviser/become-advisor.html:181
+#: templates/main/client-center.html:156 templates/main/fiat.html:74
+#, python-format
+msgid "0%% Transfer Fee"
+msgstr "0%% комиссии за переводы"
+
+#: templates/adviser/become-advisor.html:184
+#: templates/main/client-center.html:159 templates/main/fiat.html:77
+#, python-format
+msgid "0%% transfer fee between personal and trading account on Exrates"
+msgstr "Комиссия 0%% на переводы между личным аккаунтом и аккаунтом Exrates"
+
+#: templates/basic/_footer.html:21 templates/basic/_footer.html:36
+#: templates/basic/_footer.html:51
+msgid "Followers"
+msgstr "Подпис"
+
+#: templates/basic/_footer.html:58
+msgid "Terms & conditions"
+msgstr "Условия и положения"
+
+#: templates/basic/_footer.html:61 templates/main/about-us.html:34
+#: templates/main/privacy-policy.html:17 templates/main/privacy-policy.html:38
+#: templates/main/support-center.html:35
+msgid "Privacy policy"
+msgstr "Политика конфиденциальности"
+
+#: templates/basic/_footer.html:69
+msgid "Fees"
+msgstr "Комиссии"
+
+#: templates/basic/_footer.html:83
+msgid "List IEO"
+msgstr "Провести IEO"
+
+#: templates/basic/_footer.html:86 templates/main/about-us.html:61
+#: templates/main/client-center.html:74 templates/main/privacy-policy.html:74
+#: templates/main/support-center.html:62
+msgid "Become Ambassador"
+msgstr "Стать Эдвайзером"
+
+#: templates/basic/_footer.html:94
+msgid "Official European Union License"
+msgstr "Official European Union License"
+
+#: templates/basic/_footer.html:95
+msgid ""
+"DexTechnologies OÜ is registered in Estonia and operates under official "
+"license. Company ID"
+msgstr ""
+
+#: templates/basic/_footer.html:102
+msgid ""
+"EXRATES LTD trade marks belong to their corresponding owners. All rights are "
+"reserved"
+msgstr ""
+
+#: templates/basic/_header.html:55 templates/main/about-us.html:31
+#: templates/main/client-center.html:33 templates/main/privacy-policy.html:35
+#: templates/main/support-center.html:32
+msgid "About us"
+msgstr "О нас"
+
+#: templates/basic/_header.html:59 templates/basic/_header.html:254
+#| msgid "Apply form"
+msgid "Apply to list"
+msgstr "Форма заявки"
+
+#: templates/basic/_header.html:84 templates/basic/_header.html:269
+msgid "Community"
+msgstr ""
+
+#: templates/basic/_header.html:89 templates/basic/_header.html:272
+msgid "Community World"
+msgstr ""
+
+#: templates/basic/_header.html:94 templates/basic/_header.html:273
+msgid "Community China"
+msgstr ""
+
+#: templates/basic/_header.html:99 templates/basic/_header.html:274
+msgid "Community Indonesia"
+msgstr ""
+
+#: templates/basic/_header.html:104 templates/basic/_header.html:275
+msgid "Community Russia"
+msgstr ""
+
+#: templates/basic/_header.html:109 templates/basic/_header.html:276
+msgid "Community Korea"
+msgstr ""
+
+#: templates/basic/_header.html:117 templates/basic/_header.html:281
+msgid "News"
+msgstr ""
+
+#: templates/basic/_header.html:123 templates/basic/_header.html:202
+msgid "Login"
+msgstr ""
+
+#: templates/basic/_header.html:126 templates/basic/_header.html:204
+msgid "Register"
+msgstr ""
+
+#: templates/main/about-us.html:15
+#| msgid "About us"
+msgid "About Us "
+msgstr "О нас"
 
 #: templates/main/about-us.html:35 templates/main/privacy-policy.html:39
 #: templates/main/support-center.html:36
@@ -97,11 +555,6 @@ msgstr ""
 #: templates/main/privacy-policy.html:68 templates/main/support-center.html:56
 msgid "Start IEO"
 msgstr "Начать IEO"
-
-#: templates/main/about-us.html:61 templates/main/client-center.html:74
-#: templates/main/privacy-policy.html:74 templates/main/support-center.html:62
-msgid "Become Ambassador"
-msgstr "Стать Эдвайзером"
 
 #: templates/main/about-us.html:64 templates/main/client-center.html:77
 #: templates/main/privacy-policy.html:77 templates/main/support-center.html:65
@@ -116,10 +569,11 @@ msgid ""
 "                            <br> Our aim is to make trading accessible for "
 "everyone and provide all the tools needed."
 msgstr ""
-"Exrates - активно развивающаяся криптовалютная биржа, основанная в 2016 году. "
-"На данный момент на Exrates доступно более 600 торговых пар с общим объемом "
-"торгов 160 миллионов долларов в день.  <br>\n"
-"<br> Наша цель - сделать торги доступными для всех и предоставить для этого все необходимые инструменты."
+"Exrates - активно развивающаяся криптовалютная биржа, основанная в 2016 "
+"году. На данный момент на Exrates доступно более 600 торговых пар с общим "
+"объемом торгов 160 миллионов долларов в день.  <br>\n"
+"<br> Наша цель - сделать торги доступными для всех и предоставить для этого "
+"все необходимые инструменты."
 
 #: templates/main/about-us.html:72
 msgid "WHY EXRATES?"
@@ -133,14 +587,9 @@ msgstr "Производительность"
 msgid ""
 "The main distinguishing feature of Exrates is a processing speed of up to "
 "10,000 trades every second and 1,000,000 TCP connections. "
-msgstr "Главной особенностью Exrates является высокая скорость - "
-"до 10,000 сделок в секунду и 1,000,000 соединений TCP."
-
-#: templates/main/about-us.html:91
-#, fuzzy
-#| msgid "Support"
-msgid "24/7 Support"
-msgstr "Поддержка"
+msgstr ""
+"Главной особенностью Exrates является высокая скорость - до 10,000 сделок в "
+"секунду и 1,000,000 соединений TCP."
 
 #: templates/main/about-us.html:92
 msgid ""
@@ -148,8 +597,9 @@ msgid ""
 "support team through the chatbox in the right corner on the bottom of the "
 "website. "
 msgstr ""
-"Наша служба поддержки всегда на связи и готова помочь вам!"
- "Вы можете связаться с нашей службой поддержки через окно чата в правом нижнем углу сайта."
+"Наша служба поддержки всегда на связи и готова помочь вам!Вы можете "
+"связаться с нашей службой поддержки через окно чата в правом нижнем углу "
+"сайта."
 
 #: templates/main/about-us.html:100
 msgid "Advanced Interface"
@@ -160,25 +610,28 @@ msgid ""
 "We use the Single Page Application The components of the website are "
 "downloaded once per page. Additional content is loaded when it is needed. "
 msgstr ""
-"Мы используем одностраничное решение. Компоненты сайта загружаются за один раз. "
-"Дополнительный контент загружается, когда это необходимо."
+"Мы используем одностраничное решение. Компоненты сайта загружаются за один "
+"раз. Дополнительный контент загружается, когда это необходимо."
 
 #: templates/main/about-us.html:109
 msgid "Strong Safety"
 msgstr "Улучшенная безопасность"
 
 #: templates/main/about-us.html:110
+#| msgid ""
+#| "More than 95%% of the currencies are stored on cold wallets. WAF (Web "
+#| "Application Firewall) a protective screen of a Web application that "
+#| "detects and blocks hacker attacks. "
 msgid ""
 "More than 95%% of the currencies are stored on cold wallets. WAF (Web "
 "Application Firewall) a protective screen of a Web application that detects "
 "and blocks hacker attacks. "
 msgstr ""
-"Более 95% всех валют хранятся на холодных кошельках. "
-"WAF (брандмауэр веб-приложений) - защитный экран веб-приложения, "
-"который обнаруживает и блокирует хакерские атаки."
+"Более 95% всех валют хранятся на холодных кошельках. WAF (брандмауэр веб-"
+"приложений) - защитный экран веб-приложения, который обнаруживает и "
+"блокирует хакерские атаки."
 
 #: templates/main/about-us.html:118
-#| msgid "currencies"
 msgid "Multicurrency"
 msgstr "Разнообразие монет"
 
@@ -188,34 +641,17 @@ msgid ""
 "lots of perspective new altcoins as well as fiat currencies. In total more "
 "than 600 trading pairs are now available."
 msgstr ""
-"На Exrates доступны не только монеты из списка топ-100, но и множество перспективных "
-"альткойнов и фиатные валюты. Всего на бирже уже более 600 торговых пар."
+"На Exrates доступны не только монеты из списка топ-100, но и множество "
+"перспективных альткойнов и фиатные валюты. Всего на бирже уже более 600 "
+"торговых пар."
 
 #: templates/main/about-us.html:126
 msgid "Apply for Listing or IEO"
 msgstr "Подать заявку на листинг или IEO"
 
 #: templates/main/about-us.html:132
-#, fuzzy
-#| msgid "I need to conduct an IEO"
 msgid "I need to conduct an IE"
 msgstr "Мне нужно провести IEO"
-
-#: templates/main/about-us.html:137 templates/main/form-listing.html:39
-msgid "I need to list a coin"
-msgstr "Мне нужно разместить монету"
-
-#: templates/main/about-us.html:143 templates/main/form-listing.html:45
-msgid "Name"
-msgstr "Имя"
-
-#: templates/main/about-us.html:158 templates/main/form-listing.html:60
-msgid "Company name"
-msgstr "Название компании"
-
-#: templates/main/about-us.html:163 templates/main/form-listing.html:65
-msgid "Link to the website"
-msgstr "Ссылка на сайт"
 
 #: templates/main/about-us.html:168
 msgid "Get your custom offer"
@@ -229,10 +665,6 @@ msgstr "Отдел продаж"
 msgid "Contact of Sales Department:"
 msgstr "Контакты отдела продаж:"
 
-#: templates/main/client-center.html:127 templates/main/fiat.html:42
-msgid "Personal Bank Account"
-msgstr "Личный банковский счет"
-
 #: templates/main/client-center.html:130
 msgid ""
 "We provide personal bank account with 3rd party payment option to 231\n"
@@ -241,26 +673,7 @@ msgstr ""
 "Мы предоставляем личный банковский аккаунт с возможностью переводов через 3ю "
 "сторону в 231 страну."
 
-#: templates/main/client-center.html:136 templates/main/fiat.html:50
-msgid "Fast KYC"
-msgstr "Быстрое прохождение KYC"
-
-#: templates/main/client-center.html:139 templates/main/fiat.html:53
-msgid ""
-"Automatic KYC process with outstanding support. Fully remote account opening."
-msgstr ""
-"Автоматическое прохождение KYC с круглосуточной поддержкой. Автономное "
-"открытие аккаунта."
-
-#: templates/main/client-center.html:144 templates/main/fiat.html:82
-msgid "Up to $500,000 monthly"
-msgstr "До $500,000 в месяц"
-
 #: templates/main/client-center.html:147
-#, fuzzy
-#| msgid ""
-#| "For VIP clients we provide special conditions for fiat deposit and "
-#| "withdraw in 35 currencies."
 msgid ""
 "For VIP clients we provide special conditions for fiat deposit and withdraw "
 "in 35\n"
@@ -268,37 +681,6 @@ msgid ""
 msgstr ""
 "Для VIP-клиентов мы предоставляем особые условия ввода и вывода средств в 35 "
 "валютах."
-
-#: templates/main/client-center.html:151 templates/main/fiat.html:88
-msgid "Become a VIP"
-msgstr "Стать VIP"
-
-#: templates/main/client-center.html:156 templates/main/fiat.html:74
-#, python-format
-msgid "0%% Transfer Fee"
-msgstr "0%% комиссии за переводы"
-
-#: templates/main/client-center.html:159 templates/main/fiat.html:77
-#, python-format
-msgid "0%% transfer fee between personal and trading account on Exrates"
-msgstr "Комиссия 0%% на переводы между личным аккаунтом и аккаунтом Exrates"
-
-#: templates/main/client-center.html:164 templates/main/fiat.html:66
-msgid "Low commissions"
-msgstr "Низкие комиссии"
-
-#: templates/main/client-center.html:167 templates/main/fiat.html:69
-msgid "Free of charge SEPA outgoing payments."
-msgstr "Платежи SEPA без комиссий и сборов."
-
-#: templates/main/client-center.html:172 templates/main/fiat.html:58
-msgid "Payment solution powered by"
-msgstr "Платежи через сингапурский банк"
-
-#: templates/main/client-center.html:175 templates/main/fiat.html:61
-msgid "Singaporian bank with the same license as PayPal & Apple Pay."
-msgstr ""
-"Платежное решение от сингапурского банка с лицензией как у PayPal и ApplePay."
 
 #: templates/main/fiat.html:17
 msgid "Meet fiat on Exrates in Q3!"
@@ -320,22 +702,6 @@ msgstr "Отрыть аккаунт сейчас"
 #: templates/main/fiat.html:37
 msgid "Benefits"
 msgstr "Преимущества счета"
-
-#: templates/main/fiat.html:45
-msgid ""
-"We provide personal bank account with 3rd party payment option to 231 "
-"countries."
-msgstr ""
-"Мы предоставляем личный банковский аккаунт с возможностью переводов через 3ю "
-"сторону в 231 страну."
-
-#: templates/main/fiat.html:85
-msgid ""
-"For VIP clients we provide special conditions for fiat deposit and withdraw "
-"in 35 currencies."
-msgstr ""
-"Для VIP-клиентов мы предоставляем особые условия ввода и вывода средств в 35 "
-"валютах."
 
 #: templates/main/fiat.html:95
 msgid "How does ot work?"
@@ -379,10 +745,6 @@ msgstr "Детальное описание условийдоступно на 
 msgid "Apply to conduct an IEO"
 msgstr "Запрос на проведение IEO"
 
-#: templates/main/form-listing.html:34
-msgid "I need to conduct an IEO"
-msgstr "Мне нужно провести IEO"
-
 #: templates/main/form-listing.html:50
 msgid "Telegram"
 msgstr ""
@@ -390,30 +752,6 @@ msgstr ""
 #: templates/main/form-listing.html:55
 msgid "Email"
 msgstr ""
-
-#: templates/main/form-listing.html:70 templates/main/support-center.html:113
-msgid "Submit"
-msgstr "Отправить"
-
-#: templates/main/form-listing.html:83
-msgid "IEO request submitted"
-msgstr "Запрос на проведение IEO отправлен"
-
-#: templates/main/form-listing.html:90
-msgid "Trade"
-msgstr "Торги"
-
-#: templates/main/form-listing.html:96
-msgid "Token Sale"
-msgstr "Продажа токенов"
-
-#: templates/main/form-listing.html:102
-msgid "Fiat"
-msgstr "Фиат"
-
-#: templates/main/form-listing.html:105
-msgid "Announcements"
-msgstr "Объявления"
 
 #: templates/main/form-listing.html:120
 msgid "by CoinMarketCap"
@@ -743,7 +1081,7 @@ msgstr ""
 
 #: templates/main/support-center.html:16
 msgid "Support Center"
-msgstr "Поддержка"
+msgstr "Отдел поддержки"
 
 #: templates/main/support-center.html:71
 msgid "submit a request "
