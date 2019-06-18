@@ -407,8 +407,6 @@ pipeline {
       }
     }
 
-
-    
     stage('helm init') {
         when {
           expression { "${params.SERVICE_IMAGE_TAG}" != "" || "${params.PIPELINE_BRANCH}" != ""}
@@ -490,7 +488,7 @@ pipeline {
       parallel {
         stage('delete succeeded django-dbupdater-job') {
             when {
-                expression { env.DJANGO_MIGRATIONS_JOB_STATUS == "1" && "${params.SKIP_CORE_FLYWAY_MIGRATIONS}" == "no"  }
+                expression { env.DJANGO_MIGRATIONS_JOB_STATUS == "1" && "${params.SKIP_DJANGO_MIGRATIONS}" == "no"  }
             }
             steps {
                 ansiColor('xterm') {
