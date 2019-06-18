@@ -90,12 +90,22 @@ class ZendeskClient:
         new_ticket['ticket']['priority'] = priority
         result = self.zendesk_client.ticket_create(data=new_ticket)
 
-
+        str = result.split('.json')[0]
+        f = ''.join(str.split('api/v2/'))
         # send notification to telegram
-        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}  \n \n Link to the ticket: {}'.format(type, email, body, priority, result)
+        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}  \n \n Link to the ticket: {}'.format(type, email, body, priority, f)
 
         msg = "Support form from about.exrates.me \n  \n  \n {} \n {}".format(msg1,
                                                                               datetime.now().strftime("%Y-%m-%d %H:%M"))
+
+
+
         send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)
 
+
+
         return result
+
+
+
+
