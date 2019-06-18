@@ -162,7 +162,6 @@ def limit_crawler(domain, ofile, limit, mute):
                 if not i in new_urls and not i in processed_urls:
                     new_urls.append(i)
 
-        print()
         if mute is False:
             if ofile is not None:
                 return limit_report_file(limit, ofile, processed_urls, limit_urls, broken_urls)

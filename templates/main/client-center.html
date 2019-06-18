@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load cache %}
 {% load static %}
+{%  load i18n %}
 {% cache 500 contacts %}
 {% block title %}
 <title>Contact us | Exrates</title>
@@ -11,7 +12,7 @@
     <div class="client-center-wr">
         <div class="client-center-inner">
             <div class="top-title">
-                <h2>Sales Department</h2>
+                <h2>{% blocktrans %}Sales Department{% endblocktrans %}</h2>
                 <div class="open-sedebar-trigger">
                     <button>
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
@@ -29,9 +30,9 @@
                         <span></span>
                     </div>
                     <ul class="sidebar-list">
-                        <li><a href="{% url 'about-us' %}"><span>About us</span></a></li>
-                        <li><a href="{% url 'client-center' %}" class="active"><span>Contacts</span></a></li>
-                        <li><a href="{% url 'support-center' %}"><span>Support</span></a></li>
+                        <li><a href="{% url 'about-us' %}"><span>{% blocktrans %}About us{% endblocktrans %}</span></a></li>
+                        <li><a href="{% url 'client-center' %}" class="active"><span>{% blocktrans %}Contacts{% endblocktrans %}</span></a></li>
+                        <li><a href="{% url 'support-center' %}"><span>{% blocktrans %}Support{% endblocktrans %}</span></a></li>
                         <li><a href="{% url 'privacy-policy' %}"><span>Privacy policy</span></a></li>
                         <li><a href="{% url 'terms-of-use' %}"><span>Terms of use</span></a></li>
                         <li class="icon-lnk"><a href="{% url 'deal' %}"><span class="icon">
@@ -62,7 +63,7 @@
                                                 </defs>
                                             </svg>
                                         </span>
-                            <span>Start IEO</span></a></li>
+                            <span>{% blocktrans %}Start IEO{% endblocktrans %}</span></a></li>
                         <li class="icon-lnk"><a href="{% url 'become-advisor' %}"><span class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                          fill="none">
@@ -70,16 +71,16 @@
                                               fill="#237BEF"/>
                                     </svg>
                                 </span>
-                            <span>Become Ambassador</span></a></li>
+                            <span>{% blocktrans %}Become Ambassador{% endblocktrans %}</span></a></li>
                     </ul>
                     <div class="button-wr">
-                        <a href="{% url 'deal' %}" class="standart-btn"><span>List your Coin</span></a>
+                        <a href="{% url 'deal' %}" class="standart-btn"><span>{% blocktrans %}List your Coin{% endblocktrans %}</span></a>
                     </div>
                 </div>
                 <div class="content-part">
                     <div class="contact-sales">
                         <div class="title-wr">
-                            <h4>Contact of Sales Department: </h4>
+                            <h4>{% blocktrans %}Contact of Sales Department:{% endblocktrans %} </h4>
                         </div>
                         <div class="contact-sales-item-wr">
                             {% for contact in contacts %}
@@ -123,55 +124,55 @@
                         <div class="benefits-item-wr">
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Personal Bank Account</h5>
+                                    <h5>{% blocktrans %}Personal Bank Account{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>We provide personal bank account with 3rd party payment option to 231
-                                        countries.</p>
+                                    <p>{% blocktrans %}We provide personal bank account with 3rd party payment option to 231
+                                        countries.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Fast KYC</h5>
+                                    <h5>{% blocktrans %}Fast KYC{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>Automatic KYC process with outstanding support. Fully remote account opening.</p>
+                                    <p>{% blocktrans %}Automatic KYC process with outstanding support. Fully remote account opening.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item large-item">
                                 <div class="title-b">
-                                    <h5>Up to $500,000 monthly</h5>
+                                    <h5>{% blocktrans %}Up to $500,000 monthly{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>For VIP clients we provide special conditions for fiat deposit and withdraw in 35
-                                        currencies.</p>
+                                    <p>{% blocktrans %}For VIP clients we provide special conditions for fiat deposit and withdraw in 35
+                                        currencies.{% endblocktrans %}</p>
                                 </div>
                                 <div class="button-wr">
-                                    <a  class="standart-btn reverse vip" href="{%  url 'chat' %}" target="_blank"><span>Become a VIP</span></a>
+                                    <a  class="standart-btn reverse vip" href="{%  url 'chat' %}" target="_blank"><span>{% blocktrans %}Become a VIP{% endblocktrans %}</span></a>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>0% Transfer Fee</h5>
+                                    <h5>{% blocktrans %}0% Transfer Fee{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>0% transfer fee between personal and trading account on Exrates</p>
+                                    <p>{% blocktrans %}0% transfer fee between personal and trading account on Exrates{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Low commissions</h5>
+                                    <h5>{% blocktrans %}Low commissions{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>Free of charge SEPA outgoing payments.</p>
+                                    <p>{% blocktrans %}Free of charge SEPA outgoing payments.{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="benefits-item">
                                 <div class="title-b">
-                                    <h5>Payment solution powered by</h5>
+                                    <h5>{% blocktrans %}Payment solution powered by{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>Singaporian bank with the same license as PayPal & Apple Pay.</p>
+                                    <p>{% blocktrans %}Singaporian bank with the same license as PayPal & Apple Pay.{% endblocktrans %}</p>
                                 </div>
                             </div>
                         </div>
