@@ -422,7 +422,7 @@ pipeline {
                 sh "cd ${HELM_REPO_PATH}/$TEMPLATES_DIR && helm init --client-only && ./install.sh"
 
                 echo "Updating django-migrate helm dependencies"
-                sh "cd $HELM_REPO_PATH/charts/$TEMPLATES_DIR/django-migrate-chart && helm init --client-only && ./django_migrate_install.sh"
+                sh "cd ${HELM_REPO_PATH}/$TEMPLATES_DIR/django-migrate-chart && helm init --client-only && ./django_migrate_install.sh"
               // }
             }
         }
