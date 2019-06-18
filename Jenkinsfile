@@ -378,9 +378,9 @@ pipeline {
                 ansiColor('xterm') {
                   // dir("$SERVICE_NAME") {
                     echo "Running ansible dry run"
-                    sh "cd ${SERVICE_REPO_PATH} && ansible-playbook -c local -i ',localhost' -e 'service_playbook_dir=${HELM_REPO_PATH}/$TEMPLATES_DIR' -e 'deployment_env=${params.deploy_env}' -e 'deploy_image_tag=${SERVICE_DOCKER_IMAGE_TAG}' -e 'deployment_app_version=${BUILD_NUMBER}' -e 'deployment_django_migrate_job_name=django-dbupdater-job-${BUILD_NUMBER}' ansible-template-${params.deploy_env}-env.yml --check"
+                    sh "cd ${SERVICE_REPO_PATH} && ansible-playbook -c local -i ',localhost' -e 'service_playbook_dir=${HELM_REPO_PATH}/$TEMPLATES_DIR' -e 'deployment_env=${params.deploy_env}' -e 'deploy_image_tag=${SERVICE_DOCKER_IMAGE_TAG}' -e 'deployment_app_version=${BUILD_NUMBER}' -e 'deployment_django_migrate_job_name=django-dbupdater-job-${BUILD_NUMBER}' ansible-template-${params.deploy_env}-env-migrate.yml --check"
                     echo "Running ansible to generate helm charts"
-                    sh "cd ${SERVICE_REPO_PATH} && ansible-playbook -c local -i ',localhost' -e 'service_playbook_dir=${HELM_REPO_PATH}/$TEMPLATES_DIR' -e 'deployment_env=${params.deploy_env}' -e 'deploy_image_tag=${SERVICE_DOCKER_IMAGE_TAG}' -e 'deployment_app_version=${BUILD_NUMBER}' -e 'deployment_django_migrate_job_name=django-dbupdater-job-${BUILD_NUMBER}' ansible-template-${params.deploy_env}-env.yml"
+                    sh "cd ${SERVICE_REPO_PATH} && ansible-playbook -c local -i ',localhost' -e 'service_playbook_dir=${HELM_REPO_PATH}/$TEMPLATES_DIR' -e 'deployment_env=${params.deploy_env}' -e 'deploy_image_tag=${SERVICE_DOCKER_IMAGE_TAG}' -e 'deployment_app_version=${BUILD_NUMBER}' -e 'deployment_django_migrate_job_name=django-dbupdater-job-${BUILD_NUMBER}' ansible-template-${params.deploy_env}-env-migrate.yml"
                   // }
                 }
             }
