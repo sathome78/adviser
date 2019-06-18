@@ -556,6 +556,8 @@ $('body').on('click', ".clearFilter", function (e) {
 	var urlNoParam = window.location.href.split('?')[0];
 	window.history.pushState('', '', urlNoParam);
 	filterHeadFunc();
+	$(".analitics-item-wr").html("");
+	pageNumber = 1;
 	downloadPost();
 });
 
