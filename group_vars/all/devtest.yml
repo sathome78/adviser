@@ -62,19 +62,52 @@ all_charts_devtest:
         mountName: staticfiles-storage
         mountPath: /app/django/staticfiles
 
+      # configmap:
+      #   mountName: nginx-config-volume
+      #   mountPath: /etc/nginx/conf.d/
+      #   configMapName: adviser-nginx
+      #   readOnly: true
+
     custom_redirects: {}
 
+    nginxContainer:
+      serve-media:
+        enabled: True
+        externalPortHttp: 8000
+        
+        service:
+          serve-media:
+            annotations: {}
+            expose: true
+            type: NodePort
+
+        image:
+          name: nginx
+          tag: 1.17.0
+          pullPolicy: IfNotPresent
+
+        config:
+          location: /media
+          alias: /app/django/media
+
+        mounts:
+
+          pvc:
+            mountName: "adviser-{{ deployment_env }}-media"
+            mountPath: /app/django/media
+            claimName: "adviser-{{ deployment_env }}-media"
+
+          # configmap:
+          #   mountName: nginx-config-volume
+          #   mountPath: /etc/nginx/conf.d/
+          #   configMapName: adviser-nginx
+            
     initContainers:
       staticfiles-storage:
         pod_env_vars:
           CONFIG_PROFILE_PATH:
             name: CONFIG_PROFILE_PATH
             value: "/app/secrets/{{ deployment_env }}-config.ini"
-        # image: busybox:1.30.1
-        # command:
-        #     - "mkdir"
-        #     - "-p"
-        #     - "/app/django/staticfiles/test"
         image: "{{ env_specific_vars[deployment_env].registry }}/{{ ecs_registry_prefix }}-adviser-{{ deployment_env }}:{{ deploy_image_tag }}"
         command:
             - "python3"
@@ -87,7 +120,7 @@ all_charts_devtest:
             mountName: staticfiles-storage
           secrets:
             mountPath: /app/secrets
-            mountName: devtest-config
+            mountName: "{{ deployment_env }}-config"
 
     use_true_probes: true
 

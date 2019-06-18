@@ -30,6 +30,7 @@
         pod_env_vars: "{{ item.value.pod_env_vars }}"
         mounts: "{{ item.value.mounts }}"
         initContainers: "{{ item.value.initContainers }}"
+        nginxContainer: "{{ item.value.nginxContainer }}"
         resources: "{{ item.value.resources }}"
         replicaCount: "{{ item.value.replicaCount }}"
         hpa_controller: "{{ item.value.hpa_controller }}"
