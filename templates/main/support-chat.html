@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exrates info page</title>
+        <!-- Main Meta information-->
+        <meta charset="utf-8" />
+        <meta http-equiv="Cache-control" content="public" />
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:600,500,400,300' rel='stylesheet' type='text/css'>
+        <!-- Meta Information-->
+        <meta name="robots" content="index, follow" />
+        <!--     <style>
+    @font-face {
+      @font-face {
+          font-display: swap;
+          font-family: 'Roboto';
+          src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+          font-weight: 300;
+      }
+      @font-face {
+          font-display: swap;
+          font-family: 'Roboto';
+          src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format('woff2');
+          font-weight: 400;
+      }
+      @font-face {
+       font-display: swap;
+       font-family: 'Roboto';
+       src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+       font-weight: 500;
+   }
+   @font-face {
+      font-display: swap;
+      font-family: 'Roboto';
+      src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format('woff2');
+      font-weight: 600;
+  }
+}
+</style> -->
+        <link type="text/plain" rel="author" href="{%  static 'humans.txt'%}" />
+        <!-- Google Tag Manager -->
+        <!-- Get html5shiv if this is IE lower or equal to 9-->
+        <!--[if lte IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+        <link rel="stylesheet" href="{%  static 'css/main.min.css' %}" />
+        <link rel="preload" href="{%  static 'css/main.min.css'%}" as="style" onload="this.rel='stylesheet'">
+        <script>
+            (function(w, d, s, l, i)
+            {
+                w[l] = w[l] || [];
+                w[l].push(
+                {
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WHBHRK6');
+        </script>
+        <!-- End Google Tag Manager -->
+    </head>
+    <body style="background-color: #191a39;">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHBHRK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <main>
+            <script type="text/javascript">
+                var openChat;
+                var $zopim = "";
+                document.addEventListener("DOMContentLoaded", function()
+                {
+                    openChat = function()
+                    {
+                        console.log(document.getElementById("launcher") !== null)
+                        if (document.getElementById("launcher") !== null)
+                        {
+                            var chatEl = document.getElementById("launcher");
+                            var iframeDoc = chatEl.contentWindow.document.body.getElementsByTagName("button")[0];
+                            iframeDoc.click();
+                        }
+                    }
+                });
+                var zCh = function()
+                {
+                    if ($zopim == '')
+                    {
+                        setTimeout(function()
+                        {
+                            console.log("ef")
+                            zCh();
+                        }, 200);
+                    }
+                    else
+                    {
+                        $zopim(function()
+                        {
+                            zE('webWidget', 'setLocale', 'en');
+                            $zopim.livechat.addTags('EXRATES');
+                            setTimeout(function()
+                            {
+                                openChat();
+                            }, 100)
+                        });
+                    }
+                }
+                zCh();
+            </script>
+            <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=78adf70e-5079-4b7b-8bcd-f2781bcb8611" async> </script>
+        </main>
+    </body>
+</html>

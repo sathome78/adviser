@@ -1,9 +1,24 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
+
 from django.conf import settings
 from zdesk import Zendesk, get_id_from_url
 
+from clients.pipedrive_client import send
+
 
 class ZendeskClient:
+    NORMAL_PRIORITY = [
+                     'Deposit',
+                     'Funds Withdrawal']
+
+    HIGH_PRIORITY = [
+                     'Security',
+                     'Authentication',
+                     'Application Performance',
+                     'API Issue',
+                     'Trading']
+
     def __init__(self):
         config = {
             'zdesk_email': settings.ZENDESK_EMAIL,
@@ -45,12 +60,11 @@ class ZendeskClient:
             fdata = file.read()
 
             import magic
-            mime_type = magic.from_buffer(fdata)
+            mime_type = magic.from_buffer(fdata, mime=True)
 
             upload_result = self.zendesk_client.upload_create(
                     fdata, filename=fname, mime_type=mime_type, complete_response=True)
             files_list.append(upload_result['content']['upload']['token'])
-
 
         new_ticket = {
             'ticket': {
@@ -65,8 +79,33 @@ class ZendeskClient:
             }
 
         new_ticket['ticket']['comment']['uploads'] = files_list
+
+        if type in self.HIGH_PRIORITY:
+            priority = 'high'
+        elif type in self.NORMAL_PRIORITY:
+            priority = 'normal'
+        else:
+            priority = 'low'
+
+        new_ticket['ticket']['priority'] = priority
         result = self.zendesk_client.ticket_create(data=new_ticket)
+
+        str = result.split('.json')[0]
+        f = ''.join(str.split('api/v2/'))
+        # send notification to telegram
+        msg1 = 'Request type: {} \n Email: {} \n Message: {} \n Priority: {}  \n \n Link to the ticket: {}'.format(type, email, body, priority, f)
+
+        msg = "Support form from about.exrates.me \n  \n  \n {} \n {}".format(msg1,
+                                                                              datetime.now().strftime("%Y-%m-%d %H:%M"))
+
+
+
+        send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)
+
 
 
         return result
+
+
+
 

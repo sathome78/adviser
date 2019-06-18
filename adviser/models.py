@@ -21,7 +21,7 @@ class Manager(models.Model):
     surname = models.CharField(max_length=100)
     job_title = models.CharField(max_length=255)
     telegram = models.CharField(max_length=200, null=True, blank=True)
-    email = models.CharField(max_length=200, null=True, blank=True)
+    email = models.EmailField(max_length=200, null=True, blank=True)
     avatar = models.ImageField(upload_to='images', default='images/default-ava.png')
 
     def __str__(self):
@@ -46,10 +46,10 @@ class Adviser(models.Model):
     slug = AutoSlugField(_('slug'), max_length=50, unique=True, populate_from=('name',))
 
     telegram = models.CharField(max_length=255, null=True, blank=True)
-    linkedin = models.CharField(max_length=255, null=True, blank=True)
+    linkedin = models.URLField(max_length=255, null=True, blank=True)
     twitter = models.CharField(max_length=255, null=True, blank=True)
-    email = models.CharField(max_length=255, null=True, blank=True)
-    website = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(max_length=255, null=True, blank=True)
+    website = models.URLField(max_length=255, null=True, blank=True)
 
     member_since = models.DateField(null=True, blank=True)
     avatar = models.ImageField(upload_to='images/advisers/', default='images/default-ava.png')
@@ -61,11 +61,14 @@ class Adviser(models.Model):
     rating = models.CharField(max_length=255, null=True, blank=True,
                               help_text="Rating CoinMarketCap")
 
+    page_title = models.CharField(max_length=255, null=True, blank=True,
+                              help_text="Title of the page", default="Ambassador Exrates Exchange")
+
+    ambassador_type = models.CharField(max_length=255, null=True, blank=True,
+                                  help_text="Type of ambassador/sales/company", default="Verified Ambassador")
+
     def __str__(self):
-        if self.get_type_display() == "adviser":
-            return '{}--{}'.format(self.get_type_display(), self.name)
-        else:
-            return '{}--{}'.format(self.get_type_display(), self.name)
+        return '{}--{}'.format(self.get_type_display(), self.name)
 
     class Meta(object):
         verbose_name = _('Ambassador')

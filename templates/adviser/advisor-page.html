@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 {% load cache %}
             <div class="adviser-container">
@@ -9,7 +10,7 @@
                     </div>
                     <div class="fs-content">
                         <div class="title-wr">
-                            <h1>{{ adviser.get_type_display }} Exrates Exchange</h1>
+                            <h1>{{ adviser.page_title }}</h1>
                         </div>
                     </div>
                 </div>
@@ -23,13 +24,13 @@
                                 <span>{{ adviser.name }}</span>
                             </div>
                             <div class="profesion">
-                                <span>Verified {{ adviser.get_type_display }}</span>
+                                <span>{{ adviser.ambassador_type }}</span>
                             </div>
                             <div class="description">
                                 <p>{{ adviser.short_description }}</p>
                             </div>
                             <div class="button-wr">
-                                <button class="standart-btn"><a href="https://t.me/{{ adviser.telegram|slice:"1:" }}"> <span>Chat in telegram</span></a></button>
+                                <button class="standart-btn"><a href="https://t.me/{{ adviser.telegram|slice:"1:" }}" target="_blank"> <span>Chat in telegram</span></a></button>
                             </div>
                             <div class="linkedin-profile">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,9 +38,11 @@
                                 </svg>
                                 <a href="{{ adviser.linkedin }}"><span>View profile</span></a>
                             </div>
+                            {% language 'en' %}
                             <div class="member">
                                 <p>MEMBER SINCE: {{ adviser.member_since|date:'F d, Y' }}</p>
                             </div>
+                            {% endlanguage %}
                         </div>
                     </div>
                     <div class="center-col">

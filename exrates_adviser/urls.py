@@ -24,7 +24,8 @@ from django.urls import include, reverse
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
                            FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView, AboutUsPageView,
-                           BecomeAdviserPageView, AdviserDemoPageView)
+                           BecomeAdviserPageView, AdviserDemoPageView, ChatPageView)
+from analytics.views import ArticlePageView, ArticlesListPageView, ListArticleView
 
 
 def home(request):
@@ -36,6 +37,7 @@ def home(request):
 
 def page_not_found_view(request):
     return render(request, '404.html', {})
+
 
 urlpatterns = [
                   url(r'^$', home, name='home'),
@@ -58,8 +60,16 @@ urlpatterns = [
                   url(r'^ambassador-form/$', AdviserFormView.as_view(), name='advisor-form'),
                   url(r'^support-center/$', SupportPageView.as_view(), name='support-center'),
 
+                  url(r'^chat/$', ChatPageView.as_view(), name='chat'),
+                  url(r'^analytics/$', ArticlesListPageView.as_view(), name='analytics-list'),
+
+                    url(r'^api/articles/$', ListArticleView.as_view(), name='articles-list1'),
+
+                  url(r'^analytics-detail/(?P<slug>[-\w]+)/$', ArticlePageView.as_view(), name='analytics-detail'),
+
                   url('admin/', admin.site.urls),
                   url('i18n/', include('django.conf.urls.i18n')),
+                  url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
                   ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

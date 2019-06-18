@@ -5,6 +5,7 @@ from django import forms
 from django.conf import settings
 from django.forms import ModelForm, model_to_dict
 from django.urls import reverse
+from django.utils.text import slugify
 
 from adviser.models import Adviser
 from clients.pipedrive_client import PipedriveClient
@@ -12,20 +13,19 @@ from clients.pipedrive_client import PipedriveClient
 REQUEST_CHOICES = (
     (1, "Funds Withdrawal"),
     (2, "API Issue"),
-    (3, "Development suggestions"),
-    (4, "Help with Deposit"),
-    (5, "Help with withdrawal"),
-    (6, "Not receiving email"),
-    (7, "Help with clients issue"),
-    (8, "Help with google Aut"),
-    (9, "Help with SMS Aut"),
+    (3, "Improvement"),
+    (4, "Deposit"),
+    (5, "I see issue"),
 
-    (10, "Help with account"),
-    (11, "Help with trade"),
-    (12, "Promotions"),
-    (13, "Security issues"),
-    (14, "Business communication"),
-    (15, "Service description"),
+    (6, "Help with my account"),
+    (7, "Trading"),
+    (8, "Promotion"),
+    (9, "Security"),
+    (10, "Business communication"),
+    (11, "Application Performance"),
+    (12, "Authentication"),
+    (13, "Usability"),
+    (14, "Other")
 
     )
 
@@ -66,8 +66,12 @@ class AdviserForm(ModelForm):
     def save(self, commit=True):
         instance = super(AdviserForm, self).save(commit=False)
         instance.type = 1
-        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": instance.slug}))
-        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": instance.slug}))
+        if instance:
+            model = instance
+        else:
+            model = self
+        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
+        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
         PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
         if commit:
             instance.save()
@@ -86,8 +90,12 @@ class AdviserProfileForm(ModelForm):
     def save(self, commit=True):
         instance = super(AdviserProfileForm, self).save(commit=False)
         instance.member_since = datetime.today()
-        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": instance.slug}))
-        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": instance.slug}))
+        if instance:
+            model = instance
+        else:
+            model = self
+        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
+        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
         PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
         if commit:
             instance.save()
@@ -103,8 +111,13 @@ class AdviserAdminForm(ModelForm):
 
     def save(self, commit=True):
         instance = super(AdviserAdminForm, self).save(commit=False)
-        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": instance.slug}))
-        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": instance.slug}))
+        print('---', self.__dict__)
+        if instance:
+            model = instance
+        else:
+            model = self
+        edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
+        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
         PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
         if commit:
             instance.save()

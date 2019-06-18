@@ -1,7 +1,21 @@
 # -*- coding: utf-8 -*-
 import re
+from datetime import datetime
+
+import telegram
 from django.conf import settings
 from pipedrive.client import Client
+
+
+
+def send(msg, chat, token=settings.TELEGRAMBOT_TOKEN):
+    """
+        Send a mensage to a telegram user specified on chatId
+        chat_id must be a number!
+    """
+    bot = telegram.Bot(token=token)
+    bot.sendMessage(chat_id=chat, text=msg)
+    return  bot
 
 
 class PipedriveClient:
@@ -10,6 +24,7 @@ class PipedriveClient:
     def __init__(self):
         self.client = Client(api_base_url=settings.PIPEDRIVE_URL)
         self.client.set_token(settings.CLIENT_SECRET)
+
 
     def create_deal(self, data):
         name = data.get("name", "")
@@ -20,6 +35,15 @@ class PipedriveClient:
 
         email = data.get("email")
         telegram = data.get("telegram")
+
+        #send notification to telegram
+        msg1 = ''
+        for k,v in data.items():
+            msg1 += '{}: {} \n'.format(k,v)
+
+        msg = "Deal form \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
+        send(msg, settings.TELEGRAMBOT_CHAT_DEAL)
+
 
         # check if organization exists
         organization = next(iter(self.client.get_organizations(name=company_name)["data"]), None) if self.client.get_organizations(name=company_name)["data"] else None
@@ -65,6 +89,14 @@ class PipedriveClient:
         telegram = data.get("telegram", "")
         email = data.get("email")
         linkedin = data.get("linkedin")
+
+        # send notification to telegram
+        msg1 = ''
+        for k, v in data.items():
+            msg1 += '{}: {} \n'.format(k, v)
+
+        msg = "Ambassador form \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
+        send(msg, settings.TELEGRAMBOT_CHAT_DEAL)
 
 
         # check if contact exists
