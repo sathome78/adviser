@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
     A Python program that crawls a website and recursively checks links to map all internal and external links
 """

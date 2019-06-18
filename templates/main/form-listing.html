@@ -1,6 +1,7 @@
 {%  load static urls %}
 {% load cache %}
 {% cache 500 contacts %}
+    {% load i18n %}
 <html>
     <head>
        <title>Apply for listing | Exrates</title>
@@ -24,49 +25,49 @@
                     <!-- start default variant -->
                     <div class="left-part">
                         <div class="title">
-                            <h3 class="variable-title">Apply to conduct an IEO</h3>
+                            <h3 class="variable-title">{% blocktrans %}Apply to conduct an IEO{% endblocktrans %}</h3>
                         </div>
                         <div class="radio-wr">
                             <div class="radio-item">
                                 <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="Apply to conduct an IEO" {% if '=ieo' in request.build_absolute_uri or "type" not in request.build_absolute_uri %} checked="checked" {% endif %}>
                                 <label class="check" for="id_request_type_0"></label>
-                                <label class="check-txt" for="id_request_type_0"><span>I need to conduct an IEO</span></label>
+                                <label class="check-txt" for="id_request_type_0"><span>{% blocktrans %}I need to conduct an IEO{% endblocktrans %}</span></label>
                             </div>
                             <div class="radio-item">
                                 <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_1" value="Listing" data-head="Apply for Listing" {% if '=listing' in request.build_absolute_uri %} checked="checked" {% endif %}>
                                 <label class="check" for="id_request_type_1"></label>
-                                <label class="check-txt" for="id_request_type_1"><span>I need to list a coin</span></label>
+                                <label class="check-txt" for="id_request_type_1"><span>{% blocktrans %}I need to list a coin{% endblocktrans %}</span></label>
                             </div>
                         </div>
                         <div class="inputs-wr">
                             <div class="wrap-input input-item popup__wrap-input">
                                 <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="name" id="id_name">
-                                <label class="wrap-input__label" for="id_name">Name*</label>
+                                <label class="wrap-input__label" for="id_name">{% blocktrans %}Name{% endblocktrans %}*</label>
                                 <label class="error" for="id_name"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
                                 <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="telegram" id="id_telegram">
-                                <label class="wrap-input__label" for="id_telegram">Telegram</label>
+                                <label class="wrap-input__label" for="id_telegram">{% blocktrans %}Telegram{% endblocktrans %}</label>
                                 <label class="error" for="id_telegram"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
                                 <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input required-field reqiered-field" autocomplete="new-password" type="text" name="email" id="id_email">
-                                <label class="wrap-input__label" for="id_email">Email*</label>
+                                <label class="wrap-input__label" for="id_email">{% blocktrans %}Email{% endblocktrans %}*</label>
                                 <label class="error" for="id_email"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
                                 <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="company_name" id="id_company_name">
-                                <label class="wrap-input__label" for="id_company_name">Company name*</label>
+                                <label class="wrap-input__label" for="id_company_name">{% blocktrans %}Company name{% endblocktrans %}*</label>
                                 <label class="error" for="id_company_name"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
                                 <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="link_to_project" id="id_link_to_project">
-                                <label class="wrap-input__label" for="id_link_to_project">Link to the website</label>
+                                <label class="wrap-input__label" for="id_link_to_project">{% blocktrans %}Link to the website{% endblocktrans %}</label>
                                 <label class="error" for="id_link_to_project"><span class="standart-text"></span></label>
                             </div>
                         </div>
                         <div class="button-wr">
-                            <button class="standart-btn" type="submit" ><span>Submit</span></button>
+                            <button class="standart-btn" type="submit" ><span>{% blocktrans %}Submit{% endblocktrans %}</span></button>
                         </div>
 
                         <div class="left-part success-mess">
@@ -79,29 +80,29 @@
                                     </svg>
                                 </div>
                                 <div class="message-txt">
-                                    <p>IEO request submitted</p>
+                                    <p>{% blocktrans %}IEO request submitted{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="bottom-part">
                                 <nav class="success-nav">
                                     <ul class="success-nav-list">
                                         <li class="success-nav-list-item">
-                                            <a href="https://exrates.me/dashboard"><span>Trade</span></a>
+                                            <a href="https://exrates.me/dashboard"><span>{% blocktrans %}Trade{% endblocktrans %}</span></a>
                                         </li>
                                         <li class="success-nav-list-item">
-                                            <a href="{% url 'support-center' %}"><span>Support</span></a>
+                                            <a href="{% url 'support-center' %}"><span>{% blocktrans %}Support{% endblocktrans %}</span></a>
                                         </li>
                                         <li class="success-nav-list-item">
-                                            <a href="https://exrates.me/dashboard"><span>Token Sale</span></a>
+                                            <a href="https://exrates.me/dashboard"><span>{% blocktrans %}Token Sale{% endblocktrans %}</span></a>
                                         </li>
                                         <li class="success-nav-list-item">
-                                            <a href="{% url 'client-center' %}"><span>Contacts</span></a>
+                                            <a href="{% url 'client-center' %}"><span>{% blocktrans %}Contacts{% endblocktrans %}</span></a>
                                         </li>
                                         <li class="success-nav-list-item">
-                                            <a href="{% url 'fiat' %}"><span>Fiat</span></a>
+                                            <a href="{% url 'fiat' %}"><span>{% blocktrans %}Fiat{% endblocktrans %}</span></a>
                                         </li>
                                         <li class="success-nav-list-item">
-                                            <a href="https://support.exrates.me/categories/announcements"><span>Announcements</span></a>
+                                            <a href="https://support.exrates.me/categories/announcements"><span>{% blocktrans %}Announcements{% endblocktrans %}</span></a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -116,7 +117,7 @@
                                     <img src="{% static 'img/pics/coinmarketcup.svg'%}" alt="">
                                 </div>
                                 <div class="description-right">
-                                    <p><span>TOP-50</span> by CoinMarketCap</p>
+                                    <p><span>TOP-50</span> {% blocktrans %}by CoinMarketCap{% endblocktrans %}</p>
                                 </div>
                             </div>
                             <div class="coingecko partner-item">
@@ -124,20 +125,20 @@
                                     <img src="{% static 'img/pics/coingecko.svg'%}" alt="">
                                 </div>
                                 <div class="description-right">
-                                    <p>Ranked by CoinGecko</p>
+                                    <p>{% blocktrans %}Ranked by CoinGecko{% endblocktrans %}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="info-part">
                             <ul class="form-list">
-                                <li><span>Supporting all types of coins</span></li>
-                                <li><span class="weight">24/7 </span><span>Online Support</span></li>
-                                <li><span class="weight">${{ extra_fields.trading_volumes }} </span><span>Daily trading volumes</span></li>
-                                <li><span class="weight">{{ extra_fields.active_trades }} </span><span>active traders</span></li>
-                                <li><span class="weight">X-Platform </span><span>for IEO</span>
-                                <span class="label">NEW</span></li>
-                                <li><span class="weight">{{ extra_fields.fiat_currencies }} Fiat </span><span>currencies</span></li>
-                                <li><span class="weight">Trading API </span><span>for AlgoTraders</span></li>
+                                <li><span>{% blocktrans %}Supporting all types of coins{% endblocktrans %}</span></li>
+                                <li><span class="weight">24/7 </span><span>{% blocktrans %}Online Support{% endblocktrans %}</span></li>
+                                <li><span class="weight">${{ extra_fields.trading_volumes }} </span><span>{% blocktrans %}Daily trading volumes{% endblocktrans %}</span></li>
+                                <li><span class="weight">{{ extra_fields.active_trades }} </span><span>{% blocktrans %}active traders{% endblocktrans %}</span></li>
+                                <li><span class="weight">X-Platform </span><span>{% blocktrans %}for IEO{% endblocktrans %}</span>
+                                <span class="label">{% blocktrans %}NEW{% endblocktrans %}</span></li>
+                                <li><span class="weight">{{ extra_fields.fiat_currencies }} Fiat </span><span>{% blocktrans %}currencies{% endblocktrans %}</span></li>
+                                <li><span class="weight">{% blocktrans %}Trading API {% endblocktrans %}</span><span>{% blocktrans %}for AlgoTraders{% endblocktrans %}</span></li>
                             </ul>
                         </div>
                        <div class="back-btn">
