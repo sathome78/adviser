@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: no
+  tasks:
+    - name: django migrate
+      include_role:
+        name: django-migrate
+      vars:
+        service_playbook_dir: "{{ service_playbook_dir }}"
+        spot: false
+        tolerations_node: "{{ item.value.tolerations_node }}"
+        affinity_node: "{{ item.value.affinity_node }}"
+        chart_name: "{{ item.value.chart_name }}"
+        djangoJobEnabled: "{{ item.value.djangoJobEnabled }}"
+        djangoJobName: "{{ item.value.djangoJobName }}"
+        chart_version: "{{ item.value.chart_version }}"
+        global_chart_name: "{{ item.value.global_chart_name }}"
+        global_app_version: "{{ item.value.global_app_version }}"
+        image: "{{ item.value.image }}"
+        image_tag: "{{ item.value.image_tag }}"
+        init: "{{ item.value.init }}"
+        mounts: "{{ item.value.mounts }}"
+      loop: "{{ migrate_charts_devtest | dict2items }}"

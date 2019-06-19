@@ -1,0 +1,156 @@
+---
+all_charts_devtest:
+  adviser:
+    chart_name: adviser
+    chart_version: "{{ deployment_chart_version }}"
+    app_version: "{{ deployment_app_version }}"
+    chart_group: "adviser"
+    image_name: "{{ env_specific_vars[deployment_env].registry }}/{{ ecs_registry_prefix }}-adviser-{{ deployment_env }}"
+    certificate_arn: "{{ env_specific_vars[deployment_env].ssl_cert_arn }}"
+    ingress_enabled: true
+    ingress_controller_type: nginx-ingress-controller
+    ingress_per_one_service: true
+    ingress_per_group_services: false
+    ingress_scheme: internet-facing
+    ingress_url: 'adviser-{{ env_specific_vars[deployment_env].subdomain_suffix }}.{{ env_specific_vars[deployment_env].main_domain }}'
+    nginx_ingress_elb: '{{ env_specific_vars[deployment_env].nginx_ingress_elb }}'
+    active_spring_profile: "{{ env_specific_vars[deployment_env].Spring_Profile }}"
+    pod_env_vars:
+      CONFIG_PROFILE_PATH:
+        name: CONFIG_PROFILE_PATH
+        value: "/app/secrets/{{ deployment_env }}-config.ini"      
+    deployment_environment: "{{ deployment_env }}"
+    tolerations_node: "microservice-dev"
+    affinity_node: "microservice-dev"
+    resources: {}
+      # limits:
+      #   memory: "1.5Gi"
+      #   cpu: "1"
+      # requests:
+      #   memory: "2Gi"
+      #   cpu: "1"
+    replicaCount: 1
+
+    hpa_controller:
+      autoscaling:
+        enabled: False
+
+    persistence:
+      pvc:
+        enabled: True
+        name: "adviser-{{ deployment_env }}-media"
+        storageClass: "adviser-{{ deployment_env }}-media"
+        storageClassZone: us-east-2b
+        storageClassType: gp2
+        accessMode: ReadWriteOnce
+        # accessMode: ReadWriteMany
+        size: 1Gi
+
+    mounts:
+      secrets:
+        mountName: "{{ deployment_env }}-config"
+        mountPath: /app/secrets
+        secretName: "{{ deployment_env }}-config"
+        readOnly: true
+
+      pvc:
+        mountName: "adviser-{{ deployment_env }}-media"
+        mountPath: /app/django/media
+        claimName: "adviser-{{ deployment_env }}-media"
+
+      emptyDir:
+        mountName: staticfiles-storage
+        mountPath: /app/django/staticfiles
+
+      # configmap:
+      #   mountName: nginx-config-volume
+      #   mountPath: /etc/nginx/conf.d/
+      #   configMapName: adviser-nginx
+      #   readOnly: true
+
+    custom_redirects: {}
+
+    nginxContainer:
+      serve-media:
+        enabled: True
+        
+        service:
+          serve-media:
+            annotations: {}
+            expose: true
+            type: ClusterIP
+
+        image:
+          name: nginx
+          tag: 1.17.0
+          pullPolicy: IfNotPresent
+
+        config:
+          location: /media
+          alias: /app/django/media
+
+        mounts:
+
+          pvc:
+            mountName: "adviser-{{ deployment_env }}-media"
+            mountPath: /app/django/media
+            claimName: "adviser-{{ deployment_env }}-media"
+
+          # configmap:
+          #   mountName: nginx-config-volume
+          #   mountPath: /etc/nginx/conf.d/
+          #   configMapName: adviser-nginx
+            
+    initContainers:
+      staticfiles-storage:
+        pod_env_vars:
+          CONFIG_PROFILE_PATH:
+            name: CONFIG_PROFILE_PATH
+            value: "/app/secrets/{{ deployment_env }}-config.ini"
+        image: "{{ env_specific_vars[deployment_env].registry }}/{{ ecs_registry_prefix }}-adviser-{{ deployment_env }}:{{ deploy_image_tag }}"
+        command:
+            - "python3"
+            - "manage.py"
+            - "collectstatic"
+            - "--noinput"
+        mounts:
+          emptyDir:
+            mountPath: /app/django/staticfiles
+            mountName: staticfiles-storage
+          secrets:
+            mountPath: /app/secrets
+            mountName: "{{ deployment_env }}-config"
+
+    use_true_probes: true
+
+migrate_charts_devtest:
+  adviser:
+    tolerations_node: "microservice-dev"
+    affinity_node: "microservice-dev"
+    chart_name: django-migrate
+    djangoJobEnabled: yes
+    djangoJobName: "{{ deployment_django_migrate_job_name }}"
+    chart_version: v1.0.0
+    global_chart_name: adviser-django-migrate-chart
+    global_app_version: "{{ deployment_app_version }}"
+    image: "{{ env_specific_vars[deployment_env].registry }}/{{ ecs_registry_prefix }}-adviser-{{ deployment_env }}"
+    image_tag: "{{ deploy_image_tag }}"
+    mounts:
+      secrets:
+        mountName: "{{ deployment_env }}-config"
+        mountPath: /app/secrets
+        secretName: "{{ deployment_env }}-config"
+        readOnly: true
+
+    init:
+      migration-secrets:
+        pod_env_vars:
+          CONFIG_PROFILE_PATH:
+            name: CONFIG_PROFILE_PATH
+            value: "/app/secrets/{{ deployment_env }}-config.ini"
+
+        mounts:
+          secrets:
+            mountPath: /app/secrets
+            mountName: devtest-config
+

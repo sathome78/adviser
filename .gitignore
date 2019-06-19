@@ -96,3 +96,6 @@ idea/
 db.sqlite
 
 config/*.ini
+
+# ansible
+*.retry

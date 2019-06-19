@@ -7,4 +7,9 @@ __pycache__
 *.pyo
 *.pyd
 Jenkinsfile
-k8s/*
+ansible*.yml
+*.retry
+ansible.cfg
+group_vars/*
+helm/*
+adviser-Dockerfile-build
