@@ -1,0 +1,12 @@
+FROM python:3.6.5
+MAINTAINER Dmitry Gamanenko
+
+ARG APP_PORT
+ENV port=$APP_PORT
+
+ADD . /app/django
+WORKDIR /app/django
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+EXPOSE ${port}
+CMD python manage.py runserver 0.0.0.0:${port}
