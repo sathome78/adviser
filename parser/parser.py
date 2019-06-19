@@ -1,29 +1,26 @@
 """
     A Python program that crawls a website and recursively checks links to map all internal and external links
 """
+import argparse
+import sys
+from collections import deque
 from itertools import groupby
 from time import sleep
+from urllib.parse import urlparse, urlsplit
 
-import selenium
-from bs4 import BeautifulSoup
 import requests
 import requests.exceptions
-from urllib.parse import urlsplit
-from urllib.parse import urlparse
-from collections import deque
-import re
-import sys
-import os
-import subprocess
-import argparse
-
-from lxml import html
+from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException, TimeoutException
+from selenium.common.exceptions import TimeoutException, WebDriverException
 
 
 def get_inner_html(url):
-    browser = webdriver.Chrome()
+    from selenium.webdriver.chrome.options import Options
+
+    options = Options()
+    options.headless = True
+    browser = webdriver.Chrome(chrome_options=options)
     browser.get(url)  # navigate to the page
     sleep(2)
     #innerHTML = browser.execute_script("return document.body.innerHTML;")

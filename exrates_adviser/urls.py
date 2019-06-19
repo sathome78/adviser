@@ -29,9 +29,6 @@ from analytics.views import ArticlePageView, ArticlesListPageView, ListArticleVi
 
 
 def home(request):
-    request.session['username'] = request.GET.get('username')
-    request.session['email'] = request.GET.get('email')
-    request.session['picture'] = request.GET.get('picture')
     return redirect(reverse("about-us"))
 
 

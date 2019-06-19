@@ -206,21 +206,13 @@ CACHES = {
     }
 
 config = get_config()
-PIPEDRIVE_URL = config.get('DEFAULT', 'PIPEDRIVE_URL')
-CLIENT_SECRET = config.get('DEFAULT', 'CLIENT_SECRET')
+
 
 ZENDESK_URL = config.get('DEFAULT', 'ZENDESK_URL')
 ZENDESK_TOKEN = config.get('DEFAULT', 'ZENDESK_TOKEN')
 ZENDESK_EMAIL = config.get('DEFAULT', 'ZENDESK_EMAIL')
 
-USER_TELEGRAM = config.get('PIPEDRIVE_FIELDS', 'user_telegram')
-USER_LINKEDIN = config.get('PIPEDRIVE_FIELDS', 'user_linked_in')
 
-USER_LINKS = config.get('PIPEDRIVE_FIELDS', 'user_links')
-ORG_WEBSITE = config.get('PIPEDRIVE_FIELDS', 'org_website')
-
-PIPEDRIVE_NEW_ADVISER = config.get('PIPEDRIVE_FIELDS', 'pipedrive_new_adviser')
-PIPEDRIVECHANNEL = config.get('PIPEDRIVE_FIELDS', 'pipedrive_listing')
 TELEGRAMBOT_TOKEN = config.get('DEFAULT', 'TELEGRAMBOT_TOKEN')
 TELEGRAMBOT_CHAT_DEAL = config.get('DEFAULT', 'TELEGRAMBOT_CHAT_DEAL')
 TELEGRAMBOT_CHAT_SUPPORT = config.get('DEFAULT', 'TELEGRAMBOT_CHAT_SUPPORT')
@@ -232,17 +224,24 @@ MYSQL_USER = config.get('MYSQL', 'MYSQL_USER')
 MYSQL_DB_NAME = config.get('MYSQL', 'MYSQL_DB_NAME')
 MYSQL_PASSWORD = config.get('MYSQL', 'MYSQL_PASSWORD')
 
-
-USER_TELEGRAM1 = config.get('PIPEDRIVE_FIELDS1', 'user_telegram')
-USER_LINKEDIN1 = config.get('PIPEDRIVE_FIELDS1', 'user_linked_in')
-
-USER_LINKS1 = config.get('PIPEDRIVE_FIELDS1', 'user_links')
-ORG_WEBSITE1 = config.get('PIPEDRIVE_FIELDS1', 'org_website')
-
-PIPEDRIVE_NEW_ADVISER1 = config.get('PIPEDRIVE_FIELDS1', 'pipedrive_new_adviser')
-PIPEDRIVECHANNEL1 = config.get('PIPEDRIVE_FIELDS1', 'pipedrive_listing')
-
-
+PIPEDRIVE_ME = {"PIPEDRIVE_URL": config.get('DEFAULT', 'PIPEDRIVE_URL'),
+                "CLIENT_SECRET": config.get('DEFAULT', 'CLIENT_SECRET'),
+                "PIPEDRIVE_NEW_ADVISER": config.get('PIPEDRIVE_FIELDS', 'pipedrive_new_adviser'),
+                "PIPEDRIVECHANNEL": config.get('PIPEDRIVE_FIELDS', 'pipedrive_listing'),
+                "USER_TELEGRAM": config.get('PIPEDRIVE_FIELDS', 'user_telegram'),
+                "USER_LINKEDIN": config.get('PIPEDRIVE_FIELDS', 'user_linked_in'),
+                "USER_LINKS": config.get('PIPEDRIVE_FIELDS', 'user_links'),
+                "ORG_WEBSITE": config.get('PIPEDRIVE_FIELDS', 'org_website')
+                }
+PIPEDRIVE = {"PIPEDRIVE_URL": config.get('DEFAULT', 'PIPEDRIVE_URL1'),
+                "CLIENT_SECRET": config.get('DEFAULT', 'CLIENT_SECRET1'),
+                "PIPEDRIVE_NEW_ADVISER": config.get('PIPEDRIVE_FIELDS1', 'pipedrive_new_adviser'),
+                "PIPEDRIVECHANNEL": config.get('PIPEDRIVE_FIELDS1', 'pipedrive_listing'),
+                "USER_TELEGRAM": config.get('PIPEDRIVE_FIELDS1', 'user_telegram'),
+                "USER_LINKEDIN": config.get('PIPEDRIVE_FIELDS1', 'user_linked_in'),
+                "USER_LINKS": config.get('PIPEDRIVE_FIELDS1', 'user_links'),
+                "ORG_WEBSITE": config.get('PIPEDRIVE_FIELDS1', 'org_website')
+                }
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',

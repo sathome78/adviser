@@ -64,15 +64,17 @@ class AdviserForm(ModelForm):
         fields = ['name', 'telegram', 'email', 'linkedin']
 
     def save(self, commit=True):
+
         instance = super(AdviserForm, self).save(commit=False)
         instance.type = 1
+        print(instance)
         if instance:
             model = instance
         else:
             model = self
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
-        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
+        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
             instance.save()
         return instance
@@ -96,7 +98,7 @@ class AdviserProfileForm(ModelForm):
             model = self
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
-        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
+        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
             instance.save()
         return instance
@@ -111,14 +113,13 @@ class AdviserAdminForm(ModelForm):
 
     def save(self, commit=True):
         instance = super(AdviserAdminForm, self).save(commit=False)
-        print('---', self.__dict__)
         if instance:
             model = instance
         else:
             model = self
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
-        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url)
+        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
             instance.save()
         return instance

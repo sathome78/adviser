@@ -1,6 +1,4 @@
 {%  load static urls %}
-{% load cache %}
-{% cache 500 contacts %}
 <html>
     <head>
        <title>Apply for listing | Exrates</title>
@@ -145,6 +143,6 @@
                                     &lt; Back</span> </a> </div> </div> </form> </div> </div> <div class="scripts">
                                         <!-- Set JS assets-->
                                         {% include 'basic/_scripts.html' %}
+    </div>
     </body>
 </html>
-{% endcache %}
