@@ -38,23 +38,24 @@ class PipedriveClient:
         email = data.get("email")
         telegram = data.get("telegram", "@")[1:]
 
-
-        #send notification to telegram
-        msg1 = ''
-        for k,v in data.items():
-            msg1 += '{}: {} \n'.format(k,v)
-
-        msg = "Deal form \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
-        send(msg, settings.TELEGRAMBOT_CHAT_DEAL)
-
         args[0]["client"] = self.client1
         args[1]["client"] = self.client2
-        deal = self.__make_deal(args, company_name, email, link_to_project, name, telegram, title)
+        result = self.__make_deal(args, company_name, email, link_to_project, name, telegram, title)
 
-        return None
+        # send notification to telegram
+        msg1 = ''
+        for k, v in data.items():
+            msg1 += '{}: {} \n'.format(k, v)
+
+        msg = "Deal form \n  \n  \n {} \n {} \n \n Result: {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"), result)
+        send(msg, settings.TELEGRAMBOT_CHAT_DEAL)
+
+
+        return result
 
 
     def __make_deal(self, setting_list, company_name, email, link_to_project, name, telegram, title):
+        result = {}
         for args in setting_list:
 
             # check if organization exists
@@ -89,8 +90,9 @@ class PipedriveClient:
                 "pipeline_id": args["PIPEDRIVECHANNEL"],
                 "person_id": contact["id"]
                 }
-            args["client"].create_deal(**deal)
-            return None
+            deal = args["client"].create_deal(**deal)
+            result[args["client"].api_base_url] = "success: ".format(deal.get("success"))
+        return result
 
     def create_or_update_adviser(self, data, edit_url, update_url, args):
         name = data.get("name", "")
@@ -98,19 +100,26 @@ class PipedriveClient:
         email = data.get("email")
         linkedin = data.get("linkedin")
 
+
+
+        args[0]["client"] = self.client1
+        args[1]["client"] = self.client2
+
+        result = self.__make_adviser(args, edit_url, email, linkedin, name, telegram, update_url)
+
         # send notification to telegram
         msg1 = ''
         for k, v in data.items():
             msg1 += '{}: {} \n'.format(k, v)
 
-        msg = "Ambassador form \n  \n  \n {} \n {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"))
+        msg = "Ambassador form \n  \n  \n {} \n {} \n \n result: {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"), result)
         send(msg, settings.TELEGRAMBOT_CHAT_DEAL)
 
-        args[0]["client"] = self.client1
-        args[1]["client"] = self.client2
-        return self.__make_adviser(args, edit_url, email, linkedin, name, telegram, update_url)
+        return result
 
     def __make_adviser(self, setting_list, edit_url, email, linkedin, name, telegram, update_url):
+        result = {}
+        print(setting_list)
         for args in setting_list:
             # check if contact exists
             contact = next(iter(args["client"].get_persons_by_name(term=name)["data"]), None) if \
@@ -135,5 +144,6 @@ class PipedriveClient:
                 "person_id": contact["id"]
                 }
 
-            args["client"].create_deal(**deal)
-            return None
+            deal = args["client"].create_deal(**deal)
+            result[args["client"].api_base_url] = "success: ".format(deal.get("success"))
+        return result
