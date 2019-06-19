@@ -67,7 +67,6 @@ class AdviserForm(ModelForm):
 
         instance = super(AdviserForm, self).save(commit=False)
         instance.type = 1
-        print(instance)
         if instance:
             model = instance
         else:

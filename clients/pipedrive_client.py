@@ -28,7 +28,6 @@ class PipedriveClient:
         self.client2 = Client(api_base_url=settings.PIPEDRIVE["PIPEDRIVE_URL"])
         self.client2.set_token(settings.PIPEDRIVE["CLIENT_SECRET"])
 
-
     def create_deal(self, data, args):
         name = data.get("name", "")
         type = data.get("request_type", "")
@@ -52,7 +51,7 @@ class PipedriveClient:
         args[1]["client"] = self.client2
         deal = self.__make_deal(args, company_name, email, link_to_project, name, telegram, title)
 
-        return deal
+        return None
 
 
     def __make_deal(self, setting_list, company_name, email, link_to_project, name, telegram, title):
@@ -90,10 +89,10 @@ class PipedriveClient:
                 "pipeline_id": args["PIPEDRIVECHANNEL"],
                 "person_id": contact["id"]
                 }
-            print(args["client"].create_deal(**deal))
+            args["client"].create_deal(**deal)
+            return None
 
     def create_or_update_adviser(self, data, edit_url, update_url, args):
-        print(args)
         name = data.get("name", "")
         telegram = data.get("telegram", "@")[1:]
         email = data.get("email")
@@ -136,4 +135,5 @@ class PipedriveClient:
                 "person_id": contact["id"]
                 }
 
-            print(args["client"].create_deal(**deal))
+            args["client"].create_deal(**deal)
+            return None
