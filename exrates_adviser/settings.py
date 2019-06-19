@@ -30,7 +30,7 @@ config = get_config()
 DEBUG = config.getboolean('DEFAULT', 'DEBUG')
 
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.10.10.71', '172.31.28.213', 'about.exrates.me', '172.50.100.48', 'coins.exrates.me']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '172.10.10.71', '172.31.28.213', 'about.exrates.me', '172.50.100.48', 'coins.exrates.me', 'adviser-devtest.exrates-k8s.name']
 
 # Application definition
 

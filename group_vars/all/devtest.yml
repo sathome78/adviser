@@ -73,13 +73,12 @@ all_charts_devtest:
     nginxContainer:
       serve-media:
         enabled: True
-        externalPortHttp: 8000
         
         service:
           serve-media:
             annotations: {}
             expose: true
-            type: NodePort
+            type: ClusterIP
 
         image:
           name: nginx
