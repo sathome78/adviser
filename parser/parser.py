@@ -2,34 +2,28 @@
 """
     A Python program that crawls a website and recursively checks links to map all internal and external links
 """
+import argparse
+import sys
+from collections import deque
 from itertools import groupby
 from time import sleep
+from urllib.parse import urlparse, urlsplit
 
-import selenium
-from bs4 import BeautifulSoup
 import requests
 import requests.exceptions
-from urllib.parse import urlsplit
-from urllib.parse import urlparse
-from collections import deque
-import re
-import sys
-import os
-import subprocess
-import argparse
-
-from lxml import html
+from bs4 import BeautifulSoup
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException, TimeoutException
+from selenium.common.exceptions import TimeoutException, WebDriverException
 
 
 def get_inner_html(url):
     browser = webdriver.Chrome()
     browser.get(url)  # navigate to the page
     sleep(2)
-    #innerHTML = browser.execute_script("return document.body.innerHTML;")
+    # innerHTML = browser.execute_script("return document.body.innerHTML;")
     innerHTML = browser.page_source
     return innerHTML
+
 
 def crawler(domain, ofile, mute):
     try:
@@ -55,10 +49,11 @@ def crawler(domain, ofile, mute):
             try:
                 response = get_inner_html(url)
 
-                #response = requests.get(url)
+                # response = requests.get(url)
             except (
-            requests.exceptions.MissingSchema, requests.exceptions.ConnectionError, requests.exceptions.InvalidURL, WebDriverException,TimeoutException,
-            requests.exceptions.InvalidSchema):
+                    requests.exceptions.MissingSchema, requests.exceptions.ConnectionError,
+                    requests.exceptions.InvalidURL, WebDriverException, TimeoutException,
+                    requests.exceptions.InvalidSchema):
                 # add broken urls to it's own set, then continue
                 broken_urls.add(url)
                 continue
@@ -132,8 +127,9 @@ def limit_crawler(domain, ofile, limit, mute):
             try:
                 response = requests.get(url)
             except (
-            requests.exceptions.MissingSchema, requests.exceptions.ConnectionError, requests.exceptions.InvalidURL, WebDriverException,
-            requests.exceptions.InvalidSchema):
+                    requests.exceptions.MissingSchema, requests.exceptions.ConnectionError,
+                    requests.exceptions.InvalidURL, WebDriverException,
+                    requests.exceptions.InvalidSchema):
                 # add broken urls to it's own set, then continue
                 broken_urls.add(url)
                 continue
@@ -195,7 +191,7 @@ def limit_report_file(limit, ofile, processed_urls, limit_urls, broken_urls):
         processed_urls1 = group_by_domain(processed_urls)
         for k, i in processed_urls1.items():
             print(k, file=f)
-            print('-----------------',file=f)
+            print('-----------------', file=f)
             for l in i:
                 print(l, file=f)
         print(
@@ -262,7 +258,7 @@ def limit_mute_report(limit, limit_urls):
     print("--------------------------------------------------------------------")
     print("All " + limit + "URLs:")
     limit_urls1 = group_by_domain(limit_urls)
-    for k,i in limit_urls1.items():
+    for k, i in limit_urls1.items():
         print(k)
         print('-----------------')
         for l in i:
@@ -284,7 +280,7 @@ def report_file(ofile, processed_urls, local_urls, foreign_urls, broken_urls):
                 "--------------------------------------------------------------------", file=f)
         print("All local URLs:", file=f)
         local_urls1 = group_by_domain(local_urls)
-        for k,j in local_urls1.items():
+        for k, j in local_urls1.items():
             print(k, file=f)
             print('-----------------', file=f)
             for l in j:
@@ -312,7 +308,7 @@ def report(processed_urls, local_urls, foreign_urls, broken_urls):
     print("--------------------------------------------------------------------")
     print("All found URLs:")
     processed_urls1 = group_by_domain(processed_urls)
-    for k,i in processed_urls1.items():
+    for k, i in processed_urls1.items():
         print(k)
         print('-----------------')
         for l in i:
@@ -328,7 +324,7 @@ def report(processed_urls, local_urls, foreign_urls, broken_urls):
     print("--------------------------------------------------------------------")
     print("All foreign URLs:")
     foreign_urls1 = group_by_domain(foreign_urls)
-    for k,x in foreign_urls1.items():
+    for k, x in foreign_urls1.items():
         print(k)
         print('-----------------')
         for l in x:
@@ -336,7 +332,7 @@ def report(processed_urls, local_urls, foreign_urls, broken_urls):
     print("--------------------------------------------------------------------")
     print("All broken URL's:")
     broken_urls1 = group_by_domain(broken_urls)
-    for k,z in broken_urls1.items():
+    for k, z in broken_urls1.items():
         print(k)
         print('-----------------')
         for l in z:
@@ -349,7 +345,7 @@ def mute_report_file(ofile, local_urls):
                 "--------------------------------------------------------------------", file=f)
         print("All local URLs:", file=f)
         local_urls1 = group_by_domain(local_urls)
-        for k,j in local_urls1.items():
+        for k, j in local_urls1.items():
             print(k, file=f)
             print('-----------------', file=f)
             for l in j:
@@ -360,7 +356,7 @@ def mute_report(local_urls):
     print("--------------------------------------------------------------------")
     print("All local URLs:")
     local_urls1 = group_by_domain(local_urls)
-    for k,i in local_urls1.items():
+    for k, i in local_urls1.items():
         print(k)
         print('-----------------')
         for l in i:
@@ -368,13 +364,19 @@ def mute_report(local_urls):
 
 
 def main(argv):
+    domains = {"prod": "https://exrates.me",
+               "uat": "http://preprod.exapp",
+               "dev": "http://dev1.exrates.tech",
+               "devtest": "http://qa1.exrates.tech"}
+
     # define the program description
     text = 'A Python program that crawls a website and recursively checks links to map all internal and external ' \
            'links. Written by Ahad Sheriff.'
     # initiate the parser with a description
     parser = argparse.ArgumentParser(description=text)
-    parser.add_argument('--domain', '-d',  default='https://exrates.me',
-                        help='domain name of website you want to map. i.e. "https://scrapethissite.com"')
+    parser.add_argument('--type', '-t', default='prod',
+                        help='domain name of website you want to map. i.e. "https://scrapethissite.com"',
+                        choices=['prod', 'uat', 'dev', 'devtest'])
     parser.add_argument('--ofile', '-o', default='links_list.txt',
                         help='define output file to save results of stdout. i.e. "test.txt"')
     parser.add_argument('--limit', '-l',
@@ -387,7 +389,7 @@ def main(argv):
     # read arguments from the command line
     args = parser.parse_args()
 
-    domain = args.domain
+    domain = domains[args.type]
     ofile = args.ofile
     limit = args.limit
     mute = args.mute
