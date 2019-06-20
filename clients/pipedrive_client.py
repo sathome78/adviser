@@ -94,6 +94,7 @@ class PipedriveClient:
             deal = args["client"].create_deal(**deal)
             result[args["client"].api_base_url] = "success: ".format(deal.get("success"))
             logger.info('Deal created in {} \n Params {}'.format(args["client"], deal))
+            print(deal)
         return result
 
     def create_or_update_adviser(self, data, edit_url, update_url, args):
@@ -146,5 +147,5 @@ class PipedriveClient:
             deal = args["client"].create_deal(**deal)
             result[args["client"].api_base_url] = "success: ".format(deal.get("success"))
             logger.info('Deal created in {} \n Params {}'.format(args["client"], deal))
-
+            print(deal)
         return result
