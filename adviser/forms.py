@@ -74,6 +74,7 @@ class AdviserForm(ModelForm):
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
         PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
+        instance.deal_id = 1
         if commit:
             instance.save()
         return instance

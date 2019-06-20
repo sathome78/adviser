@@ -67,6 +67,8 @@ class Adviser(models.Model):
     ambassador_type = models.CharField(max_length=255, null=True, blank=True,
                                   help_text="Type of ambassador/sales/company", default="Verified Ambassador")
 
+    deal_id = models.IntegerField(null=True, blank=True)
+
     def __str__(self):
         return '{}--{}'.format(self.get_type_display(), self.name)
 

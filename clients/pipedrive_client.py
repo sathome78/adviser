@@ -102,8 +102,6 @@ class PipedriveClient:
         email = data.get("email")
         linkedin = data.get("linkedin")
 
-
-
         args[0]["client"] = self.client1
         args[1]["client"] = self.client2
 
@@ -148,4 +146,5 @@ class PipedriveClient:
             deal = args["client"].create_deal(**deal)
             result[args["client"].api_base_url] = "success: ".format(deal.get("success"))
             logger.info('Deal created in {} \n Params {}'.format(args["client"], deal))
+
         return result
