@@ -67,8 +67,6 @@ class Adviser(models.Model):
     ambassador_type = models.CharField(max_length=255, null=True, blank=True,
                                   help_text="Type of ambassador/sales/company", default="Verified Ambassador")
 
-    deal_id = models.IntegerField(null=True, blank=True)
-
     def __str__(self):
         return '{}--{}'.format(self.get_type_display(), self.name)
 
@@ -97,3 +95,9 @@ class GeneralFields(models.Model):
     class Meta(object):
         verbose_name = _('general fields')
         verbose_name_plural = _('general fields')
+
+
+class AdviserPipeDrive(models.Model):
+    adviser_id = models.CharField(max_length=36)
+    deal_id = models.IntegerField()
+    workspace = models.CharField(max_length=255)
