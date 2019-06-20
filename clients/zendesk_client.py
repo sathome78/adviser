@@ -7,6 +7,9 @@ from zdesk import Zendesk, get_id_from_url
 from clients.pipedrive_client import send
 
 
+
+import logging
+logger = logging.getLogger(__name__)
 class ZendeskClient:
     NORMAL_PRIORITY = [
                      'Deposit',
@@ -98,7 +101,7 @@ class ZendeskClient:
         msg = "Support form from about.exrates.me \n  \n  \n {} \n {}".format(msg1,
                                                                               datetime.now().strftime("%Y-%m-%d %H:%M"))
 
-
+        logger.info('Ticket created with params'.format(msg))
 
         send(msg, settings.TELEGRAMBOT_CHAT_SUPPORT)
 

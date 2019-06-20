@@ -103,7 +103,25 @@ $(".burger").click(function () {
 });
 
 //end open menu script
+var tgValidation = function tgValidation(val) {
+	console.log(parseInt(val));
+	if (!isNaN(parseInt(val))) {
+		return (/^(\s*)?(\+)?([-()]?\d[-()]?){10,14}(\s*)?$/.test(val)
+		);
+	} else {
+		return (/^@/.test(val)
+		);
+	}
+};
 
+var urlValidation = function urlValidation(val) {
+	if (parseInt(val) !== NaN) {
+		return (/^(ftp|http|https):\/\/[^ "]+$/.test(val)
+		);
+	} else {
+		// return /^(ftp|http|https):\/\/[^ "]+$/.test(val)
+	}
+};
 //form validation script
 
 $(".reqiered-field").keyup(function (e) {
@@ -119,6 +137,24 @@ $(".reqiered-field").keyup(function (e) {
 		} else if (!/\S+@\S+\.\S+/.test($(this).val())) {
 			$(this).closest(".input-item").addClass("validation-error");
 			$(this).closest(".input-item").find(".error span").html("invalid email");
+			sendForm = false;
+		} else {
+			$(this).closest(".input-item").removeClass("validation-error");
+		}
+	} else if ($(this).attr("data-name") == "tg") {
+
+		if (!tgValidation($(this).val())) {
+			$(this).closest(".input-item").addClass("validation-error");
+			$(this).closest(".input-item").find(".error span").html("Please type your telegram nickname with @ or your phone number");
+			sendForm = false;
+		} else {
+			$(this).closest(".input-item").removeClass("validation-error");
+		}
+	} else if ($(this).attr("data-name") == "link") {
+
+		if (!urlValidation($(this).val())) {
+			$(this).closest(".input-item").addClass("validation-error");
+			$(this).closest(".input-item").find(".error span").html("incorrect format");
 			sendForm = false;
 		} else {
 			$(this).closest(".input-item").removeClass("validation-error");
@@ -144,6 +180,24 @@ $(".reqiered-field").focusout(function (e) {
 			} else if (!/\S+@\S+\.\S+/.test($(this).val())) {
 				$(this).closest(".input-item").addClass("validation-error");
 				$(this).closest(".input-item").find(".error span").html("invalid email");
+				sendForm = false;
+			} else {
+				$(this).closest(".input-item").removeClass("validation-error");
+			}
+		} else if ($(this).attr("data-name") == "tg") {
+
+			if (!tgValidation($(this).val())) {
+				$(this).closest(".input-item").addClass("validation-error");
+				$(this).closest(".input-item").find(".error span").html("Please type your telegram nickname with @ or your phone number");
+				sendForm = false;
+			} else {
+				$(this).closest(".input-item").removeClass("validation-error");
+			}
+		} else if ($(this).attr("data-name") == "link") {
+
+			if (!urlValidation($(this).val())) {
+				$(this).closest(".input-item").addClass("validation-error");
+				$(this).closest(".input-item").find(".error span").html("incorrect format");
 				sendForm = false;
 			} else {
 				$(this).closest(".input-item").removeClass("validation-error");
@@ -176,6 +230,24 @@ $("form").on("submit", function (e) {
 			} else if (!/\S+@\S+\.\S+/.test($(this).val())) {
 				$(this).closest(".input-item").addClass("validation-error");
 				$(this).closest(".input-item").find(".error span").html("invalid email");
+				sendForm = false;
+			} else {
+				$(this).closest(".input-item").removeClass("validation-error");
+			}
+		} else if ($(this).attr("data-name") == "tg") {
+
+			if (!tgValidation($(this).val())) {
+				$(this).closest(".input-item").addClass("validation-error");
+				$(this).closest(".input-item").find(".error span").html("Please type your telegram nickname with @ or your phone number");
+				sendForm = false;
+			} else {
+				$(this).closest(".input-item").removeClass("validation-error");
+			}
+		} else if ($(this).attr("data-name") == "link") {
+
+			if (!urlValidation($(this).val())) {
+				$(this).closest(".input-item").addClass("validation-error");
+				$(this).closest(".input-item").find(".error span").html("incorrect format");
 				sendForm = false;
 			} else {
 				$(this).closest(".input-item").removeClass("validation-error");

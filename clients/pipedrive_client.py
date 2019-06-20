@@ -7,6 +7,8 @@ from django.conf import settings
 from pipedrive.client import Client
 
 
+import logging
+logger = logging.getLogger(__name__)
 
 def send(msg, chat, token=settings.TELEGRAMBOT_TOKEN):
     """
@@ -50,7 +52,6 @@ class PipedriveClient:
         msg = "Deal form \n  \n  \n {} \n {} \n \n Result: {}".format(msg1, datetime.now().strftime("%Y-%m-%d %H:%M"), result)
         send(msg, settings.TELEGRAMBOT_CHAT_DEAL)
 
-
         return result
 
 
@@ -92,6 +93,7 @@ class PipedriveClient:
                 }
             deal = args["client"].create_deal(**deal)
             result[args["client"].api_base_url] = "success: ".format(deal.get("success"))
+            logger.info('Deal created in {} \n Params {}'.format(args["client"], deal))
         return result
 
     def create_or_update_adviser(self, data, edit_url, update_url, args):
@@ -119,7 +121,6 @@ class PipedriveClient:
 
     def __make_adviser(self, setting_list, edit_url, email, linkedin, name, telegram, update_url):
         result = {}
-        print(setting_list)
         for args in setting_list:
             # check if contact exists
             contact = next(iter(args["client"].get_persons_by_name(term=name)["data"]), None) if \
@@ -146,4 +147,5 @@ class PipedriveClient:
 
             deal = args["client"].create_deal(**deal)
             result[args["client"].api_base_url] = "success: ".format(deal.get("success"))
+            logger.info('Deal created in {} \n Params {}'.format(args["client"], deal))
         return result
