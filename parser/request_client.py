@@ -19,6 +19,7 @@ class RequestClient:
         """
         try:
             response = urllib.request.urlopen(http, timeout=timeout)
+            print(response)
         except urllib.error.HTTPError as e:  # if HTTP status is not 200
             response = e.read()
             if e.code in response_errors:

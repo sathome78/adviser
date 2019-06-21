@@ -98,6 +98,6 @@ class GeneralFields(models.Model):
 
 
 class AdviserPipeDrive(models.Model):
-    adviser_id = models.CharField(max_length=36)
+    adviser_id = models.ForeignKey(Adviser, on_delete=models.CASCADE)
     deal_id = models.IntegerField()
     workspace = models.CharField(max_length=255)

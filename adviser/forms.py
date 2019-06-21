@@ -104,6 +104,7 @@ class AdviserProfileForm(ModelForm):
         deals = PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
             instance.save()
+        print(deals)
         for deal in deals:
             adviser_pipedrive = AdviserPipeDrive(deal_id=deal["deal_id"], adviser_id=instance.id, workspace=deal["workspace"])
             adviser_pipedrive.save()

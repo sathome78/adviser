@@ -161,3 +161,15 @@ class PipedriveClient:
             logger.info('Deal created in {} \n Params {}'.format(provider.client, deal))
             deals.append({"deal_id": deal["data"]["id"], "workspace": provider.__class__.__name__})
         return deals
+
+    def delete_deal(self, deal_id, client):
+        deal = client.delete_deal(deal_id)
+        # send notification to telegram
+        msg1 = ''
+        for k, v in data.items():
+            msg1 += '{}: {} \n'.format(k, v)
+
+        msg = "Deal with id ".format(msg1,
+                                                                            datetime.now().strftime("%Y-%m-%d %H:%M"),
+                                                                            result)
+        send(msg, settings.TELEGRAMBOT_CHAT_DEAL)

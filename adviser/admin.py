@@ -3,7 +3,7 @@ from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TabbedTranslationAdmin
 
 from adviser.forms import AdviserAdminForm
-from adviser.models import Adviser, Manager, GeneralFields
+from adviser.models import Adviser, Manager, GeneralFields, AdviserPipeDrive
 
 
 class AdviserAdmin(TabbedTranslationAdmin):
@@ -12,6 +12,7 @@ class AdviserAdmin(TabbedTranslationAdmin):
     list_filter = ('type', 'member_since')
     readonly_fields = ("id", "slug")
     form = AdviserAdminForm
+    actions = ['delete_model']
     fieldsets = (
         (None, {
             "fields": ("id", "type", "name", "slug",  "short_description", "member_since", "avatar"),
@@ -28,6 +29,25 @@ class AdviserAdmin(TabbedTranslationAdmin):
             "classes": ("collapse", "collapse-closed"),
             }),
         )
+
+    def delete_model(self, request, obj):
+        for adviser in AdviserPipeDrive.objects.filter(adviser_id=obj.id):
+
+
+
+    def delete_queryset(self, request, queryset):
+        print('========================delete_queryset========================')
+        print(queryset)
+
+        """
+        you can do anything here BEFORE deleting the object(s)
+        """
+
+        queryset.delete()
+
+        """
+        you can do anything here AFTER deleting the object(s)
+        """
 
     class Media:
         js = (
