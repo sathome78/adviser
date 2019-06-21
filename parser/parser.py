@@ -2,6 +2,10 @@
     A Python program that crawls a website and recursively checks links to map all internal and external links
 """
 import argparse
+import base64
+import hashlib
+import hmac
+import struct
 import sys
 from collections import deque
 from itertools import groupby
@@ -14,6 +18,13 @@ from bs4 import BeautifulSoup
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from seleniumwire import webdriver
 
+def get_hotp_token(secret, intervals_no):
+    key = base64.b32decode(secret, True)
+    msg = struct.pack(">Q", intervals_no)
+    h = hmac.new(key, msg, hashlib.sha1).digest()
+    o = ord(h[19]) & 15
+    h = (struct.unpack(">I", h[o:o+4])[0] & 0x7fffffff) % 1000000
+    return h
 
 def get_inner_html(url):
     from selenium.webdriver.chrome.options import Options
