@@ -11,8 +11,8 @@ from urllib.parse import urlparse, urlsplit
 import requests
 import requests.exceptions
 from bs4 import BeautifulSoup
-from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, WebDriverException
+from seleniumwire import webdriver
 
 
 def get_inner_html(url):
@@ -21,6 +21,10 @@ def get_inner_html(url):
     options = Options()
     options.headless = True
     browser = webdriver.Chrome(chrome_options=options)
+    webdriver.header_overrides = {
+        'Referer': 'referer_string',
+        }
+
     browser.get(url)  # navigate to the page
     sleep(2)
     #innerHTML = browser.execute_script("return document.body.innerHTML;")

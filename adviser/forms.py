@@ -101,9 +101,12 @@ class AdviserProfileForm(ModelForm):
             model = self
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
-        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
+        deals = PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
             instance.save()
+        for deal in deals:
+            adviser_pipedrive = AdviserPipeDrive(deal_id=deal["deal_id"], adviser_id=instance.id, workspace=deal["workspace"])
+            adviser_pipedrive.save()
         return instance
 
 
@@ -122,7 +125,10 @@ class AdviserAdminForm(ModelForm):
             model = self
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"slug": slugify(model.name)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"slug": slugify(model.name)}))
-        PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
+        deals = PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
             instance.save()
+        for deal in deals:
+            adviser_pipedrive = AdviserPipeDrive(deal_id=deal["deal_id"], adviser_id=instance.id, workspace=deal["workspace"])
+            adviser_pipedrive.save()
         return instance
