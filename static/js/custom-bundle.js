@@ -637,7 +637,7 @@ $(document).on("click", ".share-link a", function (e) {
 		window.open('https://facebook.com/sharer/sharer.php?u=' + shareUrl);
 	}
 	if ($(this).closest(".share-link").hasClass("tw")) {
-		window.open('https://facebook.com/sharer/sharer.php?u=' + shareUrl);
+		window.open('https://twitter.com/intent/tweet/?url=' + shareUrl);
 	}
 });
 
