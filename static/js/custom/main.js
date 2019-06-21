@@ -109,14 +109,14 @@ var tgValidation = function tgValidation(val) {
 		return (/^(\s*)?(\+)?([-()]?\d[-()]?){10,14}(\s*)?$/.test(val)
 		);
 	} else {
-		return (/^@/.test(val)
+		return (/@([a-zA-Z0-9]{4,})/.test(val)
 		);
 	}
 };
 
 var urlValidation = function urlValidation(val) {
 	if (parseInt(val) !== NaN) {
-		return (/^(ftp|http|https):\/\/[^ "]+$/.test(val)
+		return (/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/.test(val)
 		);
 	} else {
 		// return /^(ftp|http|https):\/\/[^ "]+$/.test(val)
