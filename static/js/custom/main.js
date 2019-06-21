@@ -282,6 +282,7 @@ $("form").on("submit", function (e) {
 						$(this).val("");
 						$(".wrap-input__label").removeClass("active");
 						$(".select-txt").html("");
+						$(".file-name").html("");
 					}
 				});
 			},
