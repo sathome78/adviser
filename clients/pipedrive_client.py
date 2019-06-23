@@ -165,8 +165,6 @@ class PipedriveClient:
     def delete_deal(self, deal_id, client):
         deal = client.delete_deal(deal_id)
         # send notification to telegram
-        msg1 = ''
-        msg = "Deal with id ".format(deal_id,datetime.now().strftime("%Y-%m-%d %H:%M"),
-                                                                            )
+        msg = "Deal with id {} was deleted from  {}".format(deal_id, client.api_base_url),
         send(msg, settings.TELEGRAMBOT_CHAT_DEAL)
         return deal
