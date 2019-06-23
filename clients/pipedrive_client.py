@@ -79,7 +79,7 @@ class PipedriveClient:
                 organization = provider.client.create_organization(**org)["data"]
             else:
                 org.update({"data_id": organization["id"]})
-                organization = args["client"].update_organization(**org)["data"]
+                organization = provider.client.update_organization(**org)["data"]
 
             # check if contact exists
             contact = next(iter(provider.client.get_persons_by_name(term=name)["data"]), None) if \
@@ -107,7 +107,7 @@ class PipedriveClient:
             result[provider.client.api_base_url] = "success: ".format(deal.get("success"))
             logger.info('Deal created in {} \n Params {}'.format(provider.client, deal))
             deals.append({"deal_id": deal["data"]["id"], "workspace": provider.__class__.__name__})
-        return result
+        return deals
 
     def create_or_update_adviser(self, data, edit_url, update_url, args):
         name = data.get("name", "")
@@ -166,10 +166,7 @@ class PipedriveClient:
         deal = client.delete_deal(deal_id)
         # send notification to telegram
         msg1 = ''
-        for k, v in data.items():
-            msg1 += '{}: {} \n'.format(k, v)
-
-        msg = "Deal with id ".format(msg1,
-                                                                            datetime.now().strftime("%Y-%m-%d %H:%M"),
-                                                                            result)
+        msg = "Deal with id ".format(deal_id,datetime.now().strftime("%Y-%m-%d %H:%M"),
+                                                                            )
         send(msg, settings.TELEGRAMBOT_CHAT_DEAL)
+        return deal

@@ -2,8 +2,10 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TabbedTranslationAdmin
 
-from adviser.forms import AdviserAdminForm
-from adviser.models import Adviser, Manager, GeneralFields, AdviserPipeDrive
+from adviser.forms import AdviserAdminForm, ListingForm
+from adviser.models import Adviser, Manager, GeneralFields, AdviserPipeDrive, Deal, DealPipeDrive
+from clients import pipedrive_client
+from clients.pipedrive_client import PipedriveClient
 
 
 class AdviserAdmin(TabbedTranslationAdmin):
@@ -32,22 +34,21 @@ class AdviserAdmin(TabbedTranslationAdmin):
 
     def delete_model(self, request, obj):
         for adviser in AdviserPipeDrive.objects.filter(adviser_id=obj.id):
+            client = getattr(pipedrive_client, adviser.workspace)().client
+            PipedriveClient().delete_deal(deal_id=adviser.deal_id, client=client)
+            adviser.delete()
+        obj.delete()
 
 
 
     def delete_queryset(self, request, queryset):
-        print('========================delete_queryset========================')
-        print(queryset)
+        for obj in queryset:
+            for adviser in AdviserPipeDrive.objects.filter(adviser_id=obj.id):
+                client = getattr(pipedrive_client, adviser.workspace)().client
+                PipedriveClient().delete_deal(deal_id=adviser.deal_id, client=client)
+                adviser.delete()
+            obj.delete()
 
-        """
-        you can do anything here BEFORE deleting the object(s)
-        """
-
-        queryset.delete()
-
-        """
-        you can do anything here AFTER deleting the object(s)
-        """
 
     class Media:
         js = (
@@ -85,6 +86,33 @@ class ManagerAdmin(TabbedTranslationAdmin):
 
 
 
+class DealAdmin(admin.ModelAdmin):
+
+    list_display = ("id", "request_type", "name",  "email", "company_name")
+    list_filter = ('request_type', 'company_name')
+    readonly_fields = ("id",)
+    form = ListingForm
+    actions = ['delete_model']
+
+    def delete_model(self, request, obj):
+        for deal in DealPipeDrive.objects.filter(deal_model_id=obj.id):
+            client = getattr(pipedrive_client, deal.workspace)().client
+            PipedriveClient().delete_deal(deal_id=deal.deal_id, client=client)
+            deal.delete()
+        obj.delete()
+
+
+
+    def delete_queryset(self, request, queryset):
+        for obj in queryset:
+            for deal in DealPipeDrive.objects.filter(deal_model_id=obj.id):
+                client = getattr(pipedrive_client, deal.workspace)().client
+                PipedriveClient().delete_deal(deal_id=deal.deal_id, client=client)
+                deal.delete()
+            obj.delete()
+
+
 admin.site.register(Adviser, AdviserAdmin)
 admin.site.register(Manager, ManagerAdmin)
 admin.site.register(GeneralFields)
+admin.site.register(Deal, DealAdmin)

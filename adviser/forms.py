@@ -7,7 +7,7 @@ from django.forms import ModelForm, model_to_dict
 from django.urls import reverse
 from django.utils.text import slugify
 
-from adviser.models import Adviser, AdviserPipeDrive
+from adviser.models import Adviser, AdviserPipeDrive, LISTING_CHOICES, DealPipeDrive, Deal
 from clients.pipedrive_client import PipedriveClient
 
 REQUEST_CHOICES = (
@@ -37,13 +37,9 @@ class SupportForm(forms.Form):
     files = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}), required=False)
 
 
-LISTING_CHOICES = (
-    ("IEO", "I need to conduct IEO"),
-    ("Listing", "I need to list a coin")
-    )
 
 
-class ListingForm(forms.Form):
+class ListingForm(ModelForm):
     request_type = forms.ChoiceField(choices=LISTING_CHOICES, widget=forms.RadioSelect)
     name = forms.CharField(max_length=255)
     telegram = forms.CharField(max_length=255, required=False)
@@ -51,7 +47,25 @@ class ListingForm(forms.Form):
     company_name = forms.CharField(max_length=255)
     link_to_project = forms.CharField(max_length=255, required=True)
 
+    class Meta:
+        model = Deal
+        fields = ['request_type', 'name', 'telegram', 'email', 'company_name', 'link_to_project']
 
+    def save(self, commit=True):
+
+        instance = super(ListingForm, self).save(commit=False)
+        if instance:
+            model = instance
+        else:
+            model = self
+        deals = PipedriveClient().create_deal(model_to_dict(model), [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
+
+        if commit:
+            instance.save()
+        for deal in deals:
+            adviser_pipedrive = DealPipeDrive(deal_id=deal["deal_id"], deal_model_id=instance.id, workspace=deal["workspace"])
+            adviser_pipedrive.save()
+        return instance
 
 class AdviserForm(ModelForm):
     name = forms.CharField(max_length=255)
@@ -62,6 +76,7 @@ class AdviserForm(ModelForm):
     class Meta:
         model = Adviser
         fields = ['name', 'telegram', 'email', 'linkedin']
+
 
     def save(self, commit=True):
 

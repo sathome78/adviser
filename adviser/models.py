@@ -98,6 +98,24 @@ class GeneralFields(models.Model):
 
 
 class AdviserPipeDrive(models.Model):
-    adviser_id = models.ForeignKey(Adviser, on_delete=models.CASCADE)
+    adviser_id = models.CharField(max_length=36)
+    deal_id = models.IntegerField()
+    workspace = models.CharField(max_length=255)
+
+
+LISTING_CHOICES = (
+    ("IEO", "I need to conduct IEO"),
+    ("Listing", "I need to list a coin")
+    )
+class Deal(models.Model):
+    request_type = models.CharField(choices=LISTING_CHOICES, max_length=7)
+    name = models.CharField(max_length=255)
+    telegram = models.CharField(max_length=255)
+    email = models.EmailField()
+    company_name = models.CharField(max_length=255)
+    link_to_project = models.CharField(max_length=255)
+
+class DealPipeDrive(models.Model):
+    deal_model_id = models.IntegerField()
     deal_id = models.IntegerField()
     workspace = models.CharField(max_length=255)

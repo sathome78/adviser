@@ -14,6 +14,7 @@ import requests
 import requests.exceptions
 from bs4 import BeautifulSoup
 from selenium.common.exceptions import TimeoutException, WebDriverException
+from selenium.webdriver import DesiredCapabilities
 from seleniumwire import webdriver
 
 creds = {"email": "probachai.yu@gmail.com", "password": "aVtFRQZABQQe", "hash": "B64PQ2457AXHPKS7"}
@@ -38,10 +39,11 @@ def get_inner_html(url, token):
     options = Options()
     options.headless = True
     browser = webdriver.Chrome(chrome_options=options)
+
     browser._client.set_header_overrides(headers={
-        'Authorization': 'Bearer ',
+        'Authorization': 'Bearer {}'.format(token),
         })
-    browser.get(url)  # navigate to the page
+    browser.get(url)    # navigate to the page
     sleep(2)
     # innerHTML = browser.execute_script("return document.body.innerHTML;")
     innerHTML = browser.page_source
