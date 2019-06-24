@@ -71,6 +71,9 @@ class PipedriveClient:
         for set in setting_list:
             provider = set()
             args = provider.args
+            if 'Company account is not open' in provider.client.get_organizations(name=company_name).get('error', ''):
+                return deals
+
             # check if organization exists
             organization = next(iter(provider.client.get_organizations(name=company_name)["data"]), None) if \
                 provider.client.get_organizations(name=company_name)["data"] else None
@@ -133,6 +136,9 @@ class PipedriveClient:
         for set in setting_list:
             provider = set()
             args = provider.args
+            if 'Company account is not open' in provider.client.get_persons_by_name(term=name).get('error', ''):
+                return deals
+
             # check if contact exists
             contact = next(iter(provider.client.get_persons_by_name(term=name)["data"]), None) if \
                 provider.client.get_persons_by_name(term=name)["data"] else None
