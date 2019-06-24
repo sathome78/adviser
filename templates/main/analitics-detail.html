@@ -4,6 +4,17 @@
 {% load static %}
 
 {% block title %}
+
+    <meta charset="utf-8">
+	<meta property="fb:app_id" content="124285848214697" />
+	<meta property="og:url" content="http://drib.tech/fbsharetest/quiz.html" >
+	<meta property="og:type" content="article" >
+	<meta property="og:title" content="Are you the real Star Trek geek?" >
+	<meta property="og:description" content="Prove your Star Trek geekhood! Are you wise like Yoda or Jar Jar Binks?" >
+	<meta property="og:image" content="http://drib.tech/fbsharetest/quiz_landing.jpg" >
+	<meta property="og:image:width" content="1200" >
+	<meta property="og:image:height" content="630" >
+
 {%  endblock %}
 
 {% block content %}
@@ -86,4 +97,51 @@
                 </div>
 
             </div>
+<script>
+function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, overrideImage)
+{
+	FB.ui({
+		method: 'share_open_graph',
+		action_type: 'og.shares',
+		action_properties: JSON.stringify({
+			object: {
+				'og:url': overrideLink,
+				'og:title': overrideTitle,
+				'og:description': overrideDescription,
+				'og:image': overrideImage
+			}
+		})
+	},
+	function (response) {
+	// Action after response
+	});
+}
+</script>
+
+    <script>
+  window.fbAsyncInit = function() {
+	FB.init({
+	  appId            : '1335507479837766',
+	  autoLogAppEvents : true,
+	  xfbml            : true,
+	  version          : 'v2.10'
+	});
+	FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+	 var js, fjs = d.getElementsByTagName(s)[0];
+	 if (d.getElementById(id)) {return;}
+	 js = d.createElement(s); js.id = id;
+	 js.src = "//connect.facebook.net/en_US/sdk.js";
+	 fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+ <div class="fb-share-button"
+    href="#" onclick="return shareOverrideOGMeta();"
+    data-layout="button_count">
+  </div>
+
+
+
 {% endblock %}

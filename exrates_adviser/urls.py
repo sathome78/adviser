@@ -36,7 +36,7 @@ def page_not_found_view(request):
     return render(request, '404.html', {})
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
                   url(r'^$', home, name='home'),
 
                   url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
@@ -68,5 +68,5 @@ urlpatterns = [
                   url('i18n/', include('django.conf.urls.i18n')),
                   url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 
-                  ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+        ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

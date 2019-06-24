@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.db.models import F
 from django.db.transaction import atomic
 from django.shortcuts import render, get_object_or_404

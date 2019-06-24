@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import re
 
 from django.contrib.auth import get_user_model

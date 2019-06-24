@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load cache %}
+{% load i18n %}
 {% cache 500 contacts %}
 {% block title %}
 <title>Terms of use | Exrates</title>
@@ -13,7 +14,7 @@
 <div class="privacy-policy terms-of-use">
                 <div class="p-p-wr">
                     <div class="top-title">
-                        <h2>Terms of use</h2>
+                        <h2>{%  blocktrans %}Terms of use{% endblocktrans %}</h2>
                         <div class="open-sedebar-trigger">
                             <button>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 10 17" fill="none">
@@ -29,11 +30,11 @@
                                 <span></span>
                             </div>
                             <ul class="sidebar-list">
-                                <li><a href="{% url 'about-us' %}"><span>About us</span></a></li>
-                        <li><a href="{% url 'client-center' %}"><span>Contacts</span></a></li>
-                        <li><a href="{% url 'support-center' %}"><span>Support</span></a></li>
-                        <li><a href="{% url 'privacy-policy' %}"><span>Privacy policy</span></a></li>
-                        <li><a href="{% url 'terms-of-use' %}"  class="active"><span>Terms of use</span></a></li>
+                                <li><a href="{% url 'about-us' %}"><span>{%  blocktrans %}About us{% endblocktrans %}</span></a></li>
+                        <li><a href="{% url 'client-center' %}"><span>{%  blocktrans %}Contacts{% endblocktrans %}</span></a></li>
+                        <li><a href="{% url 'support-center' %}"><span>{%  blocktrans %}Support{% endblocktrans %}</span></a></li>
+                        <li><a href="{% url 'privacy-policy' %}"><span>{%  blocktrans %}Privacy policy{% endblocktrans %}</span></a></li>
+                        <li><a href="{% url 'terms-of-use' %}"  class="active"><span>{%  blocktrans %}Terms of use{% endblocktrans %}</span></a></li>
                                 <li class="icon-lnk">
                                     <a href="{% url 'deal' %}">
                                         <span class="icon">
@@ -55,7 +56,7 @@
                                                 </defs>
                                             </svg>
                                         </span>
-                                        <span>Start IEO</span>
+                                        <span>{%  blocktrans %}Start IEO{% endblocktrans %}</span>
                                     </a>
                                 </li>
                                 <li class="icon-lnk">
@@ -65,47 +66,48 @@
                                                 <path d="M14.7025 12.2335L13.4125 10.9435C13.4866 10.8842 13.5533 10.8174 13.6127 10.7359C13.9092 10.3281 13.8351 9.79425 13.7758 9.32716C13.7387 9.03058 13.6942 8.71918 13.7609 8.52641C13.8203 8.34847 14.0279 8.13346 14.228 7.92586C14.5617 7.57739 14.9472 7.17702 14.9472 6.65802C14.9472 6.13902 14.5691 5.73865 14.228 5.39018C14.0279 5.18258 13.8203 4.96756 13.7609 4.78962C13.6942 4.59685 13.7387 4.28545 13.7758 3.98888C13.8425 3.51436 13.9092 2.98054 13.6127 2.58017C13.3161 2.17238 12.7823 2.076 12.3077 1.98702C12.0112 1.93512 11.7146 1.87581 11.5515 1.7646C11.3958 1.65338 11.2475 1.37905 11.114 1.11956C10.8842 0.696942 10.6321 0.215014 10.1428 0.0518999C10.039 0.0148285 9.93517 0 9.82396 0C9.46066 0 9.11219 0.170528 8.77113 0.333642C8.4968 0.467099 8.21506 0.600556 8.00005 0.600556C7.78503 0.600556 7.50329 0.467099 7.22896 0.333642C6.88791 0.170528 6.53943 0 6.17614 0C6.06492 0 5.95371 0.0148285 5.85732 0.0518999C5.36057 0.2076 5.10848 0.689527 4.87864 1.11214C4.73777 1.37164 4.5969 1.63855 4.4412 1.75718C4.27808 1.87581 3.9741 1.92771 3.68494 1.97961C3.21784 2.06117 2.68401 2.15755 2.38003 2.57275C2.08346 2.98054 2.1576 3.51437 2.21691 3.98146C2.25398 4.27804 2.29847 4.58943 2.23174 4.78221C2.17243 4.96015 1.96483 5.17516 1.76464 5.38276C1.431 5.73123 1.04546 6.1316 1.04546 6.6506C1.04546 7.1696 1.42359 7.56997 1.76464 7.91844C1.96483 8.12604 2.17243 8.34106 2.23174 8.519C2.29847 8.71177 2.25398 9.02317 2.21691 9.31974C2.15018 9.79425 2.08346 10.3281 2.38003 10.7285C2.43934 10.81 2.50607 10.8767 2.58021 10.9361L1.29013 12.2335C0.941658 12.582 1.00839 12.8934 1.05287 13.012C1.09736 13.1307 1.25306 13.4124 1.7424 13.4495L3.01024 13.5533C3.23267 13.5681 3.44768 13.7831 3.46993 14.013L3.57373 15.2808C3.61821 15.8146 3.94444 16 4.21135 16C4.34481 16 4.55982 15.9555 4.78967 15.7257L7.76279 12.7525C7.85176 12.7229 7.93332 12.7081 8.00746 12.7081C8.0816 12.7081 8.16316 12.7229 8.25213 12.7525L11.2178 15.7183C11.4477 15.9481 11.6553 15.9926 11.7962 15.9926C12.0631 15.9926 12.3967 15.7998 12.4338 15.2734L12.5376 14.0056C12.5524 13.7831 12.7674 13.5681 12.9973 13.5459L14.2651 13.4421C14.7544 13.405 14.9101 13.1233 14.9546 13.0046C14.9843 12.8934 15.051 12.582 14.7025 12.2335ZM10.2021 7.82206L10.7211 10.8397L8.00746 9.41613L5.30125 10.8397L5.82025 7.82206L3.63304 5.68675L6.65806 5.24931L8.01487 2.50602L9.37169 5.24931L12.3967 5.68675L10.2021 7.82206Z" fill="#237BEF" />
                                             </svg>
                                         </span>
-                                        <span>Become Ambassador</span>
+                                        <span>{%  blocktrans %}Become Ambassador{% endblocktrans\ %}</span>
                                     </a>
                                 </li>
                             </ul>
                             <div class="button-wr">
-                                <a href="{% url 'deal' %}" class="standart-btn"><span>List your Coin</span></a>
+                                <a href="{% url 'deal' %}" class="standart-btn"><span>{%  blocktrans %}List your Coin{% endblocktrans %}</span></a>
                             </div>
                         </div>
                         <div class="content-part">
                             <div class="p-p-item-wr">
                                 <div class="p-p-item">
                                     <div class="p-p-title">
-                                        <h4>I. COMMON PROVISIONS</h4>
+                                        <h4>{%  blocktrans %}I. COMMON PROVISIONS{% endblocktrans %}</h4>
                                     </div>
                                     <div class="p-p-description">
                                         <p>
                                             <span class="label">01</span>
-                                           These Terms of Use contain an electronic agreement between you (hereinafter the “User”) and DexTechnologies OÜ, a company registered in the Republic of Estonia, (hereinafter the “DexTechnologies”) regulating the terms and conditions of the User's use of this website and all services, products and content provided by DexTechnologies OÜ.
+                                          {%  blocktrans %} These Terms of Use contain an electronic agreement between you (hereinafter the “User”) and DexTechnologies OÜ, a company registered in the Republic of Estonia, (hereinafter the “DexTechnologies”) regulating the terms and conditions of the User's use of this website and all services, products and content provided by DexTechnologies OÜ.{% endblocktrans %}
                                         </p>
                                         <p>
-                                            <span class="label">02</span> These Terms of Use contain important provisions, which the User must consider carefully and understand when choosing whether to visit the Site and use the services, products and content of DexTechnologies OÜ. Please read these Terms of Use carefully before agreeing to them.</p>
+                                            <span class="label">02</span>
+                                            {%  blocktrans %}These Terms of Use contain important provisions, which the User must consider carefully and understand when choosing whether to visit the Site and use the services, products and content of DexTechnologies OÜ. Please read these Terms of Use carefully before agreeing to them.{% endblocktrans %}</p>
                                         <p>
-                                            <span class="label">03</span> References in these Terms of Use to 'DexTechnologies OÜ', 'we', 'our' or 'us', are to the company DexTechnologies OÜ, including but not limited to, its employees, directors, officers, agents or other related parties, third parties, whose content is offered on this website and/or in DexTechnologies Software, depending on the context, and references to “User”, 'you' or 'your' are to the person with whom DexTechnologiesOÜ enters into the electronic agreement, unless otherwise provided herein.
+                                            <span class="label">03</span> {%  blocktrans %}References in these Terms of Use to 'DexTechnologies OÜ', 'we', 'our' or 'us', are to the company DexTechnologies OÜ, including but not limited to, its employees, directors, officers, agents or other related parties, third parties, whose content is offered on this website and/or in DexTechnologies Software, depending on the context, and references to “User”, 'you' or 'your' are to the person with whom DexTechnologiesOÜ enters into the electronic agreement, unless otherwise provided herein.{% endblocktrans %}
                                         </p>
                                         <p>
-                                            <span class="label">04</span> The User is solely responsible for understanding and complying with any and all laws, rules and regulations of his/her specific jurisdiction that may be applicable to the User in connection with the use of any and all services, products and content of DexTechnologies OÜ.</p>
+                                            <span class="label">04</span> {%  blocktrans %}The User is solely responsible for understanding and complying with any and all laws, rules and regulations of his/her specific jurisdiction that may be applicable to the User in connection with the use of any and all services, products and content of DexTechnologies OÜ.{% endblocktrans %}</p>
                                         <p>
-                                            <span class="label">05</span> By signing up to use an account through DexTechnologies OÜ or any of our associated websites, APIs, or mobile applications(collectively the ‘DexTechnologies Software') and/or by using DexTechnologies Software, you agree that you have read, understood, and accept all of the terms and conditions contained in these Terms of Use, as well as our Privacy Policy and our anti money laundering policies and procedures. The User has to read and to understand the entire Terms of Use carefully before each using the Site and/or any of the Services provided by DexTechnologies OÜ.</p>
+                                            <span class="label">05</span> {%  blocktrans %}By signing up to use an account through DexTechnologies OÜ or any of our associated websites, APIs, or mobile applications(collectively the ‘DexTechnologies Software') and/or by using DexTechnologies Software, you agree that you have read, understood, and accept all of the terms and conditions contained in these Terms of Use, as well as our Privacy Policy and our anti money laundering policies and procedures. The User has to read and to understand the entire Terms of Use carefully before each using the Site and/or any of the Services provided by DexTechnologies OÜ.{% endblocktrans %}</p>
                                         <p>
-                                            <span class="label">06</span> IIF THE USER DOES NOT ACCEPT AND/OR UNDERSTANDS THESE TERMS OF USE, THE USER SHALL NOT ACCESS THIS SITE AND SHALL NOT USE ANY OF DexTechnologies SOFTWARE, SERVICES, PRODUCTS AND CONTENT.</p>
+                                            <span class="label">06</span> {%  blocktrans %}IIF THE USER DOES NOT ACCEPT AND/OR UNDERSTANDS THESE TERMS OF USE, THE USER SHALL NOT ACCESS THIS SITE AND SHALL NOT USE ANY OF DexTechnologies SOFTWARE, SERVICES, PRODUCTS AND CONTENT.{% endblocktrans %}</p>
                                         <p>
-                                            <span class="label">07</span> You should be aware that the risk of loss in trading or holding Digital Currencies can be high. Digital currency services are not currently regulated in most countries (by financial authorities or any other regulator). You should therefore carefully consider whether trading or holding Digital currencies is suitable for you in light of your financial condition and possible risks.</p>
+                                            <span class="label">07</span> {%  blocktrans %}You should be aware that the risk of loss in trading or holding Digital Currencies can be high. Digital currency services are not currently regulated in most countries (by financial authorities or any other regulator). You should therefore carefully consider whether trading or holding Digital currencies is suitable for you in light of your financial condition and possible risks.{% endblocktrans %}</p>
                                     </div>
                                 </div>
                                 <div class="p-p-item">
                                     <div class="p-p-title">
-                                        <h4>II. DEFINITIONS</h4>
+                                        <h4>{%  blocktrans %}II. DEFINITIONS{% endblocktrans %}</h4>
                                     </div>
                                     <div class="p-p-description">
-                                        <p>Terms used in these Terms of Use shall be interpreted in accordance with the definitions provided below:</p>
-                                        <p>Account: means an account registered by the User on the Platform and/or on the DexTechnologies Software. "Base Currency" means the currency pair's first currency.</p>
+                                        <p>{%  blocktrans %}Terms used in these Terms of Use shall be interpreted in accordance with the definitions provided below:{% endblocktrans %}</p>
+                                        {%  blocktrans %}<p>Account: means an account registered by the User on the Platform and/or on the DexTechnologies Software. "Base Currency" means the currency pair's first currency.</p>
                                         <p>Buyer: means the User who makes an Order to buy Cryptocurrencies through the Platform (DexTechnologies Software) and/or the User whose Order is accepted by the Seller depending on the context.</p>
                                         <p>Commission: means a fee charged by or on behalf of any third party (e.g. banks, non-bank financial institutions, payment service providers, etc).</p>
                                         <p>Cryptocurrency: means peer-to-peer decentralized digital representation of value (bitcoins, ethers, etc.).</p>
@@ -123,7 +125,7 @@
                                         <p>Transaction: means (i) transfer of Cryptocurrencies or Fiat currencies by the User to his/her Account ("Deposit Transaction"), including transfer of Fiat currencies to External Wallet that is not part of the DexTechnologies OÜ platform (DexTechnologies Software) but which is indicated on the DexTechnologies OÜ platform (DexTechnologies software); (ii) transfer of Cryptocurrencies, or Fiat currencies among the Users ("Trading Transaction"), including transfer of Fiat currencies to External Wallet that is not part of the DexTechnologies OÜ platform (DexTechnologies Software) but which is indicated on the DexTechnologies OÜ platform (DexTechnologies software), (iii) withdrawal of Cryptocurrencies or Fiat currencies from his/her Account ("Withdrawal Transaction").</p>
                                         <p>User: means a person or an entity that uses the Services, agrees to follow the Terms of Use and is a holder of an Account.</p>
                                         <p>Voucher: means an alphanumeric redeemable code, which can be used to transfer Cryptocurrency or between Accounts.</p>
-                                        <p>Withdrawal: means a Transaction involving a transfer of Funds from the User's Account to his/her bank account or to an account opened in any other institution. Where the context so admits words denoting the singular shall include the plural and vice versa.</p>
+                                        <p>Withdrawal: means a Transaction involving a transfer of Funds from the User's Account to his/her bank account or to an account opened in any other institution. Where the context so admits words denoting the singular shall include the plural and vice versa.</p>{% endblocktrans %}
                                     </div>
                                 </div>
                                 <div class="p-p-item">
