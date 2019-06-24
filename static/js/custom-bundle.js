@@ -109,14 +109,14 @@ var tgValidation = function tgValidation(val) {
 		return (/^(\s*)?(\+)?([-()]?\d[-()]?){10,14}(\s*)?$/.test(val)
 		);
 	} else {
-		return (/^@/.test(val)
+		return (/@([a-zA-Z0-9]{4,})/.test(val)
 		);
 	}
 };
 
 var urlValidation = function urlValidation(val) {
 	if (parseInt(val) !== NaN) {
-		return (/^(ftp|http|https):\/\/[^ "]+$/.test(val)
+		return (/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/.test(val)
 		);
 	} else {
 		// return /^(ftp|http|https):\/\/[^ "]+$/.test(val)
@@ -282,6 +282,7 @@ $("form").on("submit", function (e) {
 						$(this).val("");
 						$(".wrap-input__label").removeClass("active");
 						$(".select-txt").html("");
+						$(".file-name").html("");
 					}
 				});
 			},
@@ -636,7 +637,7 @@ $(document).on("click", ".share-link a", function (e) {
 		window.open('https://facebook.com/sharer/sharer.php?u=' + shareUrl);
 	}
 	if ($(this).closest(".share-link").hasClass("tw")) {
-		window.open('https://facebook.com/sharer/sharer.php?u=' + shareUrl);
+		window.open('https://twitter.com/intent/tweet/?url=' + shareUrl);
 	}
 });
 

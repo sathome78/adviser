@@ -524,7 +524,7 @@ pipeline {
             ansiColor('xterm') {
               // dir("helm") {
                 echo "Add developer user to k8s using service account and create RBAC"
-                sh "./${HELM_REPO_PATH}/$TEMPLATES_DIR/kubernetes_add_service_account_kubeconfig.sh sa-developer $KUBERNETES_NAMESPACE developer ${params.deploy_env}"
+                sh "/${HELM_REPO_PATH}/$TEMPLATES_DIR/kubernetes_add_service_account_kubeconfig.sh sa-developer $KUBERNETES_NAMESPACE developer ${params.deploy_env}"
               // }
             }
         }
