@@ -38,3 +38,4 @@ def force_default_language_middleware(get_response):
         return response
 
     return middleware
+

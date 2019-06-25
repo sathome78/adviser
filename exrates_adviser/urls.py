@@ -26,7 +26,8 @@ from adviser.views import (SupportPageView, DealPageView, AdviserFormView, Advis
                            FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView, AboutUsPageView,
                            BecomeAdviserPageView, AdviserDemoPageView, ChatPageView)
 from analytics.views import ArticlePageView, ArticlesListPageView, ListArticleView
-
+from django.utils.translation import activate
+activate('en')
 
 def home(request):
     return redirect(reverse("about-us"))
