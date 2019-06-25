@@ -12,7 +12,8 @@ from django_extensions.db.fields import AutoSlugField
 ADVISER_TYPE_ENUM = (
     (1, 'Company'),
     (2, 'Ambassador'),
-    (3, 'Sales')
+    (3, 'Sales'),
+    (4, 'Advisor')
     )
 
 
@@ -75,7 +76,7 @@ class Adviser(models.Model):
         verbose_name_plural = _('Ambassadors')
 
     def get_absolute_url(self):
-        return reverse("adviser-detail", kwargs={"slug": self.slug})
+        return reverse("adviser-detail", kwargs={"type": self.get_type_display().lower(), "slug": self.slug})
 
 
 class GeneralFields(models.Model):

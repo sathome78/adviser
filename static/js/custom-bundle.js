@@ -102,7 +102,6 @@ $(".burger").click(function () {
 	}
 });
 
-//end open menu script
 var tgValidation = function tgValidation(val) {
 	console.log(parseInt(val));
 	if (!isNaN(parseInt(val))) {
@@ -115,12 +114,8 @@ var tgValidation = function tgValidation(val) {
 };
 
 var urlValidation = function urlValidation(val) {
-	if (parseInt(val) !== NaN) {
-		return (/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/.test(val)
-		);
-	} else {
-		// return /^(ftp|http|https):\/\/[^ "]+$/.test(val)
-	}
+	return (/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/.test(val)
+	);
 };
 //form validation script
 
@@ -373,8 +368,14 @@ $(".menu-mob__drop-wrap").click(function () {
 	$(this).toggleClass("active");
 });
 
-var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
+$.fn.hasExtension = function (exts) {
+	return new RegExp('(' + exts.join('|').replace(/\./g, '\\.') + ')$').test($(this).val());
+};
 
+var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
+	var widthCanv = $(".views").innerWidth();
+	var heightCanv = $(".views").innerHeight();
+	var coof;
 	var crop_max_width = 800;
 	var crop_max_height = 800;
 	var jcrop_api;
@@ -385,7 +386,12 @@ var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
 	var prefsize;
 
 	$("#crop-file").change(function () {
-		loadImage(this);
+		if ($(this).hasExtension(['.jpg', '.png', '.svg'])) {
+			$(".views-wr").addClass("no-empty");
+			loadImage(this);
+		} else {
+			$(this).val('');
+		}
 	});
 
 	function loadImage(input) {
@@ -429,11 +435,11 @@ var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
 	function validateImage() {
 		if (canvas != null) {
 			image = new Image();
+
 			image.onload = restartJcrop;
 			image.src = canvas.toDataURL('image/png');
 		} else restartJcrop();
 	}
-
 	function restartJcrop() {
 		if (jcrop_api != null) {
 			jcrop_api.destroy();
@@ -442,9 +448,21 @@ var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
 		$("#views").append("<canvas id=\"canvas\">");
 		canvas = $("#canvas")[0];
 		context = canvas.getContext("2d");
-		canvas.width = image.width;
-		canvas.height = image.height;
-		context.drawImage(image, 0, 0);
+		if (image.width >= image.height) {
+			coof = widthCanv / image.width;
+			canvas.width = widthCanv;
+			canvas.height = image.height * coof;
+			console.log(coof);
+		} else {
+			coof = heightCanv / image.height;
+			canvas.width = heightCanv;
+			canvas.height = image.width * coof;
+			console.log(coof);
+		}
+		context.drawImage(image, 0, 0, canvas.width, canvas.height);
+		image = new Image();
+		// image.onload = restartJcrop;
+		image.src = canvas.toDataURL('image/png');
 		$("#canvas").Jcrop({
 			onChange: selectcanvas,
 			// onRelease: clearcanvas,
@@ -452,7 +470,8 @@ var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
 			boxHeight: crop_max_height,
 			minSize: [40, 40],
 			setSelect: [0, 0, 40, 40],
-			aspectRatio: 1 / 1
+			aspectRatio: 1 / 1,
+			bgColor: "#0F1032"
 		}, function () {
 			jcrop_api = this;
 		});
@@ -485,37 +504,35 @@ var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
 		validateImage();
 	}
 
-	$("#views").keyup(function (e) {
-		if (e.keyCode == 13) {
+	// $("#views").keyup(function(e) {
+	// 	if(e.keyCode == 13){
 
-			applyCrop();
-			$("#crop-img").attr("src", canvas.toDataURL('image/png'));
-			setTimeout(function () {
-				$("#views").html("");
-			}, 1);
-		}
+	// 		applyCrop();
+	// 		$("#crop-img").attr("src", canvas.toDataURL('image/png'))
+	// 		$("#avatar").val(canvas.toDataURL('image/png'))
+	// 		setTimeout(function(){
+	// 			$(".views-wr").removeClass("no-empty");
+	// 			$("#views").html("")
+	// 		},1)
+
+	// 	}
+	// });
+
+	$("#save").click(function () {
+		applyCrop();
+		$("#crop-file").val("");
+		$("#crop-img").attr("src", canvas.toDataURL('image/png'));
+		$("#avatar").val(canvas.toDataURL('image/png'));
+		setTimeout(function () {
+			$(".views-wr").removeClass("no-empty");
+			$("#views").html("");
+		}, 1);
 	});
 
-	$("#form").submit(function (e) {
-		e.preventDefault();
-		formData = new FormData($(this)[0]);
-		var blob = dataURLtoBlob(canvas.toDataURL('image/png'));
-		formData.append("cropped_image[]", blob);
-		$.ajax({
-			url: "whatever.php",
-			type: "POST",
-			data: formData,
-			contentType: false,
-			cache: false,
-			processData: false,
-			success: function success(data) {
-				alert("Success");
-			},
-			error: function error(data) {
-				alert("Error");
-			},
-			complete: function complete(data) {}
-		});
+	$("#cancel").click(function () {
+		$("#crop-file").val("");
+		$(".views-wr").removeClass("no-empty");
+		$("#views").html("");
 	});
 };
 
