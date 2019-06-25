@@ -24,7 +24,7 @@ from django.urls import include, reverse
 
 from adviser.views import (SupportPageView, DealPageView, AdviserFormView, AdviserUpdateProfileView, AdviserProfileView,
                            FiatPageView, ClientCenterPageView, PrivacyPolicyPageView, TermsPageView, AboutUsPageView,
-                           BecomeAdviserPageView, AdviserDemoPageView, ChatPageView)
+                           BecomeAdviserPageView, AdviserDemoPageView, ChatPageView, AdvisorProfileView)
 from analytics.views import ArticlePageView, ArticlesListPageView, ListArticleView
 from django.utils.translation import activate
 activate('en')
@@ -43,9 +43,9 @@ urlpatterns = i18n_patterns(
                   url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
                   url(r'^ambassador-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
 
-                  url(r'^ambassador/(?P<slug>[-\w]+)/update/$', AdviserUpdateProfileView.as_view(),
+                  url(r'^(?P<type>[-\w]+)/(?P<slug>[-\w]+)/update/$', AdviserUpdateProfileView.as_view(),
                       name='adviser-update'),
-                  url(r'^ambassador/(?P<slug>[-\w]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
+                  url(r'^(?P<type>[-\w]+)/(?P<slug>[-\w]+)/$', AdviserProfileView.as_view(), name='adviser-detail'),
 
                   url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
                   url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
@@ -61,9 +61,11 @@ urlpatterns = i18n_patterns(
                   url(r'^chat/$', ChatPageView.as_view(), name='chat'),
                   url(r'^analytics/$', ArticlesListPageView.as_view(), name='analytics-list'),
 
-                    url(r'^api/articles/$', ListArticleView.as_view(), name='articles-list1'),
+                  url(r'^api/articles/$', ListArticleView.as_view(), name='articles-list1'),
 
                   url(r'^analytics-detail/(?P<slug>[-\w]+)/$', ArticlePageView.as_view(), name='analytics-detail'),
+
+                  url(r'^advisor-profile/$', AdvisorProfileView.as_view(), name='advisor-profile'),
 
                   url('admin/', admin.site.urls),
                   url('i18n/', include('django.conf.urls.i18n')),

@@ -166,3 +166,6 @@ class AdviserDemoPageView(TemplateView):
 
 class ChatPageView(TemplateView):
     template_name = 'main/support-chat.html'
+
+class AdvisorProfileView(TemplateView):
+    template_name = 'adviser/advisor-profile.html'
