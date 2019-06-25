@@ -62,11 +62,11 @@ all_charts_devtest:
         mountName: staticfiles-storage
         mountPath: /app/django/staticfiles
 
-      # configmap:
-      #   mountName: nginx-config-volume
-      #   mountPath: /etc/nginx/conf.d/
-      #   configMapName: adviser-nginx
-      #   readOnly: true
+      configmap:
+        mountName: nginx-config-volume
+        mountPath: /etc/nginx/conf.d/
+        configMapName: adviser-nginx
+        readOnly: true
 
     custom_redirects: {}
 
