@@ -165,12 +165,12 @@
                             <form action="{% url 'deal' %}">{% csrf_token %}
                                 <div class="checkbox-wr">
                                     <div class="check-item">
-                                        <input type="radio" class="accessibility-content radio-form-list" value="IEO" id="id_request_type_0" name="request_type" data-head="Get report about your coin" checked>
+                                        <input type="radio" class="accessibility-content radio-form-list" value="IEO" id="id_request_type_0" name="request_type" data-head="{% trans  'Get report about your coin'%}" checked>
                                         <label class="indicator" for="id_request_type_0"></label>
                                         <label class="label-txt" for="id_request_type_0">{% blocktrans %}I need to conduct an IEO{% endblocktrans %}</label>
                                     </div>
                                     <div class="check-item">
-                                        <input type="radio" class="accessibility-content radio-form-list" value="Listing" id="id_request_type_1" name="request_type" data-head="Submit a request for list a coin">
+                                        <input type="radio" class="accessibility-content radio-form-list" value="Listing" id="id_request_type_1" name="request_type" data-head="{% trans  'Submit a request for list a coin'%}">
                                         <label class="indicator" for="id_request_type_1"></label>
                                         <label class="label-txt" for="id_request_type_1">{% blocktrans %}I need to list a coin{% endblocktrans %}</label>
                                     </div>
@@ -197,7 +197,7 @@
                                 </div>
                                 <div class="wrap-input input-item popup__wrap-input">
                                     <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="link_to_project" id="id_link_to_project" data-name="link">
-                                    <label class="wrap-input__label" for="id_link_to_project">{% blocktrans %}Link to the website*{% endblocktrans %}</label>
+                                    <label class="wrap-input__label" for="id_link_to_project">{% blocktrans %}Link to the website{% endblocktrans %}*</label>
                                     <label class="error" for="id_link_to_project"><span class="standart-text"></span></label>
                                 </div>
                                 <div class="button-wr">

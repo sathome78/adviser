@@ -27,12 +27,12 @@
                         </div>
                         <div class="radio-wr">
                             <div class="radio-item">
-                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="Apply to conduct an IEO" {% if '=ieo' in request.build_absolute_uri or "type" not in request.build_absolute_uri %} checked="checked" {% endif %}>
+                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_0" value="IEO" data-head="{% trans  'Apply to conduct an IEO'%}" {% if '=ieo' in request.build_absolute_uri or "type" not in request.build_absolute_uri %} checked="checked" {% endif %}>
                                 <label class="check" for="id_request_type_0"></label>
                                 <label class="check-txt" for="id_request_type_0"><span>{% blocktrans %}I need to conduct an IEO{% endblocktrans %}</span></label>
                             </div>
                             <div class="radio-item">
-                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_1" value="Listing" data-head="Apply for Listing" {% if '=listing' in request.build_absolute_uri %} checked="checked" {% endif %}>
+                                <input class="accessibility-content radio-form-list" type="radio" name="request_type" id="id_request_type_1" value="Listing" data-head="{% trans  'Apply for Listing'%}" {% if '=listing' in request.build_absolute_uri %} checked="checked" {% endif %}>
                                 <label class="check" for="id_request_type_1"></label>
                                 <label class="check-txt" for="id_request_type_1"><span>{% blocktrans %}I need to list a coin{% endblocktrans %}</span></label>
                             </div>
@@ -44,10 +44,8 @@
                                 <label class="error" for="id_name"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
-                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="telegram" id="id_telegram">
-                                <label class="wrap-input__label" for="id_telegram">{% blocktrans %}Telegram{% endblocktrans %}</label>
                                 <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="telegram" id="id_telegram" data-name="tg">
-                                <label class="wrap-input__label" for="id_telegram">Telegram*</label>
+                                <label class="wrap-input__label" for="id_telegram">{% blocktrans %}Telegram{% endblocktrans %}*</label>
                                 <label class="error" for="id_telegram"><span class="standart-text"></span></label>
                             </div>
                             <div class="wrap-input input-item popup__wrap-input">
@@ -137,8 +135,8 @@
                                 <li><span class="weight">{{ extra_fields.active_trades }} </span><span>{% blocktrans %}active traders{% endblocktrans %}</span></li>
                                 <li><span class="weight">X-Platform </span><span>{% blocktrans %}for IEO{% endblocktrans %}</span>
                                 <span class="label">{% blocktrans %}NEW{% endblocktrans %}</span></li>
-                                <li><span class="weight">{{ extra_fields.fiat_currencies }} Fiat </span><span>{% blocktrans %}currencies{% endblocktrans %}</span></li>
-                                <li><span class="weight">{% blocktrans %}Trading API {% endblocktrans %}</span><span>{% blocktrans %}for AlgoTraders{% endblocktrans %}</span></li>
+                                <li><span class="weight">{{ extra_fields.fiat_currencies }}  </span><span>{% blocktrans %} Fiat currencies{% endblocktrans %}</span></li>
+                                <li><span class="weight">{% blocktrans %} {% endblocktrans %}</span><span>{% blocktrans %}Trading API for AlgoTraders{% endblocktrans %}</span></li>
                             </ul>
                         </div>
                        <div class="back-btn">

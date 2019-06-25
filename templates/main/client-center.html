@@ -33,8 +33,8 @@
                         <li><a href="{% url 'about-us' %}"><span>{% blocktrans %}About us{% endblocktrans %}</span></a></li>
                         <li><a href="{% url 'client-center' %}" class="active"><span>{% blocktrans %}Contacts{% endblocktrans %}</span></a></li>
                         <li><a href="{% url 'support-center' %}"><span>{% blocktrans %}Support{% endblocktrans %}</span></a></li>
-                        <li><a href="{% url 'privacy-policy' %}"><span>Privacy policy</span></a></li>
-                        <li><a href="{% url 'terms-of-use' %}"><span>Terms of use</span></a></li>
+                        <li><a href="{% url 'privacy-policy' %}"><span>{% blocktrans %}Privacy policy{% endblocktrans %}</span></a></li>
+                        <li><a href="{% url 'terms-of-use' %}"><span>{% blocktrans %}Terms of use{% endblocktrans %}</span></a></li>
                         <li class="icon-lnk"><a href="{% url 'deal' %}"><span class="icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                  viewBox="0 0 16 16" fill="none">
@@ -119,7 +119,7 @@
                     </div>
                     <div class="benefits">
                         <div class="title-wr">
-                            <h4>Our Benefits:</h4>
+                            <h4>{% blocktrans %}Our Benefits:{% endblocktrans %}</h4>
                         </div>
                         <div class="benefits-item-wr">
                             <div class="benefits-item">
