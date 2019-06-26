@@ -12,16 +12,13 @@ class AnalyticsAdmin(TabbedTranslationAdmin):
     readonly_fields = ("slug", "author", "views", 'is_published', )
     fieldsets = (
         (None, {
-            "fields": ("term", "title", "slug", "short_description", ),
+            "fields": ("section",  "title", "term", "currency_pair_link", "currency_pair", "slug", "preview_image","short_description", "published_at",),
             }),
-        ("Article", {
-            "fields": ("article", "preview_image", "published_at", 'is_active', "is_published", "author", "views", ),
+        ("Content", {
+            "fields": ("picture1", "picture2", "picture3", "tags", "article",  "go_to_trade_link", ),
             }),
         ("Settings", {
-            "fields": ("facebook_comments", "go_to_trade_link", "currency_pair_link", "currency_pair"),
-            }),
-        ("Tags", {
-            "fields": ("tags", ),
+            "fields": ("facebook_comments",  'is_active', "is_published", "author", "views", ),
             }),
         )
 

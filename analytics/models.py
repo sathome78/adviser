@@ -11,6 +11,12 @@ TERM_ENUM = (
     (1, 'Short'),
     (2, 'Long'),
     )
+
+SECTION_ENUM = (
+    (1, 'Article'),
+    )
+
+
 class Tag(models.Model):
     tag_name = models.CharField(max_length=100)
 
@@ -18,6 +24,9 @@ class Tag(models.Model):
         return self.tag_name
 
 class Analytic(models.Model):
+    section = models.IntegerField(choices=SECTION_ENUM,
+                                default=1)
+
     title = models.CharField(max_length=255)
     slug = AutoSlugField(_('slug'), max_length=50, unique=True, populate_from=('title',))
     short_description = models.TextField(max_length=500)
@@ -36,6 +45,10 @@ class Analytic(models.Model):
     author = models.ForeignKey(User,
                       null=True, blank=True, on_delete=models.SET_NULL)
     views = models.PositiveIntegerField(default=0)
+
+    picture1 = models.ImageField(upload_to='articles/img', null=True, blank=True)
+    picture2 = models.ImageField(upload_to='articles/img', null=True, blank=True)
+    picture3 = models.ImageField(upload_to='articles/img', null=True, blank=True)
 
 
     def __str__(self):
