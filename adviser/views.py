@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import FormView, TemplateView, UpdateView
 
 from adviser.forms import AdviserForm, AdviserProfileForm, ListingForm, REQUEST_CHOICES, SupportForm
-from adviser.models import Adviser, Manager
+from adviser.models import Adviser, Manager, ADVISER_TYPE_ENUM
 from clients.pipedrive_client import PipedriveClient
 from clients.zendesk_client import ZendeskClient
 
