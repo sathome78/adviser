@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-01 10:29+0000\n"
+"POT-Creation-Date: 2019-07-01 14:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,10 +36,9 @@ msgid "Ambassador"
 msgstr "Представитель"
 
 #: adviser/models.py:76
-#, fuzzy
 #| msgid "Ambassador"
 msgid "Ambassadors"
-msgstr "Представитель"
+msgstr "Представители"
 
 #: adviser/models.py:97 adviser/models.py:98
 msgid "general fields"
@@ -56,11 +55,11 @@ msgstr ""
 #: exrates_adviser/settings.py:63 templates/basic/_header.html:324
 #: templates/basic/_header.html:327
 msgid "English"
-msgstr ""
+msgstr "Английский"
 
 #: exrates_adviser/settings.py:64 templates/basic/_header.html:328
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
 #: templates/adviser/adviser_page.html:14
 msgid "Ambassador Exrates Exchange"
@@ -389,7 +388,7 @@ msgstr "может: "
 
 #: templates/adviser/advisor-page.html:79
 msgid "not in charge:"
-msgstr "Представитель не может: "
+msgstr "не может: "
 
 #: templates/adviser/advisor-page.html:201
 msgid "Link to the website*"
@@ -978,6 +977,8 @@ msgstr ""
 "исключением того же самого лица."
 
 #: templates/main/privacy-policy.html:122
+#, fuzzy
+#| msgid "Cookies"
 msgid "Cookie"
 msgstr "Cookies"
 
@@ -3523,57 +3524,54 @@ msgstr ""
 "вопросы, пожалуйста, свяжитесь с нами по электронной почте, указанной на Веб-"
 "сайте."
 
-#~ msgid "Company"
-#~ msgstr "Компания"
+msgid "Company"
+msgstr "Компания"
 
-#~ msgid "Sales"
-#~ msgstr "Менеджер по продажам"
+msgid "Sales"
+msgstr "Менеджер по продажам"
 
-#~ msgid "Advisor"
-#~ msgstr "Советник"
+msgid "Advisor"
+msgstr "Советник"
 
-#~ msgid "Funds Withdrawal"
-#~ msgstr "Вывод средств"
+msgid "Funds Withdrawal"
+msgstr "Вывод средств"
 
-#~ msgid "API Issue"
-#~ msgstr "Проблема с API"
+msgid "API Issue"
+msgstr "Проблема с API"
 
-#~ msgid "Improvement"
-#~ msgstr "Улучшение"
+msgid "Improvement"
+msgstr "Улучшение"
 
-#~ msgid "Deposit"
-#~ msgstr "Депозит"
+msgid "Deposit"
+msgstr "Депозит"
 
-#~ msgid "I see issue"
-#~ msgstr "Я вижу проблему"
+msgid "I see issue"
+msgstr "Я вижу проблему"
 
-#~ msgid "Help with my account"
-#~ msgstr "Помощь с аккаунтом"
+msgid "Help with my account"
+msgstr "Помощь с аккаунтом"
 
-#~ msgid "Trading"
-#~ msgstr "Торговля"
+msgid "Trading"
+msgstr "Торговля"
 
-#~ msgid "Promotion"
-#~ msgstr "Компания"
+msgid "Promotion"
+msgstr "Компания"
 
-#~ msgid "Business communication"
-#~ msgstr "Деловое общение"
+msgid "Business communication"
+msgstr "Деловое общение"
 
-#~ msgid "Application Performance"
-#~ msgstr "Производительность приложения"
+msgid "Application Performance"
+msgstr "Производительность приложения"
 
-#~ msgid "Authentication"
-#~ msgstr "Аутентификация"
+msgid "Authentication"
+msgstr "Аутентификация"
 
-#~ msgid "Usability"
-#~ msgstr "Удобство использования"
+msgid "Usability"
+msgstr "Удобство использования"
 
-#~ msgid "Other"
-#~ msgstr "Другое"
+msgid "Other"
+msgstr "Другое"
 
-#~ msgid "Trading API "
-#~ msgstr "API для AlgoTraders"
+msgid "Trading API "
+msgstr "API для AlgoTraders"
 
-#~| msgid "Apply form"
-#~ msgid "Apply to list"
-#~ msgstr "Форма заявки"
