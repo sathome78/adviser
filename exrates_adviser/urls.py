@@ -67,9 +67,13 @@ urlpatterns = i18n_patterns(
 
                   url(r'^advisor-profile/$', AdvisorProfileView.as_view(), name='advisor-profile'),
 
-                  url('admin/', admin.site.urls),
-                  url('i18n/', include('django.conf.urls.i18n')),
-                  url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
 
         ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urls = [url('admin/', admin.site.urls),
+                  url('i18n/', include('django.conf.urls.i18n')),
+                  url(r'^ckeditor/', include('ckeditor_uploader.urls')),]
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += urls

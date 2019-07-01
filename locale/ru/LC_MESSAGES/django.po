@@ -468,7 +468,7 @@ msgstr "Комиссия 0%% на переводы между личным ак�
 #: templates/basic/_footer.html:21 templates/basic/_footer.html:36
 #: templates/basic/_footer.html:51
 msgid "Followers"
-msgstr "Подписчики"
+msgstr "Подписчиков"
 
 #: templates/basic/_footer.html:58
 msgid "Terms & conditions"
