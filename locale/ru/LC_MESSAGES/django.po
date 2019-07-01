@@ -251,7 +251,6 @@ msgstr "Мне нужно провести IEO"
 
 #: templates/adviser/adviser_page.html:173
 #: templates/adviser/advisor-page.html:174
-#, fuzzy
 #| msgid "submit a request "
 msgid "Submit a request for list a coin"
 msgstr "Оставить заявку"
@@ -392,7 +391,6 @@ msgid "not in charge:"
 msgstr "Представитель не может: "
 
 #: templates/adviser/advisor-page.html:201
-#, fuzzy
 #| msgid "Link to the website"
 msgid "Link to the website*"
 msgstr "Ссылка на сайт"
@@ -470,7 +468,7 @@ msgstr "Комиссия 0%% на переводы между личным ак�
 #: templates/basic/_footer.html:21 templates/basic/_footer.html:36
 #: templates/basic/_footer.html:51
 msgid "Followers"
-msgstr "Подпис"
+msgstr "Подписчики"
 
 #: templates/basic/_footer.html:58
 msgid "Terms & conditions"
@@ -523,104 +521,124 @@ msgstr "О нас"
 msgid ""
 "Apply to\n"
 "                                list"
-msgstr ""
+msgstr "Запрос на листинг"
 
 #: templates/basic/_header.html:87 templates/basic/_header.html:303
 msgid "Community"
-msgstr ""
+msgstr "Сообщество"
 
 #: templates/basic/_header.html:93
 msgid ""
 "Community\n"
 "                                                    World"
 msgstr ""
+"Сообщество Мир"
 
 #: templates/basic/_header.html:100
 msgid ""
 "Community\n"
 "                                                    China"
 msgstr ""
+"Сообщество Китай"
 
 #: templates/basic/_header.html:107
 msgid ""
 "Community\n"
 "                                                    Indonesia"
 msgstr ""
+"Сообщество Индонезия"
 
 #: templates/basic/_header.html:114
 msgid ""
 "Community\n"
 "                                                    Russia"
 msgstr ""
+"Сообщество Россия"
 
 #: templates/basic/_header.html:121
 msgid ""
 "Community\n"
 "                                                    Korea"
 msgstr ""
+"Сообщество Корея"
 
 #: templates/basic/_header.html:130 templates/basic/_header.html:320
 msgid "News"
 msgstr ""
+"Новости"
 
 #: templates/basic/_header.html:136
 msgid "Login"
 msgstr ""
+"Авторизация"
 
 #: templates/basic/_header.html:140
 msgid ""
 "\n"
 "                            Register"
 msgstr ""
-
+"\n"
+"Создать аккаунт"
 #: templates/basic/_header.html:219
 msgid "Account"
 msgstr ""
+"Аккаунт"
 
 #: templates/basic/_header.html:224
 msgid ""
 "\n"
 "                                Login"
 msgstr ""
-
+"\n"
+"Авторизация"
 #: templates/basic/_header.html:227
 msgid ""
 "\n"
 "                                Register"
 msgstr ""
+"\n"
+"Создать аккаунт"
 
 #: templates/basic/_header.html:285
 msgid ""
 "\n"
 "                            Apply to list"
 msgstr ""
+"\n"
+"Запрос на листинг"
 
 #: templates/basic/_header.html:294
 msgid ""
 "\n"
 "                            Fiat"
 msgstr ""
+"\n"
+"Фиат"
 
 #: templates/basic/_header.html:307
 msgid "Community World"
 msgstr ""
+"Сообщество Мир"
 
 #: templates/basic/_header.html:309
 msgid "Community China"
 msgstr ""
+"Сообщество Китай"
 
 #: templates/basic/_header.html:311
 msgid "Community Indonesia"
 msgstr ""
+"Сообщество Индонезия"
 
 #: templates/basic/_header.html:313
 msgid "Community Russia"
 msgstr ""
+"Сообщество Россия"
 
 #: templates/basic/_header.html:315
 msgid "Community Korea"
 msgstr ""
-
+"Сообщетво Корея"
 #: templates/main/about-us.html:15
 msgid "About Us "
 msgstr "О нас"
@@ -704,7 +722,6 @@ msgid "Strong Safety"
 msgstr "Улучшенная безопасность"
 
 #: templates/main/about-us.html:110
-#, fuzzy, python-format
 #| msgid ""
 #| "More than 95%% of the currencies are stored on cold wallets. WAF (Web "
 #| "Application Firewall) a protective screen of a Web application that "
@@ -762,7 +779,6 @@ msgid "Contact of Sales Department:"
 msgstr "Контакты отдела продаж:"
 
 #: templates/main/client-center.html:122
-#, fuzzy
 #| msgid "Benefits:"
 msgid "Our Benefits:"
 msgstr "Преимущества счета"
@@ -884,7 +900,6 @@ msgid "NEW"
 msgstr "НОВОЕ"
 
 #: templates/main/form-listing.html:138
-#, fuzzy
 #| msgid "currencies"
 msgid " Fiat currencies"
 msgstr "Фиатных валют"
@@ -894,7 +909,6 @@ msgid " "
 msgstr ""
 
 #: templates/main/form-listing.html:139
-#, fuzzy
 #| msgid "for AlgoTraders"
 msgid "Trading API for AlgoTraders"
 msgstr "для AlgoTraders"
@@ -976,7 +990,6 @@ msgstr ""
 "исключением того же самого лица."
 
 #: templates/main/privacy-policy.html:122
-#, fuzzy
 #| msgid "Cookies"
 msgid "Cookie"
 msgstr "Cookies"
@@ -1717,7 +1730,6 @@ msgstr ""
 "использоваться для перевода криптовалюты между счетами."
 
 #: templates/main/terms-of-use.html:128
-#, fuzzy
 #| msgid ""
 #| "Withdrawal: means a Transaction involving a transfer of Funds from the "
 #| "User's Account to his/her bank account or to an account opened in any "
