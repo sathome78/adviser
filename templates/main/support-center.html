@@ -81,7 +81,7 @@
 
                                             {% for value, displayable  in form.fields.request_type.choices %}
                                             <div class="dropdown-item">
-                                            <p data-value="{{ value }}">{{ displayable }}</p>
+                                            <p data-value="{{ value }}">{% trans displayable %}</p>
                                             </div>
                                             {% endfor %}
 

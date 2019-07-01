@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-01 13:39+0000\n"
+"POT-Creation-Date: 2019-07-01 10:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,138 +18,2527 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: adviser/models.py:31
+#: adviser/models.py:32
 msgid "sale manager"
 msgstr ""
 
-#: adviser/models.py:32
+#: adviser/models.py:33
 msgid "sale managers"
 msgstr ""
 
-#: adviser/models.py:71
-msgid "adviser"
+#: adviser/models.py:47 analytics/models.py:31
+msgid "slug"
 msgstr ""
 
-#: adviser/models.py:72
-msgid "advisers"
+#: adviser/models.py:75
+msgid "Ambassador"
 msgstr ""
 
-#: adviser/models.py:95 adviser/models.py:96
+#: adviser/models.py:76
+msgid "Ambassadors"
+msgstr ""
+
+#: adviser/models.py:97 adviser/models.py:98
 msgid "general fields"
 msgstr ""
 
-#: exrates_adviser/settings.py:47
+#: analytics/models.py:58
+msgid "Analytic article"
+msgstr ""
+
+#: analytics/models.py:59
+msgid "Analytic articles"
+msgstr ""
+
+#: exrates_adviser/settings.py:63 templates/basic/_header.html:324
+#: templates/basic/_header.html:327
 msgid "English"
 msgstr ""
 
-#: exrates_adviser/settings.py:48
+#: exrates_adviser/settings.py:64 templates/basic/_header.html:328
 msgid "Russian"
 msgstr ""
 
-#: templates/main/fiat.html:14
-#, python-format
-msgid " Open account for $20 and get 0%% commission "
+#: templates/adviser/adviser_page.html:14
+msgid "Ambassador Exrates Exchange"
 msgstr ""
 
-#: templates/main/fiat.html:17
-msgid " <p>on outgoing payments in the Singapore Bank</p>"
+#: templates/adviser/adviser_page.html:25
+msgid "Jana Christian"
 msgstr ""
 
-#: templates/main/fiat.html:20
-msgid "Open an Account now"
+#: templates/adviser/adviser_page.html:28
+msgid "Verified Ambassador"
 msgstr ""
 
-#: templates/main/fiat.html:26
-msgid "Benefits"
+#: templates/adviser/adviser_page.html:31
+msgid ""
+"CEO at The Currency Analytics, CMO , Ambassador and Brand Ambassador / "
+"specialized in marketing - Cryptocurrency"
 msgstr ""
 
-#: templates/main/fiat.html:31
+#: templates/adviser/adviser_page.html:34
+msgid "Chat in telegram"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:40
+#: templates/adviser/advisor-page.html:39
+msgid "View profile"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:43
+msgid " SINCE: JANUARY 23, 2018"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:52
+msgid "Ambassador Responsibilities"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:55
+#: templates/adviser/adviser_page.html:89
+#: templates/adviser/advisor-page.html:56
+msgid "Services"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:58
+#: templates/adviser/advisor-page.html:59
+msgid "About Exrates"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:67
+msgid "Ambassador in charge:"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:70
+#: templates/adviser/advisor-page.html:71
+msgid "Conduct negotiations about sales"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:71
+#: templates/adviser/advisor-page.html:72
+msgid "Offer our products and services"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:72
+#: templates/adviser/advisor-page.html:73
+msgid "Create custom offers"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:73
+#: templates/adviser/advisor-page.html:74
+msgid "Represent Exrates on events and conferences"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:78
+msgid "Ambassador not in charge:"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:81
+#: templates/adviser/advisor-page.html:82
+msgid "Accept payments"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:82
+#: templates/adviser/advisor-page.html:83
+msgid "Sign official documents and agreements"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:103
+msgid "Benefits:"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:108
+#: templates/adviser/adviser_page.html:124
+#: templates/adviser/advisor-page.html:109
+#: templates/adviser/advisor-page.html:125
+#: templates/adviser/become-advisor.html:149
+#: templates/main/client-center.html:127 templates/main/fiat.html:42
 msgid "Personal Bank Account"
 msgstr ""
 
-#: templates/main/fiat.html:34
+#: templates/adviser/adviser_page.html:111
+#: templates/adviser/adviser_page.html:119
+#: templates/adviser/advisor-page.html:112
+#: templates/adviser/advisor-page.html:120
+#: templates/adviser/become-advisor.html:152 templates/main/fiat.html:45
 msgid ""
 "We provide personal bank account with 3rd party payment option to 231 "
 "countries."
 msgstr ""
 
-#: templates/main/fiat.html:42
+#: templates/adviser/adviser_page.html:116
+#: templates/adviser/advisor-page.html:117
+#: templates/adviser/become-advisor.html:157
+#: templates/main/client-center.html:136 templates/main/fiat.html:50
+msgid "Fast KYC"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:127
+#: templates/adviser/advisor-page.html:128
+#: templates/adviser/become-advisor.html:160
+#: templates/main/client-center.html:139 templates/main/fiat.html:53
 msgid ""
 "Automatic KYC process with outstanding support. Fully remote account opening."
 msgstr ""
 
-#: templates/main/fiat.html:47
-msgid "Payment solution powered by"
-msgstr ""
-
-#: templates/main/fiat.html:50
-msgid "Singaporian bank with the same license as PayPal & Apple Pay."
-msgstr ""
-
-#: templates/main/fiat.html:55
-msgid "Low commissions"
-msgstr ""
-
-#: templates/main/fiat.html:58
-msgid "Free of charge SEPA outgoing payments."
-msgstr ""
-
-#: templates/main/fiat.html:63
-#, python-format
-msgid "0%% Transfer Fee"
-msgstr ""
-
-#: templates/main/fiat.html:66
-#, python-format
-msgid "0%% transfer fee between personal and trading account on Exrates"
-msgstr ""
-
-#: templates/main/fiat.html:71
+#: templates/adviser/adviser_page.html:132
+#: templates/adviser/advisor-page.html:133
+#: templates/adviser/become-advisor.html:189
+#: templates/main/client-center.html:144 templates/main/fiat.html:82
 msgid "Up to $500,000 monthly"
 msgstr ""
 
-#: templates/main/fiat.html:74
+#: templates/adviser/adviser_page.html:135
+#: templates/adviser/advisor-page.html:136
+#: templates/adviser/become-advisor.html:192 templates/main/fiat.html:85
 msgid ""
 "For VIP clients we provide special conditions for fiat deposit and withdraw "
 "in 35 currencies."
 msgstr ""
 
-#: templates/main/fiat.html:77
+#: templates/adviser/adviser_page.html:138
+#: templates/adviser/advisor-page.html:139
+#: templates/main/client-center.html:151 templates/main/fiat.html:88
 msgid "Become a VIP"
 msgstr ""
 
-#: templates/main/fiat.html:84
-msgid "How does ot work?"
+#: templates/adviser/adviser_page.html:143
+#: templates/adviser/advisor-page.html:144
+#: templates/adviser/become-advisor.html:173
+#: templates/main/client-center.html:164 templates/main/fiat.html:66
+msgid "Low commissions"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:146
+#: templates/adviser/advisor-page.html:147
+#: templates/adviser/become-advisor.html:176
+#: templates/main/client-center.html:167 templates/main/fiat.html:69
+msgid "Free of charge SEPA outgoing payments."
+msgstr ""
+
+#: templates/adviser/adviser_page.html:151
+#: templates/adviser/advisor-page.html:152
+#: templates/adviser/become-advisor.html:165
+#: templates/main/client-center.html:172 templates/main/fiat.html:58
+msgid "Payment solution powered by"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:154
+#: templates/adviser/advisor-page.html:155
+#: templates/main/client-center.html:175 templates/main/fiat.html:61
+msgid "Singaporian bank with the same license as PayPal & Apple Pay."
+msgstr ""
+
+#: templates/adviser/adviser_page.html:163
+#: templates/adviser/adviser_page.html:168
+#: templates/adviser/advisor-page.html:164
+#: templates/adviser/advisor-page.html:169
+msgid "Get report about your coin"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:170
+#: templates/adviser/advisor-page.html:171 templates/main/form-listing.html:32
+msgid "I need to conduct an IEO"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:173
+#: templates/adviser/advisor-page.html:174
+msgid "Submit a request for list a coin"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:175
+#: templates/adviser/advisor-page.html:176 templates/main/about-us.html:137
+#: templates/main/form-listing.html:37
+msgid "I need to list a coin"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:180
+#: templates/adviser/advisor-form.html:31
+#: templates/adviser/advisor-page.html:181 templates/main/about-us.html:143
+#: templates/main/form-listing.html:43
+msgid "Name"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:195
+#: templates/adviser/advisor-page.html:196 templates/main/about-us.html:158
+#: templates/main/form-listing.html:58
+msgid "Company name"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:200 templates/main/about-us.html:163
+#: templates/main/form-listing.html:63
+msgid "Link to the website"
+msgstr ""
+
+#: templates/adviser/adviser_page.html:204
+#: templates/adviser/advisor-form.html:51
+#: templates/adviser/advisor-page.html:205 templates/main/form-listing.html:68
+#: templates/main/support-center.html:116
+msgid "Submit"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:18
+msgid "Cryptocurrency Exchange"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:26
+msgid "Fill the form to become an Ambassador"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:63 templates/main/form-listing.html:81
+msgid "IEO request submitted"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:70 templates/basic/_header.html:13
+#: templates/basic/_header.html:249 templates/main/form-listing.html:88
+msgid "Trade"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:73 templates/basic/_footer.html:77
+#: templates/main/about-us.html:33 templates/main/client-center.html:35
+#: templates/main/form-listing.html:91 templates/main/privacy-policy.html:37
+#: templates/main/support-center.html:34 templates/main/terms-of-use.html:35
+msgid "Support"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:76 templates/basic/_header.html:65
+#: templates/basic/_header.html:289 templates/main/form-listing.html:94
+msgid "Token Sale"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:79 templates/basic/_footer.html:80
+#: templates/main/about-us.html:32 templates/main/client-center.html:34
+#: templates/main/form-listing.html:97 templates/main/privacy-policy.html:36
+#: templates/main/support-center.html:33 templates/main/terms-of-use.html:34
+msgid "Contacts"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:82 templates/basic/_header.html:70
+#: templates/main/form-listing.html:100
+msgid "Fiat"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:85 templates/main/form-listing.html:103
+msgid "Announcements"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:94
+#: templates/adviser/become-advisor.html:37
+msgid "Benefits for Exrates Ambassadors"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:102
+#, python-format
+msgid "Special reward system for ambassadors: <br>get from 5%% to 15%%"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:108
+msgid "Get exclusive analytical market reports"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:114
+msgid "Participation in online trainings & webinars"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:120
+msgid "Your personal page on Exchange website"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:126
+msgid "Your personal manager"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:132
+msgid "Attend conferences & events as a part of Exrates team"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:138
+msgid "An opportunity to become a part of international community"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:144
+#: templates/adviser/become-advisor.html:86
+msgid "Referral program"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:150 templates/main/form-listing.html:144
+msgid "Back"
+msgstr ""
+
+#: templates/adviser/advisor-page.html:43
+msgid "MEMBER SINCE:"
+msgstr ""
+
+#: templates/adviser/advisor-page.html:53
+msgid "Responsibilities"
+msgstr ""
+
+#: templates/adviser/advisor-page.html:68
+msgid "in charge:"
+msgstr ""
+
+#: templates/adviser/advisor-page.html:79
+msgid "not in charge:"
+msgstr ""
+
+#: templates/adviser/advisor-page.html:201
+msgid "Link to the website*"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:23
+msgid "Become an Official Ambassador of Exrates Exchange!"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:27
+msgid "Apply form"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:30
+msgid "View demo"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:45
+#, python-format
+msgid "Special reward system for advisors: <br>get from 5%% to 15%%"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:53
+msgid "Your <span>personal page</span> <br>on Exchange website"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:61
+msgid "Attend conferences and events as <br>a part of Exrates team"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:69
+msgid "Get exclusive <br>analytical market reports"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:94
+msgid "An opportunity to become a <br>part of international community"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:113
+msgid "What is Exrates?"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:118
+msgid "Trading volume for 24h"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:126
+msgid "Trading pairs"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:134
+msgid "Active traders"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:144
+msgid "What is Exrates for traders?"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:168
+msgid "Singaporean bank with the same license as PayPal & Apple Pay."
+msgstr ""
+
+#: templates/adviser/become-advisor.html:181
+#: templates/main/client-center.html:156 templates/main/fiat.html:74
+#, python-format
+msgid "0%% Transfer Fee"
+msgstr ""
+
+#: templates/adviser/become-advisor.html:184
+#: templates/main/client-center.html:159 templates/main/fiat.html:77
+#, python-format
+msgid "0%% transfer fee between personal and trading account on Exrates"
+msgstr ""
+
+#: templates/basic/_footer.html:21 templates/basic/_footer.html:36
+#: templates/basic/_footer.html:51
+msgid "Followers"
+msgstr ""
+
+#: templates/basic/_footer.html:58
+msgid "Terms & conditions"
+msgstr ""
+
+#: templates/basic/_footer.html:61 templates/main/about-us.html:34
+#: templates/main/client-center.html:36 templates/main/privacy-policy.html:17
+#: templates/main/privacy-policy.html:38 templates/main/support-center.html:35
+#: templates/main/terms-of-use.html:36
+msgid "Privacy policy"
+msgstr ""
+
+#: templates/basic/_footer.html:69
+msgid "Fees"
+msgstr ""
+
+#: templates/basic/_footer.html:83
+msgid "List IEO"
+msgstr ""
+
+#: templates/basic/_footer.html:86 templates/main/about-us.html:61
+#: templates/main/client-center.html:74 templates/main/privacy-policy.html:74
+#: templates/main/support-center.html:62 templates/main/terms-of-use.html:69
+msgid "Become Ambassador"
+msgstr ""
+
+#: templates/basic/_footer.html:94
+msgid "Official European Union License"
+msgstr ""
+
+#: templates/basic/_footer.html:95
+msgid ""
+"DexTechnologies OÜ is registered in Estonia and operates under official "
+"license. Company ID"
+msgstr ""
+
+#: templates/basic/_footer.html:102
+msgid ""
+"EXRATES LTD trade marks belong to their corresponding owners. All rights are "
+"reserved"
+msgstr ""
+
+#: templates/basic/_header.html:56 templates/main/about-us.html:31
+#: templates/main/client-center.html:33 templates/main/privacy-policy.html:35
+#: templates/main/support-center.html:32 templates/main/terms-of-use.html:33
+msgid "About us"
+msgstr ""
+
+#: templates/basic/_header.html:61
+msgid ""
+"Apply to\n"
+"                                list"
+msgstr ""
+
+#: templates/basic/_header.html:87 templates/basic/_header.html:303
+msgid "Community"
+msgstr ""
+
+#: templates/basic/_header.html:93
+msgid ""
+"Community\n"
+"                                                    World"
+msgstr ""
+
+#: templates/basic/_header.html:100
+msgid ""
+"Community\n"
+"                                                    China"
+msgstr ""
+
+#: templates/basic/_header.html:107
+msgid ""
+"Community\n"
+"                                                    Indonesia"
+msgstr ""
+
+#: templates/basic/_header.html:114
+msgid ""
+"Community\n"
+"                                                    Russia"
+msgstr ""
+
+#: templates/basic/_header.html:121
+msgid ""
+"Community\n"
+"                                                    Korea"
+msgstr ""
+
+#: templates/basic/_header.html:130 templates/basic/_header.html:320
+msgid "News"
+msgstr ""
+
+#: templates/basic/_header.html:136
+msgid "Login"
+msgstr ""
+
+#: templates/basic/_header.html:140
+msgid ""
+"\n"
+"                            Register"
+msgstr ""
+
+#: templates/basic/_header.html:219
+msgid "Account"
+msgstr ""
+
+#: templates/basic/_header.html:224
+msgid ""
+"\n"
+"                                Login"
+msgstr ""
+
+#: templates/basic/_header.html:227
+msgid ""
+"\n"
+"                                Register"
+msgstr ""
+
+#: templates/basic/_header.html:285
+msgid ""
+"\n"
+"                            Apply to list"
+msgstr ""
+
+#: templates/basic/_header.html:294
+msgid ""
+"\n"
+"                            Fiat"
+msgstr ""
+
+#: templates/basic/_header.html:307
+msgid "Community World"
+msgstr ""
+
+#: templates/basic/_header.html:309
+msgid "Community China"
+msgstr ""
+
+#: templates/basic/_header.html:311
+msgid "Community Indonesia"
+msgstr ""
+
+#: templates/basic/_header.html:313
+msgid "Community Russia"
+msgstr ""
+
+#: templates/basic/_header.html:315
+msgid "Community Korea"
+msgstr ""
+
+#: templates/main/about-us.html:15
+msgid "About Us "
+msgstr ""
+
+#: templates/main/about-us.html:35 templates/main/client-center.html:37
+#: templates/main/privacy-policy.html:39 templates/main/support-center.html:36
+#: templates/main/terms-of-use.html:17 templates/main/terms-of-use.html:37
+msgid "Terms of use"
+msgstr ""
+
+#: templates/main/about-us.html:55 templates/main/client-center.html:66
+#: templates/main/privacy-policy.html:68 templates/main/support-center.html:56
+#: templates/main/terms-of-use.html:59
+msgid "Start IEO"
+msgstr ""
+
+#: templates/main/about-us.html:64 templates/main/client-center.html:77
+#: templates/main/privacy-policy.html:77 templates/main/support-center.html:65
+#: templates/main/terms-of-use.html:74
+msgid "List your Coin"
+msgstr ""
+
+#: templates/main/about-us.html:69
+msgid ""
+"Exrates is an actively growing cryptocurrency exchange, founded in 2016. "
+"<br> At the moment more than 600 trading pairs are available on Exrates with "
+"a total trading volume of $160 million per day. <br>\n"
+"                            <br> Our aim is to make trading accessible for "
+"everyone and provide all the tools needed."
+msgstr ""
+
+#: templates/main/about-us.html:72
+msgid "WHY EXRATES?"
+msgstr ""
+
+#: templates/main/about-us.html:82
+msgid "High Performance"
+msgstr ""
+
+#: templates/main/about-us.html:83
+msgid ""
+"The main distinguishing feature of Exrates is a processing speed of up to "
+"10,000 trades every second and 1,000,000 TCP connections. "
+msgstr ""
+
+#: templates/main/about-us.html:91
+msgid "24/7 Support"
+msgstr ""
+
+#: templates/main/about-us.html:92
+msgid ""
+"Our support team is always online and ready to help you! You can contact our "
+"support team through the chatbox in the right corner on the bottom of the "
+"website. "
+msgstr ""
+
+#: templates/main/about-us.html:100
+msgid "Advanced Interface"
+msgstr ""
+
+#: templates/main/about-us.html:101
+msgid ""
+"We use the Single Page Application The components of the website are "
+"downloaded once per page. Additional content is loaded when it is needed. "
+msgstr ""
+
+#: templates/main/about-us.html:109
+msgid "Strong Safety"
+msgstr ""
+
+#: templates/main/about-us.html:110
+#, python-format
+msgid ""
+"More than 95%% of the currencies are stored on cold wallets. WAF (Web "
+"Application Firewall) a protective screen of a Web application that detects "
+"and blocks hacker attacks. "
+msgstr ""
+
+#: templates/main/about-us.html:118
+msgid "Multicurrency"
+msgstr ""
+
+#: templates/main/about-us.html:119
+msgid ""
+"Exrates provides an opportunity to trade not only Top-100 coins, but also "
+"lots of perspective new altcoins as well as fiat currencies. In total more "
+"than 600 trading pairs are now available."
+msgstr ""
+
+#: templates/main/about-us.html:126
+msgid "Apply for Listing or IEO"
+msgstr ""
+
+#: templates/main/about-us.html:130 templates/main/form-listing.html:26
+#: templates/main/form-listing.html:30
+msgid "Apply to conduct an IEO"
+msgstr ""
+
+#: templates/main/about-us.html:132
+msgid "I need to conduct an IE"
+msgstr ""
+
+#: templates/main/about-us.html:135 templates/main/form-listing.html:35
+msgid "Apply for Listing"
+msgstr ""
+
+#: templates/main/about-us.html:168
+msgid "Get your custom offer"
+msgstr ""
+
+#: templates/main/client-center.html:15
+msgid "Sales Department"
+msgstr ""
+
+#: templates/main/client-center.html:83
+msgid "Contact of Sales Department:"
+msgstr ""
+
+#: templates/main/client-center.html:122
+msgid "Our Benefits:"
+msgstr ""
+
+#: templates/main/client-center.html:130
+msgid ""
+"We provide personal bank account with 3rd party payment option to 231\n"
+"                                        countries."
+msgstr ""
+
+#: templates/main/client-center.html:147
+msgid ""
+"For VIP clients we provide special conditions for fiat deposit and withdraw "
+"in 35\n"
+"                                        currencies."
+msgstr ""
+
+#: templates/main/fiat.html:17
+msgid "Meet fiat on Exrates in Q3!"
+msgstr ""
+
+#: templates/main/fiat.html:25
+#, python-format
+msgid "Open account for $20 and get 0%% commission"
+msgstr ""
+
+#: templates/main/fiat.html:28
+msgid "on outgoing payments in the Singapore Bank"
+msgstr ""
+
+#: templates/main/fiat.html:31
+msgid "Open an Account now"
+msgstr ""
+
+#: templates/main/fiat.html:37
+msgid "Benefits"
 msgstr ""
 
 #: templates/main/fiat.html:95
+msgid "How does ot work?"
+msgstr ""
+
+#: templates/main/fiat.html:106
 msgid "Open Exrates account"
 msgstr ""
 
-#: templates/main/fiat.html:98
+#: templates/main/fiat.html:109
 msgid "Still don’t have Exrates account?"
 msgstr ""
 
-#: templates/main/fiat.html:101
+#: templates/main/fiat.html:112
 msgid "Create account now "
 msgstr ""
 
-#: templates/main/fiat.html:112
+#: templates/main/fiat.html:123
 msgid "Provide basic personal <br>information."
 msgstr ""
 
-#: templates/main/fiat.html:120
+#: templates/main/fiat.html:131
 msgid "Get your personal FUG<br>account!"
 msgstr ""
 
-#: templates/main/fiat.html:128
+#: templates/main/fiat.html:139
 msgid ""
 "This is your personal account which you can use for instant fiat transfers "
 "to your Exrates trading account."
 msgstr ""
 
-#: templates/main/fiat.html:131
+#: templates/main/fiat.html:142
 msgid ""
 "A more detailed description of the conditions is available on our financial "
-"partner page - "
+"partner page"
+msgstr ""
+
+#: templates/main/form-listing.html:48
+msgid "Telegram"
+msgstr ""
+
+#: templates/main/form-listing.html:53
+msgid "Email"
+msgstr ""
+
+#: templates/main/form-listing.html:118
+msgid "by CoinMarketCap"
+msgstr ""
+
+#: templates/main/form-listing.html:126
+msgid "Ranked by CoinGecko"
+msgstr ""
+
+#: templates/main/form-listing.html:132
+msgid "Supporting all types of coins"
+msgstr ""
+
+#: templates/main/form-listing.html:133
+msgid "Online Support"
+msgstr ""
+
+#: templates/main/form-listing.html:134
+msgid "Daily trading volumes"
+msgstr ""
+
+#: templates/main/form-listing.html:135
+msgid "active traders"
+msgstr ""
+
+#: templates/main/form-listing.html:136
+msgid "for IEO"
+msgstr ""
+
+#: templates/main/form-listing.html:137
+msgid "NEW"
+msgstr ""
+
+#: templates/main/form-listing.html:138
+msgid " Fiat currencies"
+msgstr ""
+
+#: templates/main/form-listing.html:139
+msgid " "
+msgstr ""
+
+#: templates/main/form-listing.html:139
+msgid "Trading API for AlgoTraders"
+msgstr ""
+
+#: templates/main/privacy-policy.html:86
+msgid "General"
+msgstr ""
+
+#: templates/main/privacy-policy.html:89
+msgid ""
+"DexTechnologies OÜ and its affiliates (hereinafter, 'DexTechnologies OÜ', "
+"'DexTechnologies', 'we', 'us' or 'our') are committed to protecting and "
+"respecting your privacy. This Privacy Policy (together with our Terms of "
+"Use) governs our collection, processing and use of your Personal "
+"Information. We define 'Personal Information' as information which "
+"identifies you personally, e.g. your name, address, email address, trades "
+"etc."
+msgstr ""
+
+#: templates/main/privacy-policy.html:94
+msgid "Who is DexTechnologies?"
+msgstr ""
+
+#: templates/main/privacy-policy.html:97
+msgid ""
+"DexTechnologies OÜ is a company registered in the Republic of Estonia.\n"
+"Our registered office is at Tornimae tn 7, Kesklinna linnaosa, Tallin, Harju "
+"maakond, Estonia, 10145. Our website is https://exrates.me."
+msgstr ""
+
+#: templates/main/privacy-policy.html:103
+msgid "The types of Personal Information which we collect may include:"
+msgstr ""
+
+#: templates/main/privacy-policy.html:106
+msgid ""
+"We will process your Personal Information only for the purpose(s) of "
+"providing to you the service(s) that you ask us to provide you and to "
+"satisfy the legal obligations stemming from regulatory obligations that "
+"arise from providing you the service(s)"
+msgstr ""
+
+#: templates/main/privacy-policy.html:110
+msgid "We may use your Personal Information for the following purposes:"
+msgstr ""
+
+#: templates/main/privacy-policy.html:114
+msgid "IP Addresses"
+msgstr ""
+
+#: templates/main/privacy-policy.html:117
+msgid ""
+"We may collect information about your computer, including where available "
+"your IP address, operating system and browser type, for system "
+"administration and to report aggregate information to our advertisers. This "
+"is statistical data about our users' browsing actions and patterns and will "
+"not be used to identify any individual unless that same individual."
+msgstr ""
+
+#: templates/main/privacy-policy.html:122
+msgid "Cookie"
+msgstr ""
+
+#: templates/main/privacy-policy.html:125
+msgid ""
+"We use a browser feature known as a 'cookie', which assigns a unique "
+"identification to your computer. Cookies are typically stored on your "
+"computer's hard drive. Information collected from cookies is used by us to "
+"evaluate the effectiveness of our Site, analyze trends, and administer the "
+"Platform. The information collected from cookies allows us to determine such "
+"things as which parts of our Site are most visited and difficulties our "
+"visitors may experience in accessing our Site. With this knowledge, we can "
+"improve the quality of your experience on the Platform by recognizing and "
+"delivering more of the most desired features and information, as well as by "
+"resolving access difficulties. We also use cookies and/or a technology known "
+"as web bugs or clear gifs, which are typically stored in emails to help us "
+"confirm your receipt of, and response to, our emails and to provide you with "
+"a more personalized experience when using our Site. We use third party "
+"service provider(s), to assist us in better understanding the use of our "
+"Site. Our service provider(s) will place cookies on the hard drive of your "
+"computer and will receive information that we select that will educate us on "
+"such things as how visitors navigate around our site, what products are "
+"browsed, and general Transaction information. Our service provider(s) "
+"analyses this information and provides us with aggregate reports. The "
+"information and analysis provided by our service provider(s) will be used to "
+"assist us in better understanding our visitors' interests in our Site and "
+"how to better serve those interests. The information collected by our "
+"service provider(s) may be linked to and combined with information that we "
+"collect about you while you are using the Platform. Our service provider(s) "
+"is/are contractually restricted from using information they receive from our "
+"Site other than to assist us. By using our Site you are agreeing that we may "
+"use cookies for the purposes set out above. The company will keep records of "
+"all transfers of Personal Information to third parties and this information, "
+"where possible, can be provided to you."
+msgstr ""
+
+#: templates/main/privacy-policy.html:130
+msgid "Disclosure of Personal Information"
+msgstr ""
+
+#: templates/main/privacy-policy.html:133
+msgid ""
+"You have the right to access your Personal Information and to require the "
+"correction, updating and blocking of inaccurate and/or incorrect data by "
+"sending an email to us at email mentioned on the website (out email), you "
+"can do these actions in your account profile page yourself (if applicable). "
+"Upon your written request at our e-mail, we will inform you of the Personal "
+"Information relating to you that we hold and the use and general disclosure "
+"of your Personal Information. We will also give you a copy of the Personal "
+"Information we have retained. There may be a minimal charge for providing "
+"you additional copies of your Personal Information to cover administrative "
+"costs. You may also request the deletion or destruction of both the Account "
+"and Personal Information by sending an email to our email. DexTechnologies "
+"will action your request immediately, except, where this is not consistent "
+"with its legal and regulatory obligations.You may also ask us to transfer "
+"your Personal Information to another controller of your choice. To ensure "
+"the confidentiality, integrity and availability of your information to "
+"yourself, we may request you to confirm your identity by providing "
+"identification documentation and/or other methods prior to assisting you in "
+"exercising any of your rights. С–f you refuse to prove your identity, we may "
+"decline to take actions in respect of your data, save restricting "
+"processing, until we can ensure that such actions are the true wish of the "
+"data subject. In the carrying out of our services we may use automated "
+"processing and profiling to reduce the risks of fraud, money laundering and "
+"abuse of our services. Through this automated processing, we carry out an "
+"analysis of your identification, transactional and behavioral patterns. We "
+"may not able to provide you with some or all our services if you do not wish "
+"this automated processing to be carried out. If you feel that this "
+"processing might be detrimental to you, we can provide you with further "
+"information about this automated processing by contacting us on our email."
+msgstr ""
+
+#: templates/main/privacy-policy.html:138
+msgid "Security"
+msgstr ""
+
+#: templates/main/privacy-policy.html:141
+msgid ""
+"We have implemented technical and organizational security measures to ensure "
+"the confidentiality of your Personal Information and to protect your "
+"Personal Information from loss, misuse, alteration or destruction. Only "
+"authorized personnel have access to your Personal Information, and these "
+"personnel are required to treat the information as confidential. Where you "
+"have consented to, or we are obliged to pass on Personal Information to "
+"third parties to provide you with a requested service or in the carrying out "
+"of a regulatory or legal obligation, we will request that the same levels of "
+"technical and organizational security measures be applied through "
+"contractual arrangements, where possible. Technical and organizational "
+"security measures in place will, from time to time, be reviewed in line with "
+"legal and technical developments. С–n the event of a personal data breach or "
+"the failure of the measures of protection of such information we will "
+"immediately notify you without undue delay."
+msgstr ""
+
+#: templates/main/privacy-policy.html:146
+msgid "Links"
+msgstr ""
+
+#: templates/main/privacy-policy.html:149
+msgid ""
+"Here may be links from our Site to other sites and resources provided by "
+"third parties. This Privacy Policy applies only to our Site. Accessing those "
+"third-party sites or sources requires you to leave our Site. We do not "
+"control those third party sites or any of the content contained therein and "
+"you agree that we are in no way responsible or liable for any of those third "
+"party sites, including, without limitation, their content, policies, "
+"failures, promotions, products, services or actions and/or any damages, "
+"losses, failures or problems caused by, related to or arising from those "
+"sites. We encourage you to review all policies, rules, terms and "
+"regulations, including the privacy policies, of each site that you visit."
+msgstr ""
+
+#: templates/main/privacy-policy.html:154
+msgid "Retention of Personal Information"
+msgstr ""
+
+#: templates/main/privacy-policy.html:157
+msgid ""
+"Your information is held within our servers. Access to this information is "
+"provided to employees of DexTechnologies whose office may be inside and/or "
+"outside of the European Union all our employees adhere to the principles of "
+"data security and processes as those within the European Union. We will hold "
+"your Personal Information only for as long as it is necessary for the "
+"purposes described in this Privacy Policy and our own legal and regulatory "
+"requirements. С–n accordance with record keeping activities for Anti-Money "
+"Laundering, Tax and Company legal obligations, we will retain Accounts and "
+"Personal Information for, at least, a period of ten years after a user "
+"closes his account with us. Data stored for regulatory purposes only will be "
+"protected from unnecessary processing and will be held only for the purpose "
+"of being able to provide information or access to relevant authorities."
+msgstr ""
+
+#: templates/main/privacy-policy.html:162
+msgid "Disposal of Personal Information"
+msgstr ""
+
+#: templates/main/privacy-policy.html:165
+msgid ""
+"Once we do not have any obligation to providing you with a service you "
+"requested, nor an obligation to hold Personal Information for regulatory or "
+"legal purpose, we will anonymize or dispose of your Personal Information in "
+"line with acceptable industry and security standards so that this cannot be "
+"subsequently retrieved and associated to you.Where we cannot directly remove "
+"such records, such as in archived backups, we will retain a log of which "
+"Personal Information should be removed if ever the backup data is restored."
+msgstr ""
+
+#: templates/main/privacy-policy.html:170
+msgid "Marketing"
+msgstr ""
+
+#: templates/main/privacy-policy.html:173
+msgid ""
+"We will ask you for your consent on registration or post-registration, by "
+"providing you the ability to check marketing preferences check boxes located "
+"within your account profile page to allow us to contact you or use your "
+"Personal Information for marketing purposes. You have the right to retract "
+"the consent for us to process your Personal Information for marketing "
+"purposes. You can exercise your right to prevent such processing by "
+"unchecking marketing preferences check boxes on your account profile or by "
+"contacting us at any time on our email."
+msgstr ""
+
+#: templates/main/privacy-policy.html:178
+msgid "Our Data Protection Officer"
+msgstr ""
+
+#: templates/main/privacy-policy.html:181
+msgid ""
+"Our Data Protection Officer is the person in charge of ensuring our company "
+"adheres to this privacy policy. This person is also the main contact for our "
+"Data Protection Supervisory Authority. The Data Protection Officer may be "
+"contacted on separate email: bd@exrates.me."
+msgstr ""
+
+#: templates/main/privacy-policy.html:186
+msgid "Data Protection Supervisory Authority"
+msgstr ""
+
+#: templates/main/privacy-policy.html:189
+msgid ""
+"You may contact an appropriate Data Protection Supervisory Authority if you "
+"wish to discuss with them any instance where you feel we may not be adhering "
+"to the terms within this Privacy Policy or to raise a complaint."
+msgstr ""
+
+#: templates/main/privacy-policy.html:194
+msgid "Changes"
+msgstr ""
+
+#: templates/main/privacy-policy.html:197
+msgid ""
+"Our Site policies, content, information, promotions, disclosures, "
+"disclaimers and features may be revised, modified, updated, and/or "
+"supplemented at any time and without prior notice at the sole and absolute "
+"discretion of DexTechnologies. If we change this Privacy Policy, will take "
+"steps to notify all users by a notice on our Site and will post the amended "
+"Privacy Policy on the Site. If we consider that your rights may be affected "
+"by any such changes, we will request you to confirm your consideration and "
+"acceptance prior to continue our relationship with you."
+msgstr ""
+
+#: templates/main/privacy-policy.html:202
+msgid "Fraud, Phishing and Email scams disclaimer"
+msgstr ""
+
+#: templates/main/privacy-policy.html:205
+msgid ""
+"Please be notified that DexTechnologies is not in any partnership with "
+"entities who represent themselves as customer support agents, providing "
+"customer support services via phone and/or social media and promise to help "
+"solve your issues for money. Remember - customer support is provided only by "
+"the DexTechnologies website and is always provided free of charge."
+msgstr ""
+
+#: templates/main/privacy-policy.html:210
+msgid "Contact Us"
+msgstr ""
+
+#: templates/main/privacy-policy.html:213
+msgid ""
+"If you have any questions, comments, or concerns not specifically regarding "
+"our Privacy Policy and/or practices as it or they relate to the Platform, "
+"please contact us at our email address."
+msgstr ""
+
+#: templates/main/support-center.html:16
+msgid "Support Center"
+msgstr ""
+
+#: templates/main/support-center.html:71
+msgid "submit a request "
+msgstr ""
+
+#: templates/main/support-center.html:77
+msgid "Choose the topic of your request"
+msgstr ""
+
+#: templates/main/support-center.html:93
+msgid "Enter email"
+msgstr ""
+
+#: templates/main/support-center.html:100
+msgid "Your Message"
+msgstr ""
+
+#: templates/main/support-center.html:105
+msgid "Please, describe your request. Our Support Team will contact you ASAP."
+msgstr ""
+
+#: templates/main/support-center.html:112
+msgid "Add file"
+msgstr ""
+
+#: templates/main/support-center.html:123
+msgid "top-10 questions"
+msgstr ""
+
+#: templates/main/support-center.html:126
+msgid "How to register on Exrates?"
+msgstr ""
+
+#: templates/main/support-center.html:127
+msgid "How long does withdrawal take?"
+msgstr ""
+
+#: templates/main/support-center.html:128
+msgid "My deposit wasn't approved"
+msgstr ""
+
+#: templates/main/support-center.html:129
+msgid "Where can I check the Fees?"
+msgstr ""
+
+#: templates/main/support-center.html:130
+msgid "I haven't received a PIN-code"
+msgstr ""
+
+#: templates/main/support-center.html:131
+msgid "How to create an order?"
+msgstr ""
+
+#: templates/main/support-center.html:132
+msgid "How to pass verification?"
+msgstr ""
+
+#: templates/main/support-center.html:133
+msgid "Where can I get your API?"
+msgstr ""
+
+#: templates/main/support-center.html:134
+msgid "How to get listed?"
+msgstr ""
+
+#: templates/main/support-center.html:135
+msgid "How to contact you for partnership and cooperation?"
+msgstr ""
+
+#: templates/main/terms-of-use.html:81
+msgid "I. COMMON PROVISIONS"
+msgstr ""
+
+#: templates/main/terms-of-use.html:86
+msgid ""
+" These Terms of Use contain an electronic agreement between you (hereinafter "
+"the “User”) and DexTechnologies OÜ, a company registered in the Republic of "
+"Estonia, (hereinafter the “DexTechnologies”) regulating the terms and "
+"conditions of the User's use of this website and all services, products and "
+"content provided by DexTechnologies OÜ."
+msgstr ""
+
+#: templates/main/terms-of-use.html:90
+msgid ""
+"These Terms of Use contain important provisions, which the User must "
+"consider carefully and understand when choosing whether to visit the Site "
+"and use the services, products and content of DexTechnologies OÜ. Please "
+"read these Terms of Use carefully before agreeing to them."
+msgstr ""
+
+#: templates/main/terms-of-use.html:92
+msgid ""
+"References in these Terms of Use to 'DexTechnologies OÜ', 'we', 'our' or "
+"'us', are to the company DexTechnologies OÜ, including but not limited to, "
+"its employees, directors, officers, agents or other related parties, third "
+"parties, whose content is offered on this website and/or in DexTechnologies "
+"Software, depending on the context, and references to “User”, 'you' or "
+"'your' are to the person with whom DexTechnologiesOÜ enters into the "
+"electronic agreement, unless otherwise provided herein."
+msgstr ""
+
+#: templates/main/terms-of-use.html:95
+msgid ""
+"The User is solely responsible for understanding and complying with any and "
+"all laws, rules and regulations of his/her specific jurisdiction that may be "
+"applicable to the User in connection with the use of any and all services, "
+"products and content of DexTechnologies OÜ."
+msgstr ""
+
+#: templates/main/terms-of-use.html:97
+msgid ""
+"By signing up to use an account through DexTechnologies OÜ or any of our "
+"associated websites, APIs, or mobile applications(collectively the "
+"‘DexTechnologies Software') and/or by using DexTechnologies Software, you "
+"agree that you have read, understood, and accept all of the terms and "
+"conditions contained in these Terms of Use, as well as our Privacy Policy "
+"and our anti money laundering policies and procedures. The User has to read "
+"and to understand the entire Terms of Use carefully before each using the "
+"Site and/or any of the Services provided by DexTechnologies OÜ."
+msgstr ""
+
+#: templates/main/terms-of-use.html:99
+msgid ""
+"IIF THE USER DOES NOT ACCEPT AND/OR UNDERSTANDS THESE TERMS OF USE, THE USER "
+"SHALL NOT ACCESS THIS SITE AND SHALL NOT USE ANY OF DexTechnologies "
+"SOFTWARE, SERVICES, PRODUCTS AND CONTENT."
+msgstr ""
+
+#: templates/main/terms-of-use.html:101
+msgid ""
+"You should be aware that the risk of loss in trading or holding Digital "
+"Currencies can be high. Digital currency services are not currently "
+"regulated in most countries (by financial authorities or any other "
+"regulator). You should therefore carefully consider whether trading or "
+"holding Digital currencies is suitable for you in light of your financial "
+"condition and possible risks."
+msgstr ""
+
+#: templates/main/terms-of-use.html:106
+msgid "II. DEFINITIONS"
+msgstr ""
+
+#: templates/main/terms-of-use.html:109
+msgid ""
+"Terms used in these Terms of Use shall be interpreted in accordance with the "
+"definitions provided below:"
+msgstr ""
+
+#: templates/main/terms-of-use.html:110
+msgid ""
+"Account: means an account registered by the User on the Platform and/or on "
+"the DexTechnologies Software. \"Base Currency\" means the currency pair's "
+"first currency."
+msgstr ""
+
+#: templates/main/terms-of-use.html:111
+msgid ""
+"Buyer: means the User who makes an Order to buy Cryptocurrencies through the "
+"Platform (DexTechnologies Software) and/or the User whose Order is accepted "
+"by the Seller depending on the context."
+msgstr ""
+
+#: templates/main/terms-of-use.html:112
+msgid ""
+"Commission: means a fee charged by or on behalf of any third party (e.g. "
+"banks, non-bank financial institutions, payment service providers, etc)."
+msgstr ""
+
+#: templates/main/terms-of-use.html:113
+msgid ""
+"Cryptocurrency: means peer-to-peer decentralized digital representation of "
+"value (bitcoins, ethers, etc.)."
+msgstr ""
+
+#: templates/main/terms-of-use.html:114
+msgid ""
+"Deposit: means a Transaction involving transfer of Funds to the Account."
+msgstr ""
+
+#: templates/main/terms-of-use.html:115
+msgid ""
+"External Wallet: means a Cryptocurrency or Fiat wallet that is not part of "
+"the DexTechnologies OÜ platform (DexTechnologies software) but which can be "
+"indicated on the DexTechnologies OÜ platform (DexTechnologies software)."
+msgstr ""
+
+#: templates/main/terms-of-use.html:116
+msgid ""
+"Fiat currency: means government-issued currency, which is regulated in its "
+"country of issuance through government regulation or law."
+msgstr ""
+
+#: templates/main/terms-of-use.html:117
+msgid ""
+"Fiat currency storage service: means DexTechnologies OÜ, which includes "
+"storing of balances in Fiat currency on External Wallets of Users serving by "
+"the Holder."
+msgstr ""
+
+#: templates/main/terms-of-use.html:118
+msgid ""
+"Order: means the User's offer on theDexTechnologies OÜ platform "
+"(DexTechnologies Software) to buy or sell Cryptocurrency on certain "
+"conditions."
+msgstr ""
+
+#: templates/main/terms-of-use.html:119
+msgid ""
+"Closing a position: Closing a position means either buying or selling of "
+"Cryptocurrency, which essentially results in reduction of client's open "
+"position. Closing a position means bringing a transaction to an end, "
+"incurring any related profits or losses as a result."
+msgstr ""
+
+#: templates/main/terms-of-use.html:120
+msgid ""
+"Seller: means the User who submits an Order to sell Cryptocurrencies through "
+"the Platform (DexTechnologies Software) and/or the User whose Order is "
+"accepted by the Buyer depending on the context."
+msgstr ""
+
+#: templates/main/terms-of-use.html:121
+msgid "Services: means all and any service provided by DexTechnologies OÜ."
+msgstr ""
+
+#: templates/main/terms-of-use.html:122
+msgid ""
+"Website or Site: means DexTechnologies OÜ website at https://exrates.me."
+msgstr ""
+
+#: templates/main/terms-of-use.html:123
+msgid ""
+"Storage service: means DexTechnologies OÜ, which includes storing of "
+"balances (in Fiat currency and/or in Cryptocurrency) from the abandoned "
+"Accounts, no longer supported cryptocurrencies. <br>Transaction fee: means a "
+"fee which is payable to DexTechnologies OÜ for each completed Transaction."
+msgstr ""
+
+#: templates/main/terms-of-use.html:124
+msgid ""
+"Transaction Price: means the total price paid by the User in respect to each "
+"Transaction performed via the Platform (DexTechnologies Software)."
+msgstr ""
+
+#: templates/main/terms-of-use.html:125
+msgid ""
+"Transaction: means (i) transfer of Cryptocurrencies or Fiat currencies by "
+"the User to his/her Account (\"Deposit Transaction\"), including transfer of "
+"Fiat currencies to External Wallet that is not part of the DexTechnologies "
+"OÜ platform (DexTechnologies Software) but which is indicated on the "
+"DexTechnologies OÜ platform (DexTechnologies software); (ii) transfer of "
+"Cryptocurrencies, or Fiat currencies among the Users (\"Trading Transaction"
+"\"), including transfer of Fiat currencies to External Wallet that is not "
+"part of the DexTechnologies OÜ platform (DexTechnologies Software) but which "
+"is indicated on the DexTechnologies OÜ platform (DexTechnologies software), "
+"(iii) withdrawal of Cryptocurrencies or Fiat currencies from his/her Account "
+"(\"Withdrawal Transaction\")."
+msgstr ""
+
+#: templates/main/terms-of-use.html:126
+msgid ""
+"User: means a person or an entity that uses the Services, agrees to follow "
+"the Terms of Use and is a holder of an Account."
+msgstr ""
+
+#: templates/main/terms-of-use.html:127
+msgid ""
+"Voucher: means an alphanumeric redeemable code, which can be used to "
+"transfer Cryptocurrency or between Accounts."
+msgstr ""
+
+#: templates/main/terms-of-use.html:128
+msgid ""
+"Withdrawal: means a Transaction involving a transfer of Funds from the "
+"User's Account to his/her bank account or to an account opened in any other "
+"institution. Where the context so admits words denoting the singular shall "
+"include the plural and vice versa."
+msgstr ""
+
+#: templates/main/terms-of-use.html:133
+msgid "III. OUR SERVICES"
+msgstr ""
+
+#: templates/main/terms-of-use.html:137
+msgid ""
+"The Services allow all Users of the Platform (with limitations mentioned in "
+"these Terms of Use) to trade Cryptocurrencies with other Users."
+msgstr ""
+
+#: templates/main/terms-of-use.html:139
+msgid ""
+"Depending on the User’s place of residence (and/or other legal facts), the "
+"User may not be able to use all the functions of the Site. It is the User’s "
+"responsibility to follow those rules and laws in his/her place of residence "
+"and/or place from which the User accesses this Site. The User must "
+"understand that technical possibility to use the appropriate Services on the "
+"Platform (DexTechnologies OÜ Software) doesn’t mean that such the using is "
+"legal for him/her. The User is solely responsible for understanding and "
+"complying with any and all laws, rules and regulations of his/her specific "
+"jurisdiction that may be applicable to the User in connection with the use "
+"of any and all services, products and content of DexTechnologies OÜ."
+msgstr ""
+
+#: templates/main/terms-of-use.html:141
+msgid ""
+"The User acknowledges and agrees that, when completing Trading Transactions, "
+"he/she is trading with other Users, and that DexTechnologies OÜ acts only as "
+"a provider of technical services (the Platform and/or DexTechnologies OÜ "
+"Software) in such Transactions, not as the counterparty to any trade."
+msgstr ""
+
+#: templates/main/terms-of-use.html:146
+msgid "IV. OUR RIGHTS, RESPONSIBILITIES AND WARRANTIES"
+msgstr ""
+
+#: templates/main/terms-of-use.html:150
+msgid ""
+"DexTechnologies OÜ undertakes to provide the Services with the appropriate "
+"effort, due care and in accordance with these Terms of Use. "
+"DexTechnologies’s responsibility shall be limited to using reasonable "
+"technical efforts to ensure the receipt of the cryptocurrency transferred. "
+"When initiating cryptocurrency transactions to a user who is not the "
+"DexTechnologies OÜ User, DexTechnologies OÜ responsibility shall be further "
+"limited to ensuring the transfer of the necessary technical data to the "
+"cryptocurrency network."
+msgstr ""
+
+#: templates/main/terms-of-use.html:152
+msgid ""
+"To the extent permitted by law, DexTechnologies OÜ is not responsible for "
+"any damages, loss of profit, loss of revenue, loss of business, loss of "
+"opportunity, loss of data, indirect or consequential loss unless the loss "
+"suffered is caused by a breach of the Terms of Use by DexTechnologies OÜ."
+msgstr ""
+
+#: templates/main/terms-of-use.html:154
+msgid ""
+"DexTechnologies OÜ has the right to suspend the User’s Account and block all "
+"and/or part of cryptocurrency contained therein in case of non-fulfillment "
+"or unduly fulfillment of the Terms of Use by the User."
+msgstr ""
+
+#: templates/main/terms-of-use.html:157
+msgid ""
+"DexTechnologies OÜ is not responsible: <br>- for the delay in the processing "
+"of payments made by the fault of any third parties, operators of such "
+"transactions. <br>- for any malfunction, breakdown, delay or interruption of "
+"the Internet connection or any reason why our site is unavailable at any "
+"given time."
+msgstr ""
+
+#: templates/main/terms-of-use.html:159
+msgid ""
+"In the case of fraud, DexTechnologies OÜ undertakes to report all the "
+"necessary information, including names, addresses and all other requested "
+"information, to the relevant authorities dealing with fraud and breaches of "
+"the law. The Users recognize that their account may be frozen at any time at "
+"the request of any competent authority investigating a fraud or any other "
+"illegal activity."
+msgstr ""
+
+#: templates/main/terms-of-use.html:161
+msgid ""
+"Nothing in these terms excludes or limits the responsibility of "
+"DexTechnologies OÜ for fraud, death or personal injury caused by their "
+"negligence, breach of the terms implied by operation of the law or any other "
+"liability which may not be limited or excluded by law."
+msgstr ""
+
+#: templates/main/terms-of-use.html:163
+msgid ""
+"All buy and sell orders made on the Platform, will be managed in an "
+"anonymous manner so that Buyers and Sellers are not acquainted with each "
+"other. The Transaction Price is calculated on the basis of actual matched "
+"orders made by the Buyers and Sellers participating in the bidding process "
+"on the Platform combined with the applicable Transaction fees."
+msgstr ""
+
+#: templates/main/terms-of-use.html:165
+msgid ""
+" DexTechnologies OÜ represents and warrants that once the orders to buy or "
+"sell Cryptocurrencies match, such orders may not be cancelled or reversed. "
+"It holds all Cryptocurrencies acquired by each User in his/her Account and "
+"on the respective User's behalf. DexTechnologies OÜ reserves the right to "
+"cancel orders/trades obviously made by mistake (in particular if the price "
+"of the order/trade due to mistake is clearly very different from the market "
+"price, orders/trades obviously made due to lags of User’s equipment etc.) "
+"The cancelation can only be made based on request of interested User and "
+"only if an appropriate technical possibility exists in case if mistake made "
+"is absolutely obvious. This right couldn’t be considered as an obligation "
+"and/or a guaranty of DexTechnologies OÜ"
+msgstr ""
+
+#: templates/main/terms-of-use.html:167
+msgid ""
+"DexTechnologies OÜ does not provide any financial, investment or legal "
+"advice in connection with the Services provided by DexTechnologies OÜ. "
+"DexTechnologies OÜ may provide information on the price, range, volatility "
+"of Cryptocurrencies and events that have affected the price of "
+"Cryptocurrencies and/or links to trading ideas of third parties (persons), "
+"but it should not be considered as an investment or financial advice and "
+"should not be construed as such. Any decision to buy or sell "
+"Cryptocurrencies is the User’s decision and DexTechnologies OÜ will not be "
+"liable for any loss suffered."
+msgstr ""
+
+#: templates/main/terms-of-use.html:172
+msgid "V. THE USER'S RIGHTS, RESPONSIBILITIES AND WARRANTIES"
+msgstr ""
+
+#: templates/main/terms-of-use.html:176
+msgid ""
+"The User has the right to enter and/or use the Site and the Services, as "
+"long as he/she agrees to and actually complies with the Terms of Use. By "
+"using the Site, the User agrees to accept and comply with the terms and "
+"conditions stated herein."
+msgstr ""
+
+#: templates/main/terms-of-use.html:178
+msgid ""
+" The User has to comply with any and all applicable laws and regulations "
+"related to the use of the Services."
+msgstr ""
+
+#: templates/main/terms-of-use.html:180
+msgid ""
+"The User has to monitor all and any changes on his/her Account. The User has "
+"to inform DexTechnologies OÜ immediately about any unusual, suspicious, not "
+"sanctioned, abnormal changes on his/her Account. In case of late informing "
+"or non-informing the User will be liable for the breach of the Terms of Use "
+"and DexTechnologies OÜ will have the right to take any further steps "
+"accordingly, including but not limited to report to the relevant state or "
+"national authorities."
+msgstr ""
+
+#: templates/main/terms-of-use.html:182
+msgid ""
+"The User agrees that, whenever the Transaction is made, the Platform sends "
+"and receives the cryptocurrencies to/from the Buyer’s and the Seller’s "
+"Accounts."
+msgstr ""
+
+#: templates/main/terms-of-use.html:183
+msgid ""
+"The User has to inform DexTechnologies OÜ immediately of any unauthorized "
+"use of his/her Account or password, or any other breach of security by email "
+"addressed to address, mentioned on the Site. Any User who violates the "
+"mentioned rules may be terminated, and thereafter held liable for any losses "
+"incurred by DexTechnologies OÜ or any user of the Site."
+msgstr ""
+
+#: templates/main/terms-of-use.html:185
+msgid ""
+"The User undertakes not to use the Service to perform criminal and/or not "
+"legal activity of any sort, including but not limited to, money laundering, "
+"illegal gambling operations, financing terrorist organizations, or malicious "
+"hacking."
+msgstr ""
+
+#: templates/main/terms-of-use.html:187
+msgid ""
+"The User is responsible for any and all damages caused, and all liability "
+"actions brought against DexTechnologies OÜ for infringement of any third-"
+"party rights or violation of any applicable laws. Nothing in the Terms of "
+"Use excludes or limits the liability of the User for fraud, penalties any "
+"other negative consequences, caused by their negligence, breach of the terms "
+"implied by operation of law or any other liability which may not be limited "
+"or excluded by law."
+msgstr ""
+
+#: templates/main/terms-of-use.html:189
+msgid ""
+"Users are solely responsible for determining whether any contemplated "
+"Transaction is appropriate for them based on their personal goals, financial "
+"status and risk willingness."
+msgstr ""
+
+#: templates/main/terms-of-use.html:191
+msgid ""
+"All added payment instruments to your Account, may it be a bank account, "
+"credit card, debit card, or others must be personalized and owned by the "
+"Account holder. Any attempt otherwise will (or can) be recognized as fraud."
+msgstr ""
+
+#: templates/main/terms-of-use.html:193
+msgid ""
+"By registering an Account, the User expressly represents and warrants that "
+"he/she: follows the rules and laws in his/her country of residence and/or "
+"country from which he /she accesses this Site and Services; has accepted "
+"these Terms of Use; is at least 18 years old and has the right to accept "
+"these Terms of Use and participate in transactions involving "
+"cryptocurrencies."
+msgstr ""
+
+#: templates/main/terms-of-use.html:195
+msgid ""
+"The User represents and warrants that he/she will only use the Platform to "
+"perform Transactions in accordance with the conditions set forth in these "
+"Terms and that they are duly authorized and have the capacity to enter into "
+"the Transactions on the Platform."
+msgstr ""
+
+#: templates/main/terms-of-use.html:197
+msgid ""
+"The User represents and warrants that both currencies deposited (indicated "
+"on the Platform basing the information from External wallet) to(on) the "
+"Account belong to the User and derived from legal sources."
+msgstr ""
+
+#: templates/main/terms-of-use.html:199
+msgid ""
+"The User represents and warrants that he/she will withdraw any "
+"cryptocurrency from his/her Account only to his/her wallets, otherwise "
+"DexTechnologies OÜ does not hold any liability for the consequences of such "
+"withdrawal. A mistake in requisite of the User's wallet while transaction "
+"may cause the loss of appropriate currencies without any responsibility and/"
+"or coverage from DexTechnologies OÜ."
+msgstr ""
+
+#: templates/main/terms-of-use.html:201
+msgid ""
+"The User represents and warrants that all Transactions being carried out do "
+"not violate the rights of any third party or applicable laws."
+msgstr ""
+
+#: templates/main/terms-of-use.html:203
+msgid ""
+"The User understands that his personal data may be shared due to legal "
+"obligations etc. It may be used according to our Privacy policy."
+msgstr ""
+
+#: templates/main/terms-of-use.html:205
+msgid ""
+"The User undertakes to pay all his/her taxes and duties, which can be "
+"resulted from the use of DexTechnologies OÜ Services and should be paid "
+"according to the User's state of residence regulations. DexTechnologies OÜ "
+"is not responsible for any violation made by the User due to his/her "
+"obligation to calculate and pay taxes and duties. The User has to refrain "
+"from transactions on the Platform related to tax offences and/or violations."
+msgstr ""
+
+#: templates/main/terms-of-use.html:207
+msgid ""
+"ATTENTION TO RESIDENTS OF UNITED STATES OF AMERICA OR ANY JURISDICTION OR "
+"COUNTRY WHERE INITIAL DISTRIBUTION OR SECONDARY TRADING OF CERTAIN TOKENS "
+"(TRADED ON THIS PLATFORM AND/OR ON THE DexTechnologies SOFTWARE) WOULD (I) "
+"BE CONTRARY TO ANY LAW OR REGULATION, OR (II) WHICH WOULD OBLIGE (WOULD "
+"SUBJECT) AN ISSUER AND/OR SELLER OF SUCH TOKENS (TRADED ON THIS PLATFORM AND/"
+"OR ON THE DexTechnologies SOFTWARE) AND/OR DexTechnologies OÜ AND/OR "
+"ENTITY(INCLUDING AFFILIATES) CREATING/MAINTAINING THIS WEBSITE TO ANY "
+"REGISTRATION,LICENSING OR OTHER AUTHORIZATION REQUIREMENT WITHIN SUCH "
+"JURISDICTION OR COUNTRY: <br>THE APPROPRIATE TOKENS, TRADED ON THIS PLATFORM "
+"AND/OR ON THE DexTechnologies SOFTWARE (IN PARTICULAR, TOKENS WHICH COULD BE "
+"CONSIDERED AS SECURITIES BY SEC) IS NOT INTENDED FOR PURCHASE AND/OR USE AND/"
+"OR DISTRIBUTION TO, OR USE BY,ANY PERSON OR ENTITY IN ANY JURISDICTION OR "
+"COUNTRY, WHERE SUCH PURCHASE AND/OR DISTRIBUTION AND/OR USE WOULD BE "
+"CONTRARY TO ANY LAW OR REGULATION,OR WHICH WOULD OBLIGE (WOULD SUBJECT) AN "
+"ISSUER AND/OR SELLER OF SUCH TOKENS (TRADED ON THIS PLATFORM AND/OR ON THE "
+"DexTechnologies SOFTWARE) AND/OR DexTechnologies OÜ AND/OR ENTITY (INCLUDING "
+"THEIR AFFILIATES)CREATING/MAINTAINING THIS WEBSITE TO ANY REGISTRATION, "
+"LICENSING OR OTHER AUTHORIZATION REQUIREMENT WITHIN SUCH JURISDICTION OR "
+"COUNTRY."
+msgstr ""
+
+#: templates/main/terms-of-use.html:212
+msgid "VI. INTELLECTUAL PROPERTY RIGHTS"
+msgstr ""
+
+#: templates/main/terms-of-use.html:216
+msgid ""
+"All content on this Site is the property of DexTechnologies OÜ and is "
+"protected by copyright, patent, trademark and any other applicable laws, "
+"unless otherwise specified hereby."
+msgstr ""
+
+#: templates/main/terms-of-use.html:218
+msgid ""
+"The trademarks, trade names, service marks and logos of DexTechnologies OÜ "
+"and others used on the Site (hereinafter the \"Trademarks\") are the "
+"property of DexTechnologies OÜ. The software, applications, text, images, "
+"graphics, data, prices, trades, charts, graphs, video and audio materials "
+"used on this Site belongs to DexTechnologies OÜ. The Trademarks and other "
+"content on the Site may not be copied, reproduced, modified, republished, "
+"uploaded, posted, transmitted, scraped, collected or distributed in any form "
+"or by any means, whether manual or automated. The use of any content from "
+"the Site on any other site or networked computer environment for any other "
+"purpose is strictly prohibited; any such unauthorized use may violate "
+"copyright, patent, trademark and any other applicable laws and could result "
+"in criminal or civil penalties."
+msgstr ""
+
+#: templates/main/terms-of-use.html:223
+msgid "VII. VERIFICATION"
+msgstr ""
+
+#: templates/main/terms-of-use.html:227
+msgid ""
+"Identification and verification procedures (also known as 'Know Your "
+"Customer' or 'KYC') are required for all the Transactions. If the User "
+"refuses to provide required documents and information under KYC, "
+"DexTechnologies OÜ reserves the right to immediately terminate the Services "
+"provision to the User."
+msgstr ""
+
+#: templates/main/terms-of-use.html:229
+msgid ""
+"The User undertakes to provide DexTechnologies OÜ with correct and relevant "
+"documents and personal information contained therein. In case the User "
+"provides counterfeit documents and false personal information, such behavior "
+"will be interpreted as a fraudulent activity."
+msgstr ""
+
+#: templates/main/terms-of-use.html:231
+msgid ""
+"The User hereby authorize DexTechnologies OÜ to, directly or indirectly "
+"(through third parties), make any inquiries we consider it necessary to "
+"check the relevance and accuracy of the information provided for "
+"verification purposes."
+msgstr ""
+
+#: templates/main/terms-of-use.html:236
+msgid "VIII. ACCOUNT MAINTENANCE"
+msgstr ""
+
+#: templates/main/terms-of-use.html:240
+msgid ""
+"The Site is for the User's personal and non-commercial use only. "
+"DexTechnologies OÜ is vigilant in maintaining the security of the Site and "
+"the Service. By registering with DexTechnologies OÜ, the User agrees to "
+"provide DexTechnologies OÜ with actual (up to date), accurate and complete "
+"personal information as prompted by the registration process and to keep "
+"such information updated."
+msgstr ""
+
+#: templates/main/terms-of-use.html:242
+msgid ""
+"The User is allowed to register only one Account on the Platform. Thus, any "
+"additional Account may be suspended."
+msgstr ""
+
+#: templates/main/terms-of-use.html:244
+msgid ""
+"The User agrees that he/she will not use any Account other than their own or "
+"access the Account of any other User at any time, or assist others in "
+"obtaining unauthorized access."
+msgstr ""
+
+#: templates/main/terms-of-use.html:246
+msgid ""
+"DexTechnologies OÜ reserves the right to recommend amount limits for the "
+"Account funding/withdrawal. DexTechnologies OÜ could recommend daily, "
+"monthly and per one-transaction amount limits but is not obliged to do it."
+msgstr ""
+
+#: templates/main/terms-of-use.html:248
+msgid ""
+"The User is responsible for maintaining the confidentiality of information "
+"on their Account, including, but not limited to their password, email, "
+"wallet address, wallet balance and of all activities including Transactions "
+"made via their Account. If there is any suspicious activity related to the "
+"User's Account, DexTechnologies OÜ may request additional information from "
+"the User, including authenticating documents and freeze the Account for the "
+"review time. The User is obligated to comply with these security requests or "
+"accept termination of their Account."
+msgstr ""
+
+#: templates/main/terms-of-use.html:250
+msgid ""
+"Creation or use of the Accounts without obtaining a prior permission from "
+"DexTechnologies OÜ will result in the immediate suspension of all respective "
+"Accounts, as well as all pending buy/sell orders. Any attempt to do so or to "
+"assist others (Users or other third parties), or distribution of "
+"instructions, software or tools for that purpose will result in termination "
+"of such Users' Accounts. Termination is not an exclusive remedy for such a "
+"violation and DexTechnologies OÜ may decide to take further action against "
+"the User."
+msgstr ""
+
+#: templates/main/terms-of-use.html:252
+msgid ""
+"In case if it has been more than six (6) months since the User signed in "
+"with his/her Account or made the Funds deposit, DexTechnologies OÜ has the "
+"right to qualify this Account as abandoned. In that case Storage fee will be "
+"applied to such Account with ten (10) days prior email notification to the "
+"User. DexTechnologies OÜ will charge the Storage fee set forth herein. "
+"Abandoned Accounts with zero balances may be deactivated."
+msgstr ""
+
+#: templates/main/terms-of-use.html:257
+msgid "IX. TRANSACTIONS"
+msgstr ""
+
+#: templates/main/terms-of-use.html:261
+msgid ""
+"The Platform allows the User to submit the Orders to buy or sell "
+"Cryptocurrencies."
+msgstr ""
+
+#: templates/main/terms-of-use.html:263
+msgid ""
+"The User recognizes that the Order should only be submitted after careful "
+"consideration and the ser understands and accepts the consequences of its "
+"execution. The User agrees that as soon as the Order is executed, such "
+"transaction is irreversible and may not be cancelled. Transactions will be "
+"executed instantly upon the matching of the Buyer's and the Seller's Orders "
+"without prior notice to the Seller and the Buyer and will be considered to "
+"have taken place at the execution date and time."
+msgstr ""
+
+#: templates/main/terms-of-use.html:265
+msgid ""
+"The User acknowledges and agrees that in case the destination tag is not "
+"specified, is incorrectly indicated(in particular XRP, XLM) or the reference "
+"number is incorrectly specified, the User may lose the deposit or at least "
+"the processing speed of such requests will be made with low priority."
+msgstr ""
+
+#: templates/main/terms-of-use.html:267
+msgid ""
+"Minimum and maximum order amount vary for each trading pair and can be seen "
+"on the Trade Page when placing an Order."
+msgstr ""
+
+#: templates/main/terms-of-use.html:269
+msgid ""
+"The User acknowledges and agrees that Deposit and Withdrawal Transaction may "
+"be delayed due to some verifications and checks (performed by "
+"DexTechnologies OÜ or appropriate third parties). Similarly, and due to the "
+"inherent nature of the cryptocurrency networks, the User acknowledges and "
+"agrees that depositing and withdrawing Cryptocurrencies into/from their "
+"Account may take some time."
+msgstr ""
+
+#: templates/main/terms-of-use.html:271
+msgid ""
+"Unverified users are not allowed to withdraw any Cryptocurrencies from their "
+"Account until the verification process has been completed."
+msgstr ""
+
+#: templates/main/terms-of-use.html:273
+msgid ""
+"The User can use Vouchers to transfer Cryptocurrencies between the Accounts "
+"(if applicable on the Platform). The Voucher should be redeemed before its "
+"expiration date set by DexTechnologies OÜ. DexTechnologies OÜ shall not be "
+"liable and shall not accept any liability, obligation or responsibility "
+"whatsoever for any loss or damage arising from the User's use of the "
+"Vouchers purchased from any third parties or acquired in any other way. To "
+"avoid any doubts, the User is solely responsible for ensuring that the "
+"Voucher they acquired is genuine and redeemable."
+msgstr ""
+
+#: templates/main/terms-of-use.html:275
+msgid ""
+"In case if the User discovers transaction activity, including but not "
+"limited to unknown deposits and withdrawals, on their Account that was not "
+"initiated by the User, the User shall immediately notify DexTechnologies OÜ "
+"of this fact and follow the instructions sent by DexTechnologies OÜ. "
+"Otherwise, DexTechnologies OÜ reserves the right to freeze the Account until "
+"the end of investigation."
+msgstr ""
+
+#: templates/main/terms-of-use.html:277
+msgid ""
+"DexTechnologies OÜ may be forced to cancel or recall already executed "
+"Withdrawal Transaction at the request of financial institutions, including "
+"but not limited to banks, which are involved in settlement of such "
+"Transactions. In such cases the User obliged to cooperate with "
+"DexTechnologies OÜ in order to discover the reasons for such request."
+msgstr ""
+
+#: templates/main/terms-of-use.html:279
+msgid ""
+"DexTechnologies OÜ reserves the right to set the minimal and/or maximal "
+"deposit amount for Cryptocurrencies hold by the User on the Platform. If the "
+"amount is less and/or higher than specified, the funds will not be credited "
+"to the User's Account."
+msgstr ""
+
+#: templates/main/terms-of-use.html:284
+msgid "X. TRANSACTION AND STORAGE FEE"
+msgstr ""
+
+#: templates/main/terms-of-use.html:288
+msgid ""
+"The User agrees to pay DexTechnologies OÜ the Transaction fee for each "
+"completed Transaction."
+msgstr ""
+
+#: templates/main/terms-of-use.html:290
+msgid ""
+"Prior to trading, the User must consider the Transaction fee rates published "
+"on the Fee Schedule page. However, DexTechnologies OÜ reserves the right to "
+"change the Transaction fee rates from time to time publishing updates on the "
+"Fee Schedule page."
+msgstr ""
+
+#: templates/main/terms-of-use.html:292
+msgid ""
+"The Transaction fee amount is automatically charged off in the currency "
+"indicated on the Platform after the relevant Transaction."
+msgstr ""
+
+#: templates/main/terms-of-use.html:294
+msgid ""
+"The minimal transaction fee equals to minimal currency amount. The "
+"Transaction fee is charged with a rounding in favor of the Platform. The "
+"rounding policy for cryptocurrencies varies depending on cryptocurrency."
+msgstr ""
+
+#: templates/main/terms-of-use.html:296
+msgid ""
+"For the purpose of the processes optimization, transactions on the Platform "
+"with regard to some items (including, but not limited to currencies, "
+"cryptocurrencies, etc.) may not be indicated at the User's Account and will "
+"appear as soon as a unit is whole in accordance with the rounding standards."
+msgstr ""
+
+#: templates/main/terms-of-use.html:298
+msgid ""
+"Minimal and maximal price, as well as minimal and maximal order amount vary "
+"for each trading pair and can be seen on the Trade Page when placing an "
+"order."
+msgstr ""
+
+#: templates/main/terms-of-use.html:300
+msgid ""
+"For specific type of orders the Transaction fee may differ from those "
+"published on the 'Fee Schedule' page. Transaction fee rate shall be "
+"disclosed before the order execution."
+msgstr ""
+
+#: templates/main/terms-of-use.html:302
+msgid ""
+"The Transaction fees, other charges, as well as the charge procedure can be "
+"changed/reviewed unilaterally by DexTechnologies OÜ from time to time and "
+"such changes shall become effective the moment they are posted on the Site."
+msgstr ""
+
+#: templates/main/terms-of-use.html:304
+msgid ""
+"The Storage fee may be charged by DexTechnologies OÜ for storing any "
+"cryptocurrency until assets are claimed back by the User or the Account goes "
+"to a zero balance. The Storage fee (if applicable) is set in the Fee "
+"Schedule page. The Storage fee is charged on a daily basis. DexTechnologies "
+"OÜ has the right to change the Storage fee unilaterally."
+msgstr ""
+
+#: templates/main/terms-of-use.html:309
+msgid "XI. ILLEGAL TRANSACTIONS"
+msgstr ""
+
+#: templates/main/terms-of-use.html:313
+msgid ""
+"DexTechnologies OÜ reserves the right to suspend or terminate your "
+"DexTechnologies OÜ Account at any time if we reasonably believe to be "
+"required to do so by law or in order to comply with recommendations issued "
+"by a relevant government authority or recognized body for the prevention of "
+"financial crime."
+msgstr ""
+
+#: templates/main/terms-of-use.html:315
+msgid ""
+"It is strictly forbidden to use the Account for any illegal purposes. "
+"DexTechnologies OÜ will report any suspicious activity to the relevant law "
+"enforcement. The User shall ensure that they do not use the Services for the "
+"transactions relating to: <br>- money laundering, terrorist financing, "
+"proliferation of weapons of mass destruction; human trafficking; <br>- any "
+"goods or services that are illegal or the promotion, offer or marketing of "
+"which is illegal or that are offered in connection with illegal, obscene or "
+"pornographic content, depict children or minors in sexual postures, depict "
+"means of propaganda or signs of unconstitutional organizations glorifying "
+"war or violating human dignity; <br>- any goods or services, promotion, "
+"offer or marketing of which would violate copyrights, industrial property "
+"rights or other rights of any person; <br>- archeological findings; <br>- "
+"drugs, narcotics or hallucinogens; <br>- weapons of any kind; <br>- illegal "
+"gambling services; <br>- Ponzi, pyramid or any other \"get rich quick\" "
+"schemes; <br>- goods that are subject to any trade embargo; media that is "
+"harmful to minors and violates laws and, in particular, the provision in "
+"<br>- respect of the protection of minors; <br>- body parts or human "
+"remains; <br>- protected animals or protected plants; <br>- weapons or "
+"explosive materials; <br>- or any other illegal goods, services or "
+"transactions."
+msgstr ""
+
+#: templates/main/terms-of-use.html:317
+msgid ""
+"User has the right to report fraud related to certain operation(s)/asset(s))/"
+"account(s) to the DexTechnologies's support exrates@exrates.me. If "
+"convincing evidence(s) of fraud is(are) provided, the appropriate "
+"operation(s)/asset(s))/account(s) is(are) considered suspicious of fraud. As "
+"a rule, the DexTechnologies will freeze suspicious of fraud asset(s))/"
+"account(s) and/or will cancel suspicious of fraud operation(s) and/or will "
+"transfer stolen funds to proper owner only based on final resolution in "
+"written of the appropriate competent authorities (courts etc.) or based on "
+"the DexTechnologies's internal KYC/AML procedures. As an exception "
+"DexTechnologies reserves the right: - to freeze temporary asset(s))/"
+"account(s) if convincing evidence(s) is (are) submitted that the interested "
+"person has turned to law enforcement and the appropriate investigation is "
+"underway (for reasonable time according to a decision of an appropriate "
+"DexTechnologies's body or the Arbitration Committee of the DexTechnologies); "
+"- in absolutely apparent cases to freeze and to return clearly stolen assets "
+"to its proper owner based on internal investigation and decision of the "
+"Arbitration Committee of the DexTechnologies (for example if tokens are "
+"stolen while ICO directly to account on exrates.me and exrates.me is the "
+"only exchange, trading the appropriate tokens). In such cases before assets "
+"transfer - the proper owner has to pass registration and verification on "
+"exrates.me and the cost of investigation and considering by the Arbitration "
+"Committee of the DexTechnologies (based on time spent) has to be compensated "
+"according to the appropriate invoice."
+msgstr ""
+
+#: templates/main/terms-of-use.html:322
+msgid "XII. ACCOUNT SECURITY"
+msgstr ""
+
+#: templates/main/terms-of-use.html:326
+msgid ""
+"The User is responsible for maintaining the confidentiality of their "
+"Account's credentials, including, but not limited to a password, email, "
+"wallet address, balance and of all activity including Transactions made "
+"through the Account."
+msgstr ""
+
+#: templates/main/terms-of-use.html:328
+msgid ""
+"DexTechnologies OÜ personnel will never ask the User to disclose their "
+"password. Any message the User receives or website that he/she visits that "
+"asks for the password, other than the DexTechnologies OÜ Site, should be "
+"reported to DexTechnologies OÜ. Before each using of the Website the User "
+"has to check (ensure) that he is using a genuine website."
+msgstr ""
+
+#: templates/main/terms-of-use.html:330
+msgid ""
+"We advise to change the User's password regularly in order to reduce the "
+"risk of a security breach in relation to the Account. The User must never "
+"allow anyone to access his/her Account or watch the User accessing his/her "
+"Account. If the User has any security concerns concerning his/her Account, "
+"login details, (password or other security feature being lost, stolen, "
+"misappropriated, used without authorization or otherwise compromised), the "
+"User is advised to change the password immediately. The User must contact "
+"support service without undue delay on becoming aware of any loss, theft, "
+"misappropriation or unauthorized use of the Account, login details, password "
+"or other security features. Any undue delay in notifying DexTechnologies OÜ "
+"may not only affect the security of the Account but may result in the User "
+"being liable for any losses as a result. If the User suspects that someone "
+"else accessed his/her Account, the User should also contact an appropriate "
+"government agency and report the incident."
+msgstr ""
+
+#: templates/main/terms-of-use.html:332
+msgid ""
+"The User must take reasonable care to ensure that his/her email account(s) "
+"are secure and only accessed by the User, as his/her email address may be "
+"used to reset passwords or to communicate with the User about the security "
+"of the Account. DexTechnologies OÜ cannot be liable for the breach of an "
+"email account resulting an unauthorized Transaction to be executed with "
+"proper confirmation. In case any of the email addresses registered with the "
+"User's Accounts are compromised, the User should without undue delay after "
+"becoming aware of this contact Support Service and also contact his/her "
+"email service provider."
+msgstr ""
+
+#: templates/main/terms-of-use.html:334
+msgid ""
+"Irrespective of whether the User is using a public, a shared or his/her own "
+"computer to access the Account, the User must always ensure that his/her "
+"login details are not stored by the browser, cached or otherwise recorded. "
+"The User should never use any functionality that allows login details or "
+"passwords to be stored by the computer he/she is using."
+msgstr ""
+
+#: templates/main/terms-of-use.html:336
+msgid ""
+"Additional products or services the User uses may have additional security "
+"requirements and the User must familiarize with those as notified to him/her."
+msgstr ""
+
+#: templates/main/terms-of-use.html:338
+msgid ""
+"We strictly recommend to use additional authentication options of the "
+"Platform."
+msgstr ""
+
+#: templates/main/terms-of-use.html:343
+msgid "XIII. TERMINATION OF THE TERMS OF USE"
+msgstr ""
+
+#: templates/main/terms-of-use.html:347
+msgid ""
+"The User may terminate the Terms of Use and close their Account at any time, "
+"following settlement of any pending transactions."
+msgstr ""
+
+#: templates/main/terms-of-use.html:349
+msgid ""
+"The User also agrees that DexTechnologies OÜ may, by giving notice, at its "
+"sole discretion terminate his/her access to the Site and to his/her Account, "
+"including without limitation, our right to: limit, suspend or terminate the "
+"service and the Users' Accounts, prohibit access to the Site and its "
+"content, services and tools, delay or remove hosted content and take "
+"technical and legal steps to keep the User off the Site if we think that he/"
+"she or his/her activity/deeds linked to illegal activity, infringing the "
+"intellectual property rights of third parties or acting inconsistently with "
+"the letter or spirit of these Terms. Additionally, we may, in appropriate "
+"circumstances and at our discretion, suspend or terminate Account of User "
+"for any reason, including without limitation: (1) attempts to gain "
+"unauthorized access to the Site or another User's account or providing "
+"assistance to others' attempting to do so, (2) overcoming software security "
+"features limiting use of or protecting any content, (3) usage of the Service "
+"to perform illegal activities such as money laundering, illegal gambling "
+"operations, financing terrorism, or other criminal activities, (4) "
+"violations of these Terms of Use, (5) failure to pay or fraudulent payment "
+"for Transactions, (6) unexpected operational difficulties, or (7) upon the "
+"request of law enforcement or other government agencies, if deemed to be "
+"legitimate and compelling by DexTechnologies OÜ, acting at its sole "
+"discretion."
+msgstr ""
+
+#: templates/main/terms-of-use.html:351
+msgid ""
+"DexTechnologies OÜ also reserves the right to cancel unconfirmed Accounts or "
+"Accounts that have been inactive for a period of six (6) months or more and/"
+"or to modify or discontinue our Site or Service. The User agrees that "
+"DexTechnologies OÜ will not be liable to them or to any third party for "
+"termination of their Account or access to the Site."
+msgstr ""
+
+#: templates/main/terms-of-use.html:353
+msgid ""
+"The suspension of the Account shall not affect the payment of the "
+"Transaction fees due for past Transactions. Upon termination, the User shall "
+"provide a valid account details or cryptocurrency address to allow the "
+"transfer of any currencies deposited to his/her Account. DexTechnologies OÜ "
+"shall transfer the currencies as soon as possible following the User's "
+"request in the time frames specified by DexTechnologies OÜ. If account is "
+"suspended because of detection of illegal or criminal activity transfer may "
+"be delayed for the time necessary for appropriate investigation of an "
+"appropriate authorities."
+msgstr ""
+
+#: templates/main/terms-of-use.html:358
+msgid "XIV. SERVICES AVAILABILITY"
+msgstr ""
+
+#: templates/main/terms-of-use.html:362
+msgid ""
+"All Services are provided \"AS IS\", without guarantees of any kind, either "
+"expressed or implied."
+msgstr ""
+
+#: templates/main/terms-of-use.html:364
+msgid ""
+"DexTechnologies OÜ will strive to keep the Site up and running; however, all "
+"online services suffer from occasional disruptions and outages and "
+"DexTechnologies OÜ is not liable for any disruption or loss the User may "
+"suffer as a result. Thus, DexTechnologies OÜ does not provide any guarantees "
+"that access to the Site will not be interrupted or that there will be no "
+"delays, failures, errors, omissions or loss of transmitted information."
+msgstr ""
+
+#: templates/main/terms-of-use.html:366
+msgid ""
+"DexTechnologies OÜ will use reasonable efforts to ensure that the User can "
+"normally access the Site in accordance with the Terms of Use. "
+"DexTechnologies OÜ may suspend use of the Site for maintenance and will make "
+"reasonable efforts to give the User a notice. The User acknowledges that "
+"this may not be possible in an emergency."
+msgstr ""
+
+#: templates/main/terms-of-use.html:375
+msgid ""
+"In order to ensure a stability of the Platform API requests maybe reasonably "
+"limited by DexTechnologies OÜ at our discretion. If this limit is exceeded, "
+"it may result to the ban for a reasonable time."
+msgstr ""
+
+#: templates/main/terms-of-use.html:380
+msgid "XVI. WIDGETS AND MOBILE APPLICATIONS"
+msgstr ""
+
+#: templates/main/terms-of-use.html:384
+msgid ""
+"DexTechnologies OÜ may provide widgets for the User's use to put our data on "
+"the User's Site. The User is free to use widgets in their original "
+"unmodified and unaltered state."
+msgstr ""
+
+#: templates/main/terms-of-use.html:388
+msgid ""
+"DexTechnologies OÜ may provide mobile applications (\"mobile apps\"), which "
+"can be used to get access to the Account. The use of these mobile apps is "
+"the subject to these Terms of Use."
+msgstr ""
+
+#: templates/main/terms-of-use.html:393
+msgid "XVII. NOTICES AND COMMUNICATION"
+msgstr ""
+
+#: templates/main/terms-of-use.html:397
+msgid ""
+"DexTechnologies OÜ reserves the right to send notices to and communicate "
+"with the User by any means of communication available to DexTechnologies OÜ, "
+"considering the contact details provided by the User."
+msgstr ""
+
+#: templates/main/terms-of-use.html:401
+msgid ""
+"The User expressly agrees to receive any notices in electronic form and to "
+"be bound by them, if so required by the Terms of Use."
+msgstr ""
+
+#: templates/main/terms-of-use.html:405
+msgid ""
+"The official information channel of DexTechnologies OÜ is the Website. The "
+"Website may contain links to other official information channels of "
+"DexTechnologies OÜ. Nevertheless any recommendation and/or trade idea (even "
+"on official channel of DexTechnologies OÜ) don't have a status of official "
+"recommendation and/or trade idea of DexTechnologies OÜ."
+msgstr ""
+
+#: templates/main/terms-of-use.html:410
+msgid "XVIII. AML/KYC POLICY"
+msgstr ""
+
+#: templates/main/terms-of-use.html:413
+msgid ""
+"DexTechnologies OÜ Anti-Money Laundering and Know Your Customer Policy "
+"(hereinafter - the \"AML/KYC Policy\") is designated to prevent and mitigate "
+"possible risks of DexTechnologies OÜ being involved in any kind of illegal "
+"activity. Both international and local regulations require DexTechnologies "
+"OÜ to implement effective internal procedures and mechanisms to prevent "
+"money laundering, terrorist financing, drug and human trafficking, "
+"proliferation of weapons of mass destruction, corruption and bribery and to "
+"take action in case of any form of suspicious activity from its Users."
+msgstr ""
+
+#: templates/main/terms-of-use.html:416
+msgid ""
+"AML/KYC Policy covers the following matters: <br>Verification procedures. "
+"<br>Identity verification <br>Compliance Officer. <br>Monitoring "
+"Transactions. <br>Risk Assessment."
+msgstr ""
+
+#: templates/main/terms-of-use.html:420
+msgid ""
+"Verification procedures <br>One of the international standards for "
+"preventing illegal activity is customer due diligence (\"CDD\").According to "
+"CDD, DexTechnologies OÜ establishes its own verification procedures within "
+"the standards of anti-money laundering and \"Know Your Customer\" frameworks."
+msgstr ""
+
+#: templates/main/terms-of-use.html:424
+msgid ""
+"Identity verification <br>DexTechnologies OÜ's identity verification "
+"procedure requires the User to provide DexTechnologies OÜ with reliable, "
+"independent source documents, data or information (e.g., national ID, "
+"international passport, bank statement, utility bill). For such purposes "
+"DexTechnologies OÜ reserves the right to collect User's identification "
+"information for the AML/KYC Policy purposes. <br>DexTechnologies OÜ will "
+"take steps to confirm the authenticity of documents and information provided "
+"by the Users. All legal methods for double-checking identification "
+"information will be used and DexTechnologies OÜ reserves the right to "
+"investigate certain Users who have been determined to be risky or "
+"suspicious. <br>DexTechnologies OÜ reserves the right to verify User's "
+"identity in an on-going basis, especially when their identification "
+"information has been changed or their activity seemed to be suspicious "
+"(unusual for the particular User). In addition, DexTechnologies OÜ reserves "
+"the right to request up-to-date documents from the Users, even though they "
+"have passed identity verification in the past. <br>User's identification "
+"information will be collected, stored, shared and protected strictly in "
+"accordance with the DexTechnologies OÜ's Privacy Policy and related "
+"regulations. Once the User's identity has been verified, DexTechnologies OÜ "
+"is able to remove itself from potential legal liability in a situation where "
+"its Services are used to conduct illegal activity. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:428
+msgid ""
+"Compliance Officer <br>The Compliance Officer is the person, duly authorized "
+"by DexTechnologies OÜ, whose duty is to ensure the effective implementation "
+"and enforcement of the AML/KYC Policy. It is the Compliance Officer's "
+"responsibility to supervise all aspects of DexTechnologies OÜ's anti-money "
+"laundering and counter-terrorist financing, including but not limited to: "
+"<br>a. Collecting Users' identification information. <br>b. Establishing and "
+"updating internal policies and procedures for the completion, review, "
+"submission and retention of all reports and records required under the "
+"applicable laws and regulations. <br>c. Monitoring transactions and "
+"investigating any significant deviations from normal activity. <br>d. "
+"Implementing a records management system for appropriate storage and "
+"retrieval of documents, files, forms and logs. <br>e. Updating risk "
+"assessment regularly. <br>f. Providing law enforcement with information as "
+"required under the applicable laws and regulations. <br>The Compliance "
+"Officer is entitled to interact with law enforcement, which are involved in "
+"prevention of money laundering, terrorist financing and other illegal "
+"activity. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:432
+msgid ""
+"Monitoring Transactions <br>The Users are known not only by verifying their "
+"identity (who they are) but, more importantly, by analyzing their "
+"transactional patterns (what they do). Therefore, DexTechnologies OÜ relies "
+"on data analysis as a risk-assessment and suspicion detection tool. "
+"DexTechnologies OÜ performs a variety of compliance-related tasks, including "
+"capturing data, filtering, record-keeping, investigation management, and "
+"reporting. System functionalities include: <br>1) Daily check of Users "
+"against recognized \"black lists\" (e.g. OFAC), aggregating transfers by "
+"multiple data points, placing Users on watch and service denial lists, "
+"opening cases for investigation where needed, sending internal "
+"communications and filling out statutory reports, if applicable; <br>2) Case "
+"and document management. <br>With regard to the AML/KYC Policy, "
+"DexTechnologies OÜ will monitor all transactions and it reserves the right "
+"to: ensure that transactions of suspicious nature are reported to the proper "
+"law enforcement through the Compliance Officer; <br>request the User to "
+"provide any additional information and documents in case of suspicious "
+"transactions; suspend or terminate User's Account when DexTechnologies OÜ "
+"has reasonable suspicion that such User engaged in illegal activity. <br>The "
+"above list is not exhaustive and the Compliance Officer will monitor Users' "
+"transactions on a day-to-day basis in order to define whether such "
+"transactions are to be reported and treated as suspicious or are to be "
+"treated as bona fide. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:436
+msgid ""
+"Risk Assessment <br>DexTechnologies OÜ, in line with the international "
+"requirements, has adopted a risk-based approach to combating money "
+"laundering and terrorist financing. By adopting a risk-based approach, "
+"DexTechnologies OÜ is able to ensure that measures to prevent or mitigate "
+"money laundering and terrorist financing are commensurate to the identified "
+"risks. This will allow resources to be allocated in the most efficient ways. "
+"The principle is that resources should be directed in accordance with "
+"priorities so that the greatest risks receive the highest attention. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:441
+msgid "XIX. GOVERNING LAW AND DISPUTE RESOLUTION"
+msgstr ""
+
+#: templates/main/terms-of-use.html:445
+msgid ""
+"These Terms of Use shall be governed by and construed in accordance with the "
+"laws of the Republic of Estonia, unless otherwise expressly provided. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:449
+msgid ""
+"All disputes arising out of or in connection with the present contract shall "
+"be finally settled by arbitration in accordance with the Rules of the "
+"Arbitration Court of the Estonian Chamber of Commerce and Industry. The "
+"Parties shall attempt to resolve all disputes relating to these Terms of Use "
+"by negotiations. If the Parties fail to resolve disputes relating to these "
+"Terms of Use through negotiations, the dispute shall be conclusively "
+"resolved in the Arbitration Court of the Chamber of Commerce and Industry of "
+"Estonia in Tallinn (hereinafter: the Arbitration Court) in accordance with "
+"the Rules of the Arbitration Court. The dispute shall be resolved on the "
+"basis of the laws of Estonia. The language of the Arbitration Court shall be "
+"Estonian. The Arbitration Court shall consist of 3 (three) members. Each "
+"Party shall appoint one arbitrator within the time period prescribed by the "
+"Council of the Arbitration Court of the Chamber of Commerce and Industry of "
+"Estonia. Each Party shall ask the arbitrator chosen by him to appoint a "
+"third arbitrator together with the arbitrator chosen by the other Party, who "
+"shall be the chairman of the Arbitration Court in the resolution of the "
+"dispute. If the arbitrators appointed by the Parties fail to choose a third "
+"arbitrator within the time period prescribed by the Council of the "
+"Arbitration Court of the Chamber of Commerce and Industry of Estonia, the "
+"third arbitrator who shall also be the chairman of the Arbitration Court "
+"shall be appointed by the Council of the Arbitration Court of the Chamber of "
+"Commerce and Industry. If the Parties fail to form the Arbitration Court in "
+"accordance with the provisions of these Terms of Use and the Rules of the "
+"Arbitration Court, the Arbitration Court shall be formed by the Council of "
+"the Chamber of Commerce and Industry of Estonia. The award of the "
+"Arbitration Court shall be final and binding upon the Parties."
+msgstr ""
+
+#: templates/main/terms-of-use.html:454
+msgid "XX. LIMITATION OF LIABILITY"
+msgstr ""
+
+#: templates/main/terms-of-use.html:457
+msgid ""
+"IN NO EVENT SHALL DexTechnologies OÜ, ITS OFFICERS, DIRECTORS, EMPLOYEES, "
+"AGENTS, AND ALL THIRD PARTY SERVICE PROVIDERS BE LIABLE TO THE USER OR ANY "
+"OTHER PERSON OR ENTITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"PUNITIVE OR CONSEQUENTIAL DAMAGES WHATSOEVER, INCLUDING ANY THAT MAY RESULT "
+"FROM (I) ACCURACY, COMPLETENESS OR CONTENT OF THIS SITE, (II) ACCURACY, "
+"COMPLETENESS OR CONTENT OF ANY SITES LINKED (THROUGH HYPERLINKS, BANNER "
+"ADVERTISING OR OTHERWISE) TO THIS SITE, (III) THE SERVICES FOUND AT THIS "
+"SITE OR ANY SITES LINKED (THROUGH HYPERLINKS, BANNER ADVERTISING OR "
+"OTHERWISE) TO THIS SITE, (IV) PERSONAL INJURY OR PROPERTY DAMAGE OF ANY "
+"NATURE WHATSOEVER, (V) THIRD-PARTY CONDUCT OF ANY NATURE WHATSOEVER, (VI) "
+"ANY UNAUTHORIZED ACCESS TO OR USE OF OUR SERVERS AND/OR ANY AND ALL CONTENT, "
+"PERSONAL INFORMATION, FINANCIAL INFORMATION OR OTHER INFORMATION AND DATA "
+"STORED THEREIN, (VII) ANY INTERRUPTION OR CESSATION OF SERVICES TO OR FROM "
+"THIS SITE OR ANY SITES LINKED (THROUGH HYPERLINKS, BANNER ADVERTISING OR "
+"OTHERWISE) TO THIS SITE, (VIII) ANY VIRUSES, WORMS, BUGS, TROJAN HORSES OR "
+"THE LIKE, WHICH MAY BE TRANSMITTED TO OR FROM THIS SITE OR ANY SITES LINKED "
+"(THROUGH HYPERLINKS, BANNER ADVERTISING OR OTHERWISE) TO THIS SITE, (IX) ANY "
+"USER CONTENT OR CONTENT THAT IS DEFAMATORY, HARASSING, ABUSIVE, HARMFUL TO "
+"MINORS OR ANY PROTECTED CLASS, PORNOGRAPHIC, \"X-RATED\", OBSCENE OR "
+"OTHERWISE OBJECTIONABLE AND/ OR (X) ANY LOSS OR DAMAGE OF ANY KIND INCURRED "
+"AS A RESULT OF THE USER'S USE OF THIS SITE OR THE SERVICES FOUND AT THIS "
+"SITE, WHETHER BASED ON WARRANTY, CONTRACT, TORT OR ANY OTHER LEGAL OR "
+"EQUITABLE THEORY AND WHETHER OR NOT DexTechnologies OÜ IS ADVISED OF THE "
+"POSSIBILITY OF SUCH DAMAGES. IN ADDITION, YOU SPECIFICALLY ACKNOWLEDGE AND "
+"AGREE THAT ANY CAUSE OF ACTION ARISING OUT OF OR RELATED TO THIS SITE OR THE "
+"SERVICES FOUND AT THIS SITE MUST BE COMMENCED WITHIN ONE (1) YEAR AFTER THE "
+"CAUSE OF ACTION ACCRUES, OTHERWISE SUCH CAUSE OF ACTION SHALL BE PERMANENTLY "
+"BARRED. IN ADDITION, THE USER SPECIFICALLY ACKNOWLEDGE AND AGREE THAT IN NO "
+"EVENT SHALL DexTechnologies OÜ'S TOTAL AGGREGATE LIABILITY EXCEED THE TOTAL "
+"AMOUNT PAID BY THE USER FOR THE PARTICULAR SERVICES THAT ARE THE SUBJECT OF "
+"THE CAUSE OF ACTION. THE FOREGOING LIMITATION OF LIABILITY SHALL APPLY TO "
+"THE FULLEST EXTENT PERMITTED BY LAW AND SHALL SURVIVE ANY TERMINATION OR "
+"EXPIRATION OF THESE TERMS OF USE OR THE USER'S USE OF THIS SITE OR THE "
+"SERVICES FOUND AT THIS SITE. <br>DexTechnologies OÜ will not be liable for "
+"the Transactions, initiated by the User, below the prescribed limits. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:462
+msgid "XXI. INDEMNITY"
+msgstr ""
+
+#: templates/main/terms-of-use.html:465
+msgid ""
+"The User agrees to protect, defend, indemnify and hold harmless "
+"DexTechnologies OÜ and its officers, directors, employees, agents and third "
+"party service providers from and against any and all claims, demands, costs, "
+"expenses, losses, liabilities and damages of every kind and nature "
+"(including, without limitation, reasonable attorneys' fees) imposed upon or "
+"incurred by DexTechnologies OÜ directly or indirectly arising from (i) the "
+"User's use of and access to this Site or the Services found at this Site; "
+"(ii) the User's violation of any provision of the Terms of Use or the "
+"policies or agreements which are incorporated herein; and/or (iii) the "
+"User's violation of any third-party right, including without limitation any "
+"intellectual property or other proprietary right. The indemnification "
+"obligations under this section shall survive any termination or expiration "
+"of the Terms of Use or the User's use of this Site or the Services found on "
+"this Site. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:470
+msgid "XXII. MODIFICATIONS AND AMENDMENTS"
+msgstr ""
+
+#: templates/main/terms-of-use.html:473
+msgid ""
+"DexTechnologies OÜ reserves the right to amend or modify any portion of "
+"these Terms of Use at any time by publishing a revised version of the Terms "
+"of Use on the Site. The changes will become effective and shall be deemed "
+"accepted by the User, the first time the User uses the Services after the "
+"publishing of the revised Terms of Use and shall apply on a going-forward "
+"basis with respect to any activity initiated after publishing. In the event "
+"that the User does not agree with any such modification, the User's sole and "
+"exclusive remedy is to terminate the use of the Services and close the "
+"Account. The User agrees that DexTechnologies OÜ shall not be liable to the "
+"User or any third party as a result of any losses suffered by any "
+"modification or amendment of these Terms of Use. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:478
+msgid "XXIII. FORCE MAJEURE"
+msgstr ""
+
+#: templates/main/terms-of-use.html:481
+msgid ""
+"If DexTechnologies OÜ is unable to perform the Services outlined in the "
+"Terms of Use due to the factors beyond its control including but not limited "
+"to the event of Force Majeure, change of law or change in sanctions policy, "
+"DexTechnologies OÜ will not have any responsibility to the User with respect "
+"to the Services provided hereunder and for a time period coincident with the "
+"event. "
+msgstr ""
+
+#: templates/main/terms-of-use.html:486
+msgid "XXIV. LINKS TO THIRD-PARTY WEBSITES"
+msgstr ""
+
+#: templates/main/terms-of-use.html:489
+msgid ""
+"This Site and the Services found at this Site may contain links to third-"
+"party websites that are not owned or controlled by DexTechnologies OÜ. "
+"DexTechnologies OÜ assumes no responsibility for the content, terms and "
+"conditions, privacy policies or practices of any third-party websites. In "
+"addition, DexTechnologies OÜ does not censor or edit the content of any "
+"third-party websites. By using this Site or the Services found at this Site, "
+"you expressly release DexTechnologies OÜ from any and all liability arising "
+"from the User's use of any third-party website. Accordingly, DexTechnologies "
+"OÜ encourages the User to be aware when the User leaves this Site, or the "
+"Services found at this Site and to review the terms and conditions, privacy "
+"policies and other governing documents of any other websites that you may "
+"visit."
+msgstr ""
+
+#: templates/main/terms-of-use.html:494
+msgid "CONTACT US"
+msgstr ""
+
+#: templates/main/terms-of-use.html:497
+msgid ""
+"If you have any questions relating to these Terms of Use, your rights and "
+"obligations arising from these Terms and/or your use of the Site and the "
+"Service, your Account or any other matter, please, contact us via email, "
+"mentioned on the Website. "
 msgstr ""
