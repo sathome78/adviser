@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-01 14:27+0000\n"
+"POT-Creation-Date: 2019-07-01 15:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,7 +36,6 @@ msgid "Ambassador"
 msgstr "Представитель"
 
 #: adviser/models.py:76
-#| msgid "Ambassador"
 msgid "Ambassadors"
 msgstr "Представители"
 
@@ -690,7 +689,7 @@ msgid ""
 "support team through the chatbox in the right corner on the bottom of the "
 "website. "
 msgstr ""
-"Наша служба поддержки всегда на связи и готова помочь вам!Вы можете "
+"Наша служба поддержки всегда на связи и готова помочь вам! Вы можете "
 "связаться с нашей службой поддержки через окно чата в правом нижнем углу "
 "сайта."
 
@@ -711,11 +710,6 @@ msgid "Strong Safety"
 msgstr "Улучшенная безопасность"
 
 #: templates/main/about-us.html:110
-#, fuzzy, python-format
-#| msgid ""
-#| "More than 95%% of the currencies are stored on cold wallets. WAF (Web "
-#| "Application Firewall) a protective screen of a Web application that "
-#| "detects and blocks hacker attacks. "
 msgid ""
 "More than 95%% of the currencies are stored on cold wallets. WAF (Web "
 "Application Firewall) a protective screen of a Web application that detects "
@@ -977,7 +971,6 @@ msgstr ""
 "исключением того же самого лица."
 
 #: templates/main/privacy-policy.html:122
-#, fuzzy
 #| msgid "Cookies"
 msgid "Cookie"
 msgstr "Cookies"
@@ -3574,4 +3567,3 @@ msgstr "Другое"
 
 msgid "Trading API "
 msgstr "API для AlgoTraders"
-
