@@ -422,15 +422,15 @@ msgstr "Сохранить"
 #: templates/adviser/advisor-profile.html:103
 msgid ""
 "Congratulations! Your request was accepted. Fill the form to\n"
-"                        create a personal Advisor page on Exrates."
+"create a personal Advisor page on Exrates."
 msgstr ""
-"Поздравляем! Ваш запрос был одобрен. Пожалуйста, заполните форму для "
+"Поздравляем! Ваш запрос был одобрен. Пожалуйста, заполните форму для\n"
 "создания личной страницы Советника на Exrates"
 
 #: templates/adviser/advisor-profile.html:152
 msgid ""
 "\n"
-"                            Bio"
+"Bio"
 msgstr ""
 "\n"
 "Биография"
