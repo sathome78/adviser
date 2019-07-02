@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-01 15:38+0000\n"
+"POT-Creation-Date: 2019-07-02 07:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -462,6 +462,22 @@ msgstr "0%% комиссии за переводы"
 #, python-format
 msgid "0%% transfer fee between personal and trading account on Exrates"
 msgstr "Комиссия 0%% на переводы между личным аккаунтом и аккаунтом Exrates"
+
+#: templates/base.html:42
+msgid "Thank you"
+msgstr "Спасибо"
+
+#: templates/base.html:43
+msgid "Our specialist will contact you shortly"
+msgstr "Наши специалисты свяжутся с Вами в скором времени"
+
+#: templates/base.html:53
+msgid "Error"
+msgstr "Ошибка"
+
+#: templates/base.html:54
+msgid "Please resend the form"
+msgstr "Пожалуйста, отправьте форму еще раз"
 
 #: templates/basic/_footer.html:21 templates/basic/_footer.html:36
 #: templates/basic/_footer.html:51
@@ -971,7 +987,6 @@ msgstr ""
 "исключением того же самого лица."
 
 #: templates/main/privacy-policy.html:122
-#| msgid "Cookies"
 msgid "Cookie"
 msgstr "Cookies"
 

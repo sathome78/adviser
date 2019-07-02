@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-01 15:38+0000\n"
+"POT-Creation-Date: 2019-07-02 07:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -452,6 +452,22 @@ msgstr ""
 #: templates/main/client-center.html:159 templates/main/fiat.html:77
 #, python-format
 msgid "0%% transfer fee between personal and trading account on Exrates"
+msgstr ""
+
+#: templates/base.html:42
+msgid "Thank you"
+msgstr ""
+
+#: templates/base.html:43
+msgid "Our specialist will contact you shortly"
+msgstr ""
+
+#: templates/base.html:53
+msgid "Error"
+msgstr ""
+
+#: templates/base.html:54
+msgid "Please resend the form"
 msgstr ""
 
 #: templates/basic/_footer.html:21 templates/basic/_footer.html:36
