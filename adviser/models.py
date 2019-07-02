@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 import uuid
 
-from django.conf import settings
+from django.db import models
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-from django.db import models
-
-from clients.pipedrive_client import PipedriveClient
 from django_extensions.db.fields import AutoSlugField
 
 ADVISER_TYPE_ENUM = (
@@ -53,7 +50,7 @@ class Adviser(models.Model):
     website = models.URLField(max_length=255, null=True, blank=True)
 
     member_since = models.DateField(null=True, blank=True)
-    avatar = models.ImageField(upload_to='images/advisers/', default='images/default-ava.png')
+    avatar = models.ImageField(upload_to='images/advisers/', default='img/pics/default-avatar.svg')
 
     long_description = models.CharField(max_length=700, null=True, blank=True,
                                         help_text="Company's benefits")
@@ -77,7 +74,6 @@ class Adviser(models.Model):
 
     def get_absolute_url(self):
         return reverse("adviser-detail", kwargs={"type": self.get_type_display().lower(), "slug": self.slug})
-
 
 class GeneralFields(models.Model):
     telegram_followers = models.CharField(max_length=100)

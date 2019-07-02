@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-02 07:46+0000\n"
+"POT-Creation-Date: 2019-07-02 15:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Представитель"
 msgid "Ambassadors"
 msgstr "Представители"
 
-#: adviser/models.py:97 adviser/models.py:98
+#: adviser/models.py:96 adviser/models.py:97
 msgid "general fields"
 msgstr ""
 
@@ -51,8 +51,8 @@ msgstr ""
 msgid "Analytic articles"
 msgstr ""
 
-#: exrates_adviser/settings.py:63 templates/basic/_header.html:324
-#: templates/basic/_header.html:327
+#: exrates_adviser/settings.py:63 templates/basic/_header.html:174
+#: templates/basic/_header.html:324 templates/basic/_header.html:327
 msgid "English"
 msgstr "Английский"
 
@@ -262,7 +262,8 @@ msgstr "Мне нужно разместить монету"
 
 #: templates/adviser/adviser_page.html:180
 #: templates/adviser/advisor-form.html:31
-#: templates/adviser/advisor-page.html:181 templates/main/about-us.html:143
+#: templates/adviser/advisor-page.html:181
+#: templates/adviser/advisor-profile.html:124 templates/main/about-us.html:143
 #: templates/main/form-listing.html:43
 msgid "Name"
 msgstr "Имя"
@@ -280,12 +281,14 @@ msgstr "Ссылка на сайт"
 
 #: templates/adviser/adviser_page.html:204
 #: templates/adviser/advisor-form.html:51
-#: templates/adviser/advisor-page.html:205 templates/main/form-listing.html:68
-#: templates/main/support-center.html:116
+#: templates/adviser/advisor-page.html:205
+#: templates/adviser/advisor-profile.html:158
+#: templates/main/form-listing.html:68 templates/main/support-center.html:116
 msgid "Submit"
 msgstr "Отправить"
 
 #: templates/adviser/advisor-form.html:18
+#: templates/adviser/advisor-profile.html:88
 msgid "Cryptocurrency Exchange"
 msgstr "Представитель Биржи Exrates"
 
@@ -293,16 +296,20 @@ msgstr "Представитель Биржи Exrates"
 msgid "Fill the form to become an Ambassador"
 msgstr "Заполните форму"
 
-#: templates/adviser/advisor-form.html:63 templates/main/form-listing.html:81
+#: templates/adviser/advisor-form.html:63
+#: templates/adviser/advisor-profile.html:174
+#: templates/main/form-listing.html:81
 msgid "IEO request submitted"
 msgstr "Запрос на проведение IEO отправлен"
 
-#: templates/adviser/advisor-form.html:70 templates/basic/_header.html:13
+#: templates/adviser/advisor-form.html:70
+#: templates/adviser/advisor-profile.html:182 templates/basic/_header.html:13
 #: templates/basic/_header.html:249 templates/main/form-listing.html:88
 msgid "Trade"
 msgstr "Торги"
 
-#: templates/adviser/advisor-form.html:73 templates/basic/_footer.html:77
+#: templates/adviser/advisor-form.html:73
+#: templates/adviser/advisor-profile.html:186 templates/basic/_footer.html:77
 #: templates/main/about-us.html:33 templates/main/client-center.html:35
 #: templates/main/form-listing.html:91 templates/main/privacy-policy.html:37
 #: templates/main/support-center.html:34 templates/main/terms-of-use.html:35
@@ -314,19 +321,23 @@ msgstr "Поддержка"
 msgid "Token Sale"
 msgstr "Продажа токенов"
 
-#: templates/adviser/advisor-form.html:79 templates/basic/_footer.html:80
+#: templates/adviser/advisor-form.html:79
+#: templates/adviser/advisor-profile.html:193 templates/basic/_footer.html:80
 #: templates/main/about-us.html:32 templates/main/client-center.html:34
 #: templates/main/form-listing.html:97 templates/main/privacy-policy.html:36
 #: templates/main/support-center.html:33 templates/main/terms-of-use.html:34
 msgid "Contacts"
 msgstr "Контакты"
 
-#: templates/adviser/advisor-form.html:82 templates/basic/_header.html:70
+#: templates/adviser/advisor-form.html:82
+#: templates/adviser/advisor-profile.html:196 templates/basic/_header.html:70
 #: templates/main/form-listing.html:100
 msgid "Fiat"
 msgstr "Фиат"
 
-#: templates/adviser/advisor-form.html:85 templates/main/form-listing.html:103
+#: templates/adviser/advisor-form.html:85
+#: templates/adviser/advisor-profile.html:199
+#: templates/main/form-listing.html:103
 msgid "Announcements"
 msgstr "Объявления"
 
@@ -341,18 +352,22 @@ msgid "Special reward system for ambassadors: <br>get from 5%% to 15%%"
 msgstr "Бонусы за привлеченные монеты - от 5 до 15 процентов"
 
 #: templates/adviser/advisor-form.html:108
+#: templates/adviser/advisor-profile.html:223
 msgid "Get exclusive analytical market reports"
 msgstr "Эксклюзивные аналитические отчеты о состоянии рынка"
 
 #: templates/adviser/advisor-form.html:114
+#: templates/adviser/advisor-profile.html:229
 msgid "Participation in online trainings & webinars"
 msgstr "Участие в онлайн семинарах и лекциях"
 
 #: templates/adviser/advisor-form.html:120
+#: templates/adviser/advisor-profile.html:235
 msgid "Your personal page on Exchange website"
 msgstr "Своя официальная личная страница на бирже"
 
 #: templates/adviser/advisor-form.html:126
+#: templates/adviser/advisor-profile.html:241
 msgid "Your personal manager"
 msgstr "Сообщение"
 
@@ -365,11 +380,14 @@ msgid "An opportunity to become a part of international community"
 msgstr "Возможность стать частью международного комьюнити"
 
 #: templates/adviser/advisor-form.html:144
+#: templates/adviser/advisor-profile.html:261
 #: templates/adviser/become-advisor.html:86
 msgid "Referral program"
 msgstr "Ваш персональный менеджер"
 
-#: templates/adviser/advisor-form.html:150 templates/main/form-listing.html:144
+#: templates/adviser/advisor-form.html:150
+#: templates/adviser/advisor-profile.html:267
+#: templates/main/form-listing.html:144
 msgid "Back"
 msgstr "Назад"
 
@@ -392,6 +410,71 @@ msgstr "не может: "
 #: templates/adviser/advisor-page.html:201
 msgid "Link to the website*"
 msgstr "Ссылка на сайт"
+
+#: templates/adviser/advisor-profile.html:95
+msgid "Cancel"
+msgstr "Отменить"
+
+#: templates/adviser/advisor-profile.html:96
+msgid "Save"
+msgstr "Сохранить"
+
+#: templates/adviser/advisor-profile.html:103
+msgid ""
+"Congratulations! Your request was accepted. Fill the form to\n"
+"                        create a personal Advisor page on Exrates."
+msgstr ""
+"Поздравляем! Ваш запрос был одобрен. Пожалуйста, заполните форму для "
+"создания личной страницы Советника на Exrates"
+
+#: templates/adviser/advisor-profile.html:152
+msgid ""
+"\n"
+"                            Bio"
+msgstr ""
+"\n"
+"Биография"
+
+#: templates/adviser/advisor-profile.html:208
+msgid "Benefits for Exrates Advisors"
+msgstr "Что получает наш представитель?"
+
+#: templates/adviser/advisor-profile.html:216
+#| msgid "Special reward system for advisors: <br>get from 5%% to 15%%"
+msgid ""
+"Special reward system for advisors: <br>get from 5%% to\n"
+"                                15%%"
+msgstr "Бонусы за привлеченные монеты - от 5 до 15 процентов"
+
+#: templates/adviser/advisor-profile.html:247
+#| msgid "Attend conferences & events as a part of Exrates team"
+msgid ""
+"Attend conferences & events as a part of Exrates\n"
+"                                team"
+msgstr "Посещение конференций от имени Exrates"
+
+#: templates/adviser/advisor-profile.html:254
+#| msgid "An opportunity to become a part of international community"
+msgid ""
+"An opportunity to become a part of international\n"
+"                                community"
+msgstr "Возможность стать частью международного комьюнити"
+
+#: templates/adviser/advisor-profile.html:276 templates/base.html:42
+msgid "Thank you"
+msgstr "Спасибо"
+
+#: templates/adviser/advisor-profile.html:277 templates/base.html:43
+msgid "Our specialist will contact you shortly"
+msgstr "Наши специалисты свяжутся с Вами в скором времени"
+
+#: templates/adviser/advisor-profile.html:287 templates/base.html:53
+msgid "Error"
+msgstr "Ошибка"
+
+#: templates/adviser/advisor-profile.html:288 templates/base.html:54
+msgid "Please resend the form"
+msgstr "Пожалуйста, отправьте форму еще раз"
 
 #: templates/adviser/become-advisor.html:23
 msgid "Become an Official Ambassador of Exrates Exchange!"
@@ -462,22 +545,6 @@ msgstr "0%% комиссии за переводы"
 #, python-format
 msgid "0%% transfer fee between personal and trading account on Exrates"
 msgstr "Комиссия 0%% на переводы между личным аккаунтом и аккаунтом Exrates"
-
-#: templates/base.html:42
-msgid "Thank you"
-msgstr "Спасибо"
-
-#: templates/base.html:43
-msgid "Our specialist will contact you shortly"
-msgstr "Наши специалисты свяжутся с Вами в скором времени"
-
-#: templates/base.html:53
-msgid "Error"
-msgstr "Ошибка"
-
-#: templates/base.html:54
-msgid "Please resend the form"
-msgstr "Пожалуйста, отправьте форму еще раз"
 
 #: templates/basic/_footer.html:21 templates/basic/_footer.html:36
 #: templates/basic/_footer.html:51
@@ -642,6 +709,22 @@ msgstr "Сообщество Россия"
 #: templates/basic/_header.html:315
 msgid "Community Korea"
 msgstr "Сообщетво Корея"
+
+#: templates/basic/_scripts.html:6
+msgid "can&#39;t be empty"
+msgstr "не может быть пустым"
+
+#: templates/basic/_scripts.html:7
+msgid "invalid email"
+msgstr "неправильный формат"
+
+#: templates/basic/_scripts.html:8
+msgid "Please type your telegram nickname with @ or your phone number"
+msgstr "Пожалуйста, введите ваш ник в telegram или номер телефона"
+
+#: templates/basic/_scripts.html:9
+msgid "incorrect format"
+msgstr "неправильный формат"
 
 #: templates/main/about-us.html:15
 msgid "About Us "
@@ -3531,6 +3614,9 @@ msgstr ""
 "использования вами Сайта и Сервиса, вашей Учетной записи или любые другие "
 "вопросы, пожалуйста, свяжитесь с нами по электронной почте, указанной на Веб-"
 "сайте."
+
+msgid "Bio"
+msgstr "Биография"
 
 msgid "Company"
 msgstr "Компания"

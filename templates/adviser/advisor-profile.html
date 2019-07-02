@@ -1,308 +1,337 @@
-
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Exrates info page</title>
-        <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="When Great Minds Don’t Think Alike" />
-        <meta property="og:description" content="How much does culture influence creative thinking?" />
-        <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
-        <!-- Main Meta information-->
-        <meta charset="utf-8" />
-        <meta http-equiv="Cache-control" content="public" />
-        <meta name="viewport" content="width=device-width, user-scalable=yes" />
-        <link href='https://fonts.googleapis.com/css?family=Roboto:600,500,400,300' rel='stylesheet' type='text/css'>
-        <!-- Meta Information-->
-        <meta name="robots" content="index, follow" />
-        <!--     <style>
-    @font-face {
-      @font-face {
-          font-display: swap;
-          font-family: 'Roboto';
-          src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
-          font-weight: 300;
-      }
-      @font-face {
-          font-display: swap;
-          font-family: 'Roboto';
-          src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format('woff2');
-          font-weight: 400;
-      }
-      @font-face {
-       font-display: swap;
-       font-family: 'Roboto';
-       src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
-       font-weight: 500;
-   }
-   @font-face {
+<head>
+    <title>Exrates info page</title>
+    <meta property="og:url"
+          content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="When Great Minds Don’t Think Alike"/>
+    <meta property="og:description" content="How much does culture influence creative thinking?"/>
+    <meta property="og:image"
+          content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"/>
+    <!-- Main Meta information-->
+    <meta charset="utf-8"/>
+    <meta http-equiv="Cache-control" content="public"/>
+    <meta name="viewport" content="width=device-width, user-scalable=yes"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:600,500,400,300' rel='stylesheet' type='text/css'>
+    <!-- Meta Information-->
+    <meta name="robots" content="index, follow"/>
+    <!--     <style>
+@font-face {
+  @font-face {
       font-display: swap;
       font-family: 'Roboto';
-      src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format('woff2');
-      font-weight: 600;
+      src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+      font-weight: 300;
   }
+  @font-face {
+      font-display: swap;
+      font-family: 'Roboto';
+      src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format('woff2');
+      font-weight: 400;
+  }
+  @font-face {
+   font-display: swap;
+   font-family: 'Roboto';
+   src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+   font-weight: 500;
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  src: local('Roboto'), url(http://fonts.gstatic.com/s/roboto/v19/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format('woff2');
+  font-weight: 600;
+}
 }
 </style> -->
-        <link type="text/plain" rel="author" href="{%  static  'humans.txt' %}" />
-        <!-- Google Tag Manager -->
-        <!-- Get html5shiv if this is IE lower or equal to 9-->
-        <!--[if lte IE 9]>
+    <link type="text/plain" rel="author" href="{% static  'humans.txt' %}"/>
+    <!-- Google Tag Manager -->
+    <!-- Get html5shiv if this is IE lower or equal to 9-->
+    <!--[if lte IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-        <link rel="stylesheet" href="{%  static  'css/main.min.css'%}" />
-        <link rel="preload" href="{%  static  'css/main.min.css'%}" as="style" onload="this.rel='stylesheet'">
-        <script>
-            (function(w, d, s, l, i)
-            {
-                w[l] = w[l] || [];
-                w[l].push(
+    <link rel="stylesheet" href="{% static  'css/main.min.css' %}"/>
+    <link rel="preload" href="{% static  'css/main.min.css' %}" as="style" onload="this.rel='stylesheet'">
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push(
                 {
                     'gtm.start': new Date().getTime(),
                     event: 'gtm.js'
                 });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-WHBHRK6');
-        </script>
-        <!-- End Google Tag Manager -->
-    </head>
-    <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHBHRK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-        <div class="form-listing-wr a-profile">
-            <div class="top-part">
-                <div class="logo">
-                    <img src="{%  static  'img/pics/logo-header.svg'%}" alt="">
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WHBHRK6');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHBHRK6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div class="form-listing-wr a-profile">
+    <div class="top-part">
+        <div class="logo">
+            <img src="{% static  'img/pics/logo-header.svg' %}" alt="">
+        </div>
+        <div class="description">
+            <p>{% blocktrans %}Cryptocurrency Exchange{% endblocktrans %}</p>
+        </div>
+    </div>
+    <div class="form-part">
+        <div class="views-wr">
+            <div id="views" class="views" tabindex="0"></div>
+            <div class="button-part">
+                <button type="button" id="cancel"><span>{% blocktrans %}Cancel{% endblocktrans %}</span></button>
+                <button type="button" id="save"><span>{% blocktrans %}Save{% endblocktrans %}</span></button>
+            </div>
+        </div>
+        <form action="" class="list-form nomodal" enctype="multipart/form-data" method="post"> {% csrf_token %}
+            <!-- start default variant -->
+            <div class="left-part">
+                <div class="title">
+                    <h3 class="small-head">{% blocktrans %}Congratulations! Your request was accepted. Fill the form to
+                        create a personal Advisor page on Exrates.{% endblocktrans %}</h3>
                 </div>
-                <div class="description">
-                    <p>Cryptocurrency Exchange</p>
+                <div class="avatar-trigger">
+                    <input class="accessibility-content" id="crop-file" type="file"/>
+                    <label for="crop-file">
+                        {% if adviser.avatar.url|length > 0 %}
+                            <img id="crop-img" src="{{ adviser.avatar.url }}">
+                        {% else %}
+                            <img id="crop-img"
+                                 src="{% static  'img/pics/default-avatar.svg' %}" alt="">
+                        {% endif %}
+
+                    </label>
+                    <input id="id_avatar" type="hidden" name="avatar">
+                </div>
+                <div class="inputs-wr">
+                    <div class="wrap-input input-item popup__wrap-input">
+                        <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field"
+                               autocomplete="new-password" type="text" name="name" id="id_name"
+                               value="{{ adviser.name }}">
+                        <label class="wrap-input__label" for="id_name">{% blocktrans %}Name{% endblocktrans %}*</label>
+                        <label class="error" for="id_name"><span class="standart-text"></span></label>
+                    </div>
+                    <div class="wrap-input input-item popup__wrap-input">
+                        <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field"
+                               autocomplete="new-password" type="text" name="telegram" id="id_telegram" data-name="tg"
+                               value="{{ adviser.telegram }}">
+                        <label class="wrap-input__label" for="id_telegram">Telegram*</label>
+                        <label class="error" for="id_telegram"><span class="standart-text"></span></label>
+                    </div>
+                    <div class="wrap-input input-item popup__wrap-input">
+                        <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field"
+                               autocomplete="new-password" type="text" name="email" id="id_email"
+                               value="{{ adviser.email }}">
+                        <label class="wrap-input__label" for="id_email">Email*</label>
+                        <label class="error" for="id_email"><span class="standart-text"></span></label>
+                    </div>
+                    <div class="wrap-input input-item popup__wrap-input locked-field">
+                        <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input"
+                               autocomplete="new-password" type="text" name="linkedin" id="id_linkedin" readonly
+                               value="{{ adviser.linkedin }}">
+                        <label class="wrap-input__label" for="id_linkedin">Linkedin*</label>
+                        <label class="locked" for="id_linkedin"><span class="standart-text"></span></label>
+                    </div>
+                    <div class="wrap-input input-item popup__wrap-input">
+                        <textarea class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field"
+                                  autocomplete="new-password" type="text" name="short_description"
+                                  id="id_short_description">{{ adviser.short_description }}</textarea>
+                        <label class="wrap-input__label" for="id_short_description">{% blocktrans %}
+                            Bio{% endblocktrans %}*</label>
+                        <label class="error" for="id_short_description"><span class="standart-text"></span></label>
+                    </div>
+                </div>
+                <div class="button-wr">
+                    <button class="standart-btn" type="submit"><span>{% blocktrans %}Submit{% endblocktrans %}</span>
+                    </button>
+                </div>
+                <div class="left-part success-mess">
+                    <div class="top-part">
+                        <div class="pic">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80"
+                                 fill="none">
+                                <circle cx="40" cy="40" r="39" stroke="#94C2FF" stroke-width="2"/>
+                                <rect x="22" y="37.1924" width="3" height="20" rx="1.5"
+                                      transform="rotate(-45 22 37.1924)" fill="#94C2FF"/>
+                                <rect x="55.2344" y="28" width="3" height="30" rx="1.5"
+                                      transform="rotate(45 55.2344 28)" fill="#94C2FF"/>
+                            </svg>
+                        </div>
+                        <div class="message-txt">
+                            <p>{% blocktrans %}IEO request submitted{% endblocktrans %}</p>
+                        </div>
+                    </div>
+                    <div class="bottom-part">
+                        <nav class="success-nav">
+
+                            <ul class="success-nav-list">
+                                <li class="success-nav-list-item">
+                                    <a href="https://exrates.me/dashboard"><span>{% trans 'Trade' %}
+                                        </span></a>
+                                </li>
+                                <li class="success-nav-list-item">
+                                    <a href="{% url 'support-center' %}"><span>{% trans 'Support' %}</span></a>
+                                </li>
+                                <li class="success-nav-list-item">
+                                    <a href="https://exrates.me/ieo"><span>{% trans 'Token
+                                        Sale{' %}</span></a>
+                                </li>
+                                <li class="success-nav-list-item">
+                                    <a href=" {% url 'client-center' %}"><span>{% trans 'Contacts' %}</span></a>
+                                </li>
+                                <li class="success-nav-list-item">
+                                    <a href="{% url 'fiat' %}"><span>{% trans 'Fiat' %}</span></a>
+                                </li>
+                                <!--<li class="success-nav-list-item">
+                                            <a href="#"><span>{%  blocktrans %}Announcements{% endblocktrans %}</span></a>
+                                        </li>-->
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
-            <div class="form-part">
-                <div class="views-wr">
-                    <div id="views" class="views" tabindex="0"></div>
-                    <div class="button-part">
-                        <button type="button" id="cancel"><span>Cancel</span></button>
-                        <button type="button" id="save"><span>Save</span></button>
-                    </div>
+            <div class="right-part">
+                <div class="title-wr">
+                    <h4>{% blocktrans %}Benefits for Exrates Advisors{% endblocktrans %}</h4>
                 </div>
-                <form action="#" class="list-form nomodal">
-                    <!-- start default variant -->
-                    <div class="left-part">
-                        <div class="title">
-                            <h3 class="small-head">Congratulations! Your request was accepted. Fill the form to create a personal Advisor page on Exrates.</h3>
-                        </div>
-                        <div class="avatar-trigger">
-                            <input class="accessibility-content" id="crop-file" type="file" />
-                            <label for="crop-file">
-                                <img id="crop-img" src="{%  static  'img/pics/default-avatar.svg'%}" alt="">
-                            </label>
-                            <input id="avatar" type="hidden" name="avatar">
-                        </div>
-                        <div class="inputs-wr">
-                            <div class="wrap-input input-item popup__wrap-input">
-                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="name" id="name">
-                                <label class="wrap-input__label" for="">Name*</label>
-                                <label class="error" for="name"><span class="standart-text"></span></label>
+                <div class="a-info-part">
+                    <ul class="a-form-list">
+                        <li>
+                            <div class="icon">
+                                <img src="{% static  'img/pics/a-form1.svg' %}" alt="">
                             </div>
-                            <div class="wrap-input input-item popup__wrap-input">
-                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="surname" id="surname">
-                                <label class="wrap-input__label" for="surname">Surname*</label>
-                                <label class="error" for="surname"><span class="standart-text"></span></label>
+                            <span>{% blocktrans %}Special reward system for advisors: <br>get from 5% to
+                                15%{% endblocktrans %}</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static  'img/pics/a-form2.svg' %}" alt="">
                             </div>
-                            <div class="wrap-input input-item popup__wrap-input">
-                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="telegram" id="telegram" data-name="tg">
-                                <label class="wrap-input__label" for="telegram">Telegram*</label>
-                                <label class="error" for="telegram"><span class="standart-text"></span></label>
+                            <span>{% blocktrans %}Get exclusive analytical market reports{% endblocktrans %}</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static  'img/pics/a-form3.svg' %}" alt="">
                             </div>
-                            <div class="wrap-input input-item popup__wrap-input">
-                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="email" id="email">
-                                <label class="wrap-input__label" for="companyName">Email*</label>
-                                <label class="error" for="companyName"><span class="standart-text"></span></label>
+                            <span>{% blocktrans %}Participation in online trainings & webinars{% endblocktrans %}</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static  'img/pics/a-form4.svg' %}" alt="">
                             </div>
-                            <div class="wrap-input input-item popup__wrap-input locked-field">
-                                <input class="wrap-input__input ng-dirty ng-valid ng-touched form-input" autocomplete="new-password" type="text" name="linkedin" id="linkedin" readonly value="www.linkedin.com/in/juliapetrolek/">
-                                <label class="wrap-input__label" for="linkedin">Linkedin*</label>
-                                <label class="locked" for="linkedin"><span class="standart-text"></span></label>
+                            <span>{% blocktrans %}Your personal page on Exchange website{% endblocktrans %}</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static  'img/pics/a-form5.svg' %}" alt="">
                             </div>
-                            <div class="wrap-input input-item popup__wrap-input">
-                                <textarea class="wrap-input__input ng-dirty ng-valid ng-touched form-input reqiered-field" autocomplete="new-password" type="text" name="bio" id="bio"></textarea>
-                                <label class="wrap-input__label" for="bio">Bio*</label>
-                                <label class="error" for="bio"><span class="standart-text"></span></label>
+                            <span>{% blocktrans %}Your personal manager{% endblocktrans %}</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static  'img/pics/a-form6.svg' %}" alt="">
                             </div>
-                        </div>
-                        <div class="button-wr">
-                            <button class="standart-btn" type="submit"><span>Submit</span></button>
-                        </div>
-                        <div class="left-part success-mess">
-                            <div class="top-part">
-                                <div class="pic">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
-                                        <circle cx="40" cy="40" r="39" stroke="#94C2FF" stroke-width="2" />
-                                        <rect x="22" y="37.1924" width="3" height="20" rx="1.5" transform="rotate(-45 22 37.1924)" fill="#94C2FF" />
-                                        <rect x="55.2344" y="28" width="3" height="30" rx="1.5" transform="rotate(45 55.2344 28)" fill="#94C2FF" />
-                                    </svg>
-                                </div>
-                                <div class="message-txt">
-                                    <p>IEO request submitted</p>
-                                </div>
+                            <span>{% blocktrans %}Attend conferences & events as a part of Exrates
+                                team{% endblocktrans %}</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static  'img/pics/a-form7.svg' %}" alt="">
                             </div>
-                            <div class="bottom-part">
-                                <nav class="success-nav">
-                                    <ul class="success-nav-list">
-                                        <li class="success-nav-list-item">
-                                            <a href="#"><span>Trade</span></a>
-                                        </li>
-                                        <li class="success-nav-list-item">
-                                            <a href="#"><span>Support</span></a>
-                                        </li>
-                                        <li class="success-nav-list-item">
-                                            <a href="#"><span>Token Sale</span></a>
-                                        </li>
-                                        <li class="success-nav-list-item">
-                                            <a href="#"><span>Contacts</span></a>
-                                        </li>
-                                        <li class="success-nav-list-item">
-                                            <a href="#"><span>Fiat</span></a>
-                                        </li>
-                                        <li class="success-nav-list-item">
-                                            <a href="#"><span>Announcements</span></a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                            <span>{% blocktrans %}An opportunity to become a part of international
+                                community{% endblocktrans %}</span>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <img src="{% static  'img/pics/a-form8.svg' %}" alt="">
                             </div>
-                        </div>
-                    </div>
-                    <div class="right-part">
-                        <div class="title-wr">
-                            <h4>Benefits for Exrates Advisors</h4>
-                        </div>
-                        <div class="a-info-part">
-                            <ul class="a-form-list">
-                                <li>
-                                    <div class="icon">
-                                        <img src="{%  static  'img/pics/a-form1.svg'%}" alt="">
-                                    </div>
-                                    <span>Special reward system for advisors: <br>get from 5% to 15%</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{%  static  'img/pics/a-form2.svg'%}" alt="">
-                                    </div>
-                                    <span>Get exclusive analytical market reports</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{%  static  'img/pics/a-form3.svg'%}" alt="">
-                                    </div>
-                                    <span>Participation in online trainings & webinars</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{%  static  'img/pics/a-form4.svg'%}" alt="">
-                                    </div>
-                                    <span>Your personal page on Exchange website</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{%  static  'img/pics/a-form5.svg'%}" alt="">
-                                    </div>
-                                    <span>Your personal manager</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{%  static  'img/pics/a-form6.svg'%}" alt="">
-                                    </div>
-                                    <span>Attend conferences & events as a part of Exrates team</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{%  static  'img/pics/a-form7.svg'%}" alt="">
-                                    </div>
-                                    <span>An opportunity to become a part of international community</span>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <img src="{%  static  'img/pics/a-form8.svg'%}" alt="">
-                                    </div>
-                                    <span>Referral program</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="back-btn">
-                            <a href="#" onclick="window.history.back()"><span>
-                                    < Back</span> </a> </div> </div> </form> </div> </div> <div class="overlay modal thk-modal">
-                                        <div class="popup">
-                                            <div class="popup__close close-trigger"></div>
-                                            <div class="logo-login-mob mobile-container"></div>
-                                            <h6 class="popup__title">Thank you</h6>
-                                            <p class="popup__subtitle">Our specialist will contact you shortly</p>
-                                            <div class="button-wr">
-                                                <button class="standart-btn close-trigger" type="submit"><span>OK</span></button>
-                                            </div>
-                                        </div>
-                        </div>
-                        <div class="overlay modal err-modal">
-                            <div class="popup">
-                                <div class="popup__close close-trigger"></div>
-                                <div class="logo-login-mob mobile-container"></div>
-                                <h6 class="popup__title">Error</h6>
-                                <p class="popup__subtitle">Please resend the form</p>
-                                <div class="button-wr">
-                                    <button class="standart-btn close-trigger" type="submit"><span>OK</span></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="scripts">
-                            <!-- Set JS assets-->
-                            <!-- <script type="text/javascript">
-		WebFontConfig = {
-			google: { families: [ 'Roboto:300,400,500,600' ] }
-		};
-		(function() {
-			var wf = document.createElement('script');
-			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-			wf.type = 'text/javascript';
-			wf.async = 'true';
-			var s = document.getElementsByTagName('script')[0];
-			s.parentNode.insertBefore(wf, s);
-		})(); 
-	</script> -->
-                            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
-                            <script type="text/javascript">
-                                function googleTranslateElementInit()
-                                {
-                                    new google.translate.TranslateElement(
-                                    {
-                                        pageLanguage: 'en'
-                                    }, 'google_translate_element');
-                                }
-                            </script>
-                            <script type="text/javascript">
-                                (function()
-                                {
-                                    console.log(document.documentElement.clientWidth)
-                                    if (document.documentElement.clientWidth > 992)
-                                    {
-                                        var wf = document.createElement('script');
-                                        wf.id = 'ze-snippet';
-                                        wf.src = 'https://static.zdassets.com/ekr/snippet.js?key=78adf70e-5079-4b7b-8bcd-f2781bcb8611';
-                                        wf.type = 'text/javascript';
-                                        wf.async = 'true';
-                                        var s = document.getElementsByTagName('script')[0];
-                                        s.parentNode.insertBefore(wf, s);
-                                    }
-                                })();
-                            </script>
-                            <!-- <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=78adf70e-5079-4b7b-8bcd-f2781bcb8611" async> </script> -->
-                            <script src="{%  static  'js/vendor-bundle.min.js'%}"></script>
-                            <script src="{%  static  'js/custom-bundle.min.js'%}"></script>
-                        </div>
-    </body>
+                            <span>{% blocktrans %}Referral program{% endblocktrans %}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="back-btn">
+                    <a href="#" onclick="window.history.back()"><span>
+                                    < {% trans 'Back' %}</span> </a></div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="overlay modal thk-modal">
+    <div class="popup">
+        <div class="popup__close close-trigger"></div>
+        <div class="logo-login-mob mobile-container"></div>
+        <h6 class="popup__title">{% blocktrans %}Thank you{% endblocktrans %}</h6>
+        <p class="popup__subtitle">{% blocktrans %}Our specialist will contact you shortly{% endblocktrans %}</p>
+        <div class="button-wr">
+            <button class="standart-btn close-trigger" type="submit"><span>OK</span></button>
+        </div>
+    </div>
+</div>
+<div class="overlay modal err-modal">
+    <div class="popup">
+        <div class="popup__close close-trigger"></div>
+        <div class="logo-login-mob mobile-container"></div>
+        <h6 class="popup__title">{% blocktrans %}Error{% endblocktrans %}</h6>
+        <p class="popup__subtitle">{% blocktrans %}Please resend the form{% endblocktrans %}</p>
+        <div class="button-wr">
+            <button class="standart-btn close-trigger" type="submit"><span>OK</span></button>
+        </div>
+    </div>
+</div>
+<div class="scripts">
+    <!-- Set JS assets-->
+    <!-- <script type="text/javascript">
+WebFontConfig = {
+google: { families: [ 'Roboto:300,400,500,600' ] }
+};
+(function() {
+var wf = document.createElement('script');
+wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+wf.type = 'text/javascript';
+wf.async = 'true';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(wf, s);
+})();
+</script> -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {
+                    pageLanguage: 'en'
+                }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript">
+        (function () {
+            console.log(document.documentElement.clientWidth)
+            if (document.documentElement.clientWidth > 992) {
+                var wf = document.createElement('script');
+                wf.id = 'ze-snippet';
+                wf.src = 'https://static.zdassets.com/ekr/snippet.js?key=78adf70e-5079-4b7b-8bcd-f2781bcb8611';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            }
+        })();
+    </script>
+    <!-- <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=78adf70e-5079-4b7b-8bcd-f2781bcb8611" async> </script> -->
+    <script src="{% static  'js/vendor-bundle.min.js' %}"></script>
+    <script src="{% static  'js/custom-bundle.min.js' %}"></script>
+</div>
+</body>
 </html>

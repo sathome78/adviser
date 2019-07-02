@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-from django.conf import settings
-from django.shortcuts import get_object_or_404
 
+from django.conf import settings
+from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import FormView, TemplateView, UpdateView
 
 from adviser.forms import AdviserForm, AdviserProfileForm, ListingForm, REQUEST_CHOICES, SupportForm
-from adviser.models import Adviser, Manager, ADVISER_TYPE_ENUM
+from adviser.models import Adviser, Manager
 from clients.pipedrive_client import PipedriveClient
 from clients.zendesk_client import ZendeskClient
 
@@ -167,5 +167,22 @@ class AdviserDemoPageView(TemplateView):
 class ChatPageView(TemplateView):
     template_name = 'main/support-chat.html'
 
-class AdvisorProfileView(TemplateView):
+
+class AdvisorProfileView(UpdateView):
     template_name = 'adviser/advisor-profile.html'
+
+    form_class = AdviserProfileForm
+    model = Adviser
+    success_url = '.'
+
+    def get_object(self, queryset=None):
+        return self.model.objects.get(slug=self.kwargs['slug'])
+
+    def form_valid(self, form):
+        adviser = form.save(commit=False)
+        adviser.avatar = form.decode_base64_file(self.request.POST.get("avatar"))
+        adviser.save()
+        return redirect(self.get_success_url())
+
+    def form_invalid(self, form):
+        return super().form_invalid(form)

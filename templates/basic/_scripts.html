@@ -1,6 +1,14 @@
 {% load static %}
+{% load i18n %}
 
 <div class="scripts">
+    <script type="text/javascript">
+        var EmptyError = "{%  trans 'can&#39;t be empty' %}";
+        var EmailError = "{%  trans 'invalid email' %}";
+        var TgError = "{%  trans 'Please type your telegram nickname with @ or your phone number'%}";
+        var UrlError = "{%  trans 'incorrect format'%}";
+    </script>
+
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
     <script type="text/javascript">
         function googleTranslateElementInit()

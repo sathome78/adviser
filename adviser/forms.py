@@ -7,7 +7,7 @@ from django.forms import ModelForm, model_to_dict
 from django.urls import reverse
 from django.utils.text import slugify
 
-from adviser.models import Adviser, AdviserPipeDrive, LISTING_CHOICES, DealPipeDrive, Deal
+from adviser.models import Adviser, AdviserPipeDrive, Deal, DealPipeDrive, LISTING_CHOICES
 from clients.pipedrive_client import PipedriveClient
 
 REQUEST_CHOICES = (
@@ -110,20 +110,60 @@ class AdviserProfileForm(ModelForm):
     def save(self, commit=True):
         instance = super(AdviserProfileForm, self).save(commit=False)
         instance.member_since = datetime.today()
+
         if instance:
             model = instance
         else:
             model = self
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"type": model.get_type_display().lower(),"slug": slugify(model.name)}))
         update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"type": model.get_type_display().lower(),"slug": slugify(model.name)}))
-        deals = PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
+        deals = PipedriveClient().create_or_update_adviser(model_to_dict(model), edit_url, update_url,
+                                                           [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
-            instance.save()
+            model.save()
         print(deals)
         for deal in deals:
-            adviser_pipedrive = AdviserPipeDrive(deal_id=deal["deal_id"], adviser_id=instance.id, workspace=deal["workspace"])
+            adviser_pipedrive = AdviserPipeDrive(deal_id=deal["deal_id"], adviser_id=model.id,
+                                                 workspace=deal["workspace"])
             adviser_pipedrive.save()
-        return instance
+        return model
+
+    def decode_base64_file(self, data):
+
+        def get_file_extension(file_name, decoded_file):
+            import imghdr
+
+            extension = imghdr.what(file_name, decoded_file)
+            extension = "jpg" if extension == "jpeg" else extension
+
+            return extension
+
+        from django.core.files.base import ContentFile
+        import base64
+        import six
+        import uuid
+
+        # Check if this is a base64 string
+        if isinstance(data, six.string_types):
+            # Check if the base64 string is in the "data:" format
+            if 'data:' in data and ';base64,' in data:
+                # Break out the header from the base64 content
+                header, data = data.split(';base64,')
+
+            # Try to decode the file. Return validation error if it fails.
+            try:
+                decoded_file = base64.b64decode(data)
+            except TypeError:
+                TypeError('invalid_image')
+
+            # Generate file name:
+            file_name = str(uuid.uuid4())[:12]  # 12 characters are more than enough.
+            # Get the file name extension:
+            file_extension = get_file_extension(file_name, decoded_file)
+
+            complete_file_name = "%s.%s" % (file_name, file_extension,)
+
+            return ContentFile(decoded_file, name=complete_file_name)
 
 
 class AdviserAdminForm(ModelForm):
@@ -140,11 +180,15 @@ class AdviserAdminForm(ModelForm):
         else:
             model = self
         edit_url = "{}{}".format(settings.SITE, reverse('adviser-update', kwargs={"type": model.get_type_display().lower(),"slug": slugify(model.name)}))
-        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"type": model.get_type_display().lower(),"slug": slugify(model.name)}))
-        deals = PipedriveClient().create_or_update_adviser(model_to_dict(instance), edit_url, update_url, [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
+        update_url = "{}{}".format(settings.SITE, reverse('adviser-detail', kwargs={"type": model.get_type_display(
+
+                ).lower(),"slug": slugify(model.name)}))
+        deals = PipedriveClient().create_or_update_adviser(model_to_dict(model), edit_url, update_url,
+                                                           [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
-            instance.save()
+            model.save()
         for deal in deals:
-            adviser_pipedrive = AdviserPipeDrive(deal_id=deal["deal_id"], adviser_id=instance.id, workspace=deal["workspace"])
+            adviser_pipedrive = AdviserPipeDrive(deal_id=deal["deal_id"], adviser_id=model.id,
+                                                 workspace=deal["workspace"])
             adviser_pipedrive.save()
-        return instance
+        return model
