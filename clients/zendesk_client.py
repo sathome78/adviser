@@ -51,6 +51,8 @@ class ZendeskClient:
         return user_id
 
     def create_issue(self, type, body, email, files=[]):
+        if settings.DEBUG:
+            return {}
 
         user_id = self.create_user(email)
 
