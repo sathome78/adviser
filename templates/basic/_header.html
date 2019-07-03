@@ -171,7 +171,7 @@
 					</div> -->
                     <!-- end auth user -->
                     <div class="lang drop">
-                        <button><span class="cur-lang">{% trans 'English' %}</span></button>
+                        <button><span class="cur-lang">{% if request.LANGUAGE_CODE == "ru" %}{% trans 'Russian' %}{% else %}{% trans 'English' %}{% endif %}</span></button>
 
                         <div class="submenu">
                             <ul class="menu submenu__list">
