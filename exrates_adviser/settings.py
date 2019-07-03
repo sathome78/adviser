@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'analytics',
     'ckeditor',
     'ckeditor_uploader'
+    'api',
 
     ]
 
