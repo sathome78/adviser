@@ -943,7 +943,7 @@ msgstr ""
 msgid ""
 "A more detailed description of the conditions is available on our financial "
 "partner page"
-msgstr "Детальное описание условийдоступно на сайтенаших партнеров"
+msgstr "Детальное описание условийдоступно на сайте наших партнеров"
 
 #: templates/main/form-listing.html:48
 msgid "Telegram"
