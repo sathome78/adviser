@@ -89,13 +89,13 @@
                                 <h3>{% blocktrans %}Services{% endblocktrans %}</h3>
                             </div>
                             <div class="servise-item">
-                                <a href="{% url 'deal' %}?type=ieo"><img src="{% static 'img/pics/advisor-banner1.png' %}" alt=""></a>
+                                <a href="{% url 'deal' %}?type=ieo"><img {% if request.LANGUAGE_CODE == "ru" %} src="{% static 'img/pics/advisor-banner1-rus.png' %}"  {% else %} src="{% static 'img/pics/advisor-banner1.png' %}" {% endif %} alt=""></a>
                             </div>
                             <div class="servise-item">
-                                <a href="{% url 'deal' %}?type=listing"><img src="{% static 'img/pics/advisor-banner2.png'%}" alt=""></a>
+                                <a href="{% url 'deal' %}?type=listing"><img {% if request.LANGUAGE_CODE == "ru" %} src="{% static 'img/pics/advisor-banner2-rus.png' %}"  {% else %} src="{% static 'img/pics/advisor-banner2.png' %}" {% endif %} alt=""></a>
                             </div>
                             <div class="servise-item">
-                                 <a href="{% url 'deal' %}?type=listing"><img src="{% static 'img/pics/advisor-banner3.png'%}" alt=""></a>
+                                 <a href="{% url 'deal' %}?type=listing"><img {% if request.LANGUAGE_CODE == "ru" %} src="{% static 'img/pics/advisor-banner3-rus.png' %}"  {% else %} src="{% static 'img/pics/advisor-banner3.png' %}" {% endif %} alt=""></a>
                             </div>
                         </div>
                         <div class="benefits scroll-block" id="about-block">

@@ -183,13 +183,13 @@
                         <img src="{% static 'img/pics/baner4.png' %}" alt="">
                     </a>-->
                     <a href="{% url 'fiat' %}" class="banner-item">
-                        <img src="{% static 'img/pics/baner1.png' %}" alt="">
+                        <img {% if request.LANGUAGE_CODE == "ru" %}  src="{% static 'img/pics/banner1-rus.png' %}" {% else  %} src="{% static 'img/pics/baner1.png' %}" {% endif %} alt="">
                     </a>
                     <a href="{% url 'deal' %}" class="banner-item">
-                        <img src="{% static 'img/pics/baner2.png' %}" alt="">
+                        <img {% if request.LANGUAGE_CODE == "ru" %}  src="{% static 'img/pics/banner2-rus.png' %}" {% else  %} src="{% static 'img/pics/baner2.png' %}" {% endif %} alt="">
                     </a>
                     <a href="{% url 'become-advisor' %}" class="banner-item">
-                        <img src="{% static 'img/pics/baner3.png' %}" alt="">
+                        <img {% if request.LANGUAGE_CODE == "ru" %}  src="{% static 'img/pics/banner3-rus.png' %}" {% else  %} src="{% static 'img/pics/baner3.png' %}" {% endif %} alt="">
                     </a>
                 </div>
             </div>
