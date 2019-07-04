@@ -322,11 +322,15 @@
                     </a>
                     <div class="menu-mob__drop-wrap">
                         <a class="menu-mob__link menu-mob__link--drop menu-mob__link--active">
-                            <span class="menu-mob__link-text cur-lang">{% blocktrans %}English{% endblocktrans %}</span>
+                            <span class="menu-mob__link-text cur-lang">{% if request.LANGUAGE_CODE == "ru" %}{% trans 'Russian' %}{% else %}{% trans 'English' %}{% endif %}</span>
                         </a>
                         <div class="menu-mob__wrap-links">
-                            <a class="menu-mob__link lang-variant">{% blocktrans %}English{% endblocktrans %}</a>
-                            <a class="menu-mob__link lang-variant">{% blocktrans %}Russian{% endblocktrans %}</a>
+                        {% get_available_languages as LANGUAGES %}
+                                {% for language_code, language_name in LANGUAGES %}
+
+                            <a class="menu-mob__link lang-variant" hreflang="{{ language_code }}"
+                                           href="{% translate_url language_code %}" rel="alternate">{% blocktrans %}{{ language_name }}{% endblocktrans %}</a>
+                        {% endfor %}
                         </div>
                     </div>
                 </div>
