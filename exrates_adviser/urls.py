@@ -70,11 +70,14 @@ urlpatterns = i18n_patterns(
 
         url(r'^analytics-detail/(?P<slug>[-\w]+)/$', ArticlePageView.as_view(), name='analytics-detail'),
 
+
         ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urls = [url('admin/', admin.site.urls),
         url('i18n/', include('django.conf.urls.i18n')),
-        url(r'^ckeditor/', include('ckeditor_uploader.urls')), ]
+        url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+url(r'^api/', include('api.urls')),
+        ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += urls
