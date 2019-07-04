@@ -18,7 +18,22 @@
 
 
 // })
+if ($(".footer").length) {
+	$(window).scroll(function (e) {
 
+		var footerPos = $(".footer").offset().top;
+		var buttonHeight = $(".button-list").innerHeight();
+		console.log($(window).scrollTop());
+		console.log($(".button-list").css("background-color"));
+		console.log(buttonHeight);
+		console.log(footerPos);
+		if ($(window).scrollTop() + $(window).innerHeight() > footerPos + buttonHeight / 2) {
+			$(".button-list").css("background-color", "#0f1032");
+		} else {
+			$(".button-list").css("background-color", "#191a39");
+		}
+	});
+}
 
 function Paralax(parent, element, transition, animationSpeed, offset, adaptive) {
 	var adaptiveMod;
@@ -122,16 +137,16 @@ var urlValidation = function urlValidation(val) {
 $(".reqiered-field").keyup(function (e) {
 	if ($(this).val() == "") {
 		$(this).closest(".input-item").addClass("validation-error");
-        $(this).closest(".input-item").find(".error span").html(EmptyError);
+		$(this).closest(".input-item").find(".error span").html(EmptyError);
 		sendForm = false;
 	} else if ($(this).attr("name") == "email") {
 		if ($(this).val() == "") {
 			$(this).closest(".input-item").addClass("validation-error");
-            $(this).closest(".input-item").find(".error span").html(EmptyError);
+			$(this).closest(".input-item").find(".error span").html(EmptyError);
 			sendForm = false;
 		} else if (!/^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/.test($(this).val())) {
 			$(this).closest(".input-item").addClass("validation-error");
-            $(this).closest(".input-item").find(".error span").html(EmailError);
+			$(this).closest(".input-item").find(".error span").html(EmailError);
 			sendForm = false;
 		} else {
 			$(this).closest(".input-item").removeClass("validation-error");
@@ -140,7 +155,7 @@ $(".reqiered-field").keyup(function (e) {
 
 		if (!tgValidation($(this).val())) {
 			$(this).closest(".input-item").addClass("validation-error");
-            $(this).closest(".input-item").find(".error span").html(TgError);
+			$(this).closest(".input-item").find(".error span").html(TgError);
 			sendForm = false;
 		} else {
 			$(this).closest(".input-item").removeClass("validation-error");
@@ -149,7 +164,7 @@ $(".reqiered-field").keyup(function (e) {
 
 		if (!urlValidation($(this).val())) {
 			$(this).closest(".input-item").addClass("validation-error");
-            $(this).closest(".input-item").find(".error span").html(UrlError);
+			$(this).closest(".input-item").find(".error span").html(UrlError);
 			sendForm = false;
 		} else {
 			$(this).closest(".input-item").removeClass("validation-error");
@@ -165,16 +180,16 @@ $(".reqiered-field").focusout(function (e) {
 		if ($(this).val() == "") {
 			// $(this).closest(".input-item").removeClass("active");
 			$(this).closest(".input-item").addClass("validation-error");
-            $(this).closest(".input-item").find(".error span").html(EmptyError);
+			$(this).closest(".input-item").find(".error span").html(EmptyError);
 			sendForm = false;
 		} else if ($(this).attr("name") == "email") {
 			if ($(this).val() == "") {
 				$(this).closest(".input-item").addClass("validation-error");
-                $(this).closest(".input-item").find(".error span").html(EmptyError);
+				$(this).closest(".input-item").find(".error span").html(EmptyError);
 				sendForm = false;
 			} else if (!/^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/.test($(this).val())) {
 				$(this).closest(".input-item").addClass("validation-error");
-                $(this).closest(".input-item").find(".error span").html(EmailError);
+				$(this).closest(".input-item").find(".error span").html(EmailError);
 				sendForm = false;
 			} else {
 				$(this).closest(".input-item").removeClass("validation-error");
@@ -183,7 +198,7 @@ $(".reqiered-field").focusout(function (e) {
 
 			if (!tgValidation($(this).val())) {
 				$(this).closest(".input-item").addClass("validation-error");
-                $(this).closest(".input-item").find(".error span").html(TgError);
+				$(this).closest(".input-item").find(".error span").html(TgError);
 				sendForm = false;
 			} else {
 				$(this).closest(".input-item").removeClass("validation-error");
@@ -192,7 +207,7 @@ $(".reqiered-field").focusout(function (e) {
 
 			if (!urlValidation($(this).val())) {
 				$(this).closest(".input-item").addClass("validation-error");
-                $(this).closest(".input-item").find(".error span").html(UrlError);
+				$(this).closest(".input-item").find(".error span").html(UrlError);
 				sendForm = false;
 			} else {
 				$(this).closest(".input-item").removeClass("validation-error");
@@ -215,16 +230,16 @@ $("form").on("submit", function (e) {
 
 		if ($(this).val() == "") {
 			$(this).closest(".input-item").addClass("validation-error");
-            $(this).closest(".input-item").find(".error span").html(EmptyError);
+			$(this).closest(".input-item").find(".error span").html(EmptyError);
 			sendForm = false;
 		} else if ($(this).attr("name") == "email") {
 			if ($(this).val() == "") {
 				$(this).closest(".input-item").addClass("validation-error");
-                $(this).closest(".input-item").find(".error span").html(EmptyError);
+				$(this).closest(".input-item").find(".error span").html(EmptyError);
 				sendForm = false;
 			} else if (!/^[a-z0-9][a-z0-9-_\.]+@([a-z]|[a-z0-9]?[a-z0-9-]+[a-z0-9])\.[a-z0-9]{2,10}(?:\.[a-z]{2,10})?$/.test($(this).val())) {
 				$(this).closest(".input-item").addClass("validation-error");
-                $(this).closest(".input-item").find(".error span").html(EmailError);
+				$(this).closest(".input-item").find(".error span").html(EmailError);
 				sendForm = false;
 			} else {
 				$(this).closest(".input-item").removeClass("validation-error");
@@ -233,7 +248,7 @@ $("form").on("submit", function (e) {
 
 			if (!tgValidation($(this).val())) {
 				$(this).closest(".input-item").addClass("validation-error");
-                $(this).closest(".input-item").find(".error span").html(TgError);
+				$(this).closest(".input-item").find(".error span").html(TgError);
 				sendForm = false;
 			} else {
 				$(this).closest(".input-item").removeClass("validation-error");
@@ -242,7 +257,7 @@ $("form").on("submit", function (e) {
 
 			if (!urlValidation($(this).val())) {
 				$(this).closest(".input-item").addClass("validation-error");
-                $(this).closest(".input-item").find(".error span").html(UrlError);
+				$(this).closest(".input-item").find(".error span").html(UrlError);
 				sendForm = false;
 			} else {
 				$(this).closest(".input-item").removeClass("validation-error");
@@ -522,7 +537,7 @@ var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
 		applyCrop();
 		$("#crop-file").val("");
 		$("#crop-img").attr("src", canvas.toDataURL('image/png'));
-        $("#id_avatar").val(canvas.toDataURL('image/png'));
+		$("#id_avatar").val(canvas.toDataURL('image/png'));
 		setTimeout(function () {
 			$(".views-wr").removeClass("no-empty");
 			$("#views").html("");
@@ -626,8 +641,8 @@ window.addEventListener("popstate", function (e) {
 }, false);
 
 $("input, textarea").each(function () {
-    activeInput($(this));
-    console.log("rvwev");
+	activeInput($(this));
+	console.log("rvwev");
 });
 
 var filterHeadFunc = function filterHeadFunc() {
