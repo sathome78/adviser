@@ -598,6 +598,14 @@ msgstr ""
 msgid "About us"
 msgstr "О нас"
 
+#: templates/basic/_header.html:227
+msgid "or"
+msgstr "или"
+
+#: templates/basic/_header.html:280
+msgid "About us"
+msgstr "О нас"
+
 #: templates/basic/_header.html:61
 msgid ""
 "Apply to\n"

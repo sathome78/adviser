@@ -224,7 +224,7 @@
                         <div class="account-info__text">
                             <a class="account-info__email" href="https://exrates.me/login">{% blocktrans %}
                                 Login{% endblocktrans %}</a>
-                            <span class="slash">or</span>
+                            <span class="slash">{% trans 'or' %}</span>
                             <a class="account-info__email" href="https://exrates.me/register">{% blocktrans %}
                                 Register{% endblocktrans %}</a>
                         </div>
@@ -277,7 +277,7 @@
                         <span
                                 {% if request.path == about or request.path == clientcenter or request.path == supportcenter or request.path == termsofuse or request.path == privacypolicy %}
                                     class=" menu-mob__link-text active" {% else %}
-                                    class=" menu-mob__link-text"{% endif %}>About us</span>
+                                    class=" menu-mob__link-text"{% endif %}>{% blocktrans %}About us{% endblocktrans %}</span>
                     </a>
                     {% url 'deal' as deal %}
                     <a class="menu-mob__link" href="{% url 'deal' %}">
