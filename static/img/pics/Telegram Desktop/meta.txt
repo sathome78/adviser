@@ -1,0 +1,46 @@
+About us
+
+<title>About us | Exrates </title>
+<meta name="description" content="Exrates Exchange is one of the leading cryptocurrency exchanges. With more than 200 coins, 170k active traders and 50k community. Join Exrates now!" />
+
+
+Support
+
+<title>Support | Exrates</title>
+<meta name="description" content="Exrates provides 24/7 support. Find your issue in FAQ, submit your request here or contact our Support Team." />
+
+
+Contact us
+
+<title>Contact us | Exrates</title>
+<meta name="description" content="Exrates Sales team is waiting for your requests! Contact us for listing, IEO or cooperation any time!" />
+
+
+Privacy Policy
+
+<title>Privacy Policy | Exrates</title>
+<meta name="description" content="Exrates Privacy Policy explains how information about you is collected, used, and disclosed by Exrates." />
+
+
+Terms of use
+
+<title>Terms of use | Exrates</title>
+<meta name="description" content="By accessing, registering, or using Exrates, you have agreed to the terms of use. Have a great trading!" />
+
+
+Apply for listing
+
+<title>Apply for listing | Exrates</title>
+<meta name="description" content="Apply your coin for listing in 2 clicks! Receive your exclusive offer immediately and get listed in few days!" />
+
+
+Become an Advisor
+
+<title>Become an Advisor | Exrates</title>
+<meta name="description" content="Become a part of TOP30 crypto exchange! Join Exrates Advisor team. Just fill the form and we will contact you." />
+
+
+Advisors | Exrates
+
+<title>Advisors | Exrates</title>
+<meta name="description" content="Meet official representatives of Exrates exchange. And become one of them!" />
