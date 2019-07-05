@@ -44,7 +44,7 @@ urlpatterns = i18n_patterns(
         url(r'^$', home, name='home'),
 
         url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
-        url(r'^ambassador-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
+        url(r'^advisor-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
 
         url(r'^(?P<type>[-\w]+)-profile/(?P<slug>[-\w]+)/$', AdvisorProfileView.as_view(), name='advisor-profile'),
 
