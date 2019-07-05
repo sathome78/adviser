@@ -52,7 +52,7 @@ class PipedriveClient:
         email = data.get("email")
         telegram = data.get("telegram", "@")[1:]
 
-        result = self.__make_deal([PIPEDRIVE_ME, PIPEDRIVE], company_name, email, link_to_project, name, telegram, title)
+        result = self.__make_deal([PIPEDRIVE], company_name, email, link_to_project, name, telegram, title)
 
         # send notification to telegram
         msg1 = ''
@@ -118,7 +118,7 @@ class PipedriveClient:
         email = data.get("email")
         linkedin = data.get("linkedin")
 
-        result = self.__make_adviser([PIPEDRIVE_ME, PIPEDRIVE], edit_url, email, linkedin, name, telegram, update_url)
+        result = self.__make_adviser([PIPEDRIVE], edit_url, email, linkedin, name, telegram, update_url)
 
         # send notification to telegram
         msg1 = ''
