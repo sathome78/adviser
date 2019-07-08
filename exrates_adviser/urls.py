@@ -42,7 +42,7 @@ def page_not_found_view(request):
 
 urlpatterns = i18n_patterns(
         url(r'^$', home, name='home'),
-
+url(r'^analytics-detail/(?P<slug>[-\w]+)/$', ArticlePageView.as_view(), name='analytics-detail'),
         url(r'^form-listing/$', DealPageView.as_view(), name='deal'),
         url(r'^advisor-demo/$', AdviserDemoPageView.as_view(), name='adviser-demo'),
 
@@ -68,7 +68,7 @@ urlpatterns = i18n_patterns(
 
         url(r'^api/articles/$', ListArticleView.as_view(), name='articles-list1'),
 
-        url(r'^analytics-detail/(?P<slug>[-\w]+)/$', ArticlePageView.as_view(), name='analytics-detail'),
+
 
 
         ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
