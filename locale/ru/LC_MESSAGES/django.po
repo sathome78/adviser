@@ -874,7 +874,7 @@ msgid ""
 "We provide personal bank account with 3rd party payment option to 231\n"
 "                                        countries."
 msgstr ""
-"Мы предоставляем личный банковский аккаунт с возможностью переводов через 3ю "
+"Мы предоставляем личный банковский аккаунт с возможностью переводов через 3-ю "
 "сторону в 231 страну."
 
 #: templates/main/client-center.html:147
@@ -888,7 +888,7 @@ msgstr ""
 
 #: templates/main/fiat.html:17
 msgid "Meet fiat on Exrates in Q3!"
-msgstr "Ожидайте FIAT на EXRATES в 3м квартале"
+msgstr "Ожидайте FIAT на EXRATES в 3-м квартале"
 
 #: templates/main/fiat.html:25
 #, python-format
@@ -943,7 +943,7 @@ msgstr ""
 msgid ""
 "A more detailed description of the conditions is available on our financial "
 "partner page"
-msgstr "Детальное описание условийдоступно на сайте наших партнеров"
+msgstr "Детальное описание условий доступно на сайте наших партнеров"
 
 #: templates/main/form-listing.html:48
 msgid "Telegram"
