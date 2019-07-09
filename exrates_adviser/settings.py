@@ -49,11 +49,11 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'api',
-    'nocaptcha_recaptcha'
+    'captcha'
 
     ]
-NORECAPTCHA_SITE_KEY = '6LdP0qwUAAAAANGp41-T0v2D5_5GpRZewOTWcmjV'
-NORECAPTCHA_SECRET_KEY = '6LdP0qwUAAAAAL0Y7vesBT-5diawOczk9A7q5jEu'
+RECAPTCHA_PUBLIC_KEY = '6LdP0qwUAAAAANGp41-T0v2D5_5GpRZewOTWcmjV'
+RECAPTCHA_PRIVATE_KEY = '6LdP0qwUAAAAAL0Y7vesBT-5diawOczk9A7q5jEu'
 CAPTCHA_AJAX = True
 OPENGRAPH_CONFIG = {
     'FB_ADMINS': '100003930913968',
