@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import mimetypes
 from datetime import datetime
 
 from django.conf import settings
@@ -60,7 +61,7 @@ class ZendeskClient:
 
         for file in files:
 
-            fname = '{}, {}'.format(type, email)
+
 
             fdata = file.read()
 
@@ -68,7 +69,7 @@ class ZendeskClient:
             mime_type = magic.from_buffer(fdata, mime=True)
 
             upload_result = self.zendesk_client.upload_create(
-                    fdata, filename=fname, mime_type=mime_type, complete_response=True)
+                    fdata, filename=file.name, mime_type=mime_type, complete_response=True)
             files_list.append(upload_result['content']['upload']['token'])
 
         new_ticket = {
