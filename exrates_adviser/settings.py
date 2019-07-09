@@ -49,9 +49,12 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'api',
+    'nocaptcha_recaptcha'
 
     ]
-
+NORECAPTCHA_SITE_KEY = '6LdP0qwUAAAAANGp41-T0v2D5_5GpRZewOTWcmjV'
+NORECAPTCHA_SECRET_KEY = '6LdP0qwUAAAAAL0Y7vesBT-5diawOczk9A7q5jEu'
+CAPTCHA_AJAX = True
 OPENGRAPH_CONFIG = {
     'FB_ADMINS': '100003930913968',
     'FB_APP_ID': '1335507479837766',
@@ -86,6 +89,8 @@ MIDDLEWARE = [
     'adviser.context_processor.force_default_language_middleware',
 
     ]
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LdRSRYUAAAAAOnk5yomm1dI9BmQkJWTg_wIlMJ_'
 
 ROOT_URLCONF = 'exrates_adviser.urls'
 

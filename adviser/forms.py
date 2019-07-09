@@ -6,6 +6,9 @@ from django.conf import settings
 from django.forms import ModelForm, model_to_dict
 from django.urls import reverse
 from django.utils.text import slugify
+from nocaptcha_recaptcha import NoReCaptchaField
+from snowpenguin.django.recaptcha2.fields import ReCaptchaField
+from snowpenguin.django.recaptcha2.widgets import ReCaptchaWidget
 
 from adviser.models import Adviser, AdviserPipeDrive, Deal, DealPipeDrive, LISTING_CHOICES
 from clients.pipedrive_client import PipedriveClient
@@ -36,9 +39,6 @@ class SupportForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea, max_length=700)
     files = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}), required=False)
 
-
-
-
 class ListingForm(ModelForm):
     request_type = forms.ChoiceField(choices=LISTING_CHOICES, widget=forms.RadioSelect)
     name = forms.CharField(max_length=255)
@@ -46,6 +46,7 @@ class ListingForm(ModelForm):
     email = forms.EmailField()
     company_name = forms.CharField(max_length=255)
     link_to_project = forms.CharField(max_length=255, required=True)
+    captcha = NoReCaptchaField(required=True)
 
     class Meta:
         model = Deal
