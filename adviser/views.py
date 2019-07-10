@@ -12,25 +12,6 @@ from clients.zendesk_client import ZendeskClient
 
 
 from functools import wraps
-def check_recaptcha(view_func):
-    @wraps(view_func)
-    def _wrapped_view(request, *args, **kwargs):
-        request.recaptcha_is_valid = None
-        if request.method == 'POST':
-            recaptcha_response = request.POST.get('g-recaptcha-response')
-            data = {
-                'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
-                'response': recaptcha_response
-            }
-            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
-            result = r.json()
-            if result['success']:
-                request.recaptcha_is_valid = True
-            else:
-                request.recaptcha_is_valid = False
-                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
-        return view_func(request, *args, **kwargs)
-    return _wrapped_view
 
 class SupportPageView(FormView):
     template_name = 'main/support-center.html'
@@ -41,7 +22,6 @@ class SupportPageView(FormView):
         context = super(SupportPageView, self).get_context_data(**kwargs)
         return context
 
-    @check_recaptcha
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -74,9 +54,8 @@ class DealPageView(FormView):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
         if form.is_valid():
-            if self.request.recaptcha_is_valid:
-                form.save()
-                return self.form_valid(form)
+            form.save()
+            return self.form_valid(form)
         else:
             return self.form_invalid(form)
 
@@ -86,7 +65,6 @@ class AdviserFormView(FormView):
     form_class = AdviserForm
     success_url = '.'
 
-    @check_recaptcha
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -106,7 +84,6 @@ class AdviserUpdateProfileView(UpdateView):
     def get_object(self, queryset=None):
         return self.model.objects.get(slug=self.kwargs['slug'])
 
-    @check_recaptcha
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -125,7 +102,6 @@ class AdviserProfileView(TemplateView):
     def get_object(self, queryset=None):
         return self.model.objects.get(slug=self.kwargs['slug'])
 
-    @check_recaptcha
     def get_context_data(self, **kwargs):
         slug = self.kwargs['slug']
         data = super().get_context_data(**kwargs)
@@ -149,7 +125,6 @@ class AboutUsPageView(FormView):
         context = super(AboutUsPageView, self).get_context_data(**kwargs)
         return context
 
-    @check_recaptcha
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
@@ -205,7 +180,6 @@ class AdvisorProfileView(UpdateView):
     def get_object(self, queryset=None):
         return self.model.objects.get(slug=self.kwargs['slug'])
 
-    @check_recaptcha
     def form_valid(self, form):
         adviser = form.save(commit=False)
         adviser.avatar = form.decode_base64_file(self.request.POST.get("avatar"))

@@ -2,7 +2,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin, TabbedTranslationAdmin
 
-from adviser.forms import AdviserAdminForm, ListingForm
+from adviser.forms import AdviserAdminForm, ListingForm, ListingFormAdmin
 from adviser.models import Adviser, Manager, GeneralFields, AdviserPipeDrive, Deal, DealPipeDrive
 from clients import pipedrive_client
 from clients.pipedrive_client import PipedriveClient
@@ -91,7 +91,7 @@ class DealAdmin(admin.ModelAdmin):
     list_display = ("id", "request_type", "name",  "email", "company_name")
     list_filter = ('request_type', 'company_name')
     readonly_fields = ("id",)
-    form = ListingForm
+    form = ListingFormAdmin
     actions = ['delete_model']
 
     def delete_model(self, request, obj):
@@ -100,8 +100,6 @@ class DealAdmin(admin.ModelAdmin):
             PipedriveClient().delete_deal(deal_id=deal.deal_id, client=client)
             deal.delete()
         obj.delete()
-
-
 
     def delete_queryset(self, request, queryset):
         for obj in queryset:

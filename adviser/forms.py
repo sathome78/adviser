@@ -44,14 +44,14 @@ class SupportForm(forms.Form):
     files = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}), required=False)
     captcha = ReCaptchaField(required=True)
 
-class ListingForm(ModelForm):
+
+class ListingFormAdmin(ModelForm):
     request_type = forms.ChoiceField(choices=LISTING_CHOICES, widget=forms.RadioSelect)
     name = forms.CharField(max_length=255)
     telegram = forms.CharField(max_length=255, required=False)
     email = forms.EmailField()
     company_name = forms.CharField(max_length=255)
     link_to_project = forms.CharField(max_length=255, required=True)
-    captcha = ReCaptchaField(required=True)
 
     class Meta:
         model = Deal
@@ -59,7 +59,7 @@ class ListingForm(ModelForm):
 
     def save(self, commit=True):
 
-        instance = super(ListingForm, self).save(commit=False)
+        instance = super(ListingFormAdmin, self).save(commit=False)
         if instance:
             model = instance
         else:
@@ -69,9 +69,14 @@ class ListingForm(ModelForm):
         if commit:
             instance.save()
         for deal in deals:
-            adviser_pipedrive = DealPipeDrive(deal_id=deal["deal_id"], deal_model_id=instance.id, workspace=deal["workspace"])
+            adviser_pipedrive = DealPipeDrive(deal_id=deal["deal_id"], deal_model_id=instance.id,
+                                              workspace=deal["workspace"])
             adviser_pipedrive.save()
         return instance
+
+class ListingForm(ListingFormAdmin):
+    captcha = ReCaptchaField()
+
 
 
 class AdviserForm(ModelForm):
