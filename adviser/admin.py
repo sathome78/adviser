@@ -35,7 +35,10 @@ class AdviserAdmin(TabbedTranslationAdmin):
     def delete_model(self, request, obj):
         for adviser in AdviserPipeDrive.objects.filter(adviser_id=obj.id):
             client = getattr(pipedrive_client, adviser.workspace)().client
-            PipedriveClient().delete_deal(deal_id=adviser.deal_id, client=client)
+            try:
+                PipedriveClient().delete_deal(deal_id=adviser.deal_id, client=client)
+            except Exception:
+                pass
             adviser.delete()
         obj.delete()
 
@@ -45,7 +48,10 @@ class AdviserAdmin(TabbedTranslationAdmin):
         for obj in queryset:
             for adviser in AdviserPipeDrive.objects.filter(adviser_id=obj.id):
                 client = getattr(pipedrive_client, adviser.workspace)().client
-                PipedriveClient().delete_deal(deal_id=adviser.deal_id, client=client)
+                try:
+                    PipedriveClient().delete_deal(deal_id=adviser.deal_id, client=client)
+                except Exception:
+                    pass
                 adviser.delete()
             obj.delete()
 
@@ -97,7 +103,10 @@ class DealAdmin(admin.ModelAdmin):
     def delete_model(self, request, obj):
         for deal in DealPipeDrive.objects.filter(deal_model_id=obj.id):
             client = getattr(pipedrive_client, deal.workspace)().client
-            PipedriveClient().delete_deal(deal_id=deal.deal_id, client=client)
+            try:
+                PipedriveClient().delete_deal(deal_id=deal.deal_id, client=client)
+            except Exception:
+                pass
             deal.delete()
         obj.delete()
 
@@ -105,7 +114,10 @@ class DealAdmin(admin.ModelAdmin):
         for obj in queryset:
             for deal in DealPipeDrive.objects.filter(deal_model_id=obj.id):
                 client = getattr(pipedrive_client, deal.workspace)().client
-                PipedriveClient().delete_deal(deal_id=deal.deal_id, client=client)
+                try:
+                    PipedriveClient().delete_deal(deal_id=deal.deal_id, client=client)
+                except Exception:
+                    pass
                 deal.delete()
             obj.delete()
 
