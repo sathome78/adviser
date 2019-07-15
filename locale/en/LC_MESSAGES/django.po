@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-02 15:04+0000\n"
+"POT-Creation-Date: 2019-07-15 15:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: adviser/models.py:32
+#: adviser/models.py:29
 msgid "sale manager"
 msgstr ""
 
-#: adviser/models.py:33
+#: adviser/models.py:30
 msgid "sale managers"
 msgstr ""
 
-#: adviser/models.py:47 analytics/models.py:31
+#: adviser/models.py:44 analytics/models.py:31
 msgid "slug"
 msgstr ""
 
-#: adviser/models.py:75
+#: adviser/models.py:72
 msgid "Ambassador"
 msgstr ""
 
-#: adviser/models.py:76
+#: adviser/models.py:73
 msgid "Ambassadors"
 msgstr ""
 
-#: adviser/models.py:96 adviser/models.py:97
+#: adviser/models.py:93 adviser/models.py:94
 msgid "general fields"
 msgstr ""
 
@@ -50,17 +50,18 @@ msgstr ""
 msgid "Analytic articles"
 msgstr ""
 
-#: exrates_adviser/settings.py:63 templates/basic/_header.html:174
-#: templates/basic/_header.html:324 templates/basic/_header.html:327
+#: exrates_adviser/settings.py:67 templates/basic/_header.html:174
+#: templates/basic/_header.html:325
 msgid "English"
 msgstr ""
 
-#: exrates_adviser/settings.py:64 templates/basic/_header.html:328
+#: exrates_adviser/settings.py:68 templates/basic/_header.html:174
+#: templates/basic/_header.html:325
 msgid "Russian"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:14
-msgid "Ambassador Exrates Exchange"
+msgid "Advisor Exrates Exchange"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:25
@@ -68,13 +69,13 @@ msgid "Jana Christian"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:28
-msgid "Verified Ambassador"
+msgid "Verified Advisor"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:31
 msgid ""
-"CEO at The Currency Analytics, CMO , Ambassador and Brand Ambassador / "
-"specialized in marketing - Cryptocurrency"
+"CEO at The Currency Analytics, CMO , Advisor and Brand Advisor / specialized "
+"in marketing - Cryptocurrency"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:34
@@ -91,7 +92,7 @@ msgid " SINCE: JANUARY 23, 2018"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:52
-msgid "Ambassador Responsibilities"
+msgid "Advisor Responsibilities"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:55
@@ -106,7 +107,7 @@ msgid "About Exrates"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:67
-msgid "Ambassador in charge:"
+msgid "Advisor in charge:"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:70
@@ -130,7 +131,7 @@ msgid "Represent Exrates on events and conferences"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:78
-msgid "Ambassador not in charge:"
+msgid "Advisor not in charge:"
 msgstr ""
 
 #: templates/adviser/adviser_page.html:81
@@ -271,11 +272,11 @@ msgstr ""
 msgid "Link to the website"
 msgstr ""
 
-#: templates/adviser/adviser_page.html:204
-#: templates/adviser/advisor-form.html:51
-#: templates/adviser/advisor-page.html:205
+#: templates/adviser/adviser_page.html:205
+#: templates/adviser/advisor-form.html:52
+#: templates/adviser/advisor-page.html:206
 #: templates/adviser/advisor-profile.html:158
-#: templates/main/form-listing.html:68 templates/main/support-center.html:116
+#: templates/main/form-listing.html:75 templates/main/support-center.html:117
 msgid "Submit"
 msgstr ""
 
@@ -288,98 +289,99 @@ msgstr ""
 msgid "Fill the form to become an Ambassador"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:63
+#: templates/adviser/advisor-form.html:64
 #: templates/adviser/advisor-profile.html:174
-#: templates/main/form-listing.html:81
+#: templates/main/form-listing.html:88
 msgid "IEO request submitted"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:70
+#: templates/adviser/advisor-form.html:71
 #: templates/adviser/advisor-profile.html:182 templates/basic/_header.html:13
-#: templates/basic/_header.html:249 templates/main/form-listing.html:88
+#: templates/basic/_header.html:250 templates/main/form-listing.html:95
 msgid "Trade"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:73
+#: templates/adviser/advisor-form.html:74
 #: templates/adviser/advisor-profile.html:186 templates/basic/_footer.html:77
 #: templates/main/about-us.html:33 templates/main/client-center.html:35
-#: templates/main/form-listing.html:91 templates/main/privacy-policy.html:37
+#: templates/main/form-listing.html:98 templates/main/privacy-policy.html:37
 #: templates/main/support-center.html:34 templates/main/terms-of-use.html:35
 msgid "Support"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:76 templates/basic/_header.html:65
-#: templates/basic/_header.html:289 templates/main/form-listing.html:94
+#: templates/adviser/advisor-form.html:77
+#: templates/adviser/advisor-profile.html:189 templates/basic/_header.html:65
+#: templates/basic/_header.html:290 templates/main/form-listing.html:101
 msgid "Token Sale"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:79
-#: templates/adviser/advisor-profile.html:193 templates/basic/_footer.html:80
+#: templates/adviser/advisor-form.html:80
+#: templates/adviser/advisor-profile.html:192 templates/basic/_footer.html:80
 #: templates/main/about-us.html:32 templates/main/client-center.html:34
-#: templates/main/form-listing.html:97 templates/main/privacy-policy.html:36
+#: templates/main/form-listing.html:104 templates/main/privacy-policy.html:36
 #: templates/main/support-center.html:33 templates/main/terms-of-use.html:34
 msgid "Contacts"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:82
-#: templates/adviser/advisor-profile.html:196 templates/basic/_header.html:70
-#: templates/main/form-listing.html:100
+#: templates/adviser/advisor-form.html:83
+#: templates/adviser/advisor-profile.html:195 templates/basic/_header.html:70
+#: templates/main/form-listing.html:107
 msgid "Fiat"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:85
-#: templates/adviser/advisor-profile.html:199
-#: templates/main/form-listing.html:103
+#: templates/adviser/advisor-form.html:86
+#: templates/adviser/advisor-profile.html:198
+#: templates/main/form-listing.html:110
 msgid "Announcements"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:94
+#: templates/adviser/advisor-form.html:95
 #: templates/adviser/become-advisor.html:37
 msgid "Benefits for Exrates Ambassadors"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:102
+#: templates/adviser/advisor-form.html:103
 #, python-format
 msgid "Special reward system for ambassadors: <br>get from 5%% to 15%%"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:108
-#: templates/adviser/advisor-profile.html:223
+#: templates/adviser/advisor-form.html:109
+#: templates/adviser/advisor-profile.html:222
 msgid "Get exclusive analytical market reports"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:114
-#: templates/adviser/advisor-profile.html:229
+#: templates/adviser/advisor-form.html:115
+#: templates/adviser/advisor-profile.html:228
 msgid "Participation in online trainings & webinars"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:120
-#: templates/adviser/advisor-profile.html:235
+#: templates/adviser/advisor-form.html:121
+#: templates/adviser/advisor-profile.html:234
 msgid "Your personal page on Exchange website"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:126
-#: templates/adviser/advisor-profile.html:241
+#: templates/adviser/advisor-form.html:127
+#: templates/adviser/advisor-profile.html:240
 msgid "Your personal manager"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:132
+#: templates/adviser/advisor-form.html:133
 msgid "Attend conferences & events as a part of Exrates team"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:138
+#: templates/adviser/advisor-form.html:139
 msgid "An opportunity to become a part of international community"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:144
-#: templates/adviser/advisor-profile.html:261
+#: templates/adviser/advisor-form.html:145
+#: templates/adviser/advisor-profile.html:260
 #: templates/adviser/become-advisor.html:86
 msgid "Referral program"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:150
-#: templates/adviser/advisor-profile.html:267
-#: templates/main/form-listing.html:144
+#: templates/adviser/advisor-form.html:151
+#: templates/adviser/advisor-profile.html:266
+#: templates/main/form-listing.html:151
 msgid "Back"
 msgstr ""
 
@@ -423,42 +425,42 @@ msgid ""
 "                            Bio"
 msgstr ""
 
-#: templates/adviser/advisor-profile.html:208
+#: templates/adviser/advisor-profile.html:207
 msgid "Benefits for Exrates Advisors"
 msgstr ""
 
-#: templates/adviser/advisor-profile.html:216
+#: templates/adviser/advisor-profile.html:215
 #, python-format
 msgid ""
 "Special reward system for advisors: <br>get from 5%% to\n"
 "                                15%%"
 msgstr ""
 
-#: templates/adviser/advisor-profile.html:247
+#: templates/adviser/advisor-profile.html:246
 msgid ""
 "Attend conferences & events as a part of Exrates\n"
 "                                team"
 msgstr ""
 
-#: templates/adviser/advisor-profile.html:254
+#: templates/adviser/advisor-profile.html:253
 msgid ""
 "An opportunity to become a part of international\n"
 "                                community"
 msgstr ""
 
-#: templates/adviser/advisor-profile.html:276 templates/base.html:42
+#: templates/adviser/advisor-profile.html:275 templates/base.html:42
 msgid "Thank you"
 msgstr ""
 
-#: templates/adviser/advisor-profile.html:277 templates/base.html:43
+#: templates/adviser/advisor-profile.html:276 templates/base.html:43
 msgid "Our specialist will contact you shortly"
 msgstr ""
 
-#: templates/adviser/advisor-profile.html:287 templates/base.html:53
+#: templates/adviser/advisor-profile.html:286 templates/base.html:53
 msgid "Error"
 msgstr ""
 
-#: templates/adviser/advisor-profile.html:288 templates/base.html:54
+#: templates/adviser/advisor-profile.html:287 templates/base.html:54
 msgid "Please resend the form"
 msgstr ""
 
@@ -577,9 +579,16 @@ msgid ""
 "reserved"
 msgstr ""
 
-#: templates/basic/_header.html:56 templates/main/about-us.html:31
-#: templates/main/client-center.html:33 templates/main/privacy-policy.html:35
-#: templates/main/support-center.html:32 templates/main/terms-of-use.html:33
+#: templates/basic/_footer.html:186 templates/main/about-us.html:64
+#: templates/main/client-center.html:77 templates/main/privacy-policy.html:77
+#: templates/main/support-center.html:65 templates/main/terms-of-use.html:74
+msgid "List your Coin"
+msgstr ""
+
+#: templates/basic/_header.html:56 templates/basic/_header.html:280
+#: templates/main/about-us.html:31 templates/main/client-center.html:33
+#: templates/main/privacy-policy.html:35 templates/main/support-center.html:32
+#: templates/main/terms-of-use.html:33
 msgid "About us"
 msgstr ""
 
@@ -589,7 +598,7 @@ msgid ""
 "                                list"
 msgstr ""
 
-#: templates/basic/_header.html:87 templates/basic/_header.html:303
+#: templates/basic/_header.html:87 templates/basic/_header.html:304
 msgid "Community"
 msgstr ""
 
@@ -623,7 +632,7 @@ msgid ""
 "                                                    Korea"
 msgstr ""
 
-#: templates/basic/_header.html:130 templates/basic/_header.html:320
+#: templates/basic/_header.html:130 templates/basic/_header.html:321
 msgid "News"
 msgstr ""
 
@@ -637,52 +646,61 @@ msgid ""
 "                            Register"
 msgstr ""
 
-#: templates/basic/_header.html:219
+#: templates/basic/_header.html:220
 msgid "Account"
 msgstr ""
 
-#: templates/basic/_header.html:224
+#: templates/basic/_header.html:225
 msgid ""
 "\n"
 "                                Login"
 msgstr ""
 
 #: templates/basic/_header.html:227
+msgid "or"
+msgstr ""
+
+#: templates/basic/_header.html:228
 msgid ""
 "\n"
 "                                Register"
 msgstr ""
 
-#: templates/basic/_header.html:285
+#: templates/basic/_header.html:286
 msgid ""
 "\n"
 "                            Apply to list"
 msgstr ""
 
-#: templates/basic/_header.html:294
+#: templates/basic/_header.html:295
 msgid ""
 "\n"
 "                            Fiat"
 msgstr ""
 
-#: templates/basic/_header.html:307
+#: templates/basic/_header.html:308
 msgid "Community World"
 msgstr ""
 
-#: templates/basic/_header.html:309
+#: templates/basic/_header.html:310
 msgid "Community China"
 msgstr ""
 
-#: templates/basic/_header.html:311
+#: templates/basic/_header.html:312
 msgid "Community Indonesia"
 msgstr ""
 
-#: templates/basic/_header.html:313
+#: templates/basic/_header.html:314
 msgid "Community Russia"
 msgstr ""
 
-#: templates/basic/_header.html:315
+#: templates/basic/_header.html:316
 msgid "Community Korea"
+msgstr ""
+
+#: templates/basic/_header.html:332
+#, python-format
+msgid "%(language_name)s"
 msgstr ""
 
 #: templates/basic/_scripts.html:6
@@ -701,6 +719,10 @@ msgstr ""
 msgid "incorrect format"
 msgstr ""
 
+#: templates/basic/_scripts.html:10
+msgid "protection from automatic filling"
+msgstr ""
+
 #: templates/main/about-us.html:15
 msgid "About Us "
 msgstr ""
@@ -715,12 +737,6 @@ msgstr ""
 #: templates/main/privacy-policy.html:68 templates/main/support-center.html:56
 #: templates/main/terms-of-use.html:59
 msgid "Start IEO"
-msgstr ""
-
-#: templates/main/about-us.html:64 templates/main/client-center.html:77
-#: templates/main/privacy-policy.html:77 templates/main/support-center.html:65
-#: templates/main/terms-of-use.html:74
-msgid "List your Coin"
 msgstr ""
 
 #: templates/main/about-us.html:69
@@ -807,7 +823,7 @@ msgstr ""
 msgid "Apply for Listing"
 msgstr ""
 
-#: templates/main/about-us.html:168
+#: templates/main/about-us.html:169
 msgid "Get your custom offer"
 msgstr ""
 
@@ -901,47 +917,47 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: templates/main/form-listing.html:118
+#: templates/main/form-listing.html:125
 msgid "by CoinMarketCap"
 msgstr ""
 
-#: templates/main/form-listing.html:126
+#: templates/main/form-listing.html:133
 msgid "Ranked by CoinGecko"
 msgstr ""
 
-#: templates/main/form-listing.html:132
+#: templates/main/form-listing.html:139
 msgid "Supporting all types of coins"
 msgstr ""
 
-#: templates/main/form-listing.html:133
+#: templates/main/form-listing.html:140
 msgid "Online Support"
 msgstr ""
 
-#: templates/main/form-listing.html:134
+#: templates/main/form-listing.html:141
 msgid "Daily trading volumes"
 msgstr ""
 
-#: templates/main/form-listing.html:135
+#: templates/main/form-listing.html:142
 msgid "active traders"
 msgstr ""
 
-#: templates/main/form-listing.html:136
+#: templates/main/form-listing.html:143
 msgid "for IEO"
 msgstr ""
 
-#: templates/main/form-listing.html:137
+#: templates/main/form-listing.html:144
 msgid "NEW"
 msgstr ""
 
-#: templates/main/form-listing.html:138
+#: templates/main/form-listing.html:145
 msgid " Fiat currencies"
 msgstr ""
 
-#: templates/main/form-listing.html:139
+#: templates/main/form-listing.html:146
 msgid " "
 msgstr ""
 
-#: templates/main/form-listing.html:139
+#: templates/main/form-listing.html:146
 msgid "Trading API for AlgoTraders"
 msgstr ""
 
@@ -1251,51 +1267,51 @@ msgstr ""
 msgid "Please, describe your request. Our Support Team will contact you ASAP."
 msgstr ""
 
-#: templates/main/support-center.html:112
+#: templates/main/support-center.html:113
 msgid "Add file"
 msgstr ""
 
-#: templates/main/support-center.html:123
+#: templates/main/support-center.html:124
 msgid "top-10 questions"
 msgstr ""
 
-#: templates/main/support-center.html:126
+#: templates/main/support-center.html:127
 msgid "How to register on Exrates?"
 msgstr ""
 
-#: templates/main/support-center.html:127
+#: templates/main/support-center.html:128
 msgid "How long does withdrawal take?"
 msgstr ""
 
-#: templates/main/support-center.html:128
+#: templates/main/support-center.html:129
 msgid "My deposit wasn't approved"
 msgstr ""
 
-#: templates/main/support-center.html:129
+#: templates/main/support-center.html:130
 msgid "Where can I check the Fees?"
 msgstr ""
 
-#: templates/main/support-center.html:130
+#: templates/main/support-center.html:131
 msgid "I haven't received a PIN-code"
 msgstr ""
 
-#: templates/main/support-center.html:131
+#: templates/main/support-center.html:132
 msgid "How to create an order?"
 msgstr ""
 
-#: templates/main/support-center.html:132
+#: templates/main/support-center.html:133
 msgid "How to pass verification?"
 msgstr ""
 
-#: templates/main/support-center.html:133
+#: templates/main/support-center.html:134
 msgid "Where can I get your API?"
 msgstr ""
 
-#: templates/main/support-center.html:134
+#: templates/main/support-center.html:135
 msgid "How to get listed?"
 msgstr ""
 
-#: templates/main/support-center.html:135
+#: templates/main/support-center.html:136
 msgid "How to contact you for partnership and cooperation?"
 msgstr ""
 
