@@ -226,6 +226,11 @@ $("form").on("submit", function (e) {
 	e.preventDefault();
 	var thisForm = $(this);
 	sendForm = true;
+	if ($(".g-recaptcha").length) {
+		if ($("#g-recaptcha-response").val() == "") {
+			sendForm = false;
+		}
+	}
 	$(this).find(".reqiered-field").each(function () {
 
 		if ($(this).val() == "") {
