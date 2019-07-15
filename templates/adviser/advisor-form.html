@@ -46,8 +46,14 @@
                                 <label class="wrap-input__label" for="id_linkedin">Linkedin*</label>
                                 <label class="error" for="id_linkedin"><span class="standart-text"></span></label>
                             </div>
+
+                        <div class="capcha-container">
+                        {{ form.captcha }}
+
+                        <div class="error" for="{{ form.captcha.id_for_label }}"><span class="standart-text"></span>
                         </div>
-                    {{ form.captcha }}
+                    </div>
+                        </div>
                          <div class="button-wr">
                     <button class="standart-btn" type="submit"><span>{% blocktrans %}Submit{% endblocktrans %}</span></button>
                 </div>

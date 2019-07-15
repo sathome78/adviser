@@ -220,6 +220,17 @@ $(".reqiered-field").focusout(function (e) {
 //end form validation script
 
 
+var validateCapcha = function validateCapcha() {
+	if ($("#g-recaptcha-response").val() == "") {
+		sendForm = false;
+		$(".capcha-container .error span").html(CapchaError);
+		$(".capcha-container").addClass("validation-error");
+	} else {
+		$(".capcha-container .error span").html("");
+		$(".capcha-container").removeClass("validation-error");
+	}
+};
+
 //ajax script
 var sendForm;
 $("form").on("submit", function (e) {
@@ -229,6 +240,11 @@ $("form").on("submit", function (e) {
 	if ($(".g-recaptcha").length) {
 		if ($("#g-recaptcha-response").val() == "") {
 			sendForm = false;
+			$(".capcha-container .error span").html(CapchaError);
+			$(".capcha-container").addClass("validation-error");
+		} else {
+			$(".capcha-container .error span").html("");
+			$(".capcha-container").removeClass("validation-error");
 		}
 	}
 	$(this).find(".reqiered-field").each(function () {

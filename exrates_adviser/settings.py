@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'api',
-    'captcha'
+    'captcha',
 
     ]
 RECAPTCHA_PUBLIC_KEY = '6LdP0qwUAAAAANGp41-T0v2D5_5GpRZewOTWcmjV'

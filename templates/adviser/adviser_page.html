@@ -200,7 +200,12 @@
                                     <label class="wrap-input__label" for="id_link_to_project">{% blocktrans %}Link to the website{% endblocktrans %}*</label>
                                     <label class="error" for="id_link_to_project"><span class="standart-text"></span></label>
                                 </div>
-                            {{ form.captcha }}
+                            <div class="capcha-container">
+                        {{ form.captcha }}
+
+                        <div class="error" for="{{ form.captcha.id_for_label }}"><span class="standart-text"></span>
+                        </div>
+                    </div>
                                 <div class="button-wr">
                                     <button class="standart-btn reverse" type="submit"><span>{% blocktrans %}Submit{% endblocktrans %}</span></button>
                                 </div>

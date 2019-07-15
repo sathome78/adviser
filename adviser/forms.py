@@ -44,6 +44,11 @@ class SupportForm(forms.Form):
     files = forms.ImageField(widget=forms.ClearableFileInput(attrs={'multiple': True}), required=False)
     captcha = ReCaptchaField(required=True)
 
+    def __init__(self, *args, **kwargs):
+        super(SupportForm, self).__init__(*args, **kwargs)
+        for captcha in self.visible_fields():
+            captcha.field.widget.attrs['data-callback'] = 'validateCapcha'
+
 
 class ListingFormAdmin(ModelForm):
     request_type = forms.ChoiceField(choices=LISTING_CHOICES, widget=forms.RadioSelect)
@@ -77,6 +82,11 @@ class ListingFormAdmin(ModelForm):
 class ListingForm(ListingFormAdmin):
     captcha = ReCaptchaField()
 
+    def __init__(self, *args, **kwargs):
+        super(ListingForm, self).__init__(*args, **kwargs)
+        for captcha in self.visible_fields():
+            captcha.field.widget.attrs['data-callback'] = 'validateCapcha'
+
 
 
 class AdviserForm(ModelForm):
@@ -90,6 +100,11 @@ class AdviserForm(ModelForm):
         model = Adviser
         fields = ['name', 'telegram', 'email', 'linkedin']
 
+
+    def __init__(self, *args, **kwargs):
+        super(AdviserForm, self).__init__(*args, **kwargs)
+        for captcha in self.visible_fields():
+            captcha.field.widget.attrs['data-callback'] = 'validateCapcha'
 
     def save(self, commit=True):
 
@@ -121,6 +136,11 @@ class AdviserProfileForm(ModelForm):
         model = Adviser
         fields = ['name',  'short_description', 'email', 'telegram', 'linkedin', 'avatar', ]
 
+    def __init__(self, *args, **kwargs):
+        super(AdviserProfileForm, self).__init__(*args, **kwargs)
+        for captcha in self.visible_fields():
+            captcha.field.widget.attrs['data-callback'] = 'validateCapcha'
+
     def save(self, commit=True):
         instance = super(AdviserProfileForm, self).save(commit=False)
         instance.member_since = datetime.today()
@@ -135,7 +155,6 @@ class AdviserProfileForm(ModelForm):
                                                            [settings.PIPEDRIVE_ME, settings.PIPEDRIVE])
         if commit:
             model.save()
-        print(deals)
         for deal in deals:
             adviser_pipedrive = AdviserPipeDrive(deal_id=deal["deal_id"], adviser_id=model.id,
                                                  workspace=deal["workspace"])
