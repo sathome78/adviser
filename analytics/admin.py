@@ -15,7 +15,7 @@ class AnalyticsAdmin(TabbedTranslationAdmin):
             "fields": ("section",  "title", "term", "currency_pair_link", "currency_pair", "slug", "preview_image","short_description", "published_at",),
             }),
         ("Content", {
-            "fields": ("picture1", "picture2", "picture3", "tags", "article",  "go_to_trade_link", ),
+            "fields": ("picture1", "picture2", "tags", "article",  "go_to_trade_link", ),
             }),
         ("Settings", {
             "fields": ("facebook_comments",  'is_active', "is_published", "author", "views", ),

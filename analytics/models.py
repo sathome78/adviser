@@ -48,7 +48,6 @@ class Analytic(models.Model):
 
     picture1 = models.ImageField(upload_to='articles/img', null=True, blank=True)
     picture2 = models.ImageField(upload_to='articles/img', null=True, blank=True)
-    picture3 = models.ImageField(upload_to='articles/img', null=True, blank=True)
 
 
     def __str__(self):

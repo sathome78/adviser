@@ -81,9 +81,9 @@
 <!-- End Google Tag Manager (noscript) -->
 <div class="form-listing-wr a-profile">
     <div class="top-part">
-        <div class="logo">
+        <a href="https://exrates.me" class="logo">
             <img src="{% static  'img/pics/logo-header.svg' %}" alt="">
-        </div>
+        </a>
         <div class="description">
             <p>{% blocktrans %}Cryptocurrency Exchange{% endblocktrans %}</p>
         </div>
@@ -152,6 +152,12 @@
                         <label class="wrap-input__label" for="id_short_description">{% blocktrans %}
                             Bio{% endblocktrans %}*</label>
                         <label class="error" for="id_short_description"><span class="standart-text"></span></label>
+                    </div>
+                    <div class="capcha-container">
+                        {{ form.captcha }}
+
+                        <div class="error" for="{{ form.captcha.id_for_label }}"><span class="standart-text"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="button-wr">

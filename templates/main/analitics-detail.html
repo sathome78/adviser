@@ -42,6 +42,24 @@
                         <p>{{ article.published_at|date:"M / d / Y G:i A l" }}</p>
                         {% endlanguage %}
                     </div>
+                <div class="img-wr col2">
+                    {%  if article.picture1 %}
+                        <div class="img-wr-inner">
+                            <img src="{{ article.picture1.url }}" alt="">
+                        </div>
+
+                        {% endif %}
+
+
+
+                    {% if  article.picture2 %}
+                        <div class="img-wr-inner">
+                            <img src="{{ article.picture2.url }}" alt="">
+                        </div>
+                    {% endif %}
+
+                    </div>
+
                     <!-- <div class="img-wr col1">
 			<img src="img/pics/graph1.png" alt="">
 		</div> -->
