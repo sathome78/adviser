@@ -1133,7 +1133,7 @@ msgstr "НОВОЕ"
 
 #: templates/main/form-listing.html:178
 msgid ""
-"                            Trading API for AlgoTraders"
+"Trading API for AlgoTraders"
 msgstr ""
 "API для AlgoTraders"
 
@@ -3851,9 +3851,6 @@ msgstr "для IEO"
 
 msgid " Fiat currencies"
 msgstr "Фиатных валют"
-
-msgid "Trading API for AlgoTraders"
-msgstr "для AlgoTraders"
 
 msgid "Choose the topic of your request"
 msgstr "Выберите тему вашего обращения"
