@@ -3946,3 +3946,6 @@ msgstr "Удобство использования"
 msgid "Other"
 msgstr "Другое"
 
+msgid "Analytics"
+msgstr "Аналитика"
+

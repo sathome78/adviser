@@ -65,9 +65,14 @@
                             <a href="https://exrates.me/ieo"><span>{% blocktrans %}Token Sale{% endblocktrans %}</span></a>
                         </li>
                         <li>
+                         {% url 'fiat' as fiat %}
+                            <a href="{% url 'fiat' %}" {% if request.path == fiat %}
+                               class="active"{% endif %}><span>{% blocktrans %}Fiat{% endblocktrans %}</span></a>
+                        <!--
                             {% url 'analytics-list' as analytics %}
                             <a href="{% url 'analytics-list' %}" {% if request.path == analytics %}
                                class="active"{% endif %}><span>{% blocktrans %}Analytics{% endblocktrans %}</span></a>
+                               -->
                         </li>
                     </ul>
                 </div>
