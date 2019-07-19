@@ -94,11 +94,12 @@ urlpatterns = i18n_patterns(
         url(r'^chat/$', ChatPageView.as_view(), name='chat'),
         url(r'^analytics/$', ArticlesListPageView.as_view(), name='analytics-list'),
 
-        url(r'^api/articles/$', ListArticleView.as_view(), name='articles-list1'),
+
 
         ) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urls = [url('admin/', admin.site.urls),
+url(r'^api/articles/$', ListArticleView.as_view(), name='articles-list1'),
         url('i18n/', include('django.conf.urls.i18n')),
         url(r'^ckeditor/', include('ckeditor_uploader.urls')),
         url(r'^api/', include('api.urls')),
