@@ -275,7 +275,7 @@ pipeline {
                          ]
                       ],
                       submoduleCfg: [],
-                      userRemoteConfigs: [[credentialsId: 'jenkins-pipeline-ssh-key', url: 'ssh://git@bitbucket.to-the-moon-team-of-world-largest-exchange.com:8979/subdomain/adviser.git']]
+                      userRemoteConfigs: [[credentialsId: 'jenkins-pipeline-ssh-key', url: 'ssh://git@git.listumbrella.com:8979/subdomain/adviser.git']]
                     ])
                 
                     script {
@@ -305,7 +305,7 @@ pipeline {
                          ]
                       ],
                       submoduleCfg: [],
-                      userRemoteConfigs: [[credentialsId: 'jenkins-pipeline-ssh-key', url: 'ssh://git@bitbucket.to-the-moon-team-of-world-largest-exchange.com:8979/ops/exrates-ops-tools.git']]
+                      userRemoteConfigs: [[credentialsId: 'jenkins-pipeline-ssh-key', url: 'ssh://git@git.listumbrella.com:8979/ops/exrates-ops-tools.git']]
                     ])
                   
                     script {
