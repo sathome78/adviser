@@ -6,7 +6,7 @@ __pycache__
 *.pyc
 *.pyo
 *.pyd
-#Jenkinsfile
+Jenkinsfile
 ansible*.yml
 *.retry
 ansible.cfg
