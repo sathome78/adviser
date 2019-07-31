@@ -197,12 +197,11 @@ msgstr "До $500,000 в месяц"
 #: templates/adviser/adviser_page.html:135
 #: templates/adviser/advisor-page.html:136
 #: templates/adviser/become-advisor.html:192 templates/main/fiat.html:85
+#: templates/main/client-center.html:147
 msgid ""
-"For VIP clients we provide special conditions for fiat deposit and withdraw "
-"in 35 currencies."
+"For VIP clients we provide special conditions for fiat deposit and withdraw."
 msgstr ""
-"Для VIP-клиентов мы предоставляем особые условия ввода и вывода средств в 35 "
-"валютах."
+"Для VIP-клиентов мы предоставляем особые условия ввода и вывода средств."
 
 #: templates/adviser/adviser_page.html:138
 #: templates/adviser/advisor-page.html:139
@@ -944,15 +943,6 @@ msgid ""
 msgstr ""
 "Мы предоставляем личный банковский аккаунт с возможностью переводов через 3-"
 "ю сторону в 231 страну."
-
-#: templates/main/client-center.html:147
-msgid ""
-"For VIP clients we provide special conditions for fiat deposit and withdraw "
-"in 35\n"
-"                                        currencies."
-msgstr ""
-"Для VIP-клиентов мы предоставляем особые условия ввода и вывода средств в 35 "
-"валютах."
 
 #: templates/main/fiat.html:17
 msgid "Meet fiat on Exrates in Q3!"

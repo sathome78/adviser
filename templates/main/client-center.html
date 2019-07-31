@@ -144,8 +144,7 @@
                                     <h5>{% blocktrans %}Up to $500,000 monthly{% endblocktrans %}</h5>
                                 </div>
                                 <div class="description">
-                                    <p>{% blocktrans %}For VIP clients we provide special conditions for fiat deposit and withdraw in 35
-                                        currencies.{% endblocktrans %}</p>
+                                    <p>{% blocktrans %}For VIP clients we provide special conditions for fiat deposit and withdraw.{% endblocktrans %}</p>
                                 </div>
                                 <div class="button-wr">
                                     <a  class="standart-btn reverse vip" href="{%  url 'chat' %}" target="_blank"><span>{% blocktrans %}Become a VIP{% endblocktrans %}</span></a>
@@ -182,9 +181,9 @@
                     <!--<a href="#" class="banner-item">
                         <img src="{% static 'img/pics/baner4.png' %}" alt="">
                     </a>-->
-                    <a href="{% url 'fiat' %}" class="banner-item">
+                    <!--<a href="{% url 'fiat' %}" class="banner-item">
                         <img {% if request.LANGUAGE_CODE == "ru" %}  src="{% static 'img/pics/banner1-rus.png' %}" {% else  %} src="{% static 'img/pics/baner1.png' %}" {% endif %} alt="">
-                    </a>
+                    </a>-->
                     <a href="{% url 'deal' %}" class="banner-item">
                         <img {% if request.LANGUAGE_CODE == "ru" %}  src="{% static 'img/pics/banner2-rus.png' %}" {% else  %} src="{% static 'img/pics/baner2.png' %}" {% endif %} alt="">
                     </a>
