@@ -1,5 +1,8 @@
 # Created by https://www.gitignore.io
 
+### I don't know what i do, sorry
+staticfiles/
+
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -91,6 +94,7 @@ local_settings.py
 .env
 .idea
 idea/
+.vscode/
 
 db.sqlite
 
