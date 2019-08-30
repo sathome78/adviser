@@ -148,8 +148,8 @@ class PrivacyPolicyPageView(TemplateView):
     template_name = 'main/privacy-policy.html'
 
 
-class TermsPageView(TemplateView):
-    template_name = 'main/terms-of-use.html'
+# class TermsPageView(TemplateView):
+#     template_name = 'main/terms-of-use.html'
 
 
 class BecomeAdviserPageView(TemplateView):

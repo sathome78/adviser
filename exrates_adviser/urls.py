@@ -26,7 +26,7 @@ from django.utils.translation import activate
 from adviser.views import (AboutUsPageView, AdviserDemoPageView, AdviserFormView, AdviserProfileView,
                            AdviserUpdateProfileView, AdvisorProfileView, BecomeAdviserPageView, ChatPageView,
                            ClientCenterPageView,
-                           DealPageView, FiatPageView, PrivacyPolicyPageView, SupportPageView, TermsPageView)
+                           DealPageView, FiatPageView, PrivacyPolicyPageView, SupportPageView)#, TermsPageView)
 from analytics.views import ArticlePageView, ArticlesListPageView, ListArticleView
 
 activate('en')
@@ -83,7 +83,7 @@ urlpatterns = i18n_patterns(
         url(r'^fiat/$', FiatPageView.as_view(), name='fiat'),
         url(r'^client-center/$', ClientCenterPageView.as_view(), name='client-center'),
         url(r'^privacy-policy/$', PrivacyPolicyPageView.as_view(), name='privacy-policy'),
-        url(r'^terms-of-use/$', TermsPageView.as_view(), name='terms-of-use'),
+        # url(r'^terms-of-use/$', TermsPageView.as_view(), name='terms-of-use'),
 
         url(r'^become-ambassador/$', BecomeAdviserPageView.as_view(), name='become-advisor'),
         url(r'^about-us/$', check_recaptcha(AboutUsPageView.as_view()), name='about-us'),
