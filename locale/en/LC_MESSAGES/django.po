@@ -1286,7 +1286,7 @@ msgid ""
 "Our Data Protection Officer is the person in charge of ensuring our company "
 "adheres to this privacy policy. This person is also the main contact for our "
 "Data Protection Supervisory Authority. The Data Protection Officer may be "
-"contacted on separate email: bd@exrates.me."
+"contacted on separate email: dataprotection@exrates.me."
 msgstr ""
 
 #: templates/main/privacy-policy.html:186
