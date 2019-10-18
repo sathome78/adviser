@@ -286,10 +286,13 @@ msgstr ""
 msgid "Fill the form to become an Ambassador"
 msgstr ""
 
-#: templates/adviser/advisor-form.html:70
 #: templates/adviser/advisor-profile.html:180
 #: templates/main/form-listing.html:112
 msgid "IEO request submitted"
+msgstr ""
+
+#: templates/adviser/advisor-form.html:70
+msgid "Your application is accepted"
 msgstr ""
 
 #: templates/adviser/advisor-form.html:77
