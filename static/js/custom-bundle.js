@@ -23,10 +23,10 @@ if ($(".footer").length) {
 
 		var footerPos = $(".footer").offset().top;
 		var buttonHeight = $(".button-list").innerHeight();
-		console.log($(window).scrollTop());
-		console.log($(".button-list").css("background-color"));
-		console.log(buttonHeight);
-		console.log(footerPos);
+		// console.log($(window).scrollTop());
+		// console.log($(".button-list").css("background-color"));
+		// console.log(buttonHeight);
+		// console.log(footerPos);
 		if ($(window).scrollTop() + $(window).innerHeight() > footerPos + buttonHeight / 2) {
 			$(".button-list").css("background-color", "#0f1032");
 		} else {
@@ -118,7 +118,7 @@ $(".burger").click(function () {
 });
 
 var tgValidation = function tgValidation(val) {
-	console.log(parseInt(val));
+	// console.log(parseInt(val));
 	if (!isNaN(parseInt(val))) {
 		return (/^(\s*)?(\+)?([-()]?\d[-()]?){10,14}(\s*)?$/.test(val)
 		);
@@ -488,12 +488,12 @@ var VanillaRunOnDomReady = function VanillaRunOnDomReady() {
 			coof = widthCanv / image.width;
 			canvas.width = widthCanv;
 			canvas.height = image.height * coof;
-			console.log(coof);
+			// console.log(coof);
 		} else {
 			coof = heightCanv / image.height;
 			canvas.width = heightCanv;
 			canvas.height = image.width * coof;
-			console.log(coof);
+			// console.log(coof);
 		}
 		context.drawImage(image, 0, 0, canvas.width, canvas.height);
 		image = new Image();
@@ -663,7 +663,7 @@ window.addEventListener("popstate", function (e) {
 
 $("input, textarea").each(function () {
 	activeInput($(this));
-	console.log("rvwev");
+	// console.log("rvwev");
 });
 
 var filterHeadFunc = function filterHeadFunc() {
@@ -673,7 +673,7 @@ var filterHeadFunc = function filterHeadFunc() {
 		$("#template .head-filter h5").html(decodeURI(filterParam));
 		$("#template .tags-block span").html(decodeURI(filterParam));
 		$("#template .tags-block a").attr("href", '/analytics?' + strGET);
-		console.log(strGET);
+		// console.log(strGET);
 		var filterHead = $("#template .filter-block").clone();
 		$(".analitics-inner").prepend(filterHead);
 	} else {
@@ -682,11 +682,11 @@ var filterHeadFunc = function filterHeadFunc() {
 };
 
 $(document).on("click", ".share-link a", function (e) {
-	console.log(e.target);
+	// console.log(e.target);
 	e.preventDefault();
 	var shareUrl = $(this).closest(".analitics-item").find(".hidden-link").attr("href");
 	// var shareUrl = location.origin  + $(this).closest(".analitics-item").find(".hidden-link").attr("href");
-	console.log(shareUrl);
+	// console.log(shareUrl);
 
 	if ($(this).closest(".share-link").hasClass("tg")) {
 		window.open('https://telegram.me/share/url?url=' + shareUrl);
@@ -703,7 +703,7 @@ var strGET;
 var postPreview;
 var pageNumber = 2;
 var scrollFlag = true;
-console.log(strGET);
+// console.log(strGET);
 var apiUrl;
 var downloadPost = function downloadPost() {
 	strGET = window.location.search.replace('?', '');
@@ -717,8 +717,8 @@ var downloadPost = function downloadPost() {
 		type: 'GET',
 		success: function success(data) {
 			postPreview = "";
-			console.log(data);
-			console.log(data.results);
+			// console.log(data);
+			// console.log(data.results);
 			postPreview = data.results;
 			for (var i = 0; i < postPreview.length; i++) {
 				$("#template .hidden-link").remove();

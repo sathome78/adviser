@@ -145,7 +145,7 @@ class PipedriveClient:
             data = {"name": name, "email": email, "label": "adviser",
                     args["USER_LINKEDIN"]: linkedin, args["USER_LINKS"]: '{} \n {}'.format(edit_url, update_url)}
             phone_pattern = re.compile("^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$")
-            telegram_pattern = re.compile("^[a-zA-Z0-9]+$")
+            telegram_pattern = re.compile("^[a-zA-Z0-9_]+$")
             if telegram:
                 if phone_pattern.match(telegram):
                     data.update({"phone": telegram})
