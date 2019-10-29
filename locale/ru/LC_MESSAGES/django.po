@@ -3943,3 +3943,7 @@ msgstr "Другое"
 msgid "Analytics"
 msgstr "Аналитика"
 
+#  templates/basic/_footer.html:186
+msgid "Go to trade"
+msgstr "К торговле"
+
