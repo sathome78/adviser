@@ -2815,3 +2815,7 @@ msgid ""
 "Service, your Account or any other matter, please, contact us via email, "
 "mentioned on the Website. "
 msgstr ""
+
+#  templates/basic/_footer.html:186
+msgid "Go to trade"
+msgstr ""
